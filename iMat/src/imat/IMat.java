@@ -2,15 +2,8 @@ package imat;
 
 import java.awt.CardLayout;
 import java.awt.Font;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Map;
-import java.util.TreeMap;
-import javax.swing.JPanel;
 import javax.swing.UIManager;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
-import se.chalmers.ait.dat215.project.ProductCategory;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -54,9 +47,12 @@ public class IMat extends javax.swing.JFrame {
         FilterFactory.createFilterCards();
                 
         this.cardPanel.add(this.productCategoryPanel, "productCategoryPanel");
-        this.cardPanel.add(new JPanel(), "profilePanel");
-        this.cardPanel.add(new JPanel(), "tipsPanel");
-     
+        this.cardPanel.add(new ProfilePanel(), "profilePanel");
+        this.cardPanel.add(new HintsPanel(), "hintsPanel");
+        this.cardPanel.add(new RecipePanel(), "recipePanel");
+        this.cardPanel.add(new WelcomePanel(), "welcomePanel");
+        
+        showCard("welcomePanel");
     }
 
     /**
@@ -138,12 +134,22 @@ public class IMat extends javax.swing.JFrame {
         tipsButton.setMaximumSize(new java.awt.Dimension(64, 40));
         tipsButton.setMinimumSize(new java.awt.Dimension(64, 40));
         tipsButton.setPreferredSize(new java.awt.Dimension(64, 40));
+        tipsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tipsButtonActionPerformed(evt);
+            }
+        });
         headerPanel.add(tipsButton);
 
         profileButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/person.png"))); // NOI18N
         profileButton.setMaximumSize(new java.awt.Dimension(64, 40));
         profileButton.setMinimumSize(new java.awt.Dimension(64, 40));
         profileButton.setPreferredSize(new java.awt.Dimension(64, 40));
+        profileButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                profileButtonActionPerformed(evt);
+            }
+        });
         headerPanel.add(profileButton);
         headerPanel.add(filler4);
 
@@ -292,46 +298,51 @@ public class IMat extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void candySnacksPanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_candySnacksPanelActionPerformed
+    private void showCard(String cardName) {
         CardLayout cards = (CardLayout) cardPanel.getLayout();
-        cards.show(cardPanel, "candySnacksPanel");
+        cards.show(cardPanel, cardName);
+    }
+    
+    private void candySnacksPanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_candySnacksPanelActionPerformed
+       showCard("candySnacksPanel");
     }//GEN-LAST:event_candySnacksPanelActionPerformed
 
     private void pantryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pantryButtonActionPerformed
-        CardLayout cards = (CardLayout) cardPanel.getLayout();
-        cards.show(cardPanel, "pantryPanel");
+       showCard("pantryPanel");
     }//GEN-LAST:event_pantryButtonActionPerformed
 
     private void fruitVegetablesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fruitVegetablesButtonActionPerformed
-        CardLayout cards = (CardLayout) cardPanel.getLayout();
-        cards.show(cardPanel, "fruitVegetablesPanel");
+        showCard("fruitVegetablesPanel");
     }//GEN-LAST:event_fruitVegetablesButtonActionPerformed
 
     private void dairyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dairyButtonActionPerformed
-        CardLayout cards = (CardLayout) cardPanel.getLayout();
-        cards.show(cardPanel, "dairyPanel");
+        showCard("dairyPanel");
     }//GEN-LAST:event_dairyButtonActionPerformed
 
     private void freezerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_freezerButtonActionPerformed
-        CardLayout cards = (CardLayout) cardPanel.getLayout();
-        cards.show(cardPanel, "freezerPanel");
+        showCard("freezerPanel");
     }//GEN-LAST:event_freezerButtonActionPerformed
 
     private void meatFishButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meatFishButtonActionPerformed
-        CardLayout cards = (CardLayout) cardPanel.getLayout();
-        cards.show(cardPanel, "productCategoryPanel");
+        showCard("productCategoryPanel");
         this.productCategoryPanel.applyFilters(FilterFactory.meatAndFishFilterCard);
     }//GEN-LAST:event_meatFishButtonActionPerformed
 
     private void recipeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recipeButtonActionPerformed
-        CardLayout cards = (CardLayout) cardPanel.getLayout();
-        cards.show(cardPanel, "fruitVegetablesPanel");
+        showCard("recipePanel");
     }//GEN-LAST:event_recipeButtonActionPerformed
 
     private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonActionPerformed
-        CardLayout cards = (CardLayout) cardPanel.getLayout();
-        cards.show(cardPanel, "meatFishPanel");
+        showCard("welcomePanel");
     }//GEN-LAST:event_homeButtonActionPerformed
+
+    private void profileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileButtonActionPerformed
+       showCard("profilePanel");
+    }//GEN-LAST:event_profileButtonActionPerformed
+
+    private void tipsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipsButtonActionPerformed
+        showCard("hintsPanel");
+    }//GEN-LAST:event_tipsButtonActionPerformed
 
     /**
      * @param args the command line arguments
