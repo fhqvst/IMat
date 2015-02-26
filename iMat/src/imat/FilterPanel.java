@@ -65,6 +65,22 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
             case "Nötkött": case "Fläskkött": return ProductCategory.MEAT;
             case "Fisk": return ProductCategory.FISH;
             case "Mjölk": return ProductCategory.DAIRIES;
+            case "Bär": return ProductCategory.BERRY;
+            case "Bröd": return ProductCategory.BREAD;
+            case "Sallad": return ProductCategory.CABBAGE;
+            case "Läsk": return ProductCategory.COLD_DRINKS;
+            case "Citrus Frukter": return ProductCategory.CITRUS_FRUIT;
+            case "Exotic Frukt": return ProductCategory.EXOTIC_FRUIT;
+            case "Mjöl, Socker, Salt": return ProductCategory.FLOUR_SUGAR_SALT;
+            case "Frukt": return ProductCategory.FRUIT;
+            case "Örter": return ProductCategory.HERB;
+            case "Kaffe, Te": return ProductCategory.HOT_DRINKS;
+            case "Meloner": return ProductCategory.MELONS;
+            case "Nötter": return ProductCategory.NUTS_AND_SEEDS;
+            case "Pasta": return ProductCategory.PASTA;
+            case "Potatis, ris": return ProductCategory.POTATO_RICE;
+            case "Godis": return ProductCategory.SWEET;
+            
             default: return ProductCategory.FISH;
         }
     }
