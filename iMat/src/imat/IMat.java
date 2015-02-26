@@ -298,39 +298,39 @@ public class IMat extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void showCard(String cardName) {
+    public void showCard(String cardName) {
         CardLayout cards = (CardLayout) cardPanel.getLayout();
         cards.show(cardPanel, cardName);
     }
     
+    public void showCard(String cardName, FilterPanel filterCard) {
+        showCard(cardName);
+        this.productCategoryPanel.applyFilters(filterCard);
+
+    }
+    
     private void candySnacksPanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_candySnacksPanelActionPerformed
-       showCard("candySnacksPanel");
-       this.productCategoryPanel.applyFilters(FilterFactory.sweetsFilterCard);
+       showCard("candySnacksPanel", FilterFactory.sweetsFilterCard);
     }//GEN-LAST:event_candySnacksPanelActionPerformed
 
     private void pantryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pantryButtonActionPerformed
-       showCard("pantryPanel");
-       this.productCategoryPanel.applyFilters(FilterFactory.pantryFilterCard);
+       showCard("pantryPanel", FilterFactory.pantryFilterCard);
     }//GEN-LAST:event_pantryButtonActionPerformed
 
     private void fruitVegetablesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fruitVegetablesButtonActionPerformed
-        showCard("fruitVegetablesPanel");
-        this.productCategoryPanel.applyFilters(FilterFactory.veggieAndFruitsFilterCard);
+        showCard("fruitVegetablesPanel", FilterFactory.veggieAndFruitsFilterCard);
     }//GEN-LAST:event_fruitVegetablesButtonActionPerformed
 
     private void dairyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dairyButtonActionPerformed
-        showCard("dairyPanel");
-        this.productCategoryPanel.applyFilters(FilterFactory.dairyFilterCard);
+        showCard("dairyPanel", FilterFactory.dairyFilterCard);
     }//GEN-LAST:event_dairyButtonActionPerformed
 
     private void freezerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_freezerButtonActionPerformed
-        showCard("freezerPanel");
-        this.productCategoryPanel.applyFilters(FilterFactory.freezerFilterCard);
+        showCard("freezerPanel", FilterFactory.freezerFilterCard);
     }//GEN-LAST:event_freezerButtonActionPerformed
 
     private void meatFishButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meatFishButtonActionPerformed
-        showCard("productCategoryPanel");
-        this.productCategoryPanel.applyFilters(FilterFactory.meatAndFishFilterCard);
+        showCard("productCategoryPanel", FilterFactory.meatAndFishFilterCard);
     }//GEN-LAST:event_meatFishButtonActionPerformed
 
     private void recipeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recipeButtonActionPerformed
