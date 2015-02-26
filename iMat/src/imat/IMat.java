@@ -305,22 +305,27 @@ public class IMat extends javax.swing.JFrame {
     
     private void candySnacksPanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_candySnacksPanelActionPerformed
        showCard("candySnacksPanel");
+       this.productCategoryPanel.applyFilters(FilterFactory.sweetsFilterCard);
     }//GEN-LAST:event_candySnacksPanelActionPerformed
 
     private void pantryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pantryButtonActionPerformed
        showCard("pantryPanel");
+       this.productCategoryPanel.applyFilters(FilterFactory.pantryFilterCard);
     }//GEN-LAST:event_pantryButtonActionPerformed
 
     private void fruitVegetablesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fruitVegetablesButtonActionPerformed
         showCard("fruitVegetablesPanel");
+        this.productCategoryPanel.applyFilters(FilterFactory.veggieAndFruitsFilterCard);
     }//GEN-LAST:event_fruitVegetablesButtonActionPerformed
 
     private void dairyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dairyButtonActionPerformed
         showCard("dairyPanel");
+        this.productCategoryPanel.applyFilters(FilterFactory.dairyFilterCard);
     }//GEN-LAST:event_dairyButtonActionPerformed
 
     private void freezerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_freezerButtonActionPerformed
         showCard("freezerPanel");
+        this.productCategoryPanel.applyFilters(FilterFactory.freezerFilterCard);
     }//GEN-LAST:event_freezerButtonActionPerformed
 
     private void meatFishButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meatFishButtonActionPerformed
