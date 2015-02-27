@@ -5,7 +5,7 @@
  */
 package imat;
 
-import se.chalmers.ait.dat215.project.Product;
+import se.chalmers.ait.dat215.project.*;
 
 /**
  *
@@ -15,6 +15,7 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
     
     private Object bean;
     private Product product;
+    private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
     /**
      * Creates new customizer ProductPanel
@@ -113,6 +114,11 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
         addToCartButton.setMaximumSize(new java.awt.Dimension(2147483647, 40));
         addToCartButton.setMinimumSize(new java.awt.Dimension(0, 0));
         addToCartButton.setPreferredSize(null);
+        addToCartButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addToCartButtonActionPerformed(evt);
+            }
+        });
         buttonPanel.add(addToCartButton, java.awt.BorderLayout.CENTER);
 
         descriptionPanel.add(buttonPanel);
@@ -123,6 +129,23 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
     private void amountSpinnerStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_amountSpinnerStateChanged
         this.adjustedPriceLabel.setText(Double.toString(((Integer)amountSpinner.getValue()) * this.product.getPrice()) + " kr");
     }//GEN-LAST:event_amountSpinnerStateChanged
+
+    private void addToCartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToCartButtonActionPerformed
+        boolean exists = false;
+        
+        for(int i = 0; i < dataHandler.getShoppingCart().getItems().size(); i++){
+            ShoppingItem temp = dataHandler.getShoppingCart().getItems().get(i);
+            if(temp.getProduct() == product){
+                temp.setAmount(temp.getAmount() + (Integer)amountSpinner.getValue());
+                exists = true;
+                break;
+            }
+        }
+        
+        if(!exists){
+            dataHandler.getShoppingCart().addProduct(product, (Integer)amountSpinner.getValue());
+        }
+    }//GEN-LAST:event_addToCartButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
