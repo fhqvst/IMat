@@ -304,9 +304,8 @@ public class IMat extends javax.swing.JFrame {
     }
     
     public void changeFilter(FilterPanel filterCard) {
-        showCard("productCategoryPanel");
         this.productCategoryPanel.applyFilters(filterCard);
-
+        showCard("productCategoryPanel");
     }
     
     private void candySnacksPanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_candySnacksPanelActionPerformed
