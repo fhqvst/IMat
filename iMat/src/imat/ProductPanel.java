@@ -31,6 +31,7 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
         this.priceLabel.setText(Double.toString(product.getPrice()) + " " + product.getUnit());
         this.imageLabel.setIcon(IMat.dataHandler.getImageIcon(product, 300, 300));
         this.adjustedPriceLabel.setText(Double.toString(this.product.getPrice()) + " kr");
+        this.amountSpinner.setValue(1);
     }
     
     public void setObject(Object bean) {
@@ -127,6 +128,8 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
     }// </editor-fold>//GEN-END:initComponents
 
     private void amountSpinnerStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_amountSpinnerStateChanged
+        if((Integer)amountSpinner.getValue() < 1)
+            amountSpinner.setValue(new Integer(1));
         this.adjustedPriceLabel.setText(Double.toString(((Integer)amountSpinner.getValue()) * this.product.getPrice()) + " kr");
     }//GEN-LAST:event_amountSpinnerStateChanged
 
