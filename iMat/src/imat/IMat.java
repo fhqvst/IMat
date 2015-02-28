@@ -26,6 +26,13 @@ public class IMat extends javax.swing.JFrame {
      */
     public IMat() {
         initComponents();
+        
+        //Saves data when application is terminated
+        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+            public void run() {
+                    dataHandler.shutDown();
+                }
+            }));
       
         /*
         Map<String, ProductCategoryPanel> productCategoryPanels = new TreeMap<String, ProductCategoryPanel>();
