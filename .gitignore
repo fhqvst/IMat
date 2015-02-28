@@ -1,23 +1,24 @@
-*.class
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.war
-*.ear
-
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-IMat/nbproject/private/
-IMat/build/
-IMat/nbbuild/
-IMat/dist/
-IMat/nbdist/
-IMat/nbactions.xml
-IMat/nb-configuration.xml
-IMat/.nb-gradle/
-/iMat/nbproject/private/
-/test/nbproject/private/
-/iMat/build/
+#ant specific
+iMat/dist/
+iMat/build/
+
+#netbeans specific
+core
+iMat/nbproject/*
+!iMat/nbproject/project.properties
+!iMat/nbproject/project.xml
+
+#java specific
+*.class
+
+#general swap/backup files
+*.so
+*.log
+*.out
+*~
+*.swp
+*.DS_Store
+*.lock
