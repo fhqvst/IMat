@@ -5,6 +5,7 @@
  */
 package imat;
 
+import java.awt.Color;
 import se.chalmers.ait.dat215.project.*;
 
 /**
@@ -32,6 +33,9 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
         this.imageLabel.setIcon(IMat.dataHandler.getImageIcon(product, 300, 300));
         this.adjustedPriceLabel.setText(Double.toString(this.product.getPrice()) + " kr");
         this.amountSpinner.setValue(1);
+        if(dataHandler.favorites().contains(product)){
+            addToFavouritesButton.setForeground(Color.red);
+        }
     }
     
     public void setObject(Object bean) {
@@ -162,7 +166,13 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
     }//GEN-LAST:event_addToCartButtonActionPerformed
 
     private void addToFavouritesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToFavouritesButtonActionPerformed
-        dataHandler.addFavorite(product);
+        if(dataHandler.favorites().contains(product)){
+            dataHandler.favorites().remove(product);
+            addToFavouritesButton.setForeground(Color.black);
+        }else{
+            dataHandler.addFavorite(product);
+            addToFavouritesButton.setForeground(Color.red);
+        }
     }//GEN-LAST:event_addToFavouritesButtonActionPerformed
 
 
