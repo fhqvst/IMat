@@ -98,6 +98,7 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
         pricePanel.setLayout(new java.awt.BorderLayout());
 
         addToFavouritesButton.setText("<3");
+        addToFavouritesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addToFavouritesButton.setMaximumSize(new java.awt.Dimension(2147483647, 40));
         addToFavouritesButton.setMinimumSize(new java.awt.Dimension(0, 0));
         addToFavouritesButton.addActionListener(new java.awt.event.ActionListener() {
@@ -129,6 +130,7 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
         descriptionPanel.add(adjustedPriceLabel);
 
         addToCartButton.setText("Lägg till");
+        addToCartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addToCartButton.setMaximumSize(new java.awt.Dimension(2147483647, 40));
         addToCartButton.setMinimumSize(new java.awt.Dimension(0, 0));
         addToCartButton.setPreferredSize(null);

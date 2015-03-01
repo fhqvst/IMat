@@ -111,6 +111,7 @@ public class IMat extends javax.swing.JFrame {
         jPopupMenu1.add(jMenuItem2);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("iMat");
         setBounds(new java.awt.Rectangle(0, 0, 0, 0));
         setPreferredSize(new java.awt.Dimension(1260, 800));
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.Y_AXIS));
@@ -131,6 +132,7 @@ public class IMat extends javax.swing.JFrame {
         headerPanel.add(searchTextField);
 
         searchButton.setText("Sök");
+        searchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         searchButton.setMaximumSize(new java.awt.Dimension(75, 40));
         searchButton.setMinimumSize(new java.awt.Dimension(75, 40));
         searchButton.setPreferredSize(new java.awt.Dimension(75, 40));
@@ -138,6 +140,7 @@ public class IMat extends javax.swing.JFrame {
         headerPanel.add(filler3);
 
         tipsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/info.png"))); // NOI18N
+        tipsButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         tipsButton.setMaximumSize(new java.awt.Dimension(64, 40));
         tipsButton.setMinimumSize(new java.awt.Dimension(64, 40));
         tipsButton.setPreferredSize(new java.awt.Dimension(64, 40));
@@ -149,6 +152,7 @@ public class IMat extends javax.swing.JFrame {
         headerPanel.add(tipsButton);
 
         profileButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/person.png"))); // NOI18N
+        profileButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         profileButton.setMaximumSize(new java.awt.Dimension(64, 40));
         profileButton.setMinimumSize(new java.awt.Dimension(64, 40));
         profileButton.setPreferredSize(new java.awt.Dimension(64, 40));
@@ -162,6 +166,7 @@ public class IMat extends javax.swing.JFrame {
 
         checkoutButton.setBackground(new java.awt.Color(204, 255, 102));
         checkoutButton.setText("Till kassan");
+        checkoutButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         checkoutButton.setMaximumSize(new java.awt.Dimension(112, 40));
         checkoutButton.setMinimumSize(new java.awt.Dimension(112, 40));
         checkoutButton.setPreferredSize(new java.awt.Dimension(112, 40));
@@ -175,6 +180,7 @@ public class IMat extends javax.swing.JFrame {
         navigationPanel.setLayout(new javax.swing.BoxLayout(navigationPanel, javax.swing.BoxLayout.LINE_AXIS));
 
         homeButton.setText("Hem");
+        homeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         homeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 homeButtonActionPerformed(evt);
@@ -183,6 +189,7 @@ public class IMat extends javax.swing.JFrame {
         navigationPanel.add(homeButton);
 
         recipeButton.setText("Recept");
+        recipeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         recipeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 recipeButtonActionPerformed(evt);
@@ -191,6 +198,7 @@ public class IMat extends javax.swing.JFrame {
         navigationPanel.add(recipeButton);
 
         meatFishButton.setText("Kött & Fisk");
+        meatFishButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         meatFishButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 meatFishButtonActionPerformed(evt);
@@ -199,6 +207,7 @@ public class IMat extends javax.swing.JFrame {
         navigationPanel.add(meatFishButton);
 
         freezerButton.setText("Frysvaror");
+        freezerButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         freezerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 freezerButtonActionPerformed(evt);
@@ -207,6 +216,7 @@ public class IMat extends javax.swing.JFrame {
         navigationPanel.add(freezerButton);
 
         dairyButton.setText("Mejeri");
+        dairyButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dairyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dairyButtonActionPerformed(evt);
@@ -215,6 +225,7 @@ public class IMat extends javax.swing.JFrame {
         navigationPanel.add(dairyButton);
 
         fruitVegetablesButton.setText("Frukt & Grönt");
+        fruitVegetablesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         fruitVegetablesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fruitVegetablesButtonActionPerformed(evt);
@@ -223,6 +234,7 @@ public class IMat extends javax.swing.JFrame {
         navigationPanel.add(fruitVegetablesButton);
 
         pantryButton.setText("Skafferi");
+        pantryButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pantryButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pantryButtonActionPerformed(evt);
@@ -231,6 +243,7 @@ public class IMat extends javax.swing.JFrame {
         navigationPanel.add(pantryButton);
 
         candySnacksPanel.setText("Godis & Snacks");
+        candySnacksPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         candySnacksPanel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 candySnacksPanelActionPerformed(evt);
@@ -249,7 +262,7 @@ public class IMat extends javax.swing.JFrame {
 
         cartAndListsPanel.setBackground(new java.awt.Color(255, 255, 255));
         cartAndListsPanel.setMaximumSize(new java.awt.Dimension(80, 2147483647));
-        cartAndListsPanel.setMinimumSize(new java.awt.Dimension(0, 0));
+        cartAndListsPanel.setMinimumSize(new java.awt.Dimension(70, 0));
         cartAndListsPanel.setPreferredSize(new java.awt.Dimension(80, 0));
         cartAndListsPanel.setLayout(new javax.swing.BoxLayout(cartAndListsPanel, javax.swing.BoxLayout.Y_AXIS));
 

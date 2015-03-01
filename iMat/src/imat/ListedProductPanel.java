@@ -87,6 +87,7 @@ public class ListedProductPanel extends javax.swing.JPanel implements java.beans
 
         RemoveFromCartButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         RemoveFromCartButton.setText("X");
+        RemoveFromCartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         RemoveFromCartButton.setMaximumSize(new java.awt.Dimension(2147483647, 40));
         RemoveFromCartButton.setMinimumSize(new java.awt.Dimension(0, 0));
         RemoveFromCartButton.addActionListener(new java.awt.event.ActionListener() {
