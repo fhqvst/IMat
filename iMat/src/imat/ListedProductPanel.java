@@ -66,7 +66,7 @@ public class ListedProductPanel extends javax.swing.JPanel implements java.beans
         add(titleLabel);
 
         priceLabel.setForeground(new java.awt.Color(255, 0, 0));
-        priceLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        priceLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         priceLabel.setText("Pris");
         priceLabel.setToolTipText("");
         add(priceLabel);
@@ -81,7 +81,7 @@ public class ListedProductPanel extends javax.swing.JPanel implements java.beans
         });
         add(amountSpinner);
 
-        adjustedPriceLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        adjustedPriceLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         adjustedPriceLabel.setText("10");
         add(adjustedPriceLabel);
 
@@ -108,6 +108,7 @@ public class ListedProductPanel extends javax.swing.JPanel implements java.beans
 
     private void RemoveFromCartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveFromCartButtonActionPerformed
         dataHandler.getShoppingCart().removeItem(item);
+        
     }//GEN-LAST:event_RemoveFromCartButtonActionPerformed
 
 
