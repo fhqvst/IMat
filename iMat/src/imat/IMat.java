@@ -38,6 +38,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         dataHandler.getShoppingCart().addShoppingCartListener(this);
         cartAmountLabel.setText(dataHandler.getShoppingCart().getItems().size() + " varor");
         cartPriceLabel.setText(dataHandler.getShoppingCart().getTotal() + " kr");
+        homeButton.requestFocus();
       
         /*
         Map<String, ProductCategoryPanel> productCategoryPanels = new TreeMap<String, ProductCategoryPanel>();
@@ -138,6 +139,14 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         headerPanel.add(filler2);
 
         searchTextField.setText("Sök produkt...");
+        searchTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                searchTextFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                searchTextFieldFocusLost(evt);
+            }
+        });
         headerPanel.add(searchTextField);
 
         searchButton.setText("Sök");
@@ -399,6 +408,20 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
         showCard("checkoutPanel");
     }//GEN-LAST:event_checkoutButtonActionPerformed
+
+    private void searchTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchTextFieldFocusGained
+        if(searchTextField.getText().equals("Sök produkt...")){
+            searchTextField.setText("");
+        }else{
+            searchTextField.selectAll();
+        }
+    }//GEN-LAST:event_searchTextFieldFocusGained
+
+    private void searchTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchTextFieldFocusLost
+        if(searchTextField.getText().equals("")){
+            searchTextField.setText("Sök produkt...");
+        }
+    }//GEN-LAST:event_searchTextFieldFocusLost
 
     @Override
     public void shoppingCartChanged(CartEvent ce) {
