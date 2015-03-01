@@ -16,10 +16,6 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="filterPanel" min="-2" pref="180" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -27,6 +23,7 @@
                   <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="jSpinner1" alignment="0" min="-2" pref="78" max="-2" attributes="0"/>
                   <Component id="unselectAllButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="filterPanel" alignment="0" min="-2" pref="170" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -42,8 +39,8 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jSpinner1" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="filterPanel" min="-2" pref="101" max="-2" attributes="0"/>
-              <EmptySpace pref="154" max="32767" attributes="0"/>
+              <Component id="filterPanel" pref="237" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="unselectAllButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
