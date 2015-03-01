@@ -9,13 +9,15 @@ import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JCheckBox;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import se.chalmers.ait.dat215.project.*;
 
 /**
  *
  * @author kakan
  */
-public class FilterPanel extends javax.swing.JPanel implements java.beans.Customizer {
+public class FilterPanel extends javax.swing.JPanel implements java.beans.Customizer, ChangeListener{
     
     private Object bean;
     private final String title;
@@ -38,6 +40,12 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
         setFilterBoxesFromString();
         setFilterBoxesToPanel();
         setTitle();
+        
+        
+    }
+    
+    public void stateChanged(ChangeEvent changeEvent) {
+        ((IMat)this.getTopLevelAncestor()).getProductCategoryPanel().applyFilters(this);
     }
     
     public void setObject(Object bean) {
@@ -52,6 +60,7 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
         for(int i=0; i<checkBoxTitles.length; i++ ) {
             filterBoxes[i] = new JCheckBox(checkBoxTitles[i]);
             filterBoxes[i].setSelected(true);
+            filterBoxes[i].addChangeListener(this);
         }
     }
     private void setFilterBoxesToPanel() {
@@ -94,6 +103,8 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
         }
         return productsShown;
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

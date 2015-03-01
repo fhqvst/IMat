@@ -318,6 +318,10 @@ public class IMat extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public ProductCategoryPanel getProductCategoryPanel(){
+        return productCategoryPanel;
+    }
+    
     public void showCard(String cardName) {
         CardLayout cards = (CardLayout) cardPanel.getLayout();
         cards.show(cardPanel, cardName);
