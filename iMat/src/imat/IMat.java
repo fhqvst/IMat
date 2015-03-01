@@ -36,8 +36,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         }));
         
         dataHandler.getShoppingCart().addShoppingCartListener(this);
-        cartAmountLabel.setText(dataHandler.getShoppingCart().getItems().size() + " varor");
-        cartPriceLabel.setText(dataHandler.getShoppingCart().getTotal() + " kr");
+        updateCartLabels();
         homeButton.requestFocus();
       
         /*
@@ -100,7 +99,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         dairyButton = new javax.swing.JButton();
         fruitVegetablesButton = new javax.swing.JButton();
         pantryButton = new javax.swing.JButton();
-        candySnacksPanel = new javax.swing.JButton();
+        candySnacksButton = new javax.swing.JButton();
+        favouriteButton = new javax.swing.JButton();
         contentPanel = new javax.swing.JPanel();
         cardPanel = new javax.swing.JPanel();
         cartAndListsPanel = new javax.swing.JPanel();
@@ -270,14 +270,23 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         });
         navigationPanel.add(pantryButton);
 
-        candySnacksPanel.setText("Godis & Snacks");
-        candySnacksPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        candySnacksPanel.addActionListener(new java.awt.event.ActionListener() {
+        candySnacksButton.setText("Godis & Snacks");
+        candySnacksButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        candySnacksButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                candySnacksPanelActionPerformed(evt);
+                candySnacksButtonActionPerformed(evt);
             }
         });
-        navigationPanel.add(candySnacksPanel);
+        navigationPanel.add(candySnacksButton);
+
+        favouriteButton.setText("Favoriter");
+        favouriteButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        favouriteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                favouriteButtonActionPerformed(evt);
+            }
+        });
+        navigationPanel.add(favouriteButton);
 
         getContentPane().add(navigationPanel);
 
@@ -359,6 +368,11 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         return productCategoryPanel;
     }
     
+    public void updateCartLabels(){
+        cartAmountLabel.setText(dataHandler.getShoppingCart().getItems().size() + " varor");
+        cartPriceLabel.setText(Math.round(dataHandler.getShoppingCart().getTotal()) + " kr");
+    }
+    
     public void showCard(String cardName) {
         CardLayout cards = (CardLayout) cardPanel.getLayout();
         cards.show(cardPanel, cardName);
@@ -369,9 +383,9 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         showCard("productCategoryPanel");
     }
     
-    private void candySnacksPanelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_candySnacksPanelActionPerformed
+    private void candySnacksButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_candySnacksButtonActionPerformed
        changeFilter(FilterFactory.sweetsFilterCard);
-    }//GEN-LAST:event_candySnacksPanelActionPerformed
+    }//GEN-LAST:event_candySnacksButtonActionPerformed
 
     private void pantryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pantryButtonActionPerformed
        changeFilter(FilterFactory.pantryFilterCard);
@@ -430,14 +444,18 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
 
-        this.productCategoryPanel.applySearchResult(dataHandler.findProducts(searchTextField.getText()));
+        this.productCategoryPanel.displayProducts(dataHandler.findProducts(searchTextField.getText()));
         showCard("productCategoryPanel");
     }//GEN-LAST:event_searchButtonActionPerformed
 
+    private void favouriteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_favouriteButtonActionPerformed
+        this.productCategoryPanel.displayProducts(dataHandler.favorites());
+        showCard("productCategoryPanel");
+    }//GEN-LAST:event_favouriteButtonActionPerformed
+
     @Override
     public void shoppingCartChanged(CartEvent ce) {
-        cartAmountLabel.setText(dataHandler.getShoppingCart().getItems().size() + " varor");
-        cartPriceLabel.setText(dataHandler.getShoppingCart().getTotal() + " kr");
+        updateCartLabels();
     }
     /**
      * @param args the command line arguments
@@ -478,7 +496,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton candySnacksPanel;
+    private javax.swing.JButton candySnacksButton;
     private javax.swing.JPanel cardPanel;
     private javax.swing.JLabel cartAmountLabel;
     private javax.swing.JPanel cartAndListsPanel;
@@ -488,6 +506,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     private javax.swing.JButton checkoutButton;
     private javax.swing.JPanel contentPanel;
     private javax.swing.JButton dairyButton;
+    private javax.swing.JButton favouriteButton;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler2;
     private javax.swing.Box.Filler filler3;

@@ -66,7 +66,7 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
         this.repaint();
     }
     
-    public void applySearchResult(List<Product> products) {
+    public void displayProducts(List<Product> products) {
         productsPanel.removeAll();
         filterPanel.removeAll();
         
