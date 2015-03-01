@@ -25,6 +25,18 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         page1Panel.add(plp, 0);
         showCard("page1");
         
+        firstNameTextField.setText(dataHandler.getCustomer().getFirstName());
+        lastNameTextField.setText(dataHandler.getCustomer().getLastName());
+        addressTextField.setText(dataHandler.getCustomer().getAddress());
+        postCodeTextField.setText(dataHandler.getCustomer().getPostCode());
+        postAddressTextField.setText(dataHandler.getCustomer().getPostAddress());
+        phoneNumberTextField.setText(dataHandler.getCustomer().getPhoneNumber());
+        mobileNumberTextField.setText(dataHandler.getCustomer().getMobilePhoneNumber());
+        
+        cardNumberTextField.setText(dataHandler.getCreditCard().getCardNumber());
+        cardTypeComboBox.setSelectedItem(dataHandler.getCreditCard().getCardType());
+        cardTypeComboBox.setSelectedItem(dataHandler.getCreditCard().getValidMonth());
+        cardTypeComboBox.setSelectedItem(dataHandler.getCreditCard().getValidYear());
         
     }
     
