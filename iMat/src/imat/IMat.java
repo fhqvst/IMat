@@ -20,6 +20,7 @@ public class IMat extends javax.swing.JFrame {
     public static IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     
     private ProductCategoryPanel productCategoryPanel;
+    private CheckoutPanel checkoutPanel;
 
     /**
      * Creates new form IMat
@@ -50,6 +51,8 @@ public class IMat extends javax.swing.JFrame {
         */
         
         this.productCategoryPanel = new ProductCategoryPanel();
+        this.checkoutPanel = new CheckoutPanel();
+
         
         FilterFactory.createFilterCards();
                 
@@ -58,6 +61,7 @@ public class IMat extends javax.swing.JFrame {
         this.cardPanel.add(new HintsPanel(), "hintsPanel");
         this.cardPanel.add(new RecipePanel(), "recipePanel");
         this.cardPanel.add(new WelcomePanel(), "welcomePanel");
+        this.cardPanel.add(this.checkoutPanel, "checkoutPanel");
         
         showCard("welcomePanel");
     }
@@ -170,6 +174,11 @@ public class IMat extends javax.swing.JFrame {
         checkoutButton.setMaximumSize(new java.awt.Dimension(112, 40));
         checkoutButton.setMinimumSize(new java.awt.Dimension(112, 40));
         checkoutButton.setPreferredSize(new java.awt.Dimension(112, 40));
+        checkoutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkoutButtonActionPerformed(evt);
+            }
+        });
         headerPanel.add(checkoutButton);
 
         getContentPane().add(headerPanel);
@@ -371,6 +380,11 @@ public class IMat extends javax.swing.JFrame {
     private void tipsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipsButtonActionPerformed
         showCard("hintsPanel");
     }//GEN-LAST:event_tipsButtonActionPerformed
+
+    private void checkoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkoutButtonActionPerformed
+        checkoutPanel.getProductListPanel().updatePanel();
+        showCard("checkoutPanel");
+    }//GEN-LAST:event_checkoutButtonActionPerformed
 
     /**
      * @param args the command line arguments
