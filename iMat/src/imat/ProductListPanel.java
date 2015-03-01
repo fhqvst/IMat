@@ -6,7 +6,6 @@
 package imat;
 
 import java.awt.GridLayout;
-import java.util.List;
 import se.chalmers.ait.dat215.project.*;
 
 /**

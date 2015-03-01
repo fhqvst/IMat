@@ -5,7 +5,6 @@
  */
 package imat;
 
-import java.awt.BorderLayout;
 import java.util.List;
 import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;

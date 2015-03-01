@@ -5,7 +5,6 @@
  */
 package imat;
 
-import javax.swing.JPanel;
 import se.chalmers.ait.dat215.project.*;
 
 /**

@@ -5,8 +5,6 @@
  */
 package imat;
 
-import javax.swing.JPanel;
-
 /**
  *
  * @author henriknilson

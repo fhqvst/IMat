@@ -3,7 +3,7 @@ package imat;
 import java.awt.CardLayout;
 import java.awt.Font;
 import javax.swing.UIManager;
-import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
