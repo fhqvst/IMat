@@ -20,7 +20,6 @@ public class IMat extends javax.swing.JFrame {
     public static IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     
     private ProductCategoryPanel productCategoryPanel;
-    private CheckoutPanel checkoutPanel;
 
     /**
      * Creates new form IMat
@@ -51,7 +50,6 @@ public class IMat extends javax.swing.JFrame {
         */
         
         this.productCategoryPanel = new ProductCategoryPanel();
-        this.checkoutPanel = new CheckoutPanel();
 
         
         FilterFactory.createFilterCards();
@@ -61,7 +59,7 @@ public class IMat extends javax.swing.JFrame {
         this.cardPanel.add(new HintsPanel(), "hintsPanel");
         this.cardPanel.add(new RecipePanel(), "recipePanel");
         this.cardPanel.add(new WelcomePanel(), "welcomePanel");
-        this.cardPanel.add(this.checkoutPanel, "checkoutPanel");
+        this.cardPanel.add(new CheckoutPanel(), "checkoutPanel");
         
         showCard("welcomePanel");
     }
@@ -382,7 +380,7 @@ public class IMat extends javax.swing.JFrame {
     }//GEN-LAST:event_tipsButtonActionPerformed
 
     private void checkoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkoutButtonActionPerformed
-        checkoutPanel.getProductListPanel().updatePanel();
+
         showCard("checkoutPanel");
     }//GEN-LAST:event_checkoutButtonActionPerformed
 

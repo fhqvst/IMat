@@ -36,10 +36,6 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         CardLayout cards = (CardLayout) cardPanel.getLayout();
         cards.show(cardPanel, cardName);
     }
-    
-    public ProductListPanel getProductListPanel(){
-        return plp;
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.

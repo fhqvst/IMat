@@ -12,7 +12,7 @@ import se.chalmers.ait.dat215.project.*;
  *
  * @author filip
  */
-public class ProductListPanel extends javax.swing.JPanel implements java.beans.Customizer {
+public class ProductListPanel extends javax.swing.JPanel implements java.beans.Customizer, ShoppingCartListener {
     
     private Object bean;
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
@@ -23,6 +23,7 @@ public class ProductListPanel extends javax.swing.JPanel implements java.beans.C
      */
     public ProductListPanel() {
         initComponents();
+        cart.addShoppingCartListener(this);
         updatePanel();
     }
 
@@ -46,6 +47,8 @@ public class ProductListPanel extends javax.swing.JPanel implements java.beans.C
             ((GridLayout)productsPanel.getLayout()).setRows(6);
         }
         this.addProducts(cart);
+        
+        this.updateUI();
     }
     
     
@@ -140,4 +143,9 @@ public class ProductListPanel extends javax.swing.JPanel implements java.beans.C
     private javax.swing.JScrollPane productsScrollPane;
     private javax.swing.JPanel titlePanel;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void shoppingCartChanged(CartEvent ce) {
+        updatePanel();
+    }
 }
