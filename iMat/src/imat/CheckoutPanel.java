@@ -23,8 +23,9 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
     public CheckoutPanel() {
         initComponents();
         page1Panel.add(plp, 0);
-        this.cardPanel.add(page1Panel, "page1");
         showCard("page1");
+        
+        
     }
     
     
@@ -52,9 +53,49 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         cardPanel = new javax.swing.JPanel();
         page1Panel = new javax.swing.JPanel();
         buttonPanel1 = new javax.swing.JPanel();
-        nextButton = new javax.swing.JButton();
+        page1NextButton = new javax.swing.JButton();
         listNameTextField = new javax.swing.JTextField();
         saveListCheckBox = new javax.swing.JCheckBox();
+        page2Panel = new javax.swing.JPanel();
+        leftPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        firstNameTextField = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        lastNameTextField = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        addressTextField = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        postCodeTextField = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        postAddressTextField = new javax.swing.JTextField();
+        filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
+        saveCustomerCheckBox = new javax.swing.JCheckBox();
+        middlePanel = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox();
+        jLabel8 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jComboBox2 = new javax.swing.JComboBox();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
+        jComboBox3 = new javax.swing.JComboBox();
+        jLabel9 = new javax.swing.JLabel();
+        jTextField9 = new javax.swing.JTextField();
+        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
+        saveCredentialsCheckBox = new javax.swing.JCheckBox();
+        rightPanel = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jTextField15 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jComboBox4 = new javax.swing.JComboBox();
+        filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
+        filler5 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
+        filler6 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
+        filler7 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
+        filler8 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
+        page2NextButton = new javax.swing.JButton();
+        page3Panel = new javax.swing.JPanel();
 
         setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
         setMinimumSize(new java.awt.Dimension(0, 0));
@@ -65,14 +106,29 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
 
         wizardStep1ToggleButton.setSelected(true);
         wizardStep1ToggleButton.setText("Varukorg");
+        wizardStep1ToggleButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                wizardStep1ToggleButtonActionPerformed(evt);
+            }
+        });
         buttonPanel.add(wizardStep1ToggleButton);
 
         wizardStep2ToggleButton.setText("Personuppgifter");
         wizardStep2ToggleButton.setEnabled(false);
+        wizardStep2ToggleButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                wizardStep2ToggleButtonActionPerformed(evt);
+            }
+        });
         buttonPanel.add(wizardStep2ToggleButton);
 
         wizardStep3ToggleButton.setText("Bekräfta köp");
         wizardStep3ToggleButton.setEnabled(false);
+        wizardStep3ToggleButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                wizardStep3ToggleButtonActionPerformed(evt);
+            }
+        });
         buttonPanel.add(wizardStep3ToggleButton);
 
         add(buttonPanel);
@@ -83,12 +139,12 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
 
         buttonPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
-        nextButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        nextButton.setText("Nästa");
-        nextButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        nextButton.addActionListener(new java.awt.event.ActionListener() {
+        page1NextButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        page1NextButton.setText("Nästa");
+        page1NextButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        page1NextButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nextButtonActionPerformed(evt);
+                page1NextButtonActionPerformed(evt);
             }
         });
 
@@ -105,37 +161,230 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(saveListCheckBox)
                 .addGap(183, 183, 183)
-                .addComponent(nextButton))
+                .addComponent(page1NextButton))
         );
         buttonPanel1Layout.setVerticalGroup(
             buttonPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(buttonPanel1Layout.createSequentialGroup()
                 .addGap(5, 5, 5)
                 .addGroup(buttonPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nextButton)
+                    .addComponent(page1NextButton)
                     .addComponent(listNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(saveListCheckBox)))
         );
 
         page1Panel.add(buttonPanel1);
 
-        cardPanel.add(page1Panel, "card2");
+        cardPanel.add(page1Panel, "page1");
+
+        page2Panel.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        page2Panel.setLayout(new javax.swing.BoxLayout(page2Panel, javax.swing.BoxLayout.LINE_AXIS));
+
+        leftPanel.setLayout(new java.awt.GridLayout(6, 2, 10, 20));
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel1.setText("Förnamn:");
+        leftPanel.add(jLabel1);
+
+        firstNameTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                firstNameTextFieldActionPerformed(evt);
+            }
+        });
+        leftPanel.add(firstNameTextField);
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel2.setText("Efternamn:");
+        leftPanel.add(jLabel2);
+        leftPanel.add(lastNameTextField);
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel3.setText("Gatuadress:");
+        leftPanel.add(jLabel3);
+        leftPanel.add(addressTextField);
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel4.setText("Postkod:");
+        leftPanel.add(jLabel4);
+        leftPanel.add(postCodeTextField);
+
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel5.setText("Ort:");
+        leftPanel.add(jLabel5);
+        leftPanel.add(postAddressTextField);
+        leftPanel.add(filler3);
+
+        saveCustomerCheckBox.setText("Spara personuppgifter");
+        leftPanel.add(saveCustomerCheckBox);
+
+        page2Panel.add(leftPanel);
+
+        middlePanel.setLayout(new java.awt.GridLayout(5, 2, 10, 20));
+
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel6.setText("Kortnummer:");
+        middlePanel.add(jLabel6);
+        middlePanel.add(jTextField6);
+
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel7.setText("Korttyp:");
+        middlePanel.add(jLabel7);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Visa", "MasterCard", "American Express", "Visa Electron" }));
+        middlePanel.add(jComboBox1);
+
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel8.setText("Giltigt t.o.m.");
+        middlePanel.add(jLabel8);
+
+        jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.LINE_AXIS));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Månad", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+        jPanel1.add(jComboBox2);
+        jPanel1.add(filler1);
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "År", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25" }));
+        jPanel1.add(jComboBox3);
+
+        middlePanel.add(jPanel1);
+
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel9.setText("CCV-kod:");
+        middlePanel.add(jLabel9);
+        middlePanel.add(jTextField9);
+        middlePanel.add(filler2);
+
+        saveCredentialsCheckBox.setText("Spara betaluppgifter");
+        middlePanel.add(saveCredentialsCheckBox);
+
+        page2Panel.add(middlePanel);
+
+        rightPanel.setLayout(new java.awt.GridLayout(5, 2, 10, 20));
+
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel11.setText("Leveransdatum:");
+        rightPanel.add(jLabel11);
+        rightPanel.add(jTextField15);
+
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel12.setText("Leveranstid:");
+        rightPanel.add(jLabel12);
+
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hela dagen (8:00-16:00)", "Förmiddag (8:00-12:00)", "Eftermiddag (12:00-16:00)" }));
+        rightPanel.add(jComboBox4);
+        rightPanel.add(filler4);
+        rightPanel.add(filler5);
+        rightPanel.add(filler6);
+        rightPanel.add(filler7);
+        rightPanel.add(filler8);
+
+        page2NextButton.setText("Nästa");
+        page2NextButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                page2NextButtonActionPerformed(evt);
+            }
+        });
+        rightPanel.add(page2NextButton);
+
+        page2Panel.add(rightPanel);
+
+        cardPanel.add(page2Panel, "page2");
+        cardPanel.add(page3Panel, "page3");
 
         add(cardPanel);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void nextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextButtonActionPerformed
-        //TODO
-    }//GEN-LAST:event_nextButtonActionPerformed
+    private void page1NextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_page1NextButtonActionPerformed
+        showCard("page2");
+        wizardStep2ToggleButton.setEnabled(true);
+        wizardStep2ToggleButton.setSelected(true);
+        wizardStep1ToggleButton.setSelected(false);
+    }//GEN-LAST:event_page1NextButtonActionPerformed
+
+    private void wizardStep1ToggleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wizardStep1ToggleButtonActionPerformed
+        showCard("page1");
+        wizardStep2ToggleButton.setSelected(false);
+        wizardStep3ToggleButton.setSelected(false);
+    }//GEN-LAST:event_wizardStep1ToggleButtonActionPerformed
+
+    private void wizardStep2ToggleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wizardStep2ToggleButtonActionPerformed
+        showCard("page2");
+        wizardStep1ToggleButton.setSelected(false);
+        wizardStep3ToggleButton.setSelected(false);
+    }//GEN-LAST:event_wizardStep2ToggleButtonActionPerformed
+
+    private void page2NextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_page2NextButtonActionPerformed
+        showCard("page3");
+        wizardStep3ToggleButton.setEnabled(true);
+        wizardStep3ToggleButton.setSelected(true);
+        wizardStep2ToggleButton.setSelected(false);
+    }//GEN-LAST:event_page2NextButtonActionPerformed
+
+    private void wizardStep3ToggleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wizardStep3ToggleButtonActionPerformed
+        showCard("page3");
+        wizardStep1ToggleButton.setSelected(false);
+        wizardStep2ToggleButton.setSelected(false);
+        
+        
+        dataHandler.getCustomer().setFirstName(firstNameTextField.getText());
+        dataHandler.getCustomer().setLastName(lastNameTextField.getText());
+        dataHandler.getCustomer().setAddress(addressTextField.getText());
+        dataHandler.getCustomer().setPostCode(postCodeTextField.getText());
+        dataHandler.getCustomer().setPostAddress(postAddressTextField.getText());
+    }//GEN-LAST:event_wizardStep3ToggleButtonActionPerformed
+
+    private void firstNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_firstNameTextFieldActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField addressTextField;
     private javax.swing.JPanel buttonPanel;
     private javax.swing.JPanel buttonPanel1;
     private javax.swing.JPanel cardPanel;
+    private javax.swing.Box.Filler filler1;
+    private javax.swing.Box.Filler filler2;
+    private javax.swing.Box.Filler filler3;
+    private javax.swing.Box.Filler filler4;
+    private javax.swing.Box.Filler filler5;
+    private javax.swing.Box.Filler filler6;
+    private javax.swing.Box.Filler filler7;
+    private javax.swing.Box.Filler filler8;
+    private javax.swing.JTextField firstNameTextField;
+    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox jComboBox2;
+    private javax.swing.JComboBox jComboBox3;
+    private javax.swing.JComboBox jComboBox4;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField15;
+    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextField9;
+    private javax.swing.JTextField lastNameTextField;
+    private javax.swing.JPanel leftPanel;
     private javax.swing.JTextField listNameTextField;
-    private javax.swing.JButton nextButton;
+    private javax.swing.JPanel middlePanel;
+    private javax.swing.JButton page1NextButton;
     private javax.swing.JPanel page1Panel;
+    private javax.swing.JButton page2NextButton;
+    private javax.swing.JPanel page2Panel;
+    private javax.swing.JPanel page3Panel;
+    private javax.swing.JTextField postAddressTextField;
+    private javax.swing.JTextField postCodeTextField;
+    private javax.swing.JPanel rightPanel;
+    private javax.swing.JCheckBox saveCredentialsCheckBox;
+    private javax.swing.JCheckBox saveCustomerCheckBox;
     private javax.swing.JCheckBox saveListCheckBox;
     private javax.swing.JToggleButton wizardStep1ToggleButton;
     private javax.swing.JToggleButton wizardStep2ToggleButton;

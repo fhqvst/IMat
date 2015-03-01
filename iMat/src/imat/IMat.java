@@ -67,6 +67,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         this.cardPanel.add(new CheckoutPanel(), "checkoutPanel");
         
         showCard("welcomePanel");
+        
     }
 
     /**
