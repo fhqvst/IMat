@@ -154,6 +154,11 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         searchButton.setMaximumSize(new java.awt.Dimension(75, 40));
         searchButton.setMinimumSize(new java.awt.Dimension(75, 40));
         searchButton.setPreferredSize(new java.awt.Dimension(75, 40));
+        searchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchButtonActionPerformed(evt);
+            }
+        });
         headerPanel.add(searchButton);
         headerPanel.add(filler3);
 
@@ -422,6 +427,12 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
             searchTextField.setText("Sök produkt...");
         }
     }//GEN-LAST:event_searchTextFieldFocusLost
+
+    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+
+        this.productCategoryPanel.applySearchResult(dataHandler.findProducts(searchTextField.getText()));
+        showCard("productCategoryPanel");
+    }//GEN-LAST:event_searchButtonActionPerformed
 
     @Override
     public void shoppingCartChanged(CartEvent ce) {

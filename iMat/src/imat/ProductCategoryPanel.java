@@ -29,6 +29,16 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
         this.addProducts(productCategories);
     }
     
+    public ProductCategoryPanel(List<Product> products) {
+        this();
+        for(Product product : products) {
+                
+            ProductPanel productPanel = new ProductPanel(product);
+            productPanel.setSize(200, 100);
+            productsPanel.add(productPanel);
+        }
+    }
+    
     private void addProducts(ProductCategory[] productCategories) {
         for(ProductCategory productCategory : productCategories) {
             List<Product> products = IMat.dataHandler.getProducts(productCategory);
@@ -46,6 +56,21 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
         filterPanel.removeAll();
         filterPanel.add(filterCard);
         for(Product product : filterCard.getSelected()) {
+            
+            ProductPanel productPanel = new ProductPanel(product);
+            productPanel.setSize(200, 100);
+            productsPanel.add(productPanel);
+
+        }
+        this.revalidate();
+        this.repaint();
+    }
+    
+    public void applySearchResult(List<Product> products) {
+        productsPanel.removeAll();
+        filterPanel.removeAll();
+        
+        for(Product product : products) {
             
             ProductPanel productPanel = new ProductPanel(product);
             productPanel.setSize(200, 100);
