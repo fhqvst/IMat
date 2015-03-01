@@ -15,7 +15,7 @@ import se.chalmers.ait.dat215.project.*;
  *
  * @author filip
  */
-public class IMat extends javax.swing.JFrame {
+public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     
     public static IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     
@@ -27,12 +27,17 @@ public class IMat extends javax.swing.JFrame {
     public IMat() {
         initComponents();
         
+        
         //Saves data when application is terminated
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
             public void run() {
                     dataHandler.shutDown();
-                }
-            }));
+            }
+        }));
+        
+        dataHandler.getShoppingCart().addShoppingCartListener(this);
+        cartAmountLabel.setText(dataHandler.getShoppingCart().getItems().size() + " varor");
+        cartPriceLabel.setText(dataHandler.getShoppingCart().getTotal() + " kr");
       
         /*
         Map<String, ProductCategoryPanel> productCategoryPanels = new TreeMap<String, ProductCategoryPanel>();
@@ -99,8 +104,10 @@ public class IMat extends javax.swing.JFrame {
         cardPanel = new javax.swing.JPanel();
         cartAndListsPanel = new javax.swing.JPanel();
         cartPanel = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        cartButton = new javax.swing.JButton();
+        cartAmountLabel = new javax.swing.JLabel();
+        cartPriceLabel = new javax.swing.JLabel();
         listsPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -275,15 +282,8 @@ public class IMat extends javax.swing.JFrame {
 
         cartPanel.setBackground(new java.awt.Color(255, 255, 255));
         cartPanel.setMaximumSize(new java.awt.Dimension(80, 2147483647));
-        cartPanel.setMinimumSize(new java.awt.Dimension(0, 0));
+        cartPanel.setMinimumSize(new java.awt.Dimension(0, 200));
         cartPanel.setLayout(new javax.swing.BoxLayout(cartPanel, javax.swing.BoxLayout.Y_AXIS));
-
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
-        jLabel2.setMaximumSize(new java.awt.Dimension(80, 48));
-        jLabel2.setMinimumSize(new java.awt.Dimension(0, 0));
-        jLabel2.setPreferredSize(null);
-        cartPanel.add(jLabel2);
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Varukorg");
@@ -291,6 +291,22 @@ public class IMat extends javax.swing.JFrame {
         jLabel4.setMinimumSize(new java.awt.Dimension(0, 0));
         jLabel4.setPreferredSize(null);
         cartPanel.add(jLabel4);
+
+        cartButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
+        cartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cartPanel.add(cartButton);
+
+        cartAmountLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cartAmountLabel.setText("Varor: 0");
+        cartAmountLabel.setMaximumSize(new java.awt.Dimension(80, 20));
+        cartAmountLabel.setMinimumSize(new java.awt.Dimension(0, 0));
+        cartPanel.add(cartAmountLabel);
+
+        cartPriceLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        cartPriceLabel.setText(" 0 kr");
+        cartPriceLabel.setMaximumSize(new java.awt.Dimension(80, 20));
+        cartPriceLabel.setMinimumSize(new java.awt.Dimension(0, 0));
+        cartPanel.add(cartPriceLabel);
 
         cartAndListsPanel.add(cartPanel);
 
@@ -384,6 +400,11 @@ public class IMat extends javax.swing.JFrame {
         showCard("checkoutPanel");
     }//GEN-LAST:event_checkoutButtonActionPerformed
 
+    @Override
+    public void shoppingCartChanged(CartEvent ce) {
+        cartAmountLabel.setText(dataHandler.getShoppingCart().getItems().size() + " varor");
+        cartPriceLabel.setText(dataHandler.getShoppingCart().getTotal() + " kr");
+    }
     /**
      * @param args the command line arguments
      */
@@ -425,8 +446,11 @@ public class IMat extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton candySnacksPanel;
     private javax.swing.JPanel cardPanel;
+    private javax.swing.JLabel cartAmountLabel;
     private javax.swing.JPanel cartAndListsPanel;
+    private javax.swing.JButton cartButton;
     private javax.swing.JPanel cartPanel;
+    private javax.swing.JLabel cartPriceLabel;
     private javax.swing.JButton checkoutButton;
     private javax.swing.JPanel contentPanel;
     private javax.swing.JButton dairyButton;
@@ -439,7 +463,6 @@ public class IMat extends javax.swing.JFrame {
     private javax.swing.JPanel headerPanel;
     private javax.swing.JButton homeButton;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JMenuItem jMenuItem1;
@@ -456,4 +479,5 @@ public class IMat extends javax.swing.JFrame {
     private javax.swing.JTextField searchTextField;
     private javax.swing.JButton tipsButton;
     // End of variables declaration//GEN-END:variables
+
 }
