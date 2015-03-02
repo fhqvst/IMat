@@ -20,7 +20,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     public static IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     
     private ProductCategoryPanel productCategoryPanel;
-
+    private DetailPanel detailPanel;
+    
     /**
      * Creates new form IMat
      */
@@ -55,6 +56,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         */
         
         this.productCategoryPanel = new ProductCategoryPanel();
+        this.detailPanel = new DetailPanel();
 
         
         FilterFactory.createFilterCards();
@@ -65,6 +67,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         this.cardPanel.add(new RecipePanel(), "recipePanel");
         this.cardPanel.add(new WelcomePanel(), "welcomePanel");
         this.cardPanel.add(new CheckoutPanel(), "checkoutPanel");
+        this.cardPanel.add(detailPanel, "detailPanel");
         
         showCard("welcomePanel");
         
@@ -370,6 +373,10 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
     public ProductCategoryPanel getProductCategoryPanel(){
         return productCategoryPanel;
+    }
+    
+    public DetailPanel getDetailPanel(){
+        return detailPanel;
     }
     
     public void updateCartLabels(){

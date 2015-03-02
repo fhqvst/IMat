@@ -74,6 +74,11 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
 
         imageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         imageLabel.setPreferredSize(new java.awt.Dimension(256, 0));
+        imageLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                imageLabelMouseClicked(evt);
+            }
+        });
         imagePanel.add(imageLabel, java.awt.BorderLayout.CENTER);
 
         add(imagePanel);
@@ -98,7 +103,7 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
         pricePanel.setLayout(new java.awt.BorderLayout());
 
         addToFavouritesButton.setText("<3");
-        addToFavouritesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addToFavouritesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         addToFavouritesButton.setMaximumSize(new java.awt.Dimension(2147483647, 40));
         addToFavouritesButton.setMinimumSize(new java.awt.Dimension(0, 0));
         addToFavouritesButton.addActionListener(new java.awt.event.ActionListener() {
@@ -130,7 +135,7 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
         descriptionPanel.add(adjustedPriceLabel);
 
         addToCartButton.setText("Lägg till");
-        addToCartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addToCartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         addToCartButton.setMaximumSize(new java.awt.Dimension(2147483647, 40));
         addToCartButton.setMinimumSize(new java.awt.Dimension(0, 0));
         addToCartButton.setPreferredSize(null);
@@ -176,6 +181,12 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
             addToFavouritesButton.setForeground(Color.red);
         }
     }//GEN-LAST:event_addToFavouritesButtonActionPerformed
+
+    private void imageLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelMouseClicked
+        ((IMat)this.getTopLevelAncestor()).showCard("detailPanel");
+        ((IMat)this.getTopLevelAncestor()).getDetailPanel().update(product);
+        
+    }//GEN-LAST:event_imageLabelMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
