@@ -164,6 +164,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         headerPanel.add(filler3);
 
         tipsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/info.png"))); // NOI18N
+        tipsButton.setBorderPainted(false);
         tipsButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         tipsButton.setMaximumSize(new java.awt.Dimension(64, 40));
         tipsButton.setMinimumSize(new java.awt.Dimension(64, 40));
@@ -176,6 +177,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         headerPanel.add(tipsButton);
 
         profileButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/person.png"))); // NOI18N
+        profileButton.setBorderPainted(false);
         profileButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         profileButton.setMaximumSize(new java.awt.Dimension(64, 40));
         profileButton.setMinimumSize(new java.awt.Dimension(64, 40));
@@ -317,6 +319,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         cartPanel.add(jLabel4);
 
         cartButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
+        cartButton.setBorderPainted(false);
         cartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         cartPanel.add(cartButton);
 
