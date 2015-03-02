@@ -111,9 +111,9 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
 
         filterPanel.setBackground(new java.awt.Color(255, 255, 255));
         filterPanel.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20)));
-        filterPanel.setMaximumSize(new java.awt.Dimension(230, 2147483647));
+        filterPanel.setMaximumSize(new java.awt.Dimension(200, 2147483647));
         filterPanel.setMinimumSize(new java.awt.Dimension(0, 0));
-        filterPanel.setPreferredSize(new java.awt.Dimension(230, 0));
+        filterPanel.setPreferredSize(new java.awt.Dimension(190, 0));
         filterPanel.setLayout(new java.awt.BorderLayout());
         add(filterPanel);
 

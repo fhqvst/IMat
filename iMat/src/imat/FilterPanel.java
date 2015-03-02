@@ -5,6 +5,7 @@
  */
 package imat;
 
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.util.ArrayList;
 import java.util.List;
@@ -61,6 +62,7 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
             filterBoxes[i] = new JCheckBox(checkBoxTitles[i]);
             filterBoxes[i].setSelected(true);
             filterBoxes[i].addChangeListener(this);
+            filterBoxes[i].setBackground(Color.white);
         }
     }
     private void setFilterBoxesToPanel() {

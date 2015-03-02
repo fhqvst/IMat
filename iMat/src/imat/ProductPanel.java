@@ -138,7 +138,6 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
         addToCartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         addToCartButton.setMaximumSize(new java.awt.Dimension(2147483647, 40));
         addToCartButton.setMinimumSize(new java.awt.Dimension(0, 0));
-        addToCartButton.setPreferredSize(null);
         addToCartButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addToCartButtonActionPerformed(evt);
