@@ -32,6 +32,7 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
         this.priceLabel.setText(Double.toString(product.getPrice()) + " " + product.getUnit());
         this.imageLabel.setIcon(IMat.dataHandler.getImageIcon(product, 300, 300));
         this.adjustedPriceLabel.setText(Double.toString(this.product.getPrice()) + " kr");
+        this.unitLabel.setText(product.getUnitSuffix());
         this.amountSpinner.setValue(1);
         if(dataHandler.favorites().contains(product)){
             addToFavouritesButton.setForeground(Color.red);
@@ -59,6 +60,8 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
         addToFavouritesButton = new javax.swing.JButton();
         buttonPanel = new javax.swing.JPanel();
         amountSpinner = new javax.swing.JSpinner();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(10, 0), new java.awt.Dimension(32767, 0));
+        unitLabel = new javax.swing.JLabel();
         adjustedPriceLabel = new javax.swing.JLabel();
         addToCartButton = new javax.swing.JButton();
 
@@ -116,7 +119,7 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
         descriptionPanel.add(pricePanel);
 
         buttonPanel.setBackground(new java.awt.Color(255, 255, 255));
-        buttonPanel.setLayout(new java.awt.BorderLayout());
+        buttonPanel.setLayout(new javax.swing.BoxLayout(buttonPanel, javax.swing.BoxLayout.LINE_AXIS));
 
         amountSpinner.setMaximumSize(new java.awt.Dimension(2147483647, 40));
         amountSpinner.setMinimumSize(new java.awt.Dimension(0, 0));
@@ -126,7 +129,11 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
                 amountSpinnerStateChanged(evt);
             }
         });
-        buttonPanel.add(amountSpinner, java.awt.BorderLayout.CENTER);
+        buttonPanel.add(amountSpinner);
+        buttonPanel.add(filler1);
+
+        unitLabel.setText("kg");
+        buttonPanel.add(unitLabel);
 
         descriptionPanel.add(buttonPanel);
 
@@ -195,10 +202,12 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
     private javax.swing.JSpinner amountSpinner;
     private javax.swing.JPanel buttonPanel;
     private javax.swing.JPanel descriptionPanel;
+    private javax.swing.Box.Filler filler1;
     private javax.swing.JLabel imageLabel;
     private javax.swing.JPanel imagePanel;
     private javax.swing.JLabel priceLabel;
     private javax.swing.JPanel pricePanel;
     private javax.swing.JLabel titleLabel;
+    private javax.swing.JLabel unitLabel;
     // End of variables declaration//GEN-END:variables
 }

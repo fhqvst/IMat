@@ -51,7 +51,10 @@ public class ProductListPanel extends javax.swing.JPanel implements java.beans.C
         this.updateUI();
     }
     
-    
+    @Override
+    public void shoppingCartChanged(CartEvent ce) {
+        updatePanel();
+    }
     
     
     public void setObject(Object bean) {
@@ -144,8 +147,4 @@ public class ProductListPanel extends javax.swing.JPanel implements java.beans.C
     private javax.swing.JPanel titlePanel;
     // End of variables declaration//GEN-END:variables
 
-    @Override
-    public void shoppingCartChanged(CartEvent ce) {
-        updatePanel();
-    }
 }
