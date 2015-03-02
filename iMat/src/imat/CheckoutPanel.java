@@ -56,8 +56,8 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         
         cardNumberTextField.setText(dataHandler.getCreditCard().getCardNumber());
         cardTypeComboBox.setSelectedItem(dataHandler.getCreditCard().getCardType());
-        validMonthComboBox.setSelectedItem(dataHandler.getCreditCard().getValidMonth());
-        validYearComboBox.setSelectedItem(dataHandler.getCreditCard().getValidYear());
+        validMonthComboBox.setSelectedItem(dataHandler.getCreditCard().getValidMonth() + "");
+        validYearComboBox.setSelectedItem(dataHandler.getCreditCard().getValidYear() + "");
         holderNameTextField.setText(dataHandler.getCreditCard().getHoldersName());
     }
     
@@ -165,7 +165,9 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         jScrollPane1 = new javax.swing.JScrollPane();
         confirmTextArea = new javax.swing.JTextArea();
         jPanel2 = new javax.swing.JPanel();
+        completedLabel = new javax.swing.JLabel();
         buyButton = new javax.swing.JButton();
+        page3BackButton = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
         setMinimumSize(new java.awt.Dimension(0, 0));
@@ -400,50 +402,46 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         confirmTextArea.setRows(5);
         jScrollPane1.setViewportView(confirmTextArea);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 833, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        jPanel2.setLayout(new java.awt.BorderLayout());
 
-        page3Panel.add(jPanel4);
+        completedLabel.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        completedLabel.setForeground(new java.awt.Color(0, 204, 0));
+        completedLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        completedLabel.setText("Köp slutfört!");
+        jPanel2.add(completedLabel, java.awt.BorderLayout.CENTER);
 
-        buyButton.setText("Köp");
+        buyButton.setText("Betala");
         buyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buyButtonActionPerformed(evt);
             }
         });
+        jPanel2.add(buyButton, java.awt.BorderLayout.EAST);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 833, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(buyButton)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+        page3BackButton.setText("Tillbaka");
+        page3BackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                page3BackButtonActionPerformed(evt);
+            }
+        });
+        jPanel2.add(page3BackButton, java.awt.BorderLayout.WEST);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 833, Short.MAX_VALUE)
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 23, Short.MAX_VALUE)
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(buyButton)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        page3Panel.add(jPanel2);
+        page3Panel.add(jPanel4);
 
         cardPanel.add(page3Panel, "page3");
 
@@ -451,16 +449,21 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
     }// </editor-fold>//GEN-END:initComponents
 
     private void page1NextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_page1NextButtonActionPerformed
-        showCard("page2");
-        wizardStep2ToggleButton.setEnabled(true);
-        wizardStep2ToggleButton.setSelected(true);
-        wizardStep1ToggleButton.setSelected(false);
+        
+        if(dataHandler.getShoppingCart().getItems().size() > 0){
+            showCard("page2");
+            wizardStep2ToggleButton.setEnabled(true);
+            wizardStep2ToggleButton.setSelected(true);
+            wizardStep1ToggleButton.setSelected(false);
+            
+        }
     }//GEN-LAST:event_page1NextButtonActionPerformed
 
     private void wizardStep1ToggleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wizardStep1ToggleButtonActionPerformed
         showCard("page1");
         wizardStep2ToggleButton.setSelected(false);
-        wizardStep3ToggleButton.setSelected(false);      
+        wizardStep3ToggleButton.setSelected(false); 
+        wizardStep2ToggleButton.setEnabled(false);
         wizardStep3ToggleButton.setEnabled(false);
     }//GEN-LAST:event_wizardStep1ToggleButtonActionPerformed
 
@@ -499,14 +502,17 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
             dataHandler.getCreditCard().setHoldersName(holderNameTextField.getText());
             
             try{
-                dataHandler.getCreditCard().setValidMonth(Integer.valueOf(validMonthComboBox.getSelectedItem().toString()));
-                dataHandler.getCreditCard().setValidYear(Integer.valueOf(validYearComboBox.getSelectedItem().toString()));
+                dataHandler.getCreditCard().setValidMonth(Integer.parseInt(validMonthComboBox.getSelectedItem().toString()));
+                dataHandler.getCreditCard().setValidYear(Integer.parseInt(validYearComboBox.getSelectedItem().toString()));
                 dataHandler.getCreditCard().setVerificationCode(Integer.valueOf(securityCodeTextField.getText()));
             }catch(NumberFormatException e){
                 errorLabel.setText("Fel format angivet.");
                 error = 2;
             }
         
+            buyButton.setEnabled(true);
+            page3BackButton.setEnabled(true);
+            completedLabel.setVisible(false);
         }
         
         if(error == 0){
@@ -529,7 +535,20 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
 
     private void buyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buyButtonActionPerformed
         dataHandler.placeOrder(true);
+        wizardStep2ToggleButton.setEnabled(false);
+        wizardStep3ToggleButton.setEnabled(false);
+        buyButton.setEnabled(false);
+        page3BackButton.setEnabled(false);
+        completedLabel.setVisible(true);
+        
     }//GEN-LAST:event_buyButtonActionPerformed
+
+    private void page3BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_page3BackButtonActionPerformed
+        showCard("page2");
+        wizardStep1ToggleButton.setSelected(false);
+        wizardStep3ToggleButton.setSelected(false);
+        wizardStep3ToggleButton.setEnabled(false);
+    }//GEN-LAST:event_page3BackButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -540,6 +559,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
     private javax.swing.JTextField cardNumberTextField;
     private javax.swing.JPanel cardPanel;
     private javax.swing.JComboBox cardTypeComboBox;
+    private javax.swing.JLabel completedLabel;
     private javax.swing.JTextArea confirmTextArea;
     private javax.swing.JTextField deliveryDateTextField;
     private javax.swing.JComboBox deliveryTimeComboBox;
@@ -588,6 +608,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
     private javax.swing.JPanel page1Panel;
     private javax.swing.JButton page2NextButton;
     private javax.swing.JPanel page2Panel;
+    private javax.swing.JButton page3BackButton;
     private javax.swing.JPanel page3Panel;
     private javax.swing.JTextField phoneNumberTextField;
     private javax.swing.JTextField postAddressTextField;
