@@ -151,7 +151,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         headerPanel.add(searchTextField);
 
         searchButton.setText("Sök");
-        searchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        searchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         searchButton.setMaximumSize(new java.awt.Dimension(75, 40));
         searchButton.setMinimumSize(new java.awt.Dimension(75, 40));
         searchButton.setPreferredSize(new java.awt.Dimension(75, 40));
@@ -164,7 +164,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         headerPanel.add(filler3);
 
         tipsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/info.png"))); // NOI18N
-        tipsButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        tipsButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         tipsButton.setMaximumSize(new java.awt.Dimension(64, 40));
         tipsButton.setMinimumSize(new java.awt.Dimension(64, 40));
         tipsButton.setPreferredSize(new java.awt.Dimension(64, 40));
@@ -176,7 +176,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         headerPanel.add(tipsButton);
 
         profileButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/person.png"))); // NOI18N
-        profileButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        profileButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         profileButton.setMaximumSize(new java.awt.Dimension(64, 40));
         profileButton.setMinimumSize(new java.awt.Dimension(64, 40));
         profileButton.setPreferredSize(new java.awt.Dimension(64, 40));
@@ -190,7 +190,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
         checkoutButton.setBackground(new java.awt.Color(204, 255, 102));
         checkoutButton.setText("Till kassan");
-        checkoutButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        checkoutButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         checkoutButton.setMaximumSize(new java.awt.Dimension(112, 40));
         checkoutButton.setMinimumSize(new java.awt.Dimension(112, 40));
         checkoutButton.setPreferredSize(new java.awt.Dimension(112, 40));
@@ -209,7 +209,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         navigationPanel.setLayout(new javax.swing.BoxLayout(navigationPanel, javax.swing.BoxLayout.LINE_AXIS));
 
         homeButton.setText("Hem");
-        homeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        homeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         homeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 homeButtonActionPerformed(evt);
@@ -218,7 +218,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         navigationPanel.add(homeButton);
 
         recipeButton.setText("Recept");
-        recipeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        recipeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         recipeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 recipeButtonActionPerformed(evt);
@@ -227,7 +227,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         navigationPanel.add(recipeButton);
 
         meatFishButton.setText("Kött & Fisk");
-        meatFishButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        meatFishButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         meatFishButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 meatFishButtonActionPerformed(evt);
@@ -236,7 +236,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         navigationPanel.add(meatFishButton);
 
         freezerButton.setText("Frysvaror");
-        freezerButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        freezerButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         freezerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 freezerButtonActionPerformed(evt);
@@ -245,7 +245,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         navigationPanel.add(freezerButton);
 
         dairyButton.setText("Mejeri");
-        dairyButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        dairyButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         dairyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dairyButtonActionPerformed(evt);
@@ -254,7 +254,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         navigationPanel.add(dairyButton);
 
         fruitVegetablesButton.setText("Frukt & Grönt");
-        fruitVegetablesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        fruitVegetablesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         fruitVegetablesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fruitVegetablesButtonActionPerformed(evt);
@@ -263,7 +263,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         navigationPanel.add(fruitVegetablesButton);
 
         pantryButton.setText("Skafferi");
-        pantryButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pantryButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         pantryButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pantryButtonActionPerformed(evt);
@@ -272,7 +272,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         navigationPanel.add(pantryButton);
 
         candySnacksButton.setText("Godis & Snacks");
-        candySnacksButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        candySnacksButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         candySnacksButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 candySnacksButtonActionPerformed(evt);
@@ -281,7 +281,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         navigationPanel.add(candySnacksButton);
 
         favouriteButton.setText("Favoriter");
-        favouriteButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        favouriteButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         favouriteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 favouriteButtonActionPerformed(evt);
@@ -317,7 +317,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         cartPanel.add(jLabel4);
 
         cartButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
-        cartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         cartPanel.add(cartButton);
 
         cartAmountLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

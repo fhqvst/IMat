@@ -52,9 +52,14 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
     }
     
     public void applyFilters(FilterPanel filterCard) {
-        productsPanel.removeAll();
+        
         filterPanel.removeAll();
         filterPanel.add(filterCard);
+        filterPanel.revalidate();
+        filterPanel.repaint();
+        
+        productsPanel.removeAll();
+  
         for(Product product : filterCard.getSelected()) {
             
             ProductPanel productPanel = new ProductPanel(product);
