@@ -120,9 +120,13 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
         filterPanel = new javax.swing.JPanel();
         unselectAllButton = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+
         titleLable.setText("Title");
 
         jLabel1.setText("Max Kr/Kg");
+
+        filterPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         unselectAllButton.setLabel("Avmarkera allt");
         unselectAllButton.addActionListener(new java.awt.event.ActionListener() {
