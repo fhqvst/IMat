@@ -29,6 +29,22 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         page1Panel.add(plp, 0);
         showCard("page1");
         
+        customerToTextFields();
+        
+        requiredTextFields = new ArrayList<JTextField>();
+        requiredTextFields.add(firstNameTextField);
+        requiredTextFields.add(lastNameTextField);
+        requiredTextFields.add(addressTextField);
+        requiredTextFields.add(postCodeTextField);
+        requiredTextFields.add(postAddressTextField);
+        requiredTextFields.add(mobileNumberTextField);
+        requiredTextFields.add(cardNumberTextField);
+        requiredTextFields.add(securityCodeTextField);
+        requiredTextFields.add(holderNameTextField);
+        
+    }
+    
+    private void customerToTextFields(){
         firstNameTextField.setText(dataHandler.getCustomer().getFirstName());
         lastNameTextField.setText(dataHandler.getCustomer().getLastName());
         addressTextField.setText(dataHandler.getCustomer().getAddress());
@@ -42,19 +58,27 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         cardTypeComboBox.setSelectedItem(dataHandler.getCreditCard().getCardType());
         validMonthComboBox.setSelectedItem(dataHandler.getCreditCard().getValidMonth());
         validYearComboBox.setSelectedItem(dataHandler.getCreditCard().getValidYear());
-        
-        requiredTextFields = new ArrayList<JTextField>();
-        requiredTextFields.add(firstNameTextField);
-        requiredTextFields.add(lastNameTextField);
-        requiredTextFields.add(addressTextField);
-        requiredTextFields.add(postCodeTextField);
-        requiredTextFields.add(postAddressTextField);
-        requiredTextFields.add(mobileNumberTextField);
-        requiredTextFields.add(cardNumberTextField);
-        requiredTextFields.add(securityCodeTextField);
-        
+        holderNameTextField.setText(dataHandler.getCreditCard().getHoldersName());
     }
     
+    private void setConfirmText(){
+        confirmTextArea.setText("Tack " + dataHandler.getCustomer().getFirstName() + " " + dataHandler.getCustomer().getLastName() + " för att du handlar dina produkter på iMat!\n\n"
+                + "Dina varor kommer att levereras till " + dataHandler.getCustomer().getAddress() + ", " + dataHandler.getCustomer().getPostCode() + " " + dataHandler.getCustomer().getPostAddress() + ".\n"
+                + "Leveransen kommer att anlända " + deliveryDateTextField.getText() + ", " + deliveryTimeComboBox.getSelectedItem().toString() + ".\n\n"
+                + "Betalsätt:\n\n"
+                + "Kortnummer: " + dataHandler.getCreditCard().getCardNumber() + "\n"
+                + "Korttyp: " + dataHandler.getCreditCard().getCardType() + "\n"
+                + "Giltigt t.o.m: " + dataHandler.getCreditCard().getValidMonth() + "/" + dataHandler.getCreditCard().getValidYear() + "\n"
+                + "Kortinnehavarens namn: " + dataHandler.getCreditCard().getHoldersName() + "\n"
+                + "CCV-kod: " + dataHandler.getCreditCard().getVerificationCode() + "\n\n"
+                + "Antal varor: " + dataHandler.getShoppingCart().getItems().size() + ",  Totalkostnad: " + dataHandler.getShoppingCart().getTotal() + " kr.\n\n\n"
+                + "Om problem uppstår kommer vi att kontakta dig via något av följande: \n\n"
+                + "Mobilnummer: " + dataHandler.getCustomer().getMobilePhoneNumber() + "\n"
+                + "Telefonnummer: " + dataHandler.getCustomer().getPhoneNumber() + "\n"
+                + "Email: " + dataHandler.getCustomer().getEmail()
+                
+        );
+    }
     
     public void setObject(Object bean) {
         this.bean = bean;
@@ -115,17 +139,17 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         validYearComboBox = new javax.swing.JComboBox();
         jLabel9 = new javax.swing.JLabel();
         securityCodeTextField = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        holderNameTextField = new javax.swing.JTextField();
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
         saveCredentialsCheckBox = new javax.swing.JCheckBox();
         filler13 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
-        filler15 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
-        filler16 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
         jTextArea1 = new javax.swing.JTextArea();
         rightPanel = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
-        jTextField15 = new javax.swing.JTextField();
+        deliveryDateTextField = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox();
+        deliveryTimeComboBox = new javax.swing.JComboBox();
         filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
         filler5 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
         filler6 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
@@ -137,6 +161,10 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         filler12 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
         page2NextButton = new javax.swing.JButton();
         page3Panel = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        confirmTextArea = new javax.swing.JTextArea();
+        jPanel2 = new javax.swing.JPanel();
         buyButton = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
@@ -285,16 +313,16 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         middlePanel.add(cardTypeComboBox);
 
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel8.setText("Giltigt t.o.m.*");
+        jLabel8.setText("Giltigt t.o.m:*");
         middlePanel.add(jLabel8);
 
         jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.LINE_AXIS));
 
-        validMonthComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12" }));
+        validMonthComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mån", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
         jPanel1.add(validMonthComboBox);
         jPanel1.add(filler1);
 
-        validYearComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025" }));
+        validYearComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "År", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25" }));
         jPanel1.add(validYearComboBox);
 
         middlePanel.add(jPanel1);
@@ -303,13 +331,16 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         jLabel9.setText("CCV-kod**:");
         middlePanel.add(jLabel9);
         middlePanel.add(securityCodeTextField);
+
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel15.setText("Kortinnehavarens namn:*");
+        middlePanel.add(jLabel15);
+        middlePanel.add(holderNameTextField);
         middlePanel.add(filler2);
 
         saveCredentialsCheckBox.setText("Spara betaluppgifter");
         middlePanel.add(saveCredentialsCheckBox);
         middlePanel.add(filler13);
-        middlePanel.add(filler15);
-        middlePanel.add(filler16);
 
         jTextArea1.setEditable(false);
         jTextArea1.setBackground(new java.awt.Color(240, 240, 240));
@@ -327,15 +358,15 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         jLabel11.setText("Leveransdatum:*");
         rightPanel.add(jLabel11);
 
-        jTextField15.setText("04-03-2015");
-        rightPanel.add(jTextField15);
+        deliveryDateTextField.setText("04-03-2015");
+        rightPanel.add(deliveryDateTextField);
 
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel12.setText("Leveranstid:*");
         rightPanel.add(jLabel12);
 
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hela dagen (8:00-16:00)", "Förmiddag (8:00-12:00)", "Eftermiddag (12:00-16:00)" }));
-        rightPanel.add(jComboBox4);
+        deliveryTimeComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hela dagen (8:00-16:00)", "Förmiddag (8:00-12:00)", "Eftermiddag (12:00-16:00)" }));
+        rightPanel.add(deliveryTimeComboBox);
         rightPanel.add(filler4);
         rightPanel.add(filler5);
         rightPanel.add(filler6);
@@ -360,13 +391,59 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
 
         cardPanel.add(page2Panel, "page2");
 
+        page3Panel.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        page3Panel.setLayout(new javax.swing.BoxLayout(page3Panel, javax.swing.BoxLayout.Y_AXIS));
+
+        confirmTextArea.setEditable(false);
+        confirmTextArea.setColumns(20);
+        confirmTextArea.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        confirmTextArea.setRows(5);
+        jScrollPane1.setViewportView(confirmTextArea);
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 833, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        page3Panel.add(jPanel4);
+
         buyButton.setText("Köp");
         buyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buyButtonActionPerformed(evt);
             }
         });
-        page3Panel.add(buyButton);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 833, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(buyButton)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 23, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(buyButton)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        page3Panel.add(jPanel2);
 
         cardPanel.add(page3Panel, "page3");
 
@@ -383,7 +460,8 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
     private void wizardStep1ToggleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wizardStep1ToggleButtonActionPerformed
         showCard("page1");
         wizardStep2ToggleButton.setSelected(false);
-        wizardStep3ToggleButton.setSelected(false);
+        wizardStep3ToggleButton.setSelected(false);      
+        wizardStep3ToggleButton.setEnabled(false);
     }//GEN-LAST:event_wizardStep1ToggleButtonActionPerformed
 
     private void wizardStep2ToggleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wizardStep2ToggleButtonActionPerformed
@@ -418,6 +496,8 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
 
             dataHandler.getCreditCard().setCardNumber(cardNumberTextField.getText());
             dataHandler.getCreditCard().setCardType(cardTypeComboBox.getSelectedItem().toString());
+            dataHandler.getCreditCard().setHoldersName(holderNameTextField.getText());
+            
             try{
                 dataHandler.getCreditCard().setValidMonth(Integer.valueOf(validMonthComboBox.getSelectedItem().toString()));
                 dataHandler.getCreditCard().setValidYear(Integer.valueOf(validYearComboBox.getSelectedItem().toString()));
@@ -434,6 +514,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
             wizardStep3ToggleButton.setEnabled(true);
             wizardStep3ToggleButton.setSelected(true);
             wizardStep2ToggleButton.setSelected(false);
+            setConfirmText();
         }
        
     }//GEN-LAST:event_page2NextButtonActionPerformed
@@ -459,14 +540,15 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
     private javax.swing.JTextField cardNumberTextField;
     private javax.swing.JPanel cardPanel;
     private javax.swing.JComboBox cardTypeComboBox;
+    private javax.swing.JTextArea confirmTextArea;
+    private javax.swing.JTextField deliveryDateTextField;
+    private javax.swing.JComboBox deliveryTimeComboBox;
     private javax.swing.JTextField emailTextField;
     private javax.swing.JLabel errorLabel;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler10;
     private javax.swing.Box.Filler filler12;
     private javax.swing.Box.Filler filler13;
-    private javax.swing.Box.Filler filler15;
-    private javax.swing.Box.Filler filler16;
     private javax.swing.Box.Filler filler2;
     private javax.swing.Box.Filler filler3;
     private javax.swing.Box.Filler filler4;
@@ -476,13 +558,14 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
     private javax.swing.Box.Filler filler8;
     private javax.swing.Box.Filler filler9;
     private javax.swing.JTextField firstNameTextField;
-    private javax.swing.JComboBox jComboBox4;
+    private javax.swing.JTextField holderNameTextField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -492,8 +575,10 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField15;
     private javax.swing.JTextField lastNameTextField;
     private javax.swing.JPanel leftPanel;
     private javax.swing.JTextField listNameTextField;
