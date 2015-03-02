@@ -6,6 +6,9 @@
 package imat;
 
 import java.awt.CardLayout;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JTextField;
 import se.chalmers.ait.dat215.project.*;
 
 /**
@@ -17,6 +20,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
     private Object bean;
     private ProductListPanel plp = new ProductListPanel();
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
+    private List<JTextField> requiredTextFields;
     /**
      * Creates new customizer PageCard
      */
@@ -24,7 +28,6 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         initComponents();
         page1Panel.add(plp, 0);
         showCard("page1");
-        
         
         firstNameTextField.setText(dataHandler.getCustomer().getFirstName());
         lastNameTextField.setText(dataHandler.getCustomer().getLastName());
@@ -37,8 +40,18 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         
         cardNumberTextField.setText(dataHandler.getCreditCard().getCardNumber());
         cardTypeComboBox.setSelectedItem(dataHandler.getCreditCard().getCardType());
-        cardTypeComboBox.setSelectedItem(dataHandler.getCreditCard().getValidMonth());
-        cardTypeComboBox.setSelectedItem(dataHandler.getCreditCard().getValidYear());
+        validMonthComboBox.setSelectedItem(dataHandler.getCreditCard().getValidMonth());
+        validYearComboBox.setSelectedItem(dataHandler.getCreditCard().getValidYear());
+        
+        requiredTextFields = new ArrayList<JTextField>();
+        requiredTextFields.add(firstNameTextField);
+        requiredTextFields.add(lastNameTextField);
+        requiredTextFields.add(addressTextField);
+        requiredTextFields.add(postCodeTextField);
+        requiredTextFields.add(postAddressTextField);
+        requiredTextFields.add(mobileNumberTextField);
+        requiredTextFields.add(cardNumberTextField);
+        requiredTextFields.add(securityCodeTextField);
         
     }
     
@@ -120,7 +133,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         filler8 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
         filler9 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
         filler10 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
-        filler11 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
+        errorLabel = new javax.swing.JLabel();
         filler12 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
         page2NextButton = new javax.swing.JButton();
         page3Panel = new javax.swing.JPanel();
@@ -313,6 +326,8 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel11.setText("Leveransdatum:*");
         rightPanel.add(jLabel11);
+
+        jTextField15.setText("04-03-2015");
         rightPanel.add(jTextField15);
 
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -328,7 +343,9 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         rightPanel.add(filler8);
         rightPanel.add(filler9);
         rightPanel.add(filler10);
-        rightPanel.add(filler11);
+
+        errorLabel.setForeground(new java.awt.Color(255, 0, 0));
+        rightPanel.add(errorLabel);
         rightPanel.add(filler12);
 
         page2NextButton.setText("Nästa");
@@ -373,29 +390,52 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         showCard("page2");
         wizardStep1ToggleButton.setSelected(false);
         wizardStep3ToggleButton.setSelected(false);
+        wizardStep3ToggleButton.setEnabled(false);
     }//GEN-LAST:event_wizardStep2ToggleButtonActionPerformed
 
     private void page2NextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_page2NextButtonActionPerformed
+        int error = 0;
         
-        dataHandler.getCustomer().setFirstName(firstNameTextField.getText());
-        dataHandler.getCustomer().setLastName(lastNameTextField.getText());
-        dataHandler.getCustomer().setAddress(addressTextField.getText());
-        dataHandler.getCustomer().setPostCode(postCodeTextField.getText());
-        dataHandler.getCustomer().setPostAddress(postAddressTextField.getText());
-        dataHandler.getCustomer().setPhoneNumber(phoneNumberTextField.getText());
-        dataHandler.getCustomer().setMobilePhoneNumber(mobileNumberTextField.getText());
-        dataHandler.getCustomer().setEmail(emailTextField.getText());
+        for(int i = 0; i < requiredTextFields.size(); i++){
+            if(requiredTextFields.get(i).getText().equals("")){
+                errorLabel.setText("Var vänlig fyll i alla fält först.");
+                error = 1;
+            }
+        }
         
-        dataHandler.getCreditCard().setCardNumber(cardNumberTextField.getText());
-        dataHandler.getCreditCard().setCardType(cardTypeComboBox.getSelectedItem().toString());
-        dataHandler.getCreditCard().setValidMonth(Integer.valueOf(validMonthComboBox.getSelectedItem().toString()));
-        dataHandler.getCreditCard().setValidYear(Integer.valueOf(validYearComboBox.getSelectedItem().toString()));
-        dataHandler.getCreditCard().setVerificationCode(Integer.valueOf(securityCodeTextField.getText()));
+        if(error == 0){
+            
+            errorLabel.setText("");
+            
+            dataHandler.getCustomer().setFirstName(firstNameTextField.getText());
+            dataHandler.getCustomer().setLastName(lastNameTextField.getText());
+            dataHandler.getCustomer().setAddress(addressTextField.getText());
+            dataHandler.getCustomer().setPostCode(postCodeTextField.getText());
+            dataHandler.getCustomer().setPostAddress(postAddressTextField.getText());
+            dataHandler.getCustomer().setPhoneNumber(phoneNumberTextField.getText());
+            dataHandler.getCustomer().setMobilePhoneNumber(mobileNumberTextField.getText());
+            dataHandler.getCustomer().setEmail(emailTextField.getText());
+
+            dataHandler.getCreditCard().setCardNumber(cardNumberTextField.getText());
+            dataHandler.getCreditCard().setCardType(cardTypeComboBox.getSelectedItem().toString());
+            try{
+                dataHandler.getCreditCard().setValidMonth(Integer.valueOf(validMonthComboBox.getSelectedItem().toString()));
+                dataHandler.getCreditCard().setValidYear(Integer.valueOf(validYearComboBox.getSelectedItem().toString()));
+                dataHandler.getCreditCard().setVerificationCode(Integer.valueOf(securityCodeTextField.getText()));
+            }catch(NumberFormatException e){
+                errorLabel.setText("Fel format angivet.");
+                error = 2;
+            }
         
-        showCard("page3");
-        wizardStep3ToggleButton.setEnabled(true);
-        wizardStep3ToggleButton.setSelected(true);
-        wizardStep2ToggleButton.setSelected(false);
+        }
+        
+        if(error == 0){
+            showCard("page3");
+            wizardStep3ToggleButton.setEnabled(true);
+            wizardStep3ToggleButton.setSelected(true);
+            wizardStep2ToggleButton.setSelected(false);
+        }
+       
     }//GEN-LAST:event_page2NextButtonActionPerformed
 
     private void wizardStep3ToggleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wizardStep3ToggleButtonActionPerformed
@@ -420,9 +460,9 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
     private javax.swing.JPanel cardPanel;
     private javax.swing.JComboBox cardTypeComboBox;
     private javax.swing.JTextField emailTextField;
+    private javax.swing.JLabel errorLabel;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler10;
-    private javax.swing.Box.Filler filler11;
     private javax.swing.Box.Filler filler12;
     private javax.swing.Box.Filler filler13;
     private javax.swing.Box.Filler filler15;
