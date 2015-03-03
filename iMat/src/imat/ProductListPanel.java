@@ -51,7 +51,10 @@ public class ProductListPanel extends javax.swing.JPanel implements java.beans.C
         this.updateUI();
     }
     
-    
+    @Override
+    public void shoppingCartChanged(CartEvent ce) {
+        updatePanel();
+    }
     
     
     public void setObject(Object bean) {
@@ -76,8 +79,8 @@ public class ProductListPanel extends javax.swing.JPanel implements java.beans.C
         jLabel5 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
-        setMinimumSize(new java.awt.Dimension(0, 0));
-        setPreferredSize(new java.awt.Dimension(100, 200));
+        setMinimumSize(new java.awt.Dimension(500, 0));
+        setPreferredSize(new java.awt.Dimension(500, 200));
 
         productsScrollPane.setBorder(null);
         productsScrollPane.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
@@ -89,7 +92,7 @@ public class ProductListPanel extends javax.swing.JPanel implements java.beans.C
         productsPanel.setLayout(new java.awt.GridLayout(1, 1, 20, 20));
         productsScrollPane.setViewportView(productsPanel);
 
-        titlePanel.setLayout(new java.awt.GridLayout());
+        titlePanel.setLayout(new java.awt.GridLayout(1, 0));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -120,7 +123,7 @@ public class ProductListPanel extends javax.swing.JPanel implements java.beans.C
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(titlePanel, javax.swing.GroupLayout.DEFAULT_SIZE, 607, Short.MAX_VALUE)
+            .addComponent(titlePanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(productsScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -144,8 +147,4 @@ public class ProductListPanel extends javax.swing.JPanel implements java.beans.C
     private javax.swing.JPanel titlePanel;
     // End of variables declaration//GEN-END:variables
 
-    @Override
-    public void shoppingCartChanged(CartEvent ce) {
-        updatePanel();
-    }
 }

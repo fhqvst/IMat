@@ -6,10 +6,10 @@
       <Dimension value="[2147483647, 2147483647]"/>
     </Property>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[0, 0]"/>
+      <Dimension value="[500, 0]"/>
     </Property>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[100, 200]"/>
+      <Dimension value="[500, 200]"/>
     </Property>
   </Properties>
   <AuxValues>
@@ -27,7 +27,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="titlePanel" alignment="0" pref="607" max="32767" attributes="0"/>
+          <Component id="titlePanel" alignment="0" max="32767" attributes="0"/>
           <Component id="productsScrollPane" alignment="1" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
