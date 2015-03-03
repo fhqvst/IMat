@@ -465,13 +465,13 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     public void closeList() {
         if (listShowing) {
             cardCartListLayeredPane.moveToFront(cardPanel);
-            cardCartListLayeredPane.moveToBack(cartLayeredPanel);
-            cartShowing = false;
+            cardCartListLayeredPane.moveToBack(listLayeredPanel);
+            listShowing = false;
         } else {
             cardCartListLayeredPane.moveToBack(cardPanel);
             cardCartListLayeredPane.moveToBack(cartLayeredPanel);
             cardCartListLayeredPane.moveToFront(listLayeredPanel);
-            cartShowing = true;
+            listShowing = true;
         }
     }
     

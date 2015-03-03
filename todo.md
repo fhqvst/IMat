@@ -4,8 +4,9 @@
 [ ] Varukorg (LayeredPane?) - Trams von Tramsson af Trams<br>
 [ ] Kassa - funkonalitet - Lloyd <br>
 [ ] Detalj vy funktionalitet - Henrik<br>
-[ ] Profil sidan design - ??<br>
+[ ] Profil sidan design - Kakan<br>
 [ ] Startsida - ?? <br>
+[ ] Filtrering funkar ej - ??<br>
 
 ##Mindre viktigt
 [ ] Bilder för favourite/unfavourite (ifyllt samt icke-ifyllt hjärta?)<br>
