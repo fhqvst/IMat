@@ -30,8 +30,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
      * Creates new form IMat
      */
     public IMat() {
-        initComponents();
-        
+        initComponents();        
         
         //Saves data when application is terminated
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {

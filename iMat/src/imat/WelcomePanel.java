@@ -18,10 +18,17 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
      */
     public WelcomePanel() {
         initComponents();
+        welcomeLabel.setText("<html>  <h1> Välkommen Alexandra! </h1> </html>");
+        recipeLabel.setText("<html> <h2> Dagens recept:   " + getRecipeOfTheDay() + "</h2> </html>");
     }
     
     public void setObject(Object bean) {
         this.bean = bean;
+    }
+    
+    public String getRecipeOfTheDay() {
+        //Unimplemented
+        return "Ninjabiffar med ris";
     }
 
     /**
@@ -33,37 +40,91 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
     private void initComponents() {
 
         welcomePanel = new javax.swing.JPanel();
-        welcomePlaceholder = new javax.swing.JLabel();
-        campaignPanel = new javax.swing.JPanel();
-        CampaignPlaceholder = new javax.swing.JLabel();
+        welcomeLabel = new javax.swing.JLabel();
+        navigationPanel = new javax.swing.JPanel();
         newsPanel = new javax.swing.JPanel();
-        RecipeOfTheDayPlaceholder = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
+        recipePanel = new javax.swing.JPanel();
+        recipeLabel = new javax.swing.JLabel();
+        trendPanel = new javax.swing.JPanel();
+        trendLabel = new javax.swing.JLabel();
+        campaignPanel = new javax.swing.JPanel();
+        campaignPlaceholder = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
 
         welcomePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         welcomePanel.setPreferredSize(new java.awt.Dimension(50, 50));
 
-        welcomePlaceholder.setText("Välkommen [namn]");
-        welcomePlaceholder.setToolTipText("");
+        welcomeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        welcomeLabel.setText("Välkommen [namn]");
+        welcomeLabel.setToolTipText("");
 
         javax.swing.GroupLayout welcomePanelLayout = new javax.swing.GroupLayout(welcomePanel);
         welcomePanel.setLayout(welcomePanelLayout);
         welcomePanelLayout.setHorizontalGroup(
             welcomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(welcomePlaceholder, javax.swing.GroupLayout.DEFAULT_SIZE, 855, Short.MAX_VALUE)
+            .addComponent(welcomeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 855, Short.MAX_VALUE)
         );
         welcomePanelLayout.setVerticalGroup(
             welcomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(welcomePlaceholder, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
+            .addComponent(welcomeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
         );
 
         add(welcomePanel, java.awt.BorderLayout.PAGE_START);
 
+        navigationPanel.setLayout(new javax.swing.BoxLayout(navigationPanel, javax.swing.BoxLayout.LINE_AXIS));
+
+        newsPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        newsPanel.setPreferredSize(new java.awt.Dimension(105, 301));
+        newsPanel.setLayout(new java.awt.GridLayout(0, 1));
+
+        recipeLabel.setText("Dagens recept");
+
+        javax.swing.GroupLayout recipePanelLayout = new javax.swing.GroupLayout(recipePanel);
+        recipePanel.setLayout(recipePanelLayout);
+        recipePanelLayout.setHorizontalGroup(
+            recipePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(recipePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(recipeLabel)
+                .addContainerGap(208, Short.MAX_VALUE))
+        );
+        recipePanelLayout.setVerticalGroup(
+            recipePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(recipePanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(recipeLabel)
+                .addContainerGap(193, Short.MAX_VALUE))
+        );
+
+        newsPanel.add(recipePanel);
+
+        trendLabel.setText("Mattrender");
+
+        javax.swing.GroupLayout trendPanelLayout = new javax.swing.GroupLayout(trendPanel);
+        trendPanel.setLayout(trendPanelLayout);
+        trendPanelLayout.setHorizontalGroup(
+            trendPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(trendPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(trendLabel)
+                .addContainerGap(230, Short.MAX_VALUE))
+        );
+        trendPanelLayout.setVerticalGroup(
+            trendPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(trendPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(trendLabel)
+                .addContainerGap(193, Short.MAX_VALUE))
+        );
+
+        newsPanel.add(trendPanel);
+
+        navigationPanel.add(newsPanel);
+
         campaignPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        CampaignPlaceholder.setText("Kampanjer");
+        campaignPlaceholder.setText("Kampanjer");
 
         javax.swing.GroupLayout campaignPanelLayout = new javax.swing.GroupLayout(campaignPanel);
         campaignPanel.setLayout(campaignPanelLayout);
@@ -71,39 +132,33 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
             campaignPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(campaignPanelLayout.createSequentialGroup()
                 .addGap(224, 224, 224)
-                .addComponent(CampaignPlaceholder)
-                .addContainerGap(452, Short.MAX_VALUE))
+                .addComponent(campaignPlaceholder)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         campaignPanelLayout.setVerticalGroup(
             campaignPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, campaignPanelLayout.createSequentialGroup()
                 .addContainerGap(360, Short.MAX_VALUE)
-                .addComponent(CampaignPlaceholder)
+                .addComponent(campaignPlaceholder)
                 .addGap(68, 68, 68))
         );
 
-        add(campaignPanel, java.awt.BorderLayout.CENTER);
+        navigationPanel.add(campaignPanel);
 
-        newsPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        newsPanel.setLayout(new java.awt.GridLayout(0, 1));
-
-        RecipeOfTheDayPlaceholder.setText("Dagens recept");
-        newsPanel.add(RecipeOfTheDayPlaceholder);
-
-        jLabel5.setText("Mattrender");
-        newsPanel.add(jLabel5);
-
-        add(newsPanel, java.awt.BorderLayout.WEST);
+        add(navigationPanel, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel CampaignPlaceholder;
-    private javax.swing.JLabel RecipeOfTheDayPlaceholder;
     private javax.swing.JPanel campaignPanel;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel campaignPlaceholder;
+    private javax.swing.JPanel navigationPanel;
     private javax.swing.JPanel newsPanel;
+    private javax.swing.JLabel recipeLabel;
+    private javax.swing.JPanel recipePanel;
+    private javax.swing.JLabel trendLabel;
+    private javax.swing.JPanel trendPanel;
+    private javax.swing.JLabel welcomeLabel;
     private javax.swing.JPanel welcomePanel;
-    private javax.swing.JLabel welcomePlaceholder;
     // End of variables declaration//GEN-END:variables
 }
