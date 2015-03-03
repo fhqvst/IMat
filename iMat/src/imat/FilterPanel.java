@@ -98,9 +98,13 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
     
     protected List<Product> getSelected() {
         List<Product> productsShown = new ArrayList<Product>();
+        List<ProductCategory> productCategoriesInSearch = new ArrayList<ProductCategory>();
         for(int i = 0; i<filterBoxes.length; i++) {
-            if(filterBoxes[i].isSelected()) {
-                productsShown.addAll(dataHandler.getProducts(stringToCategory(checkBoxTitles[i])));
+            if(filterBoxes[i].isSelected()); {
+                if (!productCategoriesInSearch.contains(stringToCategory(checkBoxTitles[i]))) {
+                    productsShown.addAll(dataHandler.getProducts(stringToCategory(checkBoxTitles[i])));
+                    productCategoriesInSearch.add(stringToCategory(checkBoxTitles[i]));
+                }
             }
         }
         return productsShown;
@@ -124,6 +128,7 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
 
         setBackground(new java.awt.Color(255, 255, 255));
 
+        titleLable.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         titleLable.setText("Title");
 
         jLabel1.setText("Max Kr/Kg");
@@ -161,7 +166,7 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(filterPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)
+                .addComponent(filterPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(unselectAllButton)
                 .addContainerGap())
