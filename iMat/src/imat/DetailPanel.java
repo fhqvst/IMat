@@ -6,6 +6,7 @@
 package imat;
 
 import java.awt.Color;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
 
 /**
@@ -15,6 +16,7 @@ import se.chalmers.ait.dat215.project.Product;
 public class DetailPanel extends javax.swing.JPanel implements java.beans.Customizer {
     
     private Object bean;
+    private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     
     /**
      * Creates new customizer Detail
@@ -30,8 +32,8 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
         this.imageLabel.setIcon(IMat.dataHandler.getImageIcon(product, 300, 300));
        // this.adjustedPriceLabel.setText(Double.toString(this.product.getPrice()) + " kr");
        // this.amountSpinner.setValue(1);
-       // if(dataHandler.favorites().contains(product)){
-       //     addToFavouritesButton.setForeground(Color.red);
+       //if(dataHandler.favorites().contains(product)){
+         //  favBtn.setForeground(Color.red);
        // }
     }
     
@@ -47,17 +49,28 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel5 = new javax.swing.JPanel();
         imageLabel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         titleLabel = new javax.swing.JLabel();
         priceLabel = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jSpinner1 = new javax.swing.JSpinner();
+        jButton1 = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setLayout(new java.awt.GridLayout());
+        setLayout(new java.awt.GridLayout(2, 4));
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        add(jPanel5);
         add(imageLabel);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new java.awt.GridLayout(2, 0));
+        jPanel1.setLayout(new java.awt.GridLayout(3, 0));
 
         titleLabel.setText("titleLabel");
         jPanel1.add(titleLabel);
@@ -65,13 +78,51 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
         priceLabel.setText("priceLabel");
         jPanel1.add(priceLabel);
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setLayout(new java.awt.GridLayout());
+        jPanel3.add(jSpinner1);
+
+        jButton1.setText("Lägg till i Varukorg");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton1);
+
+        jPanel1.add(jPanel3);
+
         add(jPanel1);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        add(jPanel2);
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+        add(jPanel4);
+
+        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
+        add(jPanel6);
+
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+        add(jPanel7);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel imageLabel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JLabel priceLabel;
     private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
