@@ -2,6 +2,7 @@ package imat;
 
 import com.sun.org.apache.xalan.internal.xsltc.runtime.BasisLibrary;
 import java.awt.CardLayout;
+import java.awt.Color;
 import java.awt.Font;
 import javax.swing.UIManager;
 import se.chalmers.ait.dat215.project.*;
@@ -449,6 +450,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     }
     
     public void closeCart() {
+        cartLayeredPanel.setBackground(Color.LIGHT_GRAY);   //Just during development
        if (cartShowing){
             cardCartListLayeredPane.moveToFront(cardPanel);
             cardCartListLayeredPane.moveToBack(cartLayeredPanel);

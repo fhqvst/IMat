@@ -50,9 +50,13 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
         cartButtonList1 = new javax.swing.JButton();
         cartButtonList2 = new javax.swing.JButton();
 
-        setLayout(new java.awt.BorderLayout());
+        setPreferredSize(null);
+        setLayout(new java.awt.GridLayout());
 
         myStoredListsScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        myStoredListsScrollPane.setPreferredSize(new java.awt.Dimension(0, 0));
+
+        myStoredListsPanel.setPreferredSize(new java.awt.Dimension(250, 250));
 
         jLabel55.setText("Mina inköpslistor");
 
@@ -90,6 +94,7 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
         });
         jScrollPane3.setViewportView(jList3);
 
+        cartButtonList1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
         cartButtonList1.setBorderPainted(false);
         cartButtonList1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         cartButtonList1.addActionListener(new java.awt.event.ActionListener() {
@@ -98,6 +103,7 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
             }
         });
 
+        cartButtonList2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
         cartButtonList2.setBorderPainted(false);
         cartButtonList2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         cartButtonList2.addActionListener(new java.awt.event.ActionListener() {
@@ -143,7 +149,7 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
                         .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel57)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 171, Short.MAX_VALUE))
         );
         myStoredListsPanelLayout.setVerticalGroup(
             myStoredListsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,12 +179,12 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
                 .addComponent(jLabel57)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         myStoredListsScrollPane.setViewportView(myStoredListsPanel);
 
-        add(myStoredListsScrollPane, java.awt.BorderLayout.CENTER);
+        add(myStoredListsScrollPane);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
