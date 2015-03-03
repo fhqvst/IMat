@@ -308,20 +308,40 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         contentPanel.setLayout(new java.awt.BorderLayout());
 
         cardPanel.setLayout(new java.awt.CardLayout());
-        cardCartListLayeredPane.add(cardPanel);
-        cardPanel.setBounds(80, 0, 1140, 450);
 
         jLabel2.setText("ShoppingCart");
         cartLayeredPanel.add(jLabel2);
 
-        cardCartListLayeredPane.add(cartLayeredPanel);
-        cartLayeredPanel.setBounds(975, 0, 170, 450);
-
         jLabel3.setText("Listor");
         listLayeredPanel.add(jLabel3);
 
-        cardCartListLayeredPane.add(listLayeredPanel);
-        listLayeredPanel.setBounds(980, 3, 160, 440);
+        javax.swing.GroupLayout cardCartListLayeredPaneLayout = new javax.swing.GroupLayout(cardCartListLayeredPane);
+        cardCartListLayeredPane.setLayout(cardCartListLayeredPaneLayout);
+        cardCartListLayeredPaneLayout.setHorizontalGroup(
+            cardCartListLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardCartListLayeredPaneLayout.createSequentialGroup()
+                .addGroup(cardCartListLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardCartListLayeredPaneLayout.createSequentialGroup()
+                        .addGap(0, 983, Short.MAX_VALUE)
+                        .addGroup(cardCartListLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cartLayeredPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(listLayeredPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
+        );
+        cardCartListLayeredPaneLayout.setVerticalGroup(
+            cardCartListLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(cardCartListLayeredPaneLayout.createSequentialGroup()
+                .addGroup(cardCartListLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cartLayeredPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(cardCartListLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(cardPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(listLayeredPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        cardCartListLayeredPane.setLayer(cardPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        cardCartListLayeredPane.setLayer(cartLayeredPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        cardCartListLayeredPane.setLayer(listLayeredPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         contentPanel.add(cardCartListLayeredPane, java.awt.BorderLayout.CENTER);
 
