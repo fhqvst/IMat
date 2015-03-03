@@ -91,6 +91,7 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
             case "Pasta": return ProductCategory.PASTA;
             case "Potatis, ris": return ProductCategory.POTATO_RICE;
             case "Godis": return ProductCategory.SWEET;
+            case "Bönor": return ProductCategory.POD;
             
             default: return ProductCategory.FISH;
         }
