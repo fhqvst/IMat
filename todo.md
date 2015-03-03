@@ -1,7 +1,7 @@
 #To do
 
 ##Viktigt inför onsdag test
-[ ] Varukorg (LayeredPane?) - Vem vill ta detta??<br>
+[ ] Varukorg (LayeredPane?) - Trams von Tramsson af Trams<br>
 [ ] Kassa - funkonalitet - Lloyd <br>
 [ ] Detalj vy funktionalitet - Henrik<br>
 [ ] Profil sidan design - ??<br>
