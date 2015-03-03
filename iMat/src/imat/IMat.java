@@ -22,7 +22,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     
     private ProductCategoryPanel productCategoryPanel;
     private DetailPanel detailPanel;
-    private boolean cartShowing;
+    private boolean cartShowing = true;
+    private boolean listShowing = true;
     
     /**
      * Creates new form IMat
@@ -70,6 +71,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         this.cardPanel.add(new WelcomePanel(), "welcomePanel");
         this.cardPanel.add(new CheckoutPanel(), "checkoutPanel");
         this.cardPanel.add(detailPanel, "detailPanel");
+        
+        closeClosablePanels();
         
         showCard("welcomePanel");
         
@@ -440,6 +443,38 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         showCard("productCategoryPanel");
     }
     
+    public void closeClosablePanels() {
+        closeCart();
+        closeList();
+    }
+    
+    public void closeCart() {
+       if (cartShowing){
+            cardCartListLayeredPane.moveToFront(cardPanel);
+            cardCartListLayeredPane.moveToBack(cartLayeredPanel);
+            cartShowing = false;
+        } else {
+            cardCartListLayeredPane.moveToBack(cardPanel);
+            cardCartListLayeredPane.moveToBack(listLayeredPanel);
+            cardCartListLayeredPane.moveToFront(cartLayeredPanel);
+            cartShowing = true;
+
+        }
+    }
+    
+    public void closeList() {
+        if (listShowing) {
+            cardCartListLayeredPane.moveToFront(cardPanel);
+            cardCartListLayeredPane.moveToBack(cartLayeredPanel);
+            cartShowing = false;
+        } else {
+            cardCartListLayeredPane.moveToBack(cardPanel);
+            cardCartListLayeredPane.moveToBack(cartLayeredPanel);
+            cardCartListLayeredPane.moveToFront(listLayeredPanel);
+            cartShowing = true;
+        }
+    }
+    
     private void candySnacksButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_candySnacksButtonActionPerformed
        changeFilter(FilterFactory.sweetsFilterCard);
     }//GEN-LAST:event_candySnacksButtonActionPerformed
@@ -511,21 +546,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     }//GEN-LAST:event_favouriteButtonActionPerformed
 
     private void cartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartButtonActionPerformed
-        if (cartShowing)
-        {
-            cardCartListLayeredPane.moveToBack(cardPanel);
-            cardCartListLayeredPane.moveToBack(listLayeredPanel);
-            cardCartListLayeredPane.moveToFront(cartLayeredPanel);
-            System.out.println("ja");
-            cartShowing = false;
-        }
-        
-        else {
-            cardCartListLayeredPane.moveToFront(cardPanel);
-            cardCartListLayeredPane.moveToBack(cartLayeredPanel);
-            System.out.println("nej");
-            cartShowing = true;
-        }
+        closeCart();
     }//GEN-LAST:event_cartButtonActionPerformed
 
     @Override
