@@ -1,5 +1,6 @@
 package imat;
 
+import com.sun.org.apache.xalan.internal.xsltc.runtime.BasisLibrary;
 import java.awt.CardLayout;
 import java.awt.Font;
 import javax.swing.UIManager;
@@ -21,6 +22,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     
     private ProductCategoryPanel productCategoryPanel;
     private DetailPanel detailPanel;
+    private boolean cartShowing;
     
     /**
      * Creates new form IMat
@@ -106,7 +108,12 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         candySnacksButton = new javax.swing.JButton();
         favouriteButton = new javax.swing.JButton();
         contentPanel = new javax.swing.JPanel();
+        cardCartListLayeredPane = new javax.swing.JLayeredPane();
         cardPanel = new javax.swing.JPanel();
+        cartLayeredPanel = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        listLayeredPanel = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
         cartAndListsPanel = new javax.swing.JPanel();
         cartPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -298,10 +305,25 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
         contentPanel.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
         contentPanel.setPreferredSize(new java.awt.Dimension(80, 0));
-        contentPanel.setLayout(new javax.swing.BoxLayout(contentPanel, javax.swing.BoxLayout.X_AXIS));
+        contentPanel.setLayout(new java.awt.BorderLayout());
 
         cardPanel.setLayout(new java.awt.CardLayout());
-        contentPanel.add(cardPanel);
+        cardCartListLayeredPane.add(cardPanel);
+        cardPanel.setBounds(80, 0, 1140, 450);
+
+        jLabel2.setText("ShoppingCart");
+        cartLayeredPanel.add(jLabel2);
+
+        cardCartListLayeredPane.add(cartLayeredPanel);
+        cartLayeredPanel.setBounds(975, 0, 170, 450);
+
+        jLabel3.setText("Listor");
+        listLayeredPanel.add(jLabel3);
+
+        cardCartListLayeredPane.add(listLayeredPanel);
+        listLayeredPanel.setBounds(980, 3, 160, 440);
+
+        contentPanel.add(cardCartListLayeredPane, java.awt.BorderLayout.CENTER);
 
         cartAndListsPanel.setBackground(new java.awt.Color(255, 255, 255));
         cartAndListsPanel.setMaximumSize(new java.awt.Dimension(80, 2147483647));
@@ -324,6 +346,11 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         cartButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
         cartButton.setBorderPainted(false);
         cartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        cartButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cartButtonActionPerformed(evt);
+            }
+        });
         cartPanel.add(cartButton);
 
         cartAmountLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -364,7 +391,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         filler1.setBackground(new java.awt.Color(255, 255, 255));
         cartAndListsPanel.add(filler1);
 
-        contentPanel.add(cartAndListsPanel);
+        contentPanel.add(cartAndListsPanel, java.awt.BorderLayout.EAST);
 
         getContentPane().add(contentPanel);
 
@@ -464,6 +491,24 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         showCard("productCategoryPanel");
     }//GEN-LAST:event_favouriteButtonActionPerformed
 
+    private void cartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartButtonActionPerformed
+        if (cartShowing)
+        {
+            cardCartListLayeredPane.moveToBack(cardPanel);
+            cardCartListLayeredPane.moveToBack(listLayeredPanel);
+            cardCartListLayeredPane.moveToFront(cartLayeredPanel);
+            System.out.println("ja");
+            cartShowing = false;
+        }
+        
+        else {
+            cardCartListLayeredPane.moveToFront(cardPanel);
+            cardCartListLayeredPane.moveToBack(cartLayeredPanel);
+            System.out.println("nej");
+            cartShowing = true;
+        }
+    }//GEN-LAST:event_cartButtonActionPerformed
+
     @Override
     public void shoppingCartChanged(CartEvent ce) {
         updateCartLabels();
@@ -508,10 +553,12 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton candySnacksButton;
+    private javax.swing.JLayeredPane cardCartListLayeredPane;
     private javax.swing.JPanel cardPanel;
     private javax.swing.JLabel cartAmountLabel;
     private javax.swing.JPanel cartAndListsPanel;
     private javax.swing.JButton cartButton;
+    private javax.swing.JPanel cartLayeredPanel;
     private javax.swing.JPanel cartPanel;
     private javax.swing.JLabel cartPriceLabel;
     private javax.swing.JButton checkoutButton;
@@ -527,11 +574,14 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     private javax.swing.JPanel headerPanel;
     private javax.swing.JButton homeButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JPanel listLayeredPanel;
     private javax.swing.JPanel listsPanel;
     private javax.swing.JLabel logotype;
     private javax.swing.JButton meatFishButton;
