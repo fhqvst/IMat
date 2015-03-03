@@ -5,24 +5,19 @@
  */
 package imat;
 
-import java.awt.BorderLayout;
-
 /**
  *
  * @author kakan
  */
-public class ProfilePanel extends javax.swing.JPanel implements java.beans.Customizer {
+public class MyPreferenses extends javax.swing.JPanel implements java.beans.Customizer {
     
     private Object bean;
 
     /**
-     * Creates new customizer ProfilePanel
+     * Creates new customizer MyPreferenses
      */
-    public ProfilePanel() {
+    public MyPreferenses() {
         initComponents();
-        this.add(new ReminderAndStoredInformation(), BorderLayout.WEST);
-        this.add(new MyPreviousShopping(), BorderLayout.CENTER);
-        this.add(new MyPreferenses(), BorderLayout.EAST);
     }
     
     public void setObject(Object bean) {
@@ -49,7 +44,7 @@ public class ProfilePanel extends javax.swing.JPanel implements java.beans.Custo
         jScrollPane5 = new javax.swing.JScrollPane();
         jList5 = new javax.swing.JList();
 
-        setLayout(new java.awt.BorderLayout());
+        setLayout(new java.awt.GridLayout());
 
         myPreferenses.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         myPreferenses.setPreferredSize(new java.awt.Dimension(301, 505));
@@ -127,7 +122,7 @@ public class ProfilePanel extends javax.swing.JPanel implements java.beans.Custo
 
         myPreferenses.add(myIgnoresScrollPane);
 
-        add(myPreferenses, java.awt.BorderLayout.EAST);
+        add(myPreferenses);
     }// </editor-fold>//GEN-END:initComponents
 
 
