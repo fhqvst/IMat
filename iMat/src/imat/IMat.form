@@ -20,6 +20,8 @@
         </MenuItem>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.ButtonGroup" name="globalNavigationButtonGroup">
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -248,103 +250,103 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JButton" name="homeButton">
+        <Component class="javax.swing.JToggleButton" name="homeButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Hem"/>
-            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="globalNavigationButtonGroup"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="Hem"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="homeButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="recipeButton">
+        <Component class="javax.swing.JToggleButton" name="receipeButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Recept"/>
-            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="globalNavigationButtonGroup"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="Recept"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="recipeButtonActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="receipeButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="meatFishButton">
+        <Component class="javax.swing.JToggleButton" name="meatFishButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="K&#xf6;tt &amp; Fisk"/>
-            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="globalNavigationButtonGroup"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="K&#xf6;tt &amp; Fisk"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="meatFishButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="freezerButton">
+        <Component class="javax.swing.JToggleButton" name="freezerButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Frysvaror"/>
-            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="globalNavigationButtonGroup"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="Frysvaror"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="freezerButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="dairyButton">
+        <Component class="javax.swing.JToggleButton" name="dairyButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Mejeri"/>
-            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="globalNavigationButtonGroup"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="Mejeri"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dairyButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="fruitVegetablesButton">
+        <Component class="javax.swing.JToggleButton" name="fruitVegetablesButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Frukt &amp; Gr&#xf6;nt"/>
-            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="globalNavigationButtonGroup"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="Frukt &amp; Gr&#xf6;nt"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fruitVegetablesButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="pantryButton">
+        <Component class="javax.swing.JToggleButton" name="pantryButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Skafferi"/>
-            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="globalNavigationButtonGroup"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="Skafferi"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pantryButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="candySnacksButton">
+        <Component class="javax.swing.JToggleButton" name="candySnacksButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Godis &amp; Snacks"/>
-            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="globalNavigationButtonGroup"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="Godis &amp; Snacks"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="candySnacksButtonActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="favouriteButton">
+        <Component class="javax.swing.JToggleButton" name="favoriteButton">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Favoriter"/>
-            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="globalNavigationButtonGroup"/>
             </Property>
+            <Property name="text" type="java.lang.String" value="Favoriter"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="favouriteButtonActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="favoriteButtonActionPerformed"/>
           </Events>
         </Component>
       </SubComponents>

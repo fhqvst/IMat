@@ -75,7 +75,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         
         closeClosablePanels();
         
-        showCard("welcomePanel");
+        switchCard("welcomePanel");
         
     }
 
@@ -91,6 +91,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         jPopupMenu1 = new javax.swing.JPopupMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
+        globalNavigationButtonGroup = new javax.swing.ButtonGroup();
         headerPanel = new javax.swing.JPanel();
         logotype = new javax.swing.JLabel();
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0));
@@ -102,15 +103,15 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0));
         checkoutButton = new javax.swing.JButton();
         navigationPanel = new javax.swing.JPanel();
-        homeButton = new javax.swing.JButton();
-        recipeButton = new javax.swing.JButton();
-        meatFishButton = new javax.swing.JButton();
-        freezerButton = new javax.swing.JButton();
-        dairyButton = new javax.swing.JButton();
-        fruitVegetablesButton = new javax.swing.JButton();
-        pantryButton = new javax.swing.JButton();
-        candySnacksButton = new javax.swing.JButton();
-        favouriteButton = new javax.swing.JButton();
+        homeButton = new javax.swing.JToggleButton();
+        receipeButton = new javax.swing.JToggleButton();
+        meatFishButton = new javax.swing.JToggleButton();
+        freezerButton = new javax.swing.JToggleButton();
+        dairyButton = new javax.swing.JToggleButton();
+        fruitVegetablesButton = new javax.swing.JToggleButton();
+        pantryButton = new javax.swing.JToggleButton();
+        candySnacksButton = new javax.swing.JToggleButton();
+        favoriteButton = new javax.swing.JToggleButton();
         contentPanel = new javax.swing.JPanel();
         cardCartListLayeredPane = new javax.swing.JLayeredPane();
         cardPanel = new javax.swing.JPanel();
@@ -224,8 +225,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         navigationPanel.setMaximumSize(new java.awt.Dimension(2147483647, 80));
         navigationPanel.setLayout(new javax.swing.BoxLayout(navigationPanel, javax.swing.BoxLayout.LINE_AXIS));
 
+        globalNavigationButtonGroup.add(homeButton);
         homeButton.setText("Hem");
-        homeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         homeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 homeButtonActionPerformed(evt);
@@ -233,17 +234,17 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         });
         navigationPanel.add(homeButton);
 
-        recipeButton.setText("Recept");
-        recipeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        recipeButton.addActionListener(new java.awt.event.ActionListener() {
+        globalNavigationButtonGroup.add(receipeButton);
+        receipeButton.setText("Recept");
+        receipeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                recipeButtonActionPerformed(evt);
+                receipeButtonActionPerformed(evt);
             }
         });
-        navigationPanel.add(recipeButton);
+        navigationPanel.add(receipeButton);
 
+        globalNavigationButtonGroup.add(meatFishButton);
         meatFishButton.setText("Kött & Fisk");
-        meatFishButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         meatFishButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 meatFishButtonActionPerformed(evt);
@@ -251,8 +252,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         });
         navigationPanel.add(meatFishButton);
 
+        globalNavigationButtonGroup.add(freezerButton);
         freezerButton.setText("Frysvaror");
-        freezerButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         freezerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 freezerButtonActionPerformed(evt);
@@ -260,8 +261,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         });
         navigationPanel.add(freezerButton);
 
+        globalNavigationButtonGroup.add(dairyButton);
         dairyButton.setText("Mejeri");
-        dairyButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         dairyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dairyButtonActionPerformed(evt);
@@ -269,8 +270,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         });
         navigationPanel.add(dairyButton);
 
+        globalNavigationButtonGroup.add(fruitVegetablesButton);
         fruitVegetablesButton.setText("Frukt & Grönt");
-        fruitVegetablesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         fruitVegetablesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fruitVegetablesButtonActionPerformed(evt);
@@ -278,8 +279,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         });
         navigationPanel.add(fruitVegetablesButton);
 
+        globalNavigationButtonGroup.add(pantryButton);
         pantryButton.setText("Skafferi");
-        pantryButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         pantryButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pantryButtonActionPerformed(evt);
@@ -287,8 +288,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         });
         navigationPanel.add(pantryButton);
 
+        globalNavigationButtonGroup.add(candySnacksButton);
         candySnacksButton.setText("Godis & Snacks");
-        candySnacksButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         candySnacksButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 candySnacksButtonActionPerformed(evt);
@@ -296,14 +297,14 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         });
         navigationPanel.add(candySnacksButton);
 
-        favouriteButton.setText("Favoriter");
-        favouriteButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        favouriteButton.addActionListener(new java.awt.event.ActionListener() {
+        globalNavigationButtonGroup.add(favoriteButton);
+        favoriteButton.setText("Favoriter");
+        favoriteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                favouriteButtonActionPerformed(evt);
+                favoriteButtonActionPerformed(evt);
             }
         });
-        navigationPanel.add(favouriteButton);
+        navigationPanel.add(favoriteButton);
 
         getContentPane().add(navigationPanel);
 
@@ -434,14 +435,14 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         cartPriceLabel.setText(Math.round(dataHandler.getShoppingCart().getTotal()) + " kr");
     }
     
-    public void showCard(String cardName) {
+    public void switchCard(String cardName) {
         CardLayout cards = (CardLayout) cardPanel.getLayout();
         cards.show(cardPanel, cardName);
     }
     
     public void changeFilter(FilterPanel filterCard) {
         this.productCategoryPanel.applyFilters(filterCard);
-        showCard("productCategoryPanel");
+        switchCard("productCategoryPanel");
     }
     
     public void closeClosablePanels() {
@@ -477,49 +478,17 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         }
     }
     
-    private void candySnacksButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_candySnacksButtonActionPerformed
-       changeFilter(FilterFactory.sweetsFilterCard);
-    }//GEN-LAST:event_candySnacksButtonActionPerformed
-
-    private void pantryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pantryButtonActionPerformed
-       changeFilter(FilterFactory.pantryFilterCard);
-    }//GEN-LAST:event_pantryButtonActionPerformed
-
-    private void fruitVegetablesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fruitVegetablesButtonActionPerformed
-        changeFilter(FilterFactory.veggieAndFruitsFilterCard);
-    }//GEN-LAST:event_fruitVegetablesButtonActionPerformed
-
-    private void dairyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dairyButtonActionPerformed
-        changeFilter(FilterFactory.dairyFilterCard);
-    }//GEN-LAST:event_dairyButtonActionPerformed
-
-    private void freezerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_freezerButtonActionPerformed
-        changeFilter(FilterFactory.freezerFilterCard);
-    }//GEN-LAST:event_freezerButtonActionPerformed
-
-    private void meatFishButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meatFishButtonActionPerformed
-        changeFilter(FilterFactory.meatAndFishFilterCard);
-    }//GEN-LAST:event_meatFishButtonActionPerformed
-
-    private void recipeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recipeButtonActionPerformed
-        showCard("recipePanel");
-    }//GEN-LAST:event_recipeButtonActionPerformed
-
-    private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonActionPerformed
-        showCard("welcomePanel");
-    }//GEN-LAST:event_homeButtonActionPerformed
-
     private void profileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileButtonActionPerformed
-       showCard("profilePanel");
+       switchCard("profilePanel");
     }//GEN-LAST:event_profileButtonActionPerformed
 
     private void tipsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipsButtonActionPerformed
-        showCard("hintsPanel");
+        switchCard("hintsPanel");
     }//GEN-LAST:event_tipsButtonActionPerformed
 
     private void checkoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkoutButtonActionPerformed
 
-        showCard("checkoutPanel");
+        switchCard("checkoutPanel");
     }//GEN-LAST:event_checkoutButtonActionPerformed
 
     private void searchTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchTextFieldFocusGained
@@ -539,17 +508,49 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
 
         this.productCategoryPanel.displayProducts(dataHandler.findProducts(searchTextField.getText()));
-        showCard("productCategoryPanel");
+        switchCard("productCategoryPanel");
     }//GEN-LAST:event_searchButtonActionPerformed
-
-    private void favouriteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_favouriteButtonActionPerformed
-        this.productCategoryPanel.displayProducts(dataHandler.favorites());
-        showCard("productCategoryPanel");
-    }//GEN-LAST:event_favouriteButtonActionPerformed
 
     private void cartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartButtonActionPerformed
         closeCart();
     }//GEN-LAST:event_cartButtonActionPerformed
+
+    private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonActionPerformed
+        switchCard("welcomePanel");
+    }//GEN-LAST:event_homeButtonActionPerformed
+
+    private void receipeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receipeButtonActionPerformed
+        switchCard("recipePanel");
+    }//GEN-LAST:event_receipeButtonActionPerformed
+
+    private void meatFishButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meatFishButtonActionPerformed
+        changeFilter(FilterFactory.meatAndFishFilterCard);
+    }//GEN-LAST:event_meatFishButtonActionPerformed
+
+    private void freezerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_freezerButtonActionPerformed
+        changeFilter(FilterFactory.freezerFilterCard);
+    }//GEN-LAST:event_freezerButtonActionPerformed
+
+    private void dairyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dairyButtonActionPerformed
+        changeFilter(FilterFactory.dairyFilterCard);
+    }//GEN-LAST:event_dairyButtonActionPerformed
+
+    private void fruitVegetablesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fruitVegetablesButtonActionPerformed
+        changeFilter(FilterFactory.veggieAndFruitsFilterCard);
+    }//GEN-LAST:event_fruitVegetablesButtonActionPerformed
+
+    private void pantryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pantryButtonActionPerformed
+        changeFilter(FilterFactory.pantryFilterCard);
+    }//GEN-LAST:event_pantryButtonActionPerformed
+
+    private void candySnacksButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_candySnacksButtonActionPerformed
+        changeFilter(FilterFactory.sweetsFilterCard);
+    }//GEN-LAST:event_candySnacksButtonActionPerformed
+
+    private void favoriteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_favoriteButtonActionPerformed
+        this.productCategoryPanel.displayProducts(dataHandler.favorites());
+        switchCard("productCategoryPanel");
+    }//GEN-LAST:event_favoriteButtonActionPerformed
 
     @Override
     public void shoppingCartChanged(CartEvent ce) {
@@ -594,7 +595,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton candySnacksButton;
+    private javax.swing.JToggleButton candySnacksButton;
     private javax.swing.JLayeredPane cardCartListLayeredPane;
     private javax.swing.JPanel cardPanel;
     private javax.swing.JLabel cartAmountLabel;
@@ -605,16 +606,17 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     private javax.swing.JLabel cartPriceLabel;
     private javax.swing.JButton checkoutButton;
     private javax.swing.JPanel contentPanel;
-    private javax.swing.JButton dairyButton;
-    private javax.swing.JButton favouriteButton;
+    private javax.swing.JToggleButton dairyButton;
+    private javax.swing.JToggleButton favoriteButton;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler2;
     private javax.swing.Box.Filler filler3;
     private javax.swing.Box.Filler filler4;
-    private javax.swing.JButton freezerButton;
-    private javax.swing.JButton fruitVegetablesButton;
+    private javax.swing.JToggleButton freezerButton;
+    private javax.swing.JToggleButton fruitVegetablesButton;
+    private javax.swing.ButtonGroup globalNavigationButtonGroup;
     private javax.swing.JPanel headerPanel;
-    private javax.swing.JButton homeButton;
+    private javax.swing.JToggleButton homeButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -626,11 +628,11 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     private javax.swing.JPanel listLayeredPanel;
     private javax.swing.JPanel listsPanel;
     private javax.swing.JLabel logotype;
-    private javax.swing.JButton meatFishButton;
+    private javax.swing.JToggleButton meatFishButton;
     private javax.swing.JPanel navigationPanel;
-    private javax.swing.JButton pantryButton;
+    private javax.swing.JToggleButton pantryButton;
     private javax.swing.JButton profileButton;
-    private javax.swing.JButton recipeButton;
+    private javax.swing.JToggleButton receipeButton;
     private javax.swing.JButton searchButton;
     private javax.swing.JTextField searchTextField;
     private javax.swing.JButton tipsButton;
