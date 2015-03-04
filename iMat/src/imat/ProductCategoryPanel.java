@@ -22,6 +22,7 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
      */
     public ProductCategoryPanel() {
         initComponents();
+        productsScrollPane.getVerticalScrollBar().setUnitIncrement(16);
     }
     
     public ProductCategoryPanel(ProductCategory... productCategories) {
