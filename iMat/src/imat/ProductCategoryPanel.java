@@ -66,7 +66,7 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
             productPanel.setSize(200, 100);
             productsPanel.add(productPanel);
 
-        }
+        }    
         this.revalidate();
         this.repaint();
     }

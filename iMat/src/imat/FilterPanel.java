@@ -24,7 +24,7 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
     private final String title;
     private String[] checkBoxTitles;
     private JCheckBox[] filterBoxes;
-    IMatDataHandler dataHandler = IMatDataHandler.getInstance();
+    private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
     /**
      * Creates new customizer AbstractFilterCard

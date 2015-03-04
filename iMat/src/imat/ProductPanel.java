@@ -163,7 +163,7 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
 
     private void addToCartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToCartButtonActionPerformed
         boolean exists = false;
-        
+                
         for(int i = 0; i < dataHandler.getShoppingCart().getItems().size(); i++){
             ShoppingItem temp = dataHandler.getShoppingCart().getItems().get(i);
             if(temp.getProduct() == product){

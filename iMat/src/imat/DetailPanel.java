@@ -6,6 +6,7 @@
 package imat;
 
 import java.awt.Color;
+import javax.swing.JButton;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
 
@@ -79,7 +80,7 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
         jPanel1.add(priceLabel);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setLayout(new java.awt.GridLayout());
+        jPanel3.setLayout(new java.awt.GridLayout(1, 0));
         jPanel3.add(jSpinner1);
 
         jButton1.setText("Lägg till i Varukorg");
