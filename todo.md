@@ -12,7 +12,7 @@
 [ ] Bilder för favourite/unfavourite (ifyllt samt icke-ifyllt hjärta?)<br>
 [ ] Visa tidigare inköp (När profilsidan är lite mer uppdaterad) - Lloyd
 [ ] Floating points när man köper multiplar av en vara. - ??<br>
-[ ] List-knappen är ingen knapp. - ??<br>
+[ ] List-knappen är ingen knapp.(Att vara eller att inte vara) - Hamlet<br>
 
 ##Test
 Spara användaruppgifter																								Ändra ett telefonnummer i mina uppgifter
