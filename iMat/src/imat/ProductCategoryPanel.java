@@ -26,6 +26,7 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
      */
     public ProductCategoryPanel() {
         initComponents();
+        productsScrollPane.getVerticalScrollBar().setUnitIncrement(16);
         filterPanel.setBackground(Color.white);
         this.add(filterPanel, 0);
     }
