@@ -5,7 +5,10 @@
  */
 package imat;
 
+import java.awt.GridLayout;
+import java.util.ArrayList;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Product;
 
 /**
  *
@@ -20,8 +23,18 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
      */
     public WelcomePanel() {
         initComponents();
+        campaignLabel.setText("<html> <h2> Kampanjer! </h2> </html>");
+        ArrayList<Product> godtyckligLista = new ArrayList<Product>();
+        godtyckligLista = (ArrayList)IMatDataHandler.getInstance().findProducts("kyckling");
+        campaignPanel.setLayout(new GridLayout(godtyckligLista.size()/2+1, godtyckligLista.size()/2));
+        for (Product p : godtyckligLista) {
+            campaignPanel.add(new ProductPanel(p));
+        }
+        
         welcomeLabel.setText("<html>  <h1> Välkommen " + IMatDataHandler.getInstance().getCustomer().getFirstName() /*Alexandra!*/ + " </h1> </html>");
         recipeLabel.setText("<html> <h2> Dagens recept:   " + getRecipeOfTheDay() + "</h2> </html>");
+        this.revalidate();
+        this.repaint();
         
     }
     
@@ -48,10 +61,17 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
         newsPanel = new javax.swing.JPanel();
         recipePanel = new javax.swing.JPanel();
         recipeLabel = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
         trendPanel = new javax.swing.JPanel();
         trendLabel = new javax.swing.JLabel();
-        campaignPanel = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea2 = new javax.swing.JTextArea();
+        jPanel1 = new javax.swing.JPanel();
         campaignLabel = new javax.swing.JLabel();
+        campaignPanel = new javax.swing.JPanel();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -66,7 +86,7 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
         welcomePanel.setLayout(welcomePanelLayout);
         welcomePanelLayout.setHorizontalGroup(
             welcomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(welcomeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
+            .addComponent(welcomeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE)
         );
         welcomePanelLayout.setVerticalGroup(
             welcomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -78,10 +98,19 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
         navigationPanel.setLayout(new javax.swing.BoxLayout(navigationPanel, javax.swing.BoxLayout.LINE_AXIS));
 
         newsPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        newsPanel.setPreferredSize(new java.awt.Dimension(105, 301));
+        newsPanel.setPreferredSize(new java.awt.Dimension(300, 300));
         newsPanel.setLayout(new java.awt.GridLayout(0, 1));
 
         recipeLabel.setText("Dagens recept");
+
+        jLabel1.setText("[bild]");
+
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Lorem ipsum dolor sit amet, consectetur adipisicing elit,\nsed do eiusmod tempor incididunt ut labore et dolore\n magna aliqua. Ut enim ad minim veniam, quis \nnostrud exercitation ullamco \n\nlaboris nisi ut aliquip ex ea commodo consequat\n. Duis aute irure dolor in reprehenderit in voluptate velit \nesse cillum dolore eu fugiat nulla pariatur. \n\nExcepteur sint occaecat cupidatat non proident, sunt \nin culpa qui officia deserunt mollit anim id est laborum.\n");
+        jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout recipePanelLayout = new javax.swing.GroupLayout(recipePanel);
         recipePanel.setLayout(recipePanelLayout);
@@ -89,20 +118,38 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
             recipePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(recipePanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(recipeLabel)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(recipePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(recipePanelLayout.createSequentialGroup()
+                        .addGroup(recipePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(recipeLabel)
+                            .addComponent(jLabel1))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         recipePanelLayout.setVerticalGroup(
             recipePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(recipePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(recipeLabel)
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE))
         );
 
         newsPanel.add(recipePanel);
 
         trendLabel.setText("Mattrender");
+
+        jLabel2.setText("[titel]");
+
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        jTextArea2.setColumns(20);
+        jTextArea2.setRows(5);
+        jTextArea2.setText("Lorem ipsum dolor sit amet, consectetur adipisicing elit,\nsed do eiusmod tempor incididunt ut labore et dolore\n magna aliqua. Ut enim ad minim veniam, quis \nnostrud exercitation ullamco \n\nlaboris nisi ut aliquip ex ea commodo consequat\n. Duis aute irure dolor in reprehenderit in voluptate velit \nesse cillum dolore eu fugiat nulla pariatur. \n\nExcepteur sint occaecat cupidatat non proident, sunt \nin culpa qui officia deserunt mollit anim id est laborum.\n");
+        jScrollPane2.setViewportView(jTextArea2);
 
         javax.swing.GroupLayout trendPanelLayout = new javax.swing.GroupLayout(trendPanel);
         trendPanel.setLayout(trendPanelLayout);
@@ -110,43 +157,42 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
             trendPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(trendPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(trendLabel)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(trendPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(trendPanelLayout.createSequentialGroup()
+                        .addGroup(trendPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(trendLabel)
+                            .addComponent(jLabel2))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         trendPanelLayout.setVerticalGroup(
             trendPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(trendPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(trendLabel)
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         newsPanel.add(trendPanel);
 
         navigationPanel.add(newsPanel);
 
-        campaignPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.setLayout(new java.awt.BorderLayout());
 
+        campaignLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         campaignLabel.setText("Kampanjer");
+        jPanel1.add(campaignLabel, java.awt.BorderLayout.NORTH);
 
-        javax.swing.GroupLayout campaignPanelLayout = new javax.swing.GroupLayout(campaignPanel);
-        campaignPanel.setLayout(campaignPanelLayout);
-        campaignPanelLayout.setHorizontalGroup(
-            campaignPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(campaignPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(campaignLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        campaignPanelLayout.setVerticalGroup(
-            campaignPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(campaignPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(campaignLabel)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        campaignPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        campaignPanel.setLayout(new java.awt.GridLayout(10, 10));
+        jPanel1.add(campaignPanel, java.awt.BorderLayout.CENTER);
 
-        navigationPanel.add(campaignPanel);
+        navigationPanel.add(jPanel1);
 
         add(navigationPanel, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
@@ -155,6 +201,13 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel campaignLabel;
     private javax.swing.JPanel campaignPanel;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JPanel navigationPanel;
     private javax.swing.JPanel newsPanel;
     private javax.swing.JLabel recipeLabel;
