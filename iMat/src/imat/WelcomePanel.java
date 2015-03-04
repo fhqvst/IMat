@@ -9,6 +9,7 @@ import java.awt.GridLayout;
 import java.util.ArrayList;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
+import se.chalmers.ait.dat215.project.ProductCategory;
 
 /**
  *
@@ -26,10 +27,8 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
         campaignLabel.setText("<html> <h2> Kampanjer! </h2> </html>");
         ArrayList<Product> godtyckligLista = new ArrayList<Product>();
         godtyckligLista = (ArrayList)IMatDataHandler.getInstance().findProducts("kyckling");
-        campaignPanel.setLayout(new GridLayout(godtyckligLista.size()/2+1, godtyckligLista.size()/2));
-        for (Product p : godtyckligLista) {
-            campaignPanel.add(new ProductPanel(p));
-        }
+        jPanel1.add(new ProductCategoryPanel(ProductCategory.POD));
+       
         
         welcomeLabel.setText("<html>  <h1> Välkommen " + IMatDataHandler.getInstance().getCustomer().getFirstName() /*Alexandra!*/ + " </h1> </html>");
         recipeLabel.setText("<html> <h2> Dagens recept:   " + getRecipeOfTheDay() + "</h2> </html>");
@@ -71,7 +70,6 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
         jTextArea2 = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         campaignLabel = new javax.swing.JLabel();
-        campaignPanel = new javax.swing.JPanel();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -188,10 +186,6 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
         campaignLabel.setText("Kampanjer");
         jPanel1.add(campaignLabel, java.awt.BorderLayout.NORTH);
 
-        campaignPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        campaignPanel.setLayout(new java.awt.GridLayout(10, 10));
-        jPanel1.add(campaignPanel, java.awt.BorderLayout.CENTER);
-
         navigationPanel.add(jPanel1);
 
         add(navigationPanel, java.awt.BorderLayout.CENTER);
@@ -200,7 +194,6 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel campaignLabel;
-    private javax.swing.JPanel campaignPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
