@@ -168,6 +168,7 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
             ShoppingItem temp = dataHandler.getShoppingCart().getItems().get(i);
             if(temp.getProduct() == product){
                 temp.setAmount(temp.getAmount() + (Integer)amountSpinner.getValue());
+                dataHandler.getShoppingCart().fireShoppingCartChanged(temp, true);
                 exists = true;
                 break;
             }
