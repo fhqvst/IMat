@@ -14,3 +14,11 @@
 [ ] Floating points när man köper multiplar av en vara. - ??<br>
 [ ] Fixa scroll panes (scrollar för långsamt) - ??<br>
 [ ] List-knappen är ingen knapp. - ??<br>
+
+##Test
+Spara användaruppgifter																								Ändra ett telefonnummer i mina uppgifter
+Lista olika slags urval av produkter											Se vilka fiskprodukter som går att köpa på iMat
+Söka bland produkter																											Kontrollera priset på Farinsocker
+Plocka fram bild och info om produkt											Läs mer om västerbotten ost på dens detaljsida
+En varukorg där man kan lägga valda produkter		Kontrollera att du verkligen har 3 kex i korgen
+Utför ett köp																																		Genomför ett köp
