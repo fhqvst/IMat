@@ -5,6 +5,9 @@
  */
 package imat;
 
+import java.awt.CardLayout;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
+
 /**
  *
  * @author kakan
@@ -12,12 +15,14 @@ package imat;
 public class ReminderAndStoredInformation extends javax.swing.JPanel implements java.beans.Customizer {
     
     private Object bean;
+    private IMatDataHandler idh = IMatDataHandler.getInstance();
 
     /**
      * Creates new customizer ReminderAndStoredInformation
      */
     public ReminderAndStoredInformation() {
         initComponents();
+        saveButtonActionPerformed(null);        
     }
     
     public void setObject(Object bean) {
@@ -32,41 +37,67 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        storedPersonalInformationPanel = new javax.swing.JPanel();
+        editPanel = new javax.swing.JPanel();
+        editStoredPersonalInformationPanel = new javax.swing.JPanel();
         contactInformationLabel = new javax.swing.JLabel();
-        nameLabel = new javax.swing.JLabel();
+        firstNameLabel = new javax.swing.JLabel();
         addressLabel = new javax.swing.JLabel();
-        nameTextField = new javax.swing.JTextField();
+        firstNameTextField = new javax.swing.JTextField();
         addressTextField = new javax.swing.JTextField();
-        postnummerLabel = new javax.swing.JLabel();
-        postnummerTextField = new javax.swing.JTextField();
-        cityLabel = new javax.swing.JLabel();
-        cityTextField = new javax.swing.JTextField();
+        postCodeLabel = new javax.swing.JLabel();
+        postCodeTextField = new javax.swing.JTextField();
         emailLabel = new javax.swing.JLabel();
         emailTextField = new javax.swing.JTextField();
         mobileLabel = new javax.swing.JLabel();
         mobileTextField = new javax.swing.JTextField();
         saveButton = new javax.swing.JButton();
-        reminderPanel = new javax.swing.JPanel();
+        lastNameLabel = new javax.swing.JLabel();
+        lastNameTextField = new javax.swing.JTextField();
+        editReminderPanel = new javax.swing.JPanel();
         reminderLabel = new javax.swing.JLabel();
         howLabel = new javax.swing.JLabel();
         frequenceyLabel = new javax.swing.JLabel();
         frequencyComboBox = new javax.swing.JComboBox();
         howComboBox = new javax.swing.JComboBox();
         newReminderButton = new javax.swing.JButton();
+        showPanel = new javax.swing.JPanel();
+        showStoredPersonalInformationPanel = new javax.swing.JPanel();
+        showContactInformationLabel = new javax.swing.JLabel();
+        showFirstNameLabel = new javax.swing.JLabel();
+        showAddressLabel = new javax.swing.JLabel();
+        showPostCodeLabel = new javax.swing.JLabel();
+        showEmailLabel = new javax.swing.JLabel();
+        showMobileLabel = new javax.swing.JLabel();
+        editButton = new javax.swing.JButton();
+        userFirstName = new javax.swing.JLabel();
+        userAddress = new javax.swing.JLabel();
+        userPostCode = new javax.swing.JLabel();
+        userEmail = new javax.swing.JLabel();
+        userMobile = new javax.swing.JLabel();
+        userLastName = new javax.swing.JLabel();
+        showLastName = new javax.swing.JLabel();
+        showReminderPanel = new javax.swing.JPanel();
+        reminderLabel1 = new javax.swing.JLabel();
+        howLabel1 = new javax.swing.JLabel();
+        frequenceyLabel1 = new javax.swing.JLabel();
+        frequencyComboBox1 = new javax.swing.JComboBox();
+        howComboBox1 = new javax.swing.JComboBox();
+        newReminderButton1 = new javax.swing.JButton();
 
-        setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.PAGE_AXIS));
+        setLayout(new java.awt.CardLayout());
 
-        storedPersonalInformationPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        editPanel.setLayout(new javax.swing.BoxLayout(editPanel, javax.swing.BoxLayout.PAGE_AXIS));
+
+        editStoredPersonalInformationPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         contactInformationLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         contactInformationLabel.setText("Kontaktuppgifter");
 
-        nameLabel.setText("Namn:");
+        firstNameLabel.setText("Förnamn:");
 
         addressLabel.setText("Adress:");
 
-        nameTextField.setText("Alexandra");
+        firstNameTextField.setText("Alexandra");
 
         addressTextField.setText("StreetIT 1337");
         addressTextField.addActionListener(new java.awt.event.ActionListener() {
@@ -75,13 +106,14 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
             }
         });
 
-        postnummerLabel.setText("Postnummer:");
+        postCodeLabel.setText("Postnummer:");
 
-        postnummerTextField.setText("133 37");
-
-        cityLabel.setText("Ort:");
-
-        cityTextField.setText("Leet");
+        postCodeTextField.setText("133 37");
+        postCodeTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                postCodeTextFieldActionPerformed(evt);
+            }
+        });
 
         emailLabel.setText("E-post:");
 
@@ -97,77 +129,86 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
         mobileTextField.setText("0703-12 13 37");
 
         saveButton.setText("Spara ändringar");
+        saveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveButtonActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout storedPersonalInformationPanelLayout = new javax.swing.GroupLayout(storedPersonalInformationPanel);
-        storedPersonalInformationPanel.setLayout(storedPersonalInformationPanelLayout);
-        storedPersonalInformationPanelLayout.setHorizontalGroup(
-            storedPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(storedPersonalInformationPanelLayout.createSequentialGroup()
+        lastNameLabel.setText("Efternamn:");
+
+        lastNameTextField.setText("Rodriguez");
+
+        javax.swing.GroupLayout editStoredPersonalInformationPanelLayout = new javax.swing.GroupLayout(editStoredPersonalInformationPanel);
+        editStoredPersonalInformationPanel.setLayout(editStoredPersonalInformationPanelLayout);
+        editStoredPersonalInformationPanelLayout.setHorizontalGroup(
+            editStoredPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(editStoredPersonalInformationPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(storedPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(contactInformationLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, storedPersonalInformationPanelLayout.createSequentialGroup()
-                        .addGroup(storedPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(addressLabel)
-                            .addComponent(postnummerLabel)
-                            .addComponent(nameLabel)
-                            .addComponent(cityLabel))
+                .addGroup(editStoredPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, editStoredPersonalInformationPanelLayout.createSequentialGroup()
+                        .addGroup(editStoredPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(postCodeLabel)
+                            .addComponent(addressLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lastNameLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(firstNameLabel, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(storedPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(postnummerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(editStoredPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(postCodeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(addressTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, storedPersonalInformationPanelLayout.createSequentialGroup()
+                            .addComponent(firstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, editStoredPersonalInformationPanelLayout.createSequentialGroup()
                         .addGap(44, 44, 44)
-                        .addGroup(storedPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(editStoredPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(emailLabel)
                             .addComponent(mobileLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(storedPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(editStoredPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(mobileTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(emailTextField)
-                            .addComponent(saveButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(saveButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(contactInformationLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        storedPersonalInformationPanelLayout.setVerticalGroup(
-            storedPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(storedPersonalInformationPanelLayout.createSequentialGroup()
-                .addContainerGap()
+        editStoredPersonalInformationPanelLayout.setVerticalGroup(
+            editStoredPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(editStoredPersonalInformationPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(contactInformationLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(storedPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nameLabel)
-                    .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(editStoredPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(firstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(firstNameLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(storedPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addressLabel)
-                    .addComponent(addressTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(editStoredPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lastNameLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(storedPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(postnummerLabel)
-                    .addComponent(postnummerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(editStoredPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addressTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addressLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(storedPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cityLabel)
-                    .addComponent(cityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(editStoredPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(postCodeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(postCodeLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(storedPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(emailLabel)
-                    .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(editStoredPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(emailLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(storedPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(mobileLabel)
-                    .addComponent(mobileTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(editStoredPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(mobileTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mobileLabel))
+                .addGap(18, 18, 18)
                 .addComponent(saveButton)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        add(storedPersonalInformationPanel);
+        editPanel.add(editStoredPersonalInformationPanel);
 
-        reminderPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        reminderPanel.setPreferredSize(new java.awt.Dimension(301, 200));
+        editReminderPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        editReminderPanel.setPreferredSize(new java.awt.Dimension(301, 200));
 
         reminderLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         reminderLabel.setText("Påminnelser");
@@ -182,42 +223,40 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
 
         newReminderButton.setText("Ny påminnelse");
 
-        javax.swing.GroupLayout reminderPanelLayout = new javax.swing.GroupLayout(reminderPanel);
-        reminderPanel.setLayout(reminderPanelLayout);
-        reminderPanelLayout.setHorizontalGroup(
-            reminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(reminderPanelLayout.createSequentialGroup()
-                .addGroup(reminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(reminderPanelLayout.createSequentialGroup()
+        javax.swing.GroupLayout editReminderPanelLayout = new javax.swing.GroupLayout(editReminderPanel);
+        editReminderPanel.setLayout(editReminderPanelLayout);
+        editReminderPanelLayout.setHorizontalGroup(
+            editReminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(editReminderPanelLayout.createSequentialGroup()
+                .addGroup(editReminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(editReminderPanelLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(reminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(editReminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(howLabel)
                             .addComponent(howComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(reminderPanelLayout.createSequentialGroup()
+                    .addGroup(editReminderPanelLayout.createSequentialGroup()
                         .addGap(89, 89, 89)
-                        .addGroup(reminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(editReminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(newReminderButton)
-                            .addGroup(reminderPanelLayout.createSequentialGroup()
-                                .addGap(23, 23, 23)
-                                .addGroup(reminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(frequenceyLabel)
-                                    .addComponent(frequencyComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(reminderPanelLayout.createSequentialGroup()
+                            .addGroup(editReminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(frequenceyLabel)
+                                .addComponent(frequencyComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(editReminderPanelLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(reminderLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        reminderPanelLayout.setVerticalGroup(
-            reminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(reminderPanelLayout.createSequentialGroup()
+        editReminderPanelLayout.setVerticalGroup(
+            editReminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(editReminderPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(reminderLabel)
                 .addGap(12, 12, 12)
-                .addGroup(reminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(editReminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(howLabel)
                     .addComponent(frequenceyLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(reminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(editReminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(howComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(frequencyComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -225,7 +264,174 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
                 .addContainerGap(60, Short.MAX_VALUE))
         );
 
-        add(reminderPanel);
+        editPanel.add(editReminderPanel);
+
+        add(editPanel, "editCard");
+
+        showPanel.setLayout(new javax.swing.BoxLayout(showPanel, javax.swing.BoxLayout.PAGE_AXIS));
+
+        showStoredPersonalInformationPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        showContactInformationLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        showContactInformationLabel.setText("Kontaktuppgifter");
+
+        showFirstNameLabel.setText("Förnamn:");
+
+        showAddressLabel.setText("Adress:");
+
+        showPostCodeLabel.setText("Postnummer:");
+
+        showEmailLabel.setText("E-post:");
+
+        showMobileLabel.setText("Mobil:");
+
+        editButton.setText("Redigera uppgifter");
+        editButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editButtonActionPerformed(evt);
+            }
+        });
+
+        userFirstName.setText("[förnamn]");
+
+        userAddress.setText("[adress]");
+
+        userPostCode.setText("[postnummer]");
+
+        userEmail.setText("[e-post]");
+
+        userMobile.setText("[mobil]");
+
+        userLastName.setText("[efternamn]");
+
+        showLastName.setText("Efternamn:");
+
+        javax.swing.GroupLayout showStoredPersonalInformationPanelLayout = new javax.swing.GroupLayout(showStoredPersonalInformationPanel);
+        showStoredPersonalInformationPanel.setLayout(showStoredPersonalInformationPanelLayout);
+        showStoredPersonalInformationPanelLayout.setHorizontalGroup(
+            showStoredPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(showStoredPersonalInformationPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(showStoredPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(showContactInformationLabel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, showStoredPersonalInformationPanelLayout.createSequentialGroup()
+                        .addGroup(showStoredPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(showStoredPersonalInformationPanelLayout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addGroup(showStoredPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(showEmailLabel)
+                                    .addComponent(showMobileLabel)
+                                    .addComponent(showLastName)))
+                            .addComponent(showPostCodeLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(showAddressLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(showFirstNameLabel, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(showStoredPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(userEmail)
+                            .addComponent(userMobile)
+                            .addComponent(userPostCode)
+                            .addComponent(userAddress)
+                            .addComponent(userLastName)
+                            .addComponent(userFirstName)))
+                    .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(87, Short.MAX_VALUE))
+        );
+        showStoredPersonalInformationPanelLayout.setVerticalGroup(
+            showStoredPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(showStoredPersonalInformationPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(showContactInformationLabel)
+                .addGap(18, 18, 18)
+                .addGroup(showStoredPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(userFirstName)
+                    .addComponent(showFirstNameLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(showStoredPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(userLastName)
+                    .addComponent(showLastName))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(showStoredPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(userAddress)
+                    .addComponent(showAddressLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(showStoredPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(userPostCode)
+                    .addComponent(showPostCodeLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(showStoredPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(userEmail)
+                    .addComponent(showEmailLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(showStoredPersonalInformationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(userMobile)
+                    .addComponent(showMobileLabel))
+                .addGap(18, 18, 18)
+                .addComponent(editButton)
+                .addContainerGap())
+        );
+
+        showPanel.add(showStoredPersonalInformationPanel);
+
+        showReminderPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        showReminderPanel.setPreferredSize(new java.awt.Dimension(301, 200));
+
+        reminderLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        reminderLabel1.setText("Påminnelser");
+
+        howLabel1.setText("Hur");
+
+        frequenceyLabel1.setText("Frekvens");
+
+        frequencyComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        howComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        newReminderButton1.setText("Ny påminnelse");
+
+        javax.swing.GroupLayout showReminderPanelLayout = new javax.swing.GroupLayout(showReminderPanel);
+        showReminderPanel.setLayout(showReminderPanelLayout);
+        showReminderPanelLayout.setHorizontalGroup(
+            showReminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(showReminderPanelLayout.createSequentialGroup()
+                .addGroup(showReminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(showReminderPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(showReminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(howLabel1)
+                            .addComponent(howComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(showReminderPanelLayout.createSequentialGroup()
+                        .addGap(89, 89, 89)
+                        .addGroup(showReminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(newReminderButton1)
+                            .addGroup(showReminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(frequenceyLabel1)
+                                .addComponent(frequencyComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(showReminderPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(reminderLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(97, Short.MAX_VALUE))
+        );
+        showReminderPanelLayout.setVerticalGroup(
+            showReminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(showReminderPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(reminderLabel1)
+                .addGap(12, 12, 12)
+                .addGroup(showReminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(howLabel1)
+                    .addComponent(frequenceyLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(showReminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(howComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(frequencyComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(newReminderButton1)
+                .addContainerGap(60, Short.MAX_VALUE))
+        );
+
+        showPanel.add(showReminderPanel);
+
+        add(showPanel, "showCard");
     }// </editor-fold>//GEN-END:initComponents
 
     private void addressTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressTextFieldActionPerformed
@@ -236,29 +442,81 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
         // TODO add your handling code here:
     }//GEN-LAST:event_emailTextFieldActionPerformed
 
+    private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
+        CardLayout cards = (CardLayout) this.getLayout();
+        cards.show(this, "editCard");
+    }//GEN-LAST:event_editButtonActionPerformed
+
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
+        idh.getCustomer().setAddress(addressTextField.getText());
+        idh.getCustomer().setEmail(emailTextField.getText());
+        idh.getCustomer().setFirstName(firstNameTextField.getText());
+        idh.getCustomer().setLastName(lastNameTextField.getText());
+        idh.getCustomer().setMobilePhoneNumber(mobileTextField.getText());;
+        idh.getCustomer().setPostCode(postCodeTextField.getText());
+        
+        userAddress.setText(idh.getCustomer().getAddress());
+        userEmail.setText(idh.getCustomer().getEmail());
+        userFirstName.setText(idh.getCustomer().getFirstName());
+        userLastName.setText(idh.getCustomer().getLastName());
+        userMobile.setText(idh.getCustomer().getMobilePhoneNumber());
+        userPostCode.setText(idh.getCustomer().getPostCode());
+        
+        CardLayout cards = (CardLayout) this.getLayout();
+        cards.show(this, "showCard");
+    }//GEN-LAST:event_saveButtonActionPerformed
+
+    private void postCodeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_postCodeTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_postCodeTextFieldActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel addressLabel;
     private javax.swing.JTextField addressTextField;
-    private javax.swing.JLabel cityLabel;
-    private javax.swing.JTextField cityTextField;
     private javax.swing.JLabel contactInformationLabel;
+    private javax.swing.JButton editButton;
+    private javax.swing.JPanel editPanel;
+    private javax.swing.JPanel editReminderPanel;
+    private javax.swing.JPanel editStoredPersonalInformationPanel;
     private javax.swing.JLabel emailLabel;
     private javax.swing.JTextField emailTextField;
+    private javax.swing.JLabel firstNameLabel;
+    private javax.swing.JTextField firstNameTextField;
     private javax.swing.JLabel frequenceyLabel;
+    private javax.swing.JLabel frequenceyLabel1;
     private javax.swing.JComboBox frequencyComboBox;
+    private javax.swing.JComboBox frequencyComboBox1;
     private javax.swing.JComboBox howComboBox;
+    private javax.swing.JComboBox howComboBox1;
     private javax.swing.JLabel howLabel;
+    private javax.swing.JLabel howLabel1;
+    private javax.swing.JLabel lastNameLabel;
+    private javax.swing.JTextField lastNameTextField;
     private javax.swing.JLabel mobileLabel;
     private javax.swing.JTextField mobileTextField;
-    private javax.swing.JLabel nameLabel;
-    private javax.swing.JTextField nameTextField;
     private javax.swing.JButton newReminderButton;
-    private javax.swing.JLabel postnummerLabel;
-    private javax.swing.JTextField postnummerTextField;
+    private javax.swing.JButton newReminderButton1;
+    private javax.swing.JLabel postCodeLabel;
+    private javax.swing.JTextField postCodeTextField;
     private javax.swing.JLabel reminderLabel;
-    private javax.swing.JPanel reminderPanel;
+    private javax.swing.JLabel reminderLabel1;
     private javax.swing.JButton saveButton;
-    private javax.swing.JPanel storedPersonalInformationPanel;
+    private javax.swing.JLabel showAddressLabel;
+    private javax.swing.JLabel showContactInformationLabel;
+    private javax.swing.JLabel showEmailLabel;
+    private javax.swing.JLabel showFirstNameLabel;
+    private javax.swing.JLabel showLastName;
+    private javax.swing.JLabel showMobileLabel;
+    private javax.swing.JPanel showPanel;
+    private javax.swing.JLabel showPostCodeLabel;
+    private javax.swing.JPanel showReminderPanel;
+    private javax.swing.JPanel showStoredPersonalInformationPanel;
+    private javax.swing.JLabel userAddress;
+    private javax.swing.JLabel userEmail;
+    private javax.swing.JLabel userFirstName;
+    private javax.swing.JLabel userLastName;
+    private javax.swing.JLabel userMobile;
+    private javax.swing.JLabel userPostCode;
     // End of variables declaration//GEN-END:variables
 }

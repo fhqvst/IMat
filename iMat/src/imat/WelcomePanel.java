@@ -5,6 +5,8 @@
  */
 package imat;
 
+import se.chalmers.ait.dat215.project.IMatDataHandler;
+
 /**
  *
  * @author kakan
@@ -18,8 +20,9 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
      */
     public WelcomePanel() {
         initComponents();
-        welcomeLabel.setText("<html>  <h1> Välkommen Alexandra! </h1> </html>");
+        welcomeLabel.setText("<html>  <h1> Välkommen " + IMatDataHandler.getInstance().getCustomer().getFirstName() /*Alexandra!*/ + " </h1> </html>");
         recipeLabel.setText("<html> <h2> Dagens recept:   " + getRecipeOfTheDay() + "</h2> </html>");
+        
     }
     
     public void setObject(Object bean) {
@@ -48,7 +51,7 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
         trendPanel = new javax.swing.JPanel();
         trendLabel = new javax.swing.JLabel();
         campaignPanel = new javax.swing.JPanel();
-        campaignPlaceholder = new javax.swing.JLabel();
+        campaignLabel = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -63,7 +66,7 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
         welcomePanel.setLayout(welcomePanelLayout);
         welcomePanelLayout.setHorizontalGroup(
             welcomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(welcomeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 855, Short.MAX_VALUE)
+            .addComponent(welcomeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
         );
         welcomePanelLayout.setVerticalGroup(
             welcomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,14 +90,14 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
             .addGroup(recipePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(recipeLabel)
-                .addContainerGap(208, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         recipePanelLayout.setVerticalGroup(
             recipePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(recipePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(recipeLabel)
-                .addContainerGap(193, Short.MAX_VALUE))
+                .addContainerGap(120, Short.MAX_VALUE))
         );
 
         newsPanel.add(recipePanel);
@@ -108,14 +111,14 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
             .addGroup(trendPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(trendLabel)
-                .addContainerGap(230, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         trendPanelLayout.setVerticalGroup(
             trendPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(trendPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(trendLabel)
-                .addContainerGap(193, Short.MAX_VALUE))
+                .addContainerGap(120, Short.MAX_VALUE))
         );
 
         newsPanel.add(trendPanel);
@@ -124,23 +127,23 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
 
         campaignPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        campaignPlaceholder.setText("Kampanjer");
+        campaignLabel.setText("Kampanjer");
 
         javax.swing.GroupLayout campaignPanelLayout = new javax.swing.GroupLayout(campaignPanel);
         campaignPanel.setLayout(campaignPanelLayout);
         campaignPanelLayout.setHorizontalGroup(
             campaignPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(campaignPanelLayout.createSequentialGroup()
-                .addGap(224, 224, 224)
-                .addComponent(campaignPlaceholder)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(campaignLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 90, Short.MAX_VALUE)
+                .addContainerGap())
         );
         campaignPanelLayout.setVerticalGroup(
             campaignPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, campaignPanelLayout.createSequentialGroup()
-                .addContainerGap(360, Short.MAX_VALUE)
-                .addComponent(campaignPlaceholder)
-                .addGap(68, 68, 68))
+            .addGroup(campaignPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(campaignLabel)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         navigationPanel.add(campaignPanel);
@@ -150,8 +153,8 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel campaignLabel;
     private javax.swing.JPanel campaignPanel;
-    private javax.swing.JLabel campaignPlaceholder;
     private javax.swing.JPanel navigationPanel;
     private javax.swing.JPanel newsPanel;
     private javax.swing.JLabel recipeLabel;
