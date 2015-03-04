@@ -32,185 +32,164 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        currentTipsScrollPane = new javax.swing.JScrollPane();
+        hintsButtonGroup = new javax.swing.ButtonGroup();
         currentTipsLayoutPanel = new javax.swing.JPanel();
         currentTipsPanel = new javax.swing.JPanel();
-        jLabel61 = new javax.swing.JLabel();
+        hintsHeaderLabel = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
+        currentHintTextArea = new javax.swing.JTextArea();
+        hintsNavigationPanel = new javax.swing.JPanel();
         jButton18 = new javax.swing.JButton();
         jButton19 = new javax.swing.JButton();
         jButton20 = new javax.swing.JButton();
+        jLabel63 = new javax.swing.JLabel();
         jButton22 = new javax.swing.JButton();
-        jLabel62 = new javax.swing.JLabel();
         jButton23 = new javax.swing.JButton();
         jButton24 = new javax.swing.JButton();
-        jLabel63 = new javax.swing.JLabel();
-        jButton30 = new javax.swing.JButton();
+        jLabel62 = new javax.swing.JLabel();
         jButton31 = new javax.swing.JButton();
+        jButton30 = new javax.swing.JButton();
         jButton32 = new javax.swing.JButton();
-        jLabel64 = new javax.swing.JLabel();
+        needHelpPanel = new javax.swing.JPanel();
+        needHelpLabel = new javax.swing.JLabel();
+        findHelpPanel = new javax.swing.JPanel();
         jLabel65 = new javax.swing.JLabel();
         jButton33 = new javax.swing.JButton();
         jLabel66 = new javax.swing.JLabel();
         jButton34 = new javax.swing.JButton();
-        manualScrollPane = new javax.swing.JScrollPane();
         manualPanel = new javax.swing.JPanel();
         jLabel60 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
-        setLayout(new java.awt.GridLayout());
+        setLayout(new java.awt.GridLayout(1, 0));
 
-        currentTipsScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        hintsHeaderLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        hintsHeaderLabel.setText("Tips 13/37");
 
-        jLabel61.setText("Tips 13/37");
-
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jTextArea2.setText("Lorem ipsum dolor sit amet, consectetur adipisicing elit,\nsed do eiusmod tempor incididunt ut labore et dolore\n magna aliqua. Ut enim ad minim veniam, quis \nnostrud exercitation ullamco \n\nlaboris nisi ut aliquip ex ea commodo consequat\n. Duis aute irure dolor in reprehenderit in voluptate velit \nesse cillum dolore eu fugiat nulla pariatur. \n\nExcepteur sint occaecat cupidatat non proident, sunt \nin culpa qui officia deserunt mollit anim id est laborum.\n");
-        jScrollPane7.setViewportView(jTextArea2);
+        currentHintTextArea.setColumns(20);
+        currentHintTextArea.setRows(5);
+        currentHintTextArea.setText("Lorem ipsum dolor sit amet, consectetur adipisicing elit,\nsed do eiusmod tempor incididunt ut labore et dolore\n magna aliqua. Ut enim ad minim veniam, quis \nnostrud exercitation ullamco \n\nlaboris nisi ut aliquip ex ea commodo consequat\n. Duis aute irure dolor in reprehenderit in voluptate velit \nesse cillum dolore eu fugiat nulla pariatur. \n\nExcepteur sint occaecat cupidatat non proident, sunt \nin culpa qui officia deserunt mollit anim id est laborum.\n");
+        jScrollPane7.setViewportView(currentHintTextArea);
 
         jButton18.setText("<<");
+        hintsButtonGroup.add(jButton18);
+        hintsNavigationPanel.add(jButton18);
 
         jButton19.setText("1");
+        hintsButtonGroup.add(jButton19);
+        hintsNavigationPanel.add(jButton19);
 
         jButton20.setText("2");
-
-        jButton22.setText("12");
-
-        jLabel62.setText(". . .");
-
-        jButton23.setText("13");
-
-        jButton24.setText("14");
+        hintsButtonGroup.add(jButton20);
+        hintsNavigationPanel.add(jButton20);
 
         jLabel63.setText(". . .");
+        hintsNavigationPanel.add(jLabel63);
 
-        jButton30.setText("36");
+        jButton22.setText("12");
+        hintsButtonGroup.add(jButton22);
+        hintsNavigationPanel.add(jButton22);
+
+        jButton23.setText("13");
+        hintsButtonGroup.add(jButton23);
+        hintsNavigationPanel.add(jButton23);
+
+        jButton24.setText("14");
+        hintsButtonGroup.add(jButton24);
+        hintsNavigationPanel.add(jButton24);
+
+        jLabel62.setText(". . .");
+        hintsNavigationPanel.add(jLabel62);
 
         jButton31.setText("37");
+        hintsButtonGroup.add(jButton31);
+        hintsNavigationPanel.add(jButton31);
+
+        jButton30.setText("36");
+        hintsButtonGroup.add(jButton30);
+        hintsNavigationPanel.add(jButton30);
 
         jButton32.setText(">>");
+        hintsButtonGroup.add(jButton32);
+        hintsNavigationPanel.add(jButton32);
 
-        jLabel64.setText("Behöver du hjälp?");
+        needHelpPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        needHelpPanel.setLayout(new java.awt.BorderLayout());
+
+        needHelpLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        needHelpLabel.setText("Behöver du hjälp?");
+        needHelpPanel.add(needHelpLabel, java.awt.BorderLayout.NORTH);
 
         jLabel65.setText("Besök vårt");
+        findHelpPanel.add(jLabel65);
 
         jButton33.setText("forum");
+        findHelpPanel.add(jButton33);
 
         jLabel66.setText("eller");
+        findHelpPanel.add(jLabel66);
 
         jButton34.setText("kontakta oss");
+        findHelpPanel.add(jButton34);
+
+        needHelpPanel.add(findHelpPanel, java.awt.BorderLayout.CENTER);
 
         javax.swing.GroupLayout currentTipsPanelLayout = new javax.swing.GroupLayout(currentTipsPanel);
         currentTipsPanel.setLayout(currentTipsPanelLayout);
         currentTipsPanelLayout.setHorizontalGroup(
             currentTipsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(currentTipsPanelLayout.createSequentialGroup()
-                .addGroup(currentTipsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(currentTipsPanelLayout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addComponent(jLabel61))
-                    .addGroup(currentTipsPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(currentTipsPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(currentTipsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(currentTipsPanelLayout.createSequentialGroup()
-                                .addComponent(jButton18)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton19)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton20))
-                            .addComponent(jLabel65))
-                        .addGap(4, 4, 4)
-                        .addGroup(currentTipsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(currentTipsPanelLayout.createSequentialGroup()
-                                .addComponent(jButton33)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel66)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton34))
-                            .addGroup(currentTipsPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel62)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(currentTipsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel64)
-                                    .addGroup(currentTipsPanelLayout.createSequentialGroup()
-                                        .addComponent(jButton22)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton23)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton24)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jLabel63)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton30)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton31)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton32)))))))
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(currentTipsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(needHelpPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(currentTipsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(hintsHeaderLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(hintsNavigationPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         currentTipsPanelLayout.setVerticalGroup(
             currentTipsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(currentTipsPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel61)
+                .addComponent(hintsHeaderLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(currentTipsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton18)
-                    .addComponent(jButton20)
-                    .addComponent(jButton19)
-                    .addComponent(jLabel62)
-                    .addComponent(jButton22)
-                    .addComponent(jButton23)
-                    .addComponent(jButton24)
-                    .addComponent(jLabel63)
-                    .addComponent(jButton30)
-                    .addComponent(jButton31)
-                    .addComponent(jButton32))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel64)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(currentTipsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel65)
-                    .addComponent(jButton33)
-                    .addComponent(jLabel66)
-                    .addComponent(jButton34))
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addComponent(hintsNavigationPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(needHelpPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout currentTipsLayoutPanelLayout = new javax.swing.GroupLayout(currentTipsLayoutPanel);
         currentTipsLayoutPanel.setLayout(currentTipsLayoutPanelLayout);
         currentTipsLayoutPanelLayout.setHorizontalGroup(
             currentTipsLayoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(currentTipsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(currentTipsLayoutPanelLayout.createSequentialGroup()
+                .addComponent(currentTipsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         currentTipsLayoutPanelLayout.setVerticalGroup(
             currentTipsLayoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(currentTipsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(currentTipsLayoutPanelLayout.createSequentialGroup()
+                .addComponent(currentTipsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
-        currentTipsScrollPane.setViewportView(currentTipsLayoutPanel);
+        add(currentTipsLayoutPanel);
 
-        add(currentTipsScrollPane);
+        manualPanel.setPreferredSize(null);
 
-        manualScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-
-        manualPanel.setPreferredSize(new java.awt.Dimension(100, 400));
-
+        jLabel60.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel60.setText("Manual");
 
         jScrollPane6.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
+        jTextArea1.setText("Lorem ipsum dolor sit amet, consectetur adipisicing elit,\nsed do eiusmod tempor incididunt ut labore et dolore\n magna aliqua. Ut enim ad minim veniam, quis \nnostrud exercitation ullamco \n\nlaboris nisi ut aliquip ex ea commodo consequat\n. Duis aute irure dolor in reprehenderit in voluptate velit \nesse cillum dolore eu fugiat nulla pariatur. \n\nExcepteur sint occaecat cupidatat non proident, sunt \nin culpa qui officia deserunt mollit anim id est laborum.\n");
         jTextArea1.setToolTipText("");
         jScrollPane6.setViewportView(jTextArea1);
 
@@ -218,13 +197,11 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         manualPanel.setLayout(manualPanelLayout);
         manualPanelLayout.setHorizontalGroup(
             manualPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, manualPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel60)
-                .addGap(167, 167, 167))
             .addGroup(manualPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 412, Short.MAX_VALUE)
+                .addGroup(manualPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel60, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 654, Short.MAX_VALUE))
                 .addContainerGap())
         );
         manualPanelLayout.setVerticalGroup(
@@ -233,20 +210,22 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
                 .addContainerGap()
                 .addComponent(jLabel60)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 475, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        manualScrollPane.setViewportView(manualPanel);
-
-        add(manualScrollPane);
+        add(manualPanel);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextArea currentHintTextArea;
     private javax.swing.JPanel currentTipsLayoutPanel;
     private javax.swing.JPanel currentTipsPanel;
-    private javax.swing.JScrollPane currentTipsScrollPane;
+    private javax.swing.JPanel findHelpPanel;
+    private javax.swing.ButtonGroup hintsButtonGroup;
+    private javax.swing.JLabel hintsHeaderLabel;
+    private javax.swing.JPanel hintsNavigationPanel;
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton20;
@@ -259,17 +238,15 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
     private javax.swing.JButton jButton33;
     private javax.swing.JButton jButton34;
     private javax.swing.JLabel jLabel60;
-    private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
-    private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
     private javax.swing.JPanel manualPanel;
-    private javax.swing.JScrollPane manualScrollPane;
+    private javax.swing.JLabel needHelpLabel;
+    private javax.swing.JPanel needHelpPanel;
     // End of variables declaration//GEN-END:variables
 }
