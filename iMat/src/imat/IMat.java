@@ -4,6 +4,8 @@ import com.sun.org.apache.xalan.internal.xsltc.runtime.BasisLibrary;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;
+import java.util.Timer;
+import java.util.TimerTask;
 import javax.swing.UIManager;
 import se.chalmers.ait.dat215.project.*;
 
@@ -554,6 +556,19 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     @Override
     public void shoppingCartChanged(CartEvent ce) {
         updateCartLabels();
+        cartPanel.setBackground(Color.green);
+        cartPanel.repaint();
+        cartPanel.revalidate();
+        
+        Timer t = new Timer();
+        t.schedule(new TimerTask() {
+            public void run(){
+                cartPanel.setBackground(Color.white);
+                cartPanel.repaint();
+                cartPanel.revalidate();
+            }
+        },1500);
+        
     }
     /**
      * @param args the command line arguments
