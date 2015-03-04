@@ -46,18 +46,14 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="myFavoritesLabel" min="-2" max="-2" attributes="0"/>
-                          <Component id="myFavouritesList" min="-2" pref="182" max="-2" attributes="0"/>
-                          <Component id="myIgnoresLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="myIgnoresLabel" pref="434" max="32767" attributes="0"/>
+                          <Component id="myFavouritesList" max="32767" attributes="0"/>
+                          <Component id="myFavoritesLabel" max="32767" attributes="0"/>
+                          <Component id="myIgnoresList" alignment="1" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="myIgnoresList" min="-2" pref="205" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -81,6 +77,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="myFavoritesLabel">
               <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Mina favoriter"/>
               </Properties>
             </Component>
@@ -108,6 +105,7 @@
             </Container>
             <Component class="javax.swing.JLabel" name="myIgnoresLabel">
               <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Mina borttagna varor"/>
               </Properties>
             </Component>
@@ -134,21 +132,6 @@
               </SubComponents>
             </Container>
           </SubComponents>
-        </Container>
-        <Container class="javax.swing.JPanel" name="myIgnoresPanel">
-
-          <Layout>
-            <DimensionLayout dim="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="229" max="32767" attributes="0"/>
-              </Group>
-            </DimensionLayout>
-            <DimensionLayout dim="1">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="524" max="32767" attributes="0"/>
-              </Group>
-            </DimensionLayout>
-          </Layout>
         </Container>
       </SubComponents>
     </Container>

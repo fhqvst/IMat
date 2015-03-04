@@ -19,6 +19,11 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
     public MyPreferenses() {
         initComponents();
     }
+
+    MyPreferenses(int width, int height) {
+        this();
+        super.setSize(width, height);
+    }
     
     public void setObject(Object bean) {
         this.bean = bean;
@@ -40,15 +45,15 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
         myIgnoresLabel = new javax.swing.JLabel();
         myIgnoresList = new javax.swing.JScrollPane();
         jList5 = new javax.swing.JList();
-        myIgnoresPanel = new javax.swing.JPanel();
 
         setPreferredSize(null);
         setLayout(new java.awt.GridLayout(1, 0));
 
         myPreferenses.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         myPreferenses.setPreferredSize(new java.awt.Dimension(301, 505));
-        myPreferenses.setLayout(new java.awt.GridLayout());
+        myPreferenses.setLayout(new java.awt.GridLayout(1, 0));
 
+        myFavoritesLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         myFavoritesLabel.setText("Mina favoriter");
 
         jList1.setModel(new javax.swing.AbstractListModel() {
@@ -58,6 +63,7 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
         });
         myFavouritesList.setViewportView(jList1);
 
+        myIgnoresLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         myIgnoresLabel.setText("Mina borttagna varor");
 
         jList5.setModel(new javax.swing.AbstractListModel() {
@@ -74,13 +80,10 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
             .addGroup(myFavouritesPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(myFavouritesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(myFavoritesLabel)
-                    .addComponent(myFavouritesList, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(myIgnoresLabel))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, myFavouritesPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(myIgnoresList, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(myIgnoresLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
+                    .addComponent(myFavouritesList)
+                    .addComponent(myFavoritesLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(myIgnoresList, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         myFavouritesPanelLayout.setVerticalGroup(
@@ -99,19 +102,6 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
 
         myPreferenses.add(myFavouritesPanel);
 
-        javax.swing.GroupLayout myIgnoresPanelLayout = new javax.swing.GroupLayout(myIgnoresPanel);
-        myIgnoresPanel.setLayout(myIgnoresPanelLayout);
-        myIgnoresPanelLayout.setHorizontalGroup(
-            myIgnoresPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 229, Short.MAX_VALUE)
-        );
-        myIgnoresPanelLayout.setVerticalGroup(
-            myIgnoresPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 524, Short.MAX_VALUE)
-        );
-
-        myPreferenses.add(myIgnoresPanel);
-
         add(myPreferenses);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -124,7 +114,6 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
     private javax.swing.JPanel myFavouritesPanel;
     private javax.swing.JLabel myIgnoresLabel;
     private javax.swing.JScrollPane myIgnoresList;
-    private javax.swing.JPanel myIgnoresPanel;
     private javax.swing.JPanel myPreferenses;
     // End of variables declaration//GEN-END:variables
 }

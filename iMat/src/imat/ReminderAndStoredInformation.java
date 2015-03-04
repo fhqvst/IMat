@@ -22,11 +22,34 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
      */
     public ReminderAndStoredInformation() {
         initComponents();
-        saveButtonActionPerformed(null);        
+        setLabelsFromStoredInformation();        
+    }
+
+    ReminderAndStoredInformation(int width, int height) {
+        this();
+        super.setSize(width, height);
     }
     
     public void setObject(Object bean) {
         this.bean = bean;
+    }
+    
+    public void setLabelsFromStoredInformation() {                  //Är inte säker på att informationen sparas...
+        userAddress.setText(idh.getCustomer().getAddress());
+        userEmail.setText(idh.getCustomer().getEmail());
+        userFirstName.setText(idh.getCustomer().getFirstName());
+        userLastName.setText(idh.getCustomer().getLastName());
+        userMobile.setText(idh.getCustomer().getMobilePhoneNumber());
+        userPostCode.setText(idh.getCustomer().getPostCode());
+    }
+    
+    public void storeInformaitonFromTextFields() {
+        idh.getCustomer().setAddress(addressTextField.getText());
+        idh.getCustomer().setEmail(emailTextField.getText());
+        idh.getCustomer().setFirstName(firstNameTextField.getText());
+        idh.getCustomer().setLastName(lastNameTextField.getText());
+        idh.getCustomer().setMobilePhoneNumber(mobileTextField.getText());;
+        idh.getCustomer().setPostCode(postCodeTextField.getText());
     }
 
     /**
@@ -94,13 +117,14 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
         howComboBox1 = new javax.swing.JComboBox();
         newReminderButton1 = new javax.swing.JButton();
 
+        setMinimumSize(new java.awt.Dimension(292, 300));
+        setPreferredSize(new java.awt.Dimension(376, 300));
         setLayout(new java.awt.CardLayout());
 
         editPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
         editPanel.setLayout(new javax.swing.BoxLayout(editPanel, javax.swing.BoxLayout.PAGE_AXIS));
 
         editStoredPersonalInformationPanel.setBorder(null);
-        editStoredPersonalInformationPanel.setPreferredSize(null);
         editStoredPersonalInformationPanel.setLayout(new javax.swing.BoxLayout(editStoredPersonalInformationPanel, javax.swing.BoxLayout.PAGE_AXIS));
 
         contactInformationLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -140,7 +164,6 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
         contactInformationGridPanel.add(firstNameLabel);
 
         firstNameTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        firstNameTextField.setText("Alexandra");
         contactInformationGridPanel.add(firstNameTextField);
 
         lastNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -148,7 +171,6 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
         contactInformationGridPanel.add(lastNameLabel);
 
         lastNameTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        lastNameTextField.setText("Rodriguez");
         contactInformationGridPanel.add(lastNameTextField);
 
         addressLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -156,7 +178,6 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
         contactInformationGridPanel.add(addressLabel);
 
         addressTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        addressTextField.setText("StreetIT 1337");
         addressTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addressTextFieldActionPerformed(evt);
@@ -169,7 +190,6 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
         contactInformationGridPanel.add(postCodeLabel);
 
         postCodeTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        postCodeTextField.setText("133 37");
         postCodeTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 postCodeTextFieldActionPerformed(evt);
@@ -182,7 +202,6 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
         contactInformationGridPanel.add(emailLabel);
 
         emailTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        emailTextField.setText("alexandra@grönIT.se");
         emailTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailTextFieldActionPerformed(evt);
@@ -195,7 +214,6 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
         contactInformationGridPanel.add(mobileLabel);
 
         mobileTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        mobileTextField.setText("0703-12 13 37");
         contactInformationGridPanel.add(mobileTextField);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -302,7 +320,6 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
         showPanel.setLayout(new javax.swing.BoxLayout(showPanel, javax.swing.BoxLayout.PAGE_AXIS));
 
         showStoredPersonalInformationPanel.setBorder(null);
-        showStoredPersonalInformationPanel.setPreferredSize(null);
         showStoredPersonalInformationPanel.setLayout(new javax.swing.BoxLayout(showStoredPersonalInformationPanel, javax.swing.BoxLayout.PAGE_AXIS));
 
         showContactInformationLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -500,19 +517,8 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
     }//GEN-LAST:event_editButtonActionPerformed
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
-        idh.getCustomer().setAddress(addressTextField.getText());
-        idh.getCustomer().setEmail(emailTextField.getText());
-        idh.getCustomer().setFirstName(firstNameTextField.getText());
-        idh.getCustomer().setLastName(lastNameTextField.getText());
-        idh.getCustomer().setMobilePhoneNumber(mobileTextField.getText());;
-        idh.getCustomer().setPostCode(postCodeTextField.getText());
-        
-        userAddress.setText(idh.getCustomer().getAddress());
-        userEmail.setText(idh.getCustomer().getEmail());
-        userFirstName.setText(idh.getCustomer().getFirstName());
-        userLastName.setText(idh.getCustomer().getLastName());
-        userMobile.setText(idh.getCustomer().getMobilePhoneNumber());
-        userPostCode.setText(idh.getCustomer().getPostCode());
+        storeInformaitonFromTextFields();
+        setLabelsFromStoredInformation();
         
         CardLayout cards = (CardLayout) this.getLayout();
         cards.show(this, "showCard");
