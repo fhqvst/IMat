@@ -45,6 +45,7 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
         
     }
     
+    @Override
     public void stateChanged(ChangeEvent changeEvent) {
         ((IMat)this.getTopLevelAncestor()).getProductCategoryPanel().applyFilters(this);
     }
@@ -126,8 +127,12 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
         jLabel1 = new javax.swing.JLabel();
         filterPanel = new javax.swing.JPanel();
         unselectAllButton = new javax.swing.JButton();
+        selectAllButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setMaximumSize(new java.awt.Dimension(180, 32767));
+        setMinimumSize(new java.awt.Dimension(150, 0));
+        setPreferredSize(new java.awt.Dimension(180, 434));
 
         titleLable.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         titleLable.setText("Title");
@@ -143,6 +148,13 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
             }
         });
 
+        selectAllButton.setText("Återställ filtrering");
+        selectAllButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                selectAllButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -150,12 +162,18 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(titleLable, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(unselectAllButton)
-                    .addComponent(filterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(titleLable, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)
+                            .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(filterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(selectAllButton, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                            .addComponent(unselectAllButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 10, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,8 +185,10 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(filterPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addComponent(filterPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(selectAllButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(unselectAllButton)
                 .addContainerGap())
         );
@@ -180,11 +200,18 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
         }
     }//GEN-LAST:event_unselectAllButtonActionPerformed
 
+    private void selectAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectAllButtonActionPerformed
+        for(int i=0; i<filterBoxes.length; i++ ) {
+            filterBoxes[i].setSelected(true);
+        }
+    }//GEN-LAST:event_selectAllButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel filterPanel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JButton selectAllButton;
     private javax.swing.JLabel titleLable;
     private javax.swing.JButton unselectAllButton;
     // End of variables declaration//GEN-END:variables
