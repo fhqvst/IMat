@@ -5,7 +5,10 @@
  */
 package imat;
 
+import java.awt.Color;
+import java.awt.Dimension;
 import java.util.List;
+import javax.swing.JPanel;
 import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;
 
@@ -16,12 +19,16 @@ import se.chalmers.ait.dat215.project.ProductCategory;
 public class ProductCategoryPanel extends javax.swing.JPanel implements java.beans.Customizer {
     
     private Object bean;
+    private JPanel filterPanel = new JPanel();
 
     /**
      * Creates new customizer PageCard
      */
     public ProductCategoryPanel() {
         initComponents();
+        productsScrollPane.getVerticalScrollBar().setUnitIncrement(16);
+        filterPanel.setBackground(Color.white);
+        this.add(filterPanel, 0);
     }
     
     public ProductCategoryPanel(ProductCategory... productCategories) {
@@ -31,6 +38,7 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
     
     public ProductCategoryPanel(List<Product> products) {
         this();
+        filterPanel.setVisible(false);
         for(Product product : products) {
                 
             ProductPanel productPanel = new ProductPanel(product);
@@ -100,27 +108,21 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        filterPanel = new javax.swing.JPanel();
         productsScrollPane = new javax.swing.JScrollPane();
         productsPanel = new javax.swing.JPanel();
 
+        setBackground(javax.swing.UIManager.getDefaults().getColor("window"));
         setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
         setMinimumSize(new java.awt.Dimension(0, 0));
         setPreferredSize(new java.awt.Dimension(100, 200));
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.LINE_AXIS));
 
-        filterPanel.setBackground(new java.awt.Color(255, 255, 255));
-        filterPanel.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20)));
-        filterPanel.setMaximumSize(new java.awt.Dimension(200, 2147483647));
-        filterPanel.setMinimumSize(new java.awt.Dimension(0, 0));
-        filterPanel.setPreferredSize(new java.awt.Dimension(190, 0));
-        filterPanel.setLayout(new java.awt.BorderLayout());
-        add(filterPanel);
-
+        productsScrollPane.setBackground(javax.swing.UIManager.getDefaults().getColor("window"));
         productsScrollPane.setBorder(null);
         productsScrollPane.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
         productsScrollPane.setMinimumSize(new java.awt.Dimension(0, 0));
 
+        productsPanel.setBackground(java.awt.SystemColor.window);
         productsPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
         productsPanel.setMaximumSize(new java.awt.Dimension(1084, 2147483647));
         productsPanel.setMinimumSize(new java.awt.Dimension(1084, 2147483647));
@@ -132,7 +134,6 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel filterPanel;
     private javax.swing.JPanel productsPanel;
     private javax.swing.JScrollPane productsScrollPane;
     // End of variables declaration//GEN-END:variables

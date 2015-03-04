@@ -19,6 +19,11 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
     public MyPreviousShopping() {
         initComponents();
     }
+
+    MyPreviousShopping(int width, int height) {
+        this();
+        super.setSize(width, height);
+    }
     
     public void setObject(Object bean) {
         this.bean = bean;

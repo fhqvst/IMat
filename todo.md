@@ -12,7 +12,6 @@
 [ ] Bilder för favourite/unfavourite (ifyllt samt icke-ifyllt hjärta?)<br>
 [ ] Visa tidigare inköp (När profilsidan är lite mer uppdaterad) - Lloyd
 [ ] Floating points när man köper multiplar av en vara. - ??<br>
-[ ] Fixa scroll panes (scrollar för långsamt) - ??<br>
 [ ] List-knappen är ingen knapp. - ??<br>
 
 ##Test

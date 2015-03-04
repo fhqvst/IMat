@@ -62,7 +62,8 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         jScrollPane6 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
 
-        setLayout(new java.awt.GridLayout(1, 0));
+        setPreferredSize(null);
+        setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.LINE_AXIS));
 
         hintsHeaderLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         hintsHeaderLabel.setText("Tips 13/37");
@@ -114,7 +115,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         hintsButtonGroup.add(jButton32);
         hintsNavigationPanel.add(jButton32);
 
-        needHelpPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        needHelpPanel.setBorder(null);
         needHelpPanel.setLayout(new java.awt.BorderLayout());
 
         needHelpLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -143,24 +144,24 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
                 .addContainerGap()
                 .addGroup(currentTipsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(needHelpPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(currentTipsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(hintsHeaderLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(hintsNavigationPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane7, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(hintsNavigationPanel, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, currentTipsPanelLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(hintsHeaderLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         currentTipsPanelLayout.setVerticalGroup(
             currentTipsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(currentTipsPanelLayout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(hintsHeaderLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(hintsNavigationPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(53, 53, 53)
                 .addComponent(needHelpPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout currentTipsLayoutPanelLayout = new javax.swing.GroupLayout(currentTipsLayoutPanel);
@@ -179,8 +180,6 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         );
 
         add(currentTipsLayoutPanel);
-
-        manualPanel.setPreferredSize(null);
 
         jLabel60.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel60.setText("Manual");
@@ -201,7 +200,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
                 .addContainerGap()
                 .addGroup(manualPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel60, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 654, Short.MAX_VALUE))
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 974, Short.MAX_VALUE))
                 .addContainerGap())
         );
         manualPanelLayout.setVerticalGroup(
