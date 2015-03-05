@@ -4,8 +4,12 @@ import com.sun.org.apache.xalan.internal.xsltc.runtime.BasisLibrary;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Timer;
 import java.util.TimerTask;
+import javax.swing.JToggleButton;
 import javax.swing.UIManager;
 import se.chalmers.ait.dat215.project.*;
 
@@ -27,6 +31,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     private DetailPanel detailPanel;
     private boolean cartShowing = true;
     private boolean listShowing = true;
+    private LinkedList<ActionEvent> previousCards =  new LinkedList<>();
+    private LinkedList<ActionEvent> nextCards =  new LinkedList<>();
     
     /**
      * Creates new form IMat
@@ -44,6 +50,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         dataHandler.getShoppingCart().addShoppingCartListener(this);
         updateCartLabels();
         homeButton.requestFocus();
+
       
         /*
         Map<String, ProductCategoryPanel> productCategoryPanels = new TreeMap<String, ProductCategoryPanel>();
@@ -76,7 +83,9 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         
         closeClosablePanels();
         
-        switchCard("welcomePanel");
+        homeButton.doClick();
+        setPrevious(false);
+        setNext(false);
         
     }
 
@@ -104,6 +113,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0));
         checkoutButton = new javax.swing.JButton();
         navigationPanel = new javax.swing.JPanel();
+        previousButton = new javax.swing.JButton();
         homeButton = new javax.swing.JToggleButton();
         receipeButton = new javax.swing.JToggleButton();
         meatFishButton = new javax.swing.JToggleButton();
@@ -113,6 +123,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         pantryButton = new javax.swing.JToggleButton();
         candySnacksButton = new javax.swing.JToggleButton();
         favoriteButton = new javax.swing.JToggleButton();
+        nextButton = new javax.swing.JButton();
         contentPanel = new javax.swing.JPanel();
         cardCartListLayeredPane = new javax.swing.JLayeredPane();
         cardPanel = new javax.swing.JPanel();
@@ -130,6 +141,23 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         jLabel1 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 100), new java.awt.Dimension(0, 100), new java.awt.Dimension(2147483647, 2147483647));
+        menu = new javax.swing.JMenuBar();
+        file = new javax.swing.JMenu();
+        exit = new javax.swing.JMenuItem();
+        edit = new javax.swing.JMenu();
+        undo = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        navigate = new javax.swing.JMenu();
+        switchToPrevious = new javax.swing.JMenuItem();
+        switchToNext = new javax.swing.JMenuItem();
+        view = new javax.swing.JMenu();
+        zoomIn = new javax.swing.JMenuItem();
+        zoomOut = new javax.swing.JMenuItem();
+        fullscreen = new javax.swing.JCheckBoxMenuItem();
+        minimize = new javax.swing.JMenuItem();
+        about = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
         jPopupMenu1.add(jMenuItem1);
@@ -226,6 +254,14 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         navigationPanel.setMaximumSize(new java.awt.Dimension(2147483647, 80));
         navigationPanel.setLayout(new javax.swing.BoxLayout(navigationPanel, javax.swing.BoxLayout.LINE_AXIS));
 
+        previousButton.setText("<<");
+        previousButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                previousButtonActionPerformed(evt);
+            }
+        });
+        navigationPanel.add(previousButton);
+
         globalNavigationButtonGroup.add(homeButton);
         homeButton.setText("Hem");
         homeButton.addActionListener(new java.awt.event.ActionListener() {
@@ -307,6 +343,14 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         });
         navigationPanel.add(favoriteButton);
 
+        nextButton.setText(">>");
+        nextButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nextButtonActionPerformed(evt);
+            }
+        });
+        navigationPanel.add(nextButton);
+
         getContentPane().add(navigationPanel);
 
         contentPanel.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
@@ -340,7 +384,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
             .addGroup(cardCartListLayeredPaneLayout.createSequentialGroup()
                 .addGroup(cardCartListLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(listLayeredPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
+                    .addComponent(listLayeredPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)
                     .addComponent(cartLayeredPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -420,6 +464,99 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
         getContentPane().add(contentPanel);
 
+        file.setMnemonic('a');
+        file.setText("Arkiv");
+
+        exit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
+        exit.setMnemonic('a');
+        exit.setText("Avsluta");
+        exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitActionPerformed(evt);
+            }
+        });
+        file.add(exit);
+
+        menu.add(file);
+
+        edit.setMnemonic('e');
+        edit.setText("Redigera");
+
+        undo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_MASK));
+        undo.setMnemonic('\u00e5');
+        undo.setText("Ångra");
+        edit.add(undo);
+
+        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Y, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem5.setMnemonic('g');
+        jMenuItem5.setText("Gör om");
+        edit.add(jMenuItem5);
+
+        menu.add(edit);
+
+        navigate.setMnemonic('n');
+        navigate.setText("Navigera");
+
+        switchToPrevious.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_BACK_SPACE, 0));
+        switchToPrevious.setText("Föregående kategori");
+        switchToPrevious.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                switchToPreviousActionPerformed(evt);
+            }
+        });
+        navigate.add(switchToPrevious);
+
+        switchToNext.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_BACK_SPACE, java.awt.event.InputEvent.SHIFT_MASK));
+        switchToNext.setText("Nästa kategori");
+        switchToNext.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                switchToNextActionPerformed(evt);
+            }
+        });
+        navigate.add(switchToNext);
+
+        menu.add(navigate);
+
+        view.setMnemonic('v');
+        view.setText("Vy");
+
+        zoomIn.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_PLUS, java.awt.event.InputEvent.CTRL_MASK));
+        zoomIn.setMnemonic('i');
+        zoomIn.setText("Zooma in");
+        view.add(zoomIn);
+
+        zoomOut.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_MINUS, java.awt.event.InputEvent.CTRL_MASK));
+        zoomOut.setMnemonic('u');
+        zoomOut.setText("Zooma ut");
+        view.add(zoomOut);
+
+        fullscreen.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F11, 0));
+        fullscreen.setMnemonic('f');
+        fullscreen.setText("Fullskärm");
+        view.add(fullscreen);
+
+        minimize.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_SPACE, java.awt.event.InputEvent.ALT_MASK));
+        minimize.setMnemonic('m');
+        minimize.setText("Minimera");
+        view.add(minimize);
+
+        menu.add(view);
+
+        about.setMnemonic('o');
+        about.setText("Om oss");
+
+        jMenuItem3.setMnemonic('k');
+        jMenuItem3.setText("Kontakt");
+        about.add(jMenuItem3);
+
+        jMenuItem4.setMnemonic('i');
+        jMenuItem4.setText("iMat");
+        about.add(jMenuItem4);
+
+        menu.add(about);
+
+        setJMenuBar(menu);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -436,14 +573,55 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         cartPriceLabel.setText(Math.round(dataHandler.getShoppingCart().getTotal()) + " kr");
     }
     
-    public void switchCard(String cardName) {
+    public void switchCard(String cardName, java.awt.event.ActionEvent evt) {
         CardLayout cards = (CardLayout) cardPanel.getLayout();
         cards.show(cardPanel, cardName);
+        if (evt != null) {
+            previousCards.add(evt);
+            if (previousCards.size() == 2) {
+                setPrevious(true);
+            }
+        }
     }
     
-    public void changeFilter(FilterPanel filterCard) {
+    public void switchToPreviousCard() {
+        if (previousCards.size() >  1) {
+            nextCards.add(previousCards.getLast());
+            if (nextCards.size() == 1) {
+                setNext(true);
+            }
+            previousCards.removeLast();
+            ((JToggleButton)previousCards.getLast().getSource()).doClick();
+            previousCards.removeLast();
+            if (previousCards.size() == 1) {
+                setPrevious(false);
+            }
+        }
+    }
+    
+    public void switchToNextCard() {
+        if (nextCards.size() > 0) {
+            ((JToggleButton)nextCards.getLast().getSource()).doClick();
+            nextCards.removeLast();
+            if (nextCards.size() == 0) {
+                setNext(false);
+            }
+        }
+    }
+    
+    public void setPrevious(boolean b) {
+        switchToPrevious.setEnabled(b);
+        previousButton.setEnabled(b);
+    }
+    
+    public void setNext(boolean b) {
+        switchToNext.setEnabled(b);
+        nextButton.setEnabled(b);
+    }
+    
+    public void changeFilter(FilterPanel filterCard, java.awt.event.ActionEvent e) {
         this.productCategoryPanel.applyFilters(filterCard);
-        switchCard("productCategoryPanel");
+        switchCard("productCategoryPanel", e);
     }
     
     public void closeClosablePanels() {
@@ -480,16 +658,16 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     }
     
     private void profileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileButtonActionPerformed
-       switchCard("profilePanel");
+       switchCard("profilePanel", evt);
     }//GEN-LAST:event_profileButtonActionPerformed
 
     private void tipsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipsButtonActionPerformed
-        switchCard("hintsPanel");
+        switchCard("hintsPanel", evt);
     }//GEN-LAST:event_tipsButtonActionPerformed
 
     private void checkoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkoutButtonActionPerformed
 
-        switchCard("checkoutPanel");
+        switchCard("checkoutPanel", evt);
     }//GEN-LAST:event_checkoutButtonActionPerformed
 
     private void searchTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchTextFieldFocusGained
@@ -509,7 +687,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
 
         this.productCategoryPanel.displayProducts(dataHandler.findProducts(searchTextField.getText()));
-        switchCard("productCategoryPanel");
+        switchCard("productCategoryPanel", evt);
     }//GEN-LAST:event_searchButtonActionPerformed
 
     private void cartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartButtonActionPerformed
@@ -517,41 +695,61 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     }//GEN-LAST:event_cartButtonActionPerformed
 
     private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonActionPerformed
-        switchCard("welcomePanel");
+        switchCard("welcomePanel", evt);
     }//GEN-LAST:event_homeButtonActionPerformed
 
     private void receipeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receipeButtonActionPerformed
-        switchCard("recipePanel");
+        switchCard("recipePanel", evt);
     }//GEN-LAST:event_receipeButtonActionPerformed
 
     private void meatFishButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meatFishButtonActionPerformed
-        changeFilter(FilterFactory.meatAndFishFilterCard);
+        changeFilter(FilterFactory.meatAndFishFilterCard, evt);
     }//GEN-LAST:event_meatFishButtonActionPerformed
 
     private void freezerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_freezerButtonActionPerformed
-        changeFilter(FilterFactory.freezerFilterCard);
+        changeFilter(FilterFactory.freezerFilterCard, evt);
     }//GEN-LAST:event_freezerButtonActionPerformed
 
     private void dairyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dairyButtonActionPerformed
-        changeFilter(FilterFactory.dairyFilterCard);
+        changeFilter(FilterFactory.dairyFilterCard, evt);
     }//GEN-LAST:event_dairyButtonActionPerformed
 
     private void fruitVegetablesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fruitVegetablesButtonActionPerformed
-        changeFilter(FilterFactory.veggieAndFruitsFilterCard);
+        changeFilter(FilterFactory.veggieAndFruitsFilterCard, evt);
     }//GEN-LAST:event_fruitVegetablesButtonActionPerformed
 
     private void pantryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pantryButtonActionPerformed
-        changeFilter(FilterFactory.pantryFilterCard);
+        changeFilter(FilterFactory.pantryFilterCard, evt);
     }//GEN-LAST:event_pantryButtonActionPerformed
 
     private void candySnacksButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_candySnacksButtonActionPerformed
-        changeFilter(FilterFactory.sweetsFilterCard);
+        changeFilter(FilterFactory.sweetsFilterCard, evt);
     }//GEN-LAST:event_candySnacksButtonActionPerformed
 
     private void favoriteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_favoriteButtonActionPerformed
         this.productCategoryPanel.displayProducts(dataHandler.favorites());
-        switchCard("productCategoryPanel");
+        switchCard("productCategoryPanel", evt);
     }//GEN-LAST:event_favoriteButtonActionPerformed
+
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_exitActionPerformed
+
+    private void switchToPreviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_switchToPreviousActionPerformed
+        switchToPreviousCard();
+    }//GEN-LAST:event_switchToPreviousActionPerformed
+
+    private void switchToNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_switchToNextActionPerformed
+        switchToNextCard();
+    }//GEN-LAST:event_switchToNextActionPerformed
+
+    private void nextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextButtonActionPerformed
+        switchToNextCard();
+    }//GEN-LAST:event_nextButtonActionPerformed
+
+    private void previousButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_previousButtonActionPerformed
+        switchToPreviousCard();
+    }//GEN-LAST:event_previousButtonActionPerformed
 
     @Override
     public void shoppingCartChanged(CartEvent ce) {
@@ -610,6 +808,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu about;
     private javax.swing.JToggleButton candySnacksButton;
     private javax.swing.JLayeredPane cardCartListLayeredPane;
     private javax.swing.JPanel cardPanel;
@@ -622,13 +821,17 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     private javax.swing.JButton checkoutButton;
     private javax.swing.JPanel contentPanel;
     private javax.swing.JToggleButton dairyButton;
+    private javax.swing.JMenu edit;
+    private javax.swing.JMenuItem exit;
     private javax.swing.JToggleButton favoriteButton;
+    private javax.swing.JMenu file;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler2;
     private javax.swing.Box.Filler filler3;
     private javax.swing.Box.Filler filler4;
     private javax.swing.JToggleButton freezerButton;
     private javax.swing.JToggleButton fruitVegetablesButton;
+    private javax.swing.JCheckBoxMenuItem fullscreen;
     private javax.swing.ButtonGroup globalNavigationButtonGroup;
     private javax.swing.JPanel headerPanel;
     private javax.swing.JToggleButton homeButton;
@@ -639,18 +842,32 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPanel listLayeredPanel;
     private javax.swing.JPanel listsPanel;
     private javax.swing.JLabel logotype;
     private javax.swing.JToggleButton meatFishButton;
+    private javax.swing.JMenuBar menu;
+    private javax.swing.JMenuItem minimize;
+    private javax.swing.JMenu navigate;
     private javax.swing.JPanel navigationPanel;
+    private javax.swing.JButton nextButton;
     private javax.swing.JToggleButton pantryButton;
+    private javax.swing.JButton previousButton;
     private javax.swing.JButton profileButton;
     private javax.swing.JToggleButton receipeButton;
     private javax.swing.JButton searchButton;
     private javax.swing.JTextField searchTextField;
+    private javax.swing.JMenuItem switchToNext;
+    private javax.swing.JMenuItem switchToPrevious;
     private javax.swing.JButton tipsButton;
+    private javax.swing.JMenuItem undo;
+    private javax.swing.JMenu view;
+    private javax.swing.JMenuItem zoomIn;
+    private javax.swing.JMenuItem zoomOut;
     // End of variables declaration//GEN-END:variables
 
 }

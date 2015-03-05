@@ -190,7 +190,7 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
     }//GEN-LAST:event_addToFavouritesButtonActionPerformed
 
     private void imageLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_imageLabelMouseClicked
-        ((IMat)this.getTopLevelAncestor()).switchCard("detailPanel");
+        ((IMat)this.getTopLevelAncestor()).switchCard("detailPanel", null);
         ((IMat)this.getTopLevelAncestor()).getDetailPanel().update(product);
         
     }//GEN-LAST:event_imageLabelMouseClicked
