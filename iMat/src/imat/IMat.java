@@ -5,6 +5,7 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Timer;
@@ -104,6 +105,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         globalNavigationButtonGroup = new javax.swing.ButtonGroup();
+        closeablePanelsButtonGroup = new javax.swing.ButtonGroup();
         headerPanel = new javax.swing.JPanel();
         logotype = new javax.swing.JLabel();
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0));
@@ -140,8 +142,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         cartAmountLabel = new javax.swing.JLabel();
         cartPriceLabel = new javax.swing.JLabel();
         listsPanel = new javax.swing.JPanel();
-        listToggleButton = new javax.swing.JToggleButton();
         jLabel5 = new javax.swing.JLabel();
+        listToggleButton = new javax.swing.JToggleButton();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 100), new java.awt.Dimension(0, 100), new java.awt.Dimension(2147483647, 2147483647));
         menu = new javax.swing.JMenuBar();
         file = new javax.swing.JMenu();
@@ -192,6 +194,11 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 searchTextFieldFocusLost(evt);
+            }
+        });
+        searchTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                searchTextFieldKeyPressed(evt);
             }
         });
         headerPanel.add(searchTextField);
@@ -377,7 +384,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
                 .addGroup(cardCartListLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardCartListLayeredPaneLayout.createSequentialGroup()
-                        .addGap(0, 733, Short.MAX_VALUE)
+                        .addGap(0, 453, Short.MAX_VALUE)
                         .addComponent(listLayeredPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cartLayeredPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -417,6 +424,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         cartPanel.add(jLabel4);
 
         cartToggleButton.setBackground(new java.awt.Color(255, 255, 255));
+        closeablePanelsButtonGroup.add(cartToggleButton);
         cartToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
         cartToggleButton.setBorderPainted(false);
         cartToggleButton.setOpaque(true);
@@ -446,7 +454,15 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         listsPanel.setPreferredSize(new java.awt.Dimension(80, 389));
         listsPanel.setLayout(new javax.swing.BoxLayout(listsPanel, javax.swing.BoxLayout.Y_AXIS));
 
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Listor");
+        jLabel5.setMaximumSize(new java.awt.Dimension(80, 20));
+        jLabel5.setMinimumSize(new java.awt.Dimension(0, 0));
+        jLabel5.setPreferredSize(null);
+        listsPanel.add(jLabel5);
+
         listToggleButton.setBackground(new java.awt.Color(255, 255, 255));
+        closeablePanelsButtonGroup.add(listToggleButton);
         listToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/lists.png"))); // NOI18N
         listToggleButton.setBorderPainted(false);
         listToggleButton.setOpaque(true);
@@ -456,13 +472,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
             }
         });
         listsPanel.add(listToggleButton);
-
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Listor");
-        jLabel5.setMaximumSize(new java.awt.Dimension(80, 20));
-        jLabel5.setMinimumSize(new java.awt.Dimension(0, 0));
-        jLabel5.setPreferredSize(null);
-        listsPanel.add(jLabel5);
 
         cartAndListsPanel.add(listsPanel);
 
@@ -767,6 +776,14 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         switchCard("profilePanel", evt);
     }//GEN-LAST:event_profileButtonActionPerformed
 
+    private void searchTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchTextFieldKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            this.productCategoryPanel.displayProducts(dataHandler.findProducts(searchTextField.getText()));
+            switchCard("productCategoryPanel", null);
+            
+        }
+    }//GEN-LAST:event_searchTextFieldKeyPressed
+
     @Override
     public void shoppingCartChanged(CartEvent ce) {
         Color typGreen = new Color(135,211,124);
@@ -836,6 +853,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     private javax.swing.JLabel cartPriceLabel;
     private javax.swing.JToggleButton cartToggleButton;
     private javax.swing.JButton checkoutButton;
+    private javax.swing.ButtonGroup closeablePanelsButtonGroup;
     private javax.swing.JMenuItem contact;
     private javax.swing.JPanel contentPanel;
     private javax.swing.JToggleButton dairyButton;
