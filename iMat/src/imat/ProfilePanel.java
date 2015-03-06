@@ -21,7 +21,7 @@ public class ProfilePanel extends javax.swing.JPanel implements java.beans.Custo
      */
     public ProfilePanel() {
         initComponents();
-        this.add(new ReminderAndStoredInformation(this.getWidth()/3, this.getHeight()));
+        this.add(new ReminderAndStoredInformation());
         this.add(new MyPreviousShopping(this.getWidth()/3, this.getHeight()));
         this.add(new MyPreferenses(this.getWidth()/3, this.getHeight()));
     }
