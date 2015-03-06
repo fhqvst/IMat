@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Timer;
 import java.util.TimerTask;
+import javax.swing.AbstractButton;
 import javax.swing.JToggleButton;
 import javax.swing.UIManager;
 import se.chalmers.ait.dat215.project.*;
@@ -46,6 +47,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
                     dataHandler.shutDown();
             }
         }));
+        //Does not
         
         dataHandler.getShoppingCart().addShoppingCartListener(this);
         updateCartLabels();
@@ -108,8 +110,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         searchTextField = new javax.swing.JTextField();
         searchButton = new javax.swing.JButton();
         filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0));
-        tipsButton = new javax.swing.JButton();
-        profileButton = new javax.swing.JButton();
+        hintsToggleButton = new javax.swing.JToggleButton();
+        profileButton = new javax.swing.JToggleButton();
         filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0));
         checkoutButton = new javax.swing.JButton();
         navigationPanel = new javax.swing.JPanel();
@@ -207,25 +209,25 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         headerPanel.add(searchButton);
         headerPanel.add(filler3);
 
-        tipsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/info.png"))); // NOI18N
-        tipsButton.setBorderPainted(false);
-        tipsButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        tipsButton.setMaximumSize(new java.awt.Dimension(64, 40));
-        tipsButton.setMinimumSize(new java.awt.Dimension(64, 40));
-        tipsButton.setPreferredSize(new java.awt.Dimension(64, 40));
-        tipsButton.addActionListener(new java.awt.event.ActionListener() {
+        hintsToggleButton.setBackground(new java.awt.Color(255, 255, 255));
+        globalNavigationButtonGroup.add(hintsToggleButton);
+        hintsToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/info.png"))); // NOI18N
+        hintsToggleButton.setToolTipText("Tips");
+        hintsToggleButton.setBorderPainted(false);
+        hintsToggleButton.setOpaque(true);
+        hintsToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tipsButtonActionPerformed(evt);
+                hintsToggleButtonActionPerformed(evt);
             }
         });
-        headerPanel.add(tipsButton);
+        headerPanel.add(hintsToggleButton);
 
+        profileButton.setBackground(new java.awt.Color(255, 255, 255));
+        globalNavigationButtonGroup.add(profileButton);
         profileButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/person.png"))); // NOI18N
+        profileButton.setToolTipText("Min profil");
         profileButton.setBorderPainted(false);
-        profileButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        profileButton.setMaximumSize(new java.awt.Dimension(64, 40));
-        profileButton.setMinimumSize(new java.awt.Dimension(64, 40));
-        profileButton.setPreferredSize(new java.awt.Dimension(64, 40));
+        profileButton.setOpaque(true);
         profileButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 profileButtonActionPerformed(evt);
@@ -255,6 +257,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         navigationPanel.setLayout(new javax.swing.BoxLayout(navigationPanel, javax.swing.BoxLayout.LINE_AXIS));
 
         previousButton.setText("<<");
+        previousButton.setToolTipText("Föregående sida");
         previousButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 previousButtonActionPerformed(evt);
@@ -344,6 +347,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         navigationPanel.add(favoriteButton);
 
         nextButton.setText(">>");
+        nextButton.setToolTipText("Nästa sida");
         nextButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nextButtonActionPerformed(evt);
@@ -412,8 +416,10 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         jLabel4.setPreferredSize(null);
         cartPanel.add(jLabel4);
 
+        cartToggleButton.setBackground(new java.awt.Color(255, 255, 255));
         cartToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
         cartToggleButton.setBorderPainted(false);
+        cartToggleButton.setOpaque(true);
         cartToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cartToggleButtonActionPerformed(evt);
@@ -440,8 +446,10 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         listsPanel.setPreferredSize(new java.awt.Dimension(80, 389));
         listsPanel.setLayout(new javax.swing.BoxLayout(listsPanel, javax.swing.BoxLayout.Y_AXIS));
 
+        listToggleButton.setBackground(new java.awt.Color(255, 255, 255));
         listToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/lists.png"))); // NOI18N
         listToggleButton.setBorderPainted(false);
+        listToggleButton.setOpaque(true);
         listToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listToggleButtonActionPerformed(evt);
@@ -500,7 +508,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
         switchToPrevious.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_BACK_SPACE, 0));
         switchToPrevious.setMnemonic('f');
-        switchToPrevious.setText("Föregående kategori");
+        switchToPrevious.setText("Föregående sida");
         switchToPrevious.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 switchToPreviousActionPerformed(evt);
@@ -510,7 +518,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
         switchToNext.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_BACK_SPACE, java.awt.event.InputEvent.SHIFT_MASK));
         switchToNext.setMnemonic('n');
-        switchToNext.setText("Nästa kategori");
+        switchToNext.setText("Nästa sida");
         switchToNext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 switchToNextActionPerformed(evt);
@@ -594,7 +602,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
                 setNext(true);
             }
             previousCards.removeLast();
-            ((JToggleButton)previousCards.getLast().getSource()).doClick();
+            ((AbstractButton)previousCards.getLast().getSource()).doClick();
             previousCards.removeLast();
             if (previousCards.size() == 1) {
                 setPrevious(false);
@@ -604,7 +612,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     
     public void switchToNextCard() {
         if (nextCards.size() > 0) {
-            ((JToggleButton)nextCards.getLast().getSource()).doClick();
+            ((AbstractButton)nextCards.getLast().getSource()).doClick();
             nextCards.removeLast();
             if (nextCards.size() == 0) {
                 setNext(false);
@@ -661,14 +669,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         listToggleButton.setSelected(listShowing);
     }
     
-    private void profileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileButtonActionPerformed
-       switchCard("profilePanel", evt);
-    }//GEN-LAST:event_profileButtonActionPerformed
-
-    private void tipsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipsButtonActionPerformed
-        switchCard("hintsPanel", evt);
-    }//GEN-LAST:event_tipsButtonActionPerformed
-
     private void checkoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkoutButtonActionPerformed
 
         switchCard("checkoutPanel", evt);
@@ -759,6 +759,14 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         closeList();
     }//GEN-LAST:event_listToggleButtonActionPerformed
 
+    private void hintsToggleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hintsToggleButtonActionPerformed
+        switchCard("hintsPanel", evt);// TODO add your handling code here:
+    }//GEN-LAST:event_hintsToggleButtonActionPerformed
+
+    private void profileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileButtonActionPerformed
+        switchCard("profilePanel", evt);
+    }//GEN-LAST:event_profileButtonActionPerformed
+
     @Override
     public void shoppingCartChanged(CartEvent ce) {
         Color typGreen = new Color(135,211,124);
@@ -844,6 +852,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     private javax.swing.JCheckBoxMenuItem fullscreen;
     private javax.swing.ButtonGroup globalNavigationButtonGroup;
     private javax.swing.JPanel headerPanel;
+    private javax.swing.JToggleButton hintsToggleButton;
     private javax.swing.JToggleButton homeButton;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -864,14 +873,13 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     private javax.swing.JButton nextButton;
     private javax.swing.JToggleButton pantryButton;
     private javax.swing.JButton previousButton;
-    private javax.swing.JButton profileButton;
+    private javax.swing.JToggleButton profileButton;
     private javax.swing.JToggleButton receipeButton;
     private javax.swing.JMenuItem redo;
     private javax.swing.JButton searchButton;
     private javax.swing.JTextField searchTextField;
     private javax.swing.JMenuItem switchToNext;
     private javax.swing.JMenuItem switchToPrevious;
-    private javax.swing.JButton tipsButton;
     private javax.swing.JMenuItem undo;
     private javax.swing.JMenu view;
     private javax.swing.JMenuItem zoomIn;
