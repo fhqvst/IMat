@@ -71,7 +71,7 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
         add(imageLabel);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new java.awt.GridLayout(3, 0));
+        jPanel1.setLayout(new java.awt.GridLayout(3, 2));
 
         titleLabel.setText("titleLabel");
         jPanel1.add(titleLabel);

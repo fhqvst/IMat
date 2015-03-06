@@ -48,6 +48,7 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
     @Override
     public void stateChanged(ChangeEvent changeEvent) {
         ((IMat)this.getTopLevelAncestor()).getProductCategoryPanel().applyFilters(this);
+        System.out.println("StateChanged");
     }
     
     public void setObject(Object bean) {
@@ -99,14 +100,14 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
     }
     
     protected List<Product> getSelected() {
+        
         List<Product> productsShown = new ArrayList<Product>();
         List<ProductCategory> productCategoriesInSearch = new ArrayList<ProductCategory>();
+        
         for(int i = 0; i<filterBoxes.length; i++) {
-            if(filterBoxes[i].isSelected()); {
-                if (!productCategoriesInSearch.contains(stringToCategory(checkBoxTitles[i]))) {
+            if(filterBoxes[i].isSelected() && !productCategoriesInSearch.contains(stringToCategory(checkBoxTitles[i]))) {
                     productsShown.addAll(dataHandler.getProducts(stringToCategory(checkBoxTitles[i])));
                     productCategoriesInSearch.add(stringToCategory(checkBoxTitles[i]));
-                }
             }
         }
         return productsShown;
