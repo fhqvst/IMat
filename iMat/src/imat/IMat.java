@@ -384,11 +384,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
                 .addGroup(cardCartListLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardCartListLayeredPaneLayout.createSequentialGroup()
-<<<<<<< HEAD
                         .addGap(0, 733, Short.MAX_VALUE)
-=======
-                        .addGap(0, 453, Short.MAX_VALUE)
->>>>>>> 5bbc432254a57d3335955188d99f791c6a119198
                         .addComponent(listLayeredPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cartLayeredPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
