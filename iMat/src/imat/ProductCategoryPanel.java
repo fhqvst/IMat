@@ -19,7 +19,7 @@ import se.chalmers.ait.dat215.project.ProductCategory;
 public class ProductCategoryPanel extends javax.swing.JPanel implements java.beans.Customizer {
     
     private Object bean;
-    private JPanel filterPanel = new JPanel();
+    protected JPanel filterPanel = new JPanel();
 
     /**
      * Creates new customizer PageCard

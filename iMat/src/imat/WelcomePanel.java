@@ -24,14 +24,15 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
      */
     public WelcomePanel() {
         initComponents();
-        campaignLabel.setText("<html> <h2> Kampanjer! </h2> </html>");
-        ArrayList<Product> godtyckligLista = new ArrayList<Product>();
-        godtyckligLista = (ArrayList)IMatDataHandler.getInstance().findProducts("kyckling");
-        jPanel1.add(new ProductCategoryPanel(ProductCategory.POD));
-       
         
-        welcomeLabel.setText("<html>  <h1> Välkommen " + IMatDataHandler.getInstance().getCustomer().getFirstName() /*Alexandra!*/ + " </h1> </html>");
-        recipeLabel.setText("<html> <h2> Dagens recept:   " + getRecipeOfTheDay() + "</h2> </html>");
+        ProductCategoryPanel campaignProducts = new ProductCategoryPanel(ProductCategory.POD);
+        
+        campaignProducts.remove(campaignProducts.filterPanel);
+        
+        contentPanel.add(campaignProducts);
+        
+        welcomeLabel.setText("Välkommen " + IMatDataHandler.getInstance().getCustomer().getFirstName());
+       
         this.revalidate();
         this.repaint();
         
@@ -39,11 +40,6 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
     
     public void setObject(Object bean) {
         this.bean = bean;
-    }
-    
-    public String getRecipeOfTheDay() {
-        //Unimplemented
-        return "Ninjabiffar med ris";
     }
 
     /**
@@ -54,159 +50,106 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        newsPanel = new javax.swing.JPanel();
+        recipeOfTheDaySubtitle = new javax.swing.JLabel();
+        recipeOfTheDayTitle = new javax.swing.JLabel();
+        jTextArea1 = new javax.swing.JTextArea();
+        trendsSubtitle = new javax.swing.JLabel();
+        trendsTitle = new javax.swing.JLabel();
+        jTextArea3 = new javax.swing.JTextArea();
+        contentPanel = new javax.swing.JPanel();
         welcomePanel = new javax.swing.JPanel();
         welcomeLabel = new javax.swing.JLabel();
-        navigationPanel = new javax.swing.JPanel();
-        newsPanel = new javax.swing.JPanel();
-        recipePanel = new javax.swing.JPanel();
-        recipeLabel = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        trendPanel = new javax.swing.JPanel();
-        trendLabel = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jPanel1 = new javax.swing.JPanel();
         campaignLabel = new javax.swing.JLabel();
 
-        setLayout(new java.awt.BorderLayout());
+        setPreferredSize(new java.awt.Dimension(100, 200));
+        setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.X_AXIS));
 
-        welcomePanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        welcomePanel.setPreferredSize(new java.awt.Dimension(50, 50));
+        newsPanel.setBackground(new java.awt.Color(255, 255, 255));
+        newsPanel.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20)));
+        newsPanel.setAlignmentX(0.5F);
+        newsPanel.setMaximumSize(new java.awt.Dimension(300, 2147483647));
+        newsPanel.setMinimumSize(new java.awt.Dimension(0, 0));
+        newsPanel.setPreferredSize(new java.awt.Dimension(250, 230));
+        newsPanel.setLayout(new javax.swing.BoxLayout(newsPanel, javax.swing.BoxLayout.Y_AXIS));
 
-        welcomeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        welcomeLabel.setText("Välkommen [namn]");
-        welcomeLabel.setToolTipText("");
+        recipeOfTheDaySubtitle.setFont(new java.awt.Font("Lucida Grande", 1, 10)); // NOI18N
+        recipeOfTheDaySubtitle.setForeground(new java.awt.Color(200, 200, 200));
+        recipeOfTheDaySubtitle.setText("DAGENS RECEPT");
+        newsPanel.add(recipeOfTheDaySubtitle);
 
-        javax.swing.GroupLayout welcomePanelLayout = new javax.swing.GroupLayout(welcomePanel);
-        welcomePanel.setLayout(welcomePanelLayout);
-        welcomePanelLayout.setHorizontalGroup(
-            welcomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(welcomeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE)
-        );
-        welcomePanelLayout.setVerticalGroup(
-            welcomePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(welcomeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-        );
+        recipeOfTheDayTitle.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        recipeOfTheDayTitle.setText("Ninjabiffar med ris");
+        recipeOfTheDayTitle.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 20, 0));
+        newsPanel.add(recipeOfTheDayTitle);
 
-        add(welcomePanel, java.awt.BorderLayout.PAGE_START);
-
-        navigationPanel.setLayout(new javax.swing.BoxLayout(navigationPanel, javax.swing.BoxLayout.LINE_AXIS));
-
-        newsPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        newsPanel.setPreferredSize(new java.awt.Dimension(300, 300));
-        newsPanel.setLayout(new java.awt.GridLayout(0, 1));
-
-        recipeLabel.setText("Dagens recept");
-
-        jLabel1.setText("[bild]");
-
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-
+        jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
+        jTextArea1.setLineWrap(true);
         jTextArea1.setRows(5);
-        jTextArea1.setText("Lorem ipsum dolor sit amet, consectetur adipisicing elit,\nsed do eiusmod tempor incididunt ut labore et dolore\n magna aliqua. Ut enim ad minim veniam, quis \nnostrud exercitation ullamco \n\nlaboris nisi ut aliquip ex ea commodo consequat\n. Duis aute irure dolor in reprehenderit in voluptate velit \nesse cillum dolore eu fugiat nulla pariatur. \n\nExcepteur sint occaecat cupidatat non proident, sunt \nin culpa qui officia deserunt mollit anim id est laborum.\n");
-        jScrollPane1.setViewportView(jTextArea1);
+        jTextArea1.setText("Nam venenatis nisl at sem blandit, at laoreet sapien auctor. Fusce hendrerit leo sit amet suscipit vestibulum. Integer sem nulla, sollicitudin at nunc sit amet, commodo imperdiet nunc. Aliquam congue ligula eget urna interdum, sit amet lacinia ipsum suscipit. Cras vitae aliquam ante, quis dictum metus. Morbi auctor rhoncus sodales. Etiam malesuada velit ac ligula dapibus, ornare porttitor velit consectetur.");
+        jTextArea1.setWrapStyleWord(true);
+        jTextArea1.setMinimumSize(new java.awt.Dimension(0, 0));
+        jTextArea1.setPreferredSize(new java.awt.Dimension(2147483647, 2147483647));
+        newsPanel.add(jTextArea1);
 
-        javax.swing.GroupLayout recipePanelLayout = new javax.swing.GroupLayout(recipePanel);
-        recipePanel.setLayout(recipePanelLayout);
-        recipePanelLayout.setHorizontalGroup(
-            recipePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(recipePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(recipePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(recipePanelLayout.createSequentialGroup()
-                        .addGroup(recipePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(recipeLabel)
-                            .addComponent(jLabel1))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        recipePanelLayout.setVerticalGroup(
-            recipePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(recipePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(recipeLabel)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 154, Short.MAX_VALUE))
-        );
+        trendsSubtitle.setFont(new java.awt.Font("Lucida Grande", 1, 10)); // NOI18N
+        trendsSubtitle.setForeground(new java.awt.Color(200, 200, 200));
+        trendsSubtitle.setText("MATTRENDER");
+        newsPanel.add(trendsSubtitle);
 
-        newsPanel.add(recipePanel);
+        trendsTitle.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        trendsTitle.setText("Både gott och nyttigt");
+        trendsTitle.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 20, 0));
+        newsPanel.add(trendsTitle);
 
-        trendLabel.setText("Mattrender");
+        jTextArea3.setEditable(false);
+        jTextArea3.setColumns(20);
+        jTextArea3.setLineWrap(true);
+        jTextArea3.setRows(5);
+        jTextArea3.setText("Nam venenatis nisl at sem blandit, at laoreet sapien auctor. Fusce hendrerit leo sit amet suscipit vestibulum. Integer sem nulla, sollicitudin at nunc sit amet, commodo imperdiet nunc. Aliquam congue ligula eget urna interdum, sit amet lacinia ipsum suscipit. ");
+        jTextArea3.setWrapStyleWord(true);
+        jTextArea3.setMinimumSize(new java.awt.Dimension(0, 0));
+        jTextArea3.setPreferredSize(new java.awt.Dimension(2147483647, 2147483647));
+        newsPanel.add(jTextArea3);
 
-        jLabel2.setText("[titel]");
+        add(newsPanel);
 
-        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        contentPanel.setLayout(new java.awt.BorderLayout());
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jTextArea2.setText("Lorem ipsum dolor sit amet, consectetur adipisicing elit,\nsed do eiusmod tempor incididunt ut labore et dolore\n magna aliqua. Ut enim ad minim veniam, quis \nnostrud exercitation ullamco \n\nlaboris nisi ut aliquip ex ea commodo consequat\n. Duis aute irure dolor in reprehenderit in voluptate velit \nesse cillum dolore eu fugiat nulla pariatur. \n\nExcepteur sint occaecat cupidatat non proident, sunt \nin culpa qui officia deserunt mollit anim id est laborum.\n");
-        jScrollPane2.setViewportView(jTextArea2);
+        welcomePanel.setBackground(new java.awt.Color(255, 255, 255));
+        welcomePanel.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20)));
+        welcomePanel.setLayout(new java.awt.BorderLayout());
 
-        javax.swing.GroupLayout trendPanelLayout = new javax.swing.GroupLayout(trendPanel);
-        trendPanel.setLayout(trendPanelLayout);
-        trendPanelLayout.setHorizontalGroup(
-            trendPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(trendPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(trendPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(trendPanelLayout.createSequentialGroup()
-                        .addGroup(trendPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(trendLabel)
-                            .addComponent(jLabel2))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        trendPanelLayout.setVerticalGroup(
-            trendPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(trendPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(trendLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        welcomeLabel.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        welcomeLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        welcomeLabel.setText("Välkommen Alexandra");
+        welcomeLabel.setToolTipText("");
+        welcomeLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 10, 0));
+        welcomePanel.add(welcomeLabel, java.awt.BorderLayout.PAGE_START);
 
-        newsPanel.add(trendPanel);
+        campaignLabel.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
+        campaignLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        campaignLabel.setText("Just nu har vi 42 varor på kampanj.");
+        campaignLabel.setToolTipText("");
+        welcomePanel.add(campaignLabel, java.awt.BorderLayout.CENTER);
 
-        navigationPanel.add(newsPanel);
+        contentPanel.add(welcomePanel, java.awt.BorderLayout.PAGE_START);
 
-        jPanel1.setLayout(new java.awt.BorderLayout());
-
-        campaignLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        campaignLabel.setText("Kampanjer");
-        jPanel1.add(campaignLabel, java.awt.BorderLayout.NORTH);
-
-        navigationPanel.add(jPanel1);
-
-        add(navigationPanel, java.awt.BorderLayout.CENTER);
+        add(contentPanel);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel campaignLabel;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JPanel contentPanel;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JPanel navigationPanel;
+    private javax.swing.JTextArea jTextArea3;
     private javax.swing.JPanel newsPanel;
-    private javax.swing.JLabel recipeLabel;
-    private javax.swing.JPanel recipePanel;
-    private javax.swing.JLabel trendLabel;
-    private javax.swing.JPanel trendPanel;
+    private javax.swing.JLabel recipeOfTheDaySubtitle;
+    private javax.swing.JLabel recipeOfTheDayTitle;
+    private javax.swing.JLabel trendsSubtitle;
+    private javax.swing.JLabel trendsTitle;
     private javax.swing.JLabel welcomeLabel;
     private javax.swing.JPanel welcomePanel;
     // End of variables declaration//GEN-END:variables
