@@ -5,6 +5,7 @@
  */
 package imat;
 
+import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.AbstractButton;
@@ -52,6 +53,17 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
                 plusTwoButton.setText(String.valueOf(NUMBER_OF_HINTS));
             }
             currentHintNbr = changeNumber;
+            String dummyText = "";
+            System.out.println(String.valueOf((char)98));
+            Random r = new Random();
+            for (int i = 0; i < 5000; i++) {
+                if (i%20 == 0) {
+                    dummyText += ". "; //97-122
+                } else {
+                    dummyText += String.valueOf((char)(r.nextInt((122 - 97) + 1) + 97));
+                }
+            }
+            currentHintTextArea.setText(dummyText);
         }
         
     }
@@ -126,6 +138,8 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         findHelpPanel.add(jButton34);
 
         needHelpPanel.add(findHelpPanel, java.awt.BorderLayout.CENTER);
+
+        currentHintScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         currentHintTextArea.setColumns(20);
         currentHintTextArea.setRows(5);
