@@ -104,6 +104,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         globalNavigationButtonGroup = new javax.swing.ButtonGroup();
+        closeablePanelsButtonGroup = new javax.swing.ButtonGroup();
         headerPanel = new javax.swing.JPanel();
         logotype = new javax.swing.JLabel();
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0));
@@ -140,8 +141,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         cartAmountLabel = new javax.swing.JLabel();
         cartPriceLabel = new javax.swing.JLabel();
         listsPanel = new javax.swing.JPanel();
-        listToggleButton = new javax.swing.JToggleButton();
         jLabel5 = new javax.swing.JLabel();
+        listToggleButton = new javax.swing.JToggleButton();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 100), new java.awt.Dimension(0, 100), new java.awt.Dimension(2147483647, 2147483647));
         menu = new javax.swing.JMenuBar();
         file = new javax.swing.JMenu();
@@ -417,6 +418,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         cartPanel.add(jLabel4);
 
         cartToggleButton.setBackground(new java.awt.Color(255, 255, 255));
+        closeablePanelsButtonGroup.add(cartToggleButton);
         cartToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
         cartToggleButton.setBorderPainted(false);
         cartToggleButton.setOpaque(true);
@@ -446,7 +448,15 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         listsPanel.setPreferredSize(new java.awt.Dimension(80, 389));
         listsPanel.setLayout(new javax.swing.BoxLayout(listsPanel, javax.swing.BoxLayout.Y_AXIS));
 
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Listor");
+        jLabel5.setMaximumSize(new java.awt.Dimension(80, 20));
+        jLabel5.setMinimumSize(new java.awt.Dimension(0, 0));
+        jLabel5.setPreferredSize(null);
+        listsPanel.add(jLabel5);
+
         listToggleButton.setBackground(new java.awt.Color(255, 255, 255));
+        closeablePanelsButtonGroup.add(listToggleButton);
         listToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/lists.png"))); // NOI18N
         listToggleButton.setBorderPainted(false);
         listToggleButton.setOpaque(true);
@@ -456,13 +466,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
             }
         });
         listsPanel.add(listToggleButton);
-
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Listor");
-        jLabel5.setMaximumSize(new java.awt.Dimension(80, 20));
-        jLabel5.setMinimumSize(new java.awt.Dimension(0, 0));
-        jLabel5.setPreferredSize(null);
-        listsPanel.add(jLabel5);
 
         cartAndListsPanel.add(listsPanel);
 
@@ -836,6 +839,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     private javax.swing.JLabel cartPriceLabel;
     private javax.swing.JToggleButton cartToggleButton;
     private javax.swing.JButton checkoutButton;
+    private javax.swing.ButtonGroup closeablePanelsButtonGroup;
     private javax.swing.JMenuItem contact;
     private javax.swing.JPanel contentPanel;
     private javax.swing.JToggleButton dairyButton;
