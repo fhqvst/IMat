@@ -49,23 +49,22 @@ public class ListedProductPanel extends javax.swing.JPanel implements java.beans
         titleLabel = new javax.swing.JLabel();
         priceLabel = new javax.swing.JLabel();
         amountPanel = new javax.swing.JPanel();
-        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(50, 0), new java.awt.Dimension(32767, 0));
+        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(10, 0), new java.awt.Dimension(25, 0), new java.awt.Dimension(50, 0));
         amountSpinner = new javax.swing.JSpinner();
-        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(10, 0), new java.awt.Dimension(32767, 0));
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(10, 0), new java.awt.Dimension(25, 0), new java.awt.Dimension(50, 0));
         unitLabel = new javax.swing.JLabel();
         adjustedPriceLabel = new javax.swing.JLabel();
-        removePanel = new javax.swing.JPanel();
         RemoveFromCartButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        setMaximumSize(new java.awt.Dimension(2147483647, 70));
+        setMaximumSize(new java.awt.Dimension(300, 70));
         setMinimumSize(new java.awt.Dimension(0, 35));
         setPreferredSize(new java.awt.Dimension(600, 70));
-        setLayout(new java.awt.GridLayout(1, 0, 20, 20));
+        setLayout(new java.awt.GridLayout());
 
         titleLabel.setText("Titel");
-        titleLabel.setMaximumSize(new java.awt.Dimension(2147483647, 40));
+        titleLabel.setMaximumSize(new java.awt.Dimension(125, 40));
         titleLabel.setMinimumSize(new java.awt.Dimension(0, 0));
         titleLabel.setPreferredSize(null);
         add(titleLabel);
@@ -80,7 +79,7 @@ public class ListedProductPanel extends javax.swing.JPanel implements java.beans
         amountPanel.setLayout(new javax.swing.BoxLayout(amountPanel, javax.swing.BoxLayout.LINE_AXIS));
         amountPanel.add(filler2);
 
-        amountSpinner.setMaximumSize(new java.awt.Dimension(2147483647, 40));
+        amountSpinner.setMaximumSize(new java.awt.Dimension(30, 40));
         amountSpinner.setMinimumSize(new java.awt.Dimension(0, 0));
         amountSpinner.setPreferredSize(new java.awt.Dimension(70, 40));
         amountSpinner.addChangeListener(new javax.swing.event.ChangeListener() {
@@ -100,24 +99,18 @@ public class ListedProductPanel extends javax.swing.JPanel implements java.beans
         adjustedPriceLabel.setText("10");
         add(adjustedPriceLabel);
 
-        removePanel.setBackground(java.awt.SystemColor.window);
-        removePanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 50, 1, 1));
-        removePanel.setLayout(new java.awt.GridLayout());
-
         RemoveFromCartButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         RemoveFromCartButton.setText("X");
         RemoveFromCartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         RemoveFromCartButton.setMargin(new java.awt.Insets(14, 14, 14, 14));
-        RemoveFromCartButton.setMaximumSize(new java.awt.Dimension(2147483647, 40));
+        RemoveFromCartButton.setMaximumSize(new java.awt.Dimension(40, 40));
         RemoveFromCartButton.setMinimumSize(new java.awt.Dimension(0, 0));
         RemoveFromCartButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RemoveFromCartButtonActionPerformed(evt);
             }
         });
-        removePanel.add(RemoveFromCartButton);
-
-        add(removePanel);
+        add(RemoveFromCartButton);
     }// </editor-fold>//GEN-END:initComponents
 
     private void amountSpinnerStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_amountSpinnerStateChanged
@@ -142,7 +135,6 @@ public class ListedProductPanel extends javax.swing.JPanel implements java.beans
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler2;
     private javax.swing.JLabel priceLabel;
-    private javax.swing.JPanel removePanel;
     private javax.swing.JLabel titleLabel;
     private javax.swing.JLabel unitLabel;
     // End of variables declaration//GEN-END:variables
