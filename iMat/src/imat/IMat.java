@@ -5,6 +5,7 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Timer;
@@ -195,6 +196,11 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
                 searchTextFieldFocusLost(evt);
             }
         });
+        searchTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                searchTextFieldKeyPressed(evt);
+            }
+        });
         headerPanel.add(searchTextField);
 
         searchButton.setText("Sök");
@@ -378,7 +384,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
                 .addGroup(cardCartListLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardCartListLayeredPaneLayout.createSequentialGroup()
-                        .addGap(0, 421, Short.MAX_VALUE)
+                        .addGap(0, 453, Short.MAX_VALUE)
                         .addComponent(listLayeredPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cartLayeredPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -769,6 +775,14 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     private void profileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_profileButtonActionPerformed
         switchCard("profilePanel", evt);
     }//GEN-LAST:event_profileButtonActionPerformed
+
+    private void searchTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchTextFieldKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+            this.productCategoryPanel.displayProducts(dataHandler.findProducts(searchTextField.getText()));
+            switchCard("productCategoryPanel", null);
+            
+        }
+    }//GEN-LAST:event_searchTextFieldKeyPressed
 
     @Override
     public void shoppingCartChanged(CartEvent ce) {
