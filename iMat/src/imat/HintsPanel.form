@@ -167,8 +167,11 @@
                     <Component class="javax.swing.JTextArea" name="currentHintTextArea">
                       <Properties>
                         <Property name="columns" type="int" value="20"/>
+                        <Property name="lineWrap" type="boolean" value="true"/>
                         <Property name="rows" type="int" value="5"/>
                         <Property name="text" type="java.lang.String" value="Lorem ipsum dolor sit amet, consectetur adipisicing elit,&#xa;sed do eiusmod tempor incididunt ut labore et dolore&#xa; magna aliqua. Ut enim ad minim veniam, quis &#xa;nostrud exercitation ullamco &#xa;&#xa;laboris nisi ut aliquip ex ea commodo consequat&#xa;. Duis aute irure dolor in reprehenderit in voluptate velit &#xa;esse cillum dolore eu fugiat nulla pariatur. &#xa;&#xa;Excepteur sint occaecat cupidatat non proident, sunt &#xa;in culpa qui officia deserunt mollit anim id est laborum.&#xa;"/>
+                        <Property name="wrapStyleWord" type="boolean" value="true"/>
+                        <Property name="autoscrolls" type="boolean" value="false"/>
                       </Properties>
                     </Component>
                   </SubComponents>

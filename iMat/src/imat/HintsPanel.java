@@ -52,18 +52,30 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
                 plusOneButton.setText(String.valueOf(NUMBER_OF_HINTS-1));
                 plusTwoButton.setText(String.valueOf(NUMBER_OF_HINTS));
             }
-            currentHintNbr = changeNumber;
-            String dummyText = "";
-            System.out.println(String.valueOf((char)98));
-            Random r = new Random();
-            for (int i = 0; i < 5000; i++) {
-                if (i%20 == 0) {
-                    dummyText += ". "; //97-122
-                } else {
-                    dummyText += String.valueOf((char)(r.nextInt((122 - 97) + 1) + 97));
+            if (currentHintNbr != changeNumber) {
+                currentHintNbr = changeNumber;
+                String dummyText = "";
+                boolean startOfSentence = false;
+                Random r = new Random();
+                for (int i = 0; i < 5000; i++) {
+                    if (i%20 == 19 && r.nextInt(3) == 0 && !startOfSentence) {
+                        dummyText += ". ";
+                        startOfSentence = true;
+                    } else if (i%7 == 6 && r.nextInt(2) == 0 && !startOfSentence) {
+                        dummyText += " ";
+                    }
+                    else {
+                        if (startOfSentence) {
+                            dummyText += String.valueOf((char)(r.nextInt((122 - 97) + 1) + 97)).toUpperCase();
+                            startOfSentence = false;
+                        } else {
+                            dummyText += String.valueOf((char)(r.nextInt((122 - 97) + 1) + 97)).toLowerCase();
+                        }
+                    }
                 }
+                currentHintTextArea.setText(dummyText);
             }
-            currentHintTextArea.setText(dummyText);
+            
         }
         
     }
@@ -142,8 +154,11 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         currentHintScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         currentHintTextArea.setColumns(20);
+        currentHintTextArea.setLineWrap(true);
         currentHintTextArea.setRows(5);
         currentHintTextArea.setText("Lorem ipsum dolor sit amet, consectetur adipisicing elit,\nsed do eiusmod tempor incididunt ut labore et dolore\n magna aliqua. Ut enim ad minim veniam, quis \nnostrud exercitation ullamco \n\nlaboris nisi ut aliquip ex ea commodo consequat\n. Duis aute irure dolor in reprehenderit in voluptate velit \nesse cillum dolore eu fugiat nulla pariatur. \n\nExcepteur sint occaecat cupidatat non proident, sunt \nin culpa qui officia deserunt mollit anim id est laborum.\n");
+        currentHintTextArea.setWrapStyleWord(true);
+        currentHintTextArea.setAutoscrolls(false);
         currentHintScrollPane.setViewportView(currentHintTextArea);
 
         previousButton.setText("<<");
