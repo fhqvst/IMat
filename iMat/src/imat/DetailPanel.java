@@ -58,6 +58,7 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
         jPanel3 = new javax.swing.JPanel();
         jSpinner1 = new javax.swing.JSpinner();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
@@ -71,7 +72,7 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
         add(imageLabel);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(new java.awt.GridLayout(3, 0));
+        jPanel1.setLayout(new java.awt.GridLayout(3, 2));
 
         titleLabel.setText("titleLabel");
         jPanel1.add(titleLabel);
@@ -92,6 +93,9 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
         jPanel3.add(jButton1);
 
         jPanel1.add(jPanel3);
+
+        jLabel1.setText("jLabel1");
+        jPanel1.add(jLabel1);
 
         add(jPanel1);
 
@@ -116,6 +120,7 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel imageLabel;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

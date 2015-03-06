@@ -69,7 +69,6 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
         productsPanel.removeAll();
   
         for(Product product : filterCard.getSelected()) {
-            
             ProductPanel productPanel = new ProductPanel(product);
             productPanel.setSize(200, 100);
             productsPanel.add(productPanel);
