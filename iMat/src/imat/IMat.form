@@ -260,6 +260,7 @@
         <Component class="javax.swing.JButton" name="searchButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="S&#xf6;k"/>
+            <Property name="toolTipText" type="java.lang.String" value="S&#xf6;k i butiken"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Default Cursor"/>
             </Property>
@@ -347,6 +348,7 @@
               <Color blue="66" green="ff" red="cc" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Till kassan"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
               <Color id="Default Cursor"/>
             </Property>
@@ -407,6 +409,7 @@
               <ComponentRef name="globalNavigationButtonGroup"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Hem"/>
+            <Property name="toolTipText" type="java.lang.String" value="Visa f&#xf6;rstasidan"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="homeButtonActionPerformed"/>
@@ -418,6 +421,7 @@
               <ComponentRef name="globalNavigationButtonGroup"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Recept"/>
+            <Property name="toolTipText" type="java.lang.String" value="Visa rekommenderade recept"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="receipeButtonActionPerformed"/>
@@ -495,6 +499,7 @@
               <ComponentRef name="globalNavigationButtonGroup"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Favoriter"/>
+            <Property name="toolTipText" type="java.lang.String" value="Visa mina favoritmarkerade varor"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="favoriteButtonActionPerformed"/>
@@ -652,6 +657,7 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/imat/resources/basket.png"/>
                     </Property>
+                    <Property name="toolTipText" type="java.lang.String" value="Visa varukorg"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
                     <Property name="contentAreaFilled" type="boolean" value="false"/>
                   </Properties>
@@ -728,6 +734,7 @@
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                       <Image iconType="3" name="/imat/resources/lists.png"/>
                     </Property>
+                    <Property name="toolTipText" type="java.lang.String" value="Visa mina listor"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
                     <Property name="contentAreaFilled" type="boolean" value="false"/>
                   </Properties>

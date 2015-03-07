@@ -204,6 +204,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         headerPanel.add(searchTextField);
 
         searchButton.setText("Sök");
+        searchButton.setToolTipText("Sök i butiken");
         searchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         searchButton.setMaximumSize(new java.awt.Dimension(75, 40));
         searchButton.setMinimumSize(new java.awt.Dimension(75, 40));
@@ -245,6 +246,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
         checkoutButton.setBackground(new java.awt.Color(204, 255, 102));
         checkoutButton.setText("Till kassan");
+        checkoutButton.setToolTipText("");
         checkoutButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         checkoutButton.setMaximumSize(new java.awt.Dimension(112, 40));
         checkoutButton.setMinimumSize(new java.awt.Dimension(112, 40));
@@ -274,6 +276,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
         globalNavigationButtonGroup.add(homeButton);
         homeButton.setText("Hem");
+        homeButton.setToolTipText("Visa förstasidan");
         homeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 homeButtonActionPerformed(evt);
@@ -283,6 +286,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
         globalNavigationButtonGroup.add(receipeButton);
         receipeButton.setText("Recept");
+        receipeButton.setToolTipText("Visa rekommenderade recept");
         receipeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 receipeButtonActionPerformed(evt);
@@ -346,6 +350,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
         globalNavigationButtonGroup.add(favoriteButton);
         favoriteButton.setText("Favoriter");
+        favoriteButton.setToolTipText("Visa mina favoritmarkerade varor");
         favoriteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 favoriteButtonActionPerformed(evt);
@@ -423,6 +428,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         cartToggleButton.setBackground(new java.awt.Color(255, 255, 255));
         closeablePanelsButtonGroup.add(cartToggleButton);
         cartToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
+        cartToggleButton.setToolTipText("Visa varukorg");
         cartToggleButton.setBorderPainted(false);
         cartToggleButton.setContentAreaFilled(false);
         cartToggleButton.addActionListener(new java.awt.event.ActionListener() {
@@ -461,6 +467,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         listToggleButton.setBackground(new java.awt.Color(255, 255, 255));
         closeablePanelsButtonGroup.add(listToggleButton);
         listToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/lists.png"))); // NOI18N
+        listToggleButton.setToolTipText("Visa mina listor");
         listToggleButton.setBorderPainted(false);
         listToggleButton.setContentAreaFilled(false);
         listToggleButton.addActionListener(new java.awt.event.ActionListener() {
