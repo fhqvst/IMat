@@ -221,7 +221,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         hintsToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/info.png"))); // NOI18N
         hintsToggleButton.setToolTipText("Tips");
         hintsToggleButton.setBorderPainted(false);
-        hintsToggleButton.setOpaque(true);
+        hintsToggleButton.setContentAreaFilled(false);
         hintsToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hintsToggleButtonActionPerformed(evt);
@@ -234,7 +234,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         profileButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/person.png"))); // NOI18N
         profileButton.setToolTipText("Min profil");
         profileButton.setBorderPainted(false);
-        profileButton.setOpaque(true);
+        profileButton.setContentAreaFilled(false);
         profileButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 profileButtonActionPerformed(evt);
@@ -424,7 +424,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         closeablePanelsButtonGroup.add(cartToggleButton);
         cartToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
         cartToggleButton.setBorderPainted(false);
-        cartToggleButton.setOpaque(true);
+        cartToggleButton.setContentAreaFilled(false);
         cartToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cartToggleButtonActionPerformed(evt);
@@ -462,7 +462,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         closeablePanelsButtonGroup.add(listToggleButton);
         listToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/lists.png"))); // NOI18N
         listToggleButton.setBorderPainted(false);
-        listToggleButton.setOpaque(true);
+        listToggleButton.setContentAreaFilled(false);
         listToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listToggleButtonActionPerformed(evt);

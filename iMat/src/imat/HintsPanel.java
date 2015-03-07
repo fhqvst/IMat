@@ -5,6 +5,7 @@
  */
 package imat;
 
+import java.awt.Component;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -25,7 +26,18 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
      */
     public HintsPanel() {
         initComponents();
-        currentHintNbr = 13;
+        Component[] allComponents = hintsNavigationPanel.getComponents();
+        for (Component c: allComponents) {
+            if (c instanceof AbstractButton) {
+                AbstractButton button = (AbstractButton)c;
+               // button.setBorderPainted(false);
+                //button.setContentAreaFilled(false);
+            }
+        }
+        forumButton.setText("<html><font color='blue'><u>forum</u></font></html>");
+        contactUsButton.setText("<html><font color='blue'><u>kontakta oss!</u></font></html>");
+        changeToHint(13);
+        manualTextArea.setText("Mitt första köp \n\n" + setDummyText());
     }
     
     public void setObject(Object bean) {
@@ -45,7 +57,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
                  minusTwoButton.setText(String.valueOf(1));
             }
             
-            if(changeNumber < NUMBER_OF_HINTS) {
+            if(changeNumber < NUMBER_OF_HINTS-1) {
                 plusOneButton.setText(String.valueOf(changeNumber+1));
                 plusTwoButton.setText(String.valueOf(changeNumber+2));
             } else {
@@ -54,30 +66,34 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
             }
             if (currentHintNbr != changeNumber) {
                 currentHintNbr = changeNumber;
-                String dummyText = "";
-                boolean startOfSentence = false;
-                Random r = new Random();
-                for (int i = 0; i < 5000; i++) {
-                    if (i%20 == 19 && r.nextInt(3) == 0 && !startOfSentence) {
-                        dummyText += ". ";
-                        startOfSentence = true;
-                    } else if (i%7 == 6 && r.nextInt(2) == 0 && !startOfSentence) {
-                        dummyText += " ";
-                    }
-                    else {
-                        if (startOfSentence) {
-                            dummyText += String.valueOf((char)(r.nextInt((122 - 97) + 1) + 97)).toUpperCase();
-                            startOfSentence = false;
-                        } else {
-                            dummyText += String.valueOf((char)(r.nextInt((122 - 97) + 1) + 97)).toLowerCase();
-                        }
-                    }
-                }
-                currentHintTextArea.setText(dummyText);
+                currentHintTextArea.setText(setDummyText());
             }
             
         }
         
+    }
+    
+    public String setDummyText() {
+        String dummyText = "";
+        boolean startOfSentence = true;
+        Random r = new Random();
+        for (int i = 0; i < 5000; i++) {
+            if (i%20 == 19 && r.nextInt(3) == 0 && !startOfSentence) {
+                dummyText += ". ";
+                startOfSentence = true;
+            } else if (i%7 == 6 && r.nextInt(2) == 0 && !startOfSentence) {
+                dummyText += " ";
+            }
+            else {
+                if (startOfSentence) {
+                    dummyText += String.valueOf((char)(r.nextInt((122 - 97) + 1) + 97)).toUpperCase();
+                    startOfSentence = false;
+                } else {
+                    dummyText += String.valueOf((char)(r.nextInt((122 - 97) + 1) + 97)).toLowerCase();
+                }
+            }
+        }
+        return dummyText;
     }
     
     private void changeCurrentHintToButtonText(AbstractButton button) {
@@ -93,16 +109,8 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
     private void initComponents() {
 
         hintsButtonGroup = new javax.swing.ButtonGroup();
-        currentTipsLayoutPanel = new javax.swing.JPanel();
         currentTipsPanel = new javax.swing.JPanel();
         hintsHeaderLabel = new javax.swing.JLabel();
-        needHelpPanel = new javax.swing.JPanel();
-        needHelpLabel = new javax.swing.JLabel();
-        findHelpPanel = new javax.swing.JPanel();
-        jLabel65 = new javax.swing.JLabel();
-        jButton33 = new javax.swing.JButton();
-        jLabel66 = new javax.swing.JLabel();
-        jButton34 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         currentHintScrollPane = new javax.swing.JScrollPane();
         currentHintTextArea = new javax.swing.JTextArea();
@@ -120,45 +128,30 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         secondLastButton = new javax.swing.JButton();
         lastButton = new javax.swing.JButton();
         nextButton = new javax.swing.JButton();
+        needHelpLabel = new javax.swing.JLabel();
+        findHelpPanel = new javax.swing.JPanel();
+        jLabel65 = new javax.swing.JLabel();
+        forumButton = new javax.swing.JButton();
+        jLabel66 = new javax.swing.JLabel();
+        contactUsButton = new javax.swing.JButton();
         manualPanel = new javax.swing.JPanel();
-        jLabel60 = new javax.swing.JLabel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        manualLabel = new javax.swing.JLabel();
+        manualScrollPane = new javax.swing.JScrollPane();
+        manualTextArea = new javax.swing.JTextArea();
 
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.LINE_AXIS));
 
         hintsHeaderLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         hintsHeaderLabel.setText("Tips 13/37");
 
-        needHelpPanel.setBorder(null);
-        needHelpPanel.setLayout(new java.awt.BorderLayout());
-
-        needHelpLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        needHelpLabel.setText("Behöver du hjälp?");
-        needHelpPanel.add(needHelpLabel, java.awt.BorderLayout.NORTH);
-
-        jLabel65.setText("Besök vårt");
-        findHelpPanel.add(jLabel65);
-
-        jButton33.setText("forum");
-        findHelpPanel.add(jButton33);
-
-        jLabel66.setText("eller");
-        findHelpPanel.add(jLabel66);
-
-        jButton34.setText("kontakta oss");
-        findHelpPanel.add(jButton34);
-
-        needHelpPanel.add(findHelpPanel, java.awt.BorderLayout.CENTER);
-
         currentHintScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
         currentHintTextArea.setColumns(20);
         currentHintTextArea.setLineWrap(true);
         currentHintTextArea.setRows(5);
-        currentHintTextArea.setText("Lorem ipsum dolor sit amet, consectetur adipisicing elit,\nsed do eiusmod tempor incididunt ut labore et dolore\n magna aliqua. Ut enim ad minim veniam, quis \nnostrud exercitation ullamco \n\nlaboris nisi ut aliquip ex ea commodo consequat\n. Duis aute irure dolor in reprehenderit in voluptate velit \nesse cillum dolore eu fugiat nulla pariatur. \n\nExcepteur sint occaecat cupidatat non proident, sunt \nin culpa qui officia deserunt mollit anim id est laborum.\n");
         currentHintTextArea.setWrapStyleWord(true);
         currentHintTextArea.setAutoscrolls(false);
+        currentHintTextArea.setFocusable(false);
         currentHintScrollPane.setViewportView(currentHintTextArea);
 
         previousButton.setText("<<");
@@ -263,24 +256,82 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         });
         hintsNavigationPanel.add(nextButton);
 
+        needHelpLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        needHelpLabel.setText("Behöver du hjälp?");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(hintsNavigationPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE)
-                .addContainerGap())
-            .addComponent(currentHintScrollPane)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(hintsNavigationPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 560, Short.MAX_VALUE)
+                    .addComponent(currentHintScrollPane))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(needHelpLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(currentHintScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(hintsNavigationPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addComponent(needHelpLabel)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        jLabel65.setText("Besök vårt");
+        findHelpPanel.add(jLabel65);
+
+        forumButton.setText("forum");
+        forumButton.setBorderPainted(false);
+        forumButton.setContentAreaFilled(false);
+        findHelpPanel.add(forumButton);
+
+        jLabel66.setText("eller");
+        findHelpPanel.add(jLabel66);
+
+        contactUsButton.setText("kontakta oss");
+        contactUsButton.setBorderPainted(false);
+        contactUsButton.setContentAreaFilled(false);
+        findHelpPanel.add(contactUsButton);
+
+        manualLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        manualLabel.setText("Manual");
+
+        manualScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        manualTextArea.setColumns(20);
+        manualTextArea.setLineWrap(true);
+        manualTextArea.setRows(5);
+        manualTextArea.setText("\n");
+        manualTextArea.setToolTipText("");
+        manualTextArea.setWrapStyleWord(true);
+        manualTextArea.setFocusable(false);
+        manualTextArea.setMaximumSize(new java.awt.Dimension(200, 204));
+        manualTextArea.setMinimumSize(new java.awt.Dimension(200, 204));
+        manualTextArea.setPreferredSize(new java.awt.Dimension(200, 204));
+        manualScrollPane.setViewportView(manualTextArea);
+
+        javax.swing.GroupLayout manualPanelLayout = new javax.swing.GroupLayout(manualPanel);
+        manualPanel.setLayout(manualPanelLayout);
+        manualPanelLayout.setHorizontalGroup(
+            manualPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(manualPanelLayout.createSequentialGroup()
+                .addGroup(manualPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(manualScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE)
+                    .addComponent(manualLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        manualPanelLayout.setVerticalGroup(
+            manualPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(manualPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(manualLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(manualScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout currentTipsPanelLayout = new javax.swing.GroupLayout(currentTipsPanel);
@@ -288,71 +339,31 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         currentTipsPanelLayout.setHorizontalGroup(
             currentTipsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(currentTipsPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(currentTipsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(hintsHeaderLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(needHelpPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(hintsHeaderLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(findHelpPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(manualPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         currentTipsPanelLayout.setVerticalGroup(
             currentTipsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(currentTipsPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(hintsHeaderLabel)
+                .addGroup(currentTipsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(currentTipsPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(hintsHeaderLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(manualPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(needHelpPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 632, Short.MAX_VALUE))
+                .addComponent(findHelpPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout currentTipsLayoutPanelLayout = new javax.swing.GroupLayout(currentTipsLayoutPanel);
-        currentTipsLayoutPanel.setLayout(currentTipsLayoutPanelLayout);
-        currentTipsLayoutPanelLayout.setHorizontalGroup(
-            currentTipsLayoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(currentTipsLayoutPanelLayout.createSequentialGroup()
-                .addComponent(currentTipsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        currentTipsLayoutPanelLayout.setVerticalGroup(
-            currentTipsLayoutPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(currentTipsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        add(currentTipsLayoutPanel);
-
-        jLabel60.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel60.setText("Manual");
-
-        jScrollPane6.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Lorem ipsum dolor sit amet, consectetur adipisicing elit,\nsed do eiusmod tempor incididunt ut labore et dolore\n magna aliqua. Ut enim ad minim veniam, quis \nnostrud exercitation ullamco \n\nlaboris nisi ut aliquip ex ea commodo consequat\n. Duis aute irure dolor in reprehenderit in voluptate velit \nesse cillum dolore eu fugiat nulla pariatur. \n\nExcepteur sint occaecat cupidatat non proident, sunt \nin culpa qui officia deserunt mollit anim id est laborum.\n");
-        jTextArea1.setToolTipText("");
-        jScrollPane6.setViewportView(jTextArea1);
-
-        javax.swing.GroupLayout manualPanelLayout = new javax.swing.GroupLayout(manualPanel);
-        manualPanel.setLayout(manualPanelLayout);
-        manualPanelLayout.setHorizontalGroup(
-            manualPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, manualPanelLayout.createSequentialGroup()
-                .addGroup(manualPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel60, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 594, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        manualPanelLayout.setVerticalGroup(
-            manualPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(manualPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel60)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.DEFAULT_SIZE, 1016, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        add(manualPanel);
+        add(currentTipsPanel);
     }// </editor-fold>//GEN-END:initComponents
 
     private void currentHintTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_currentHintTextFieldActionPerformed
@@ -417,32 +428,30 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton contactUsButton;
     private javax.swing.JScrollPane currentHintScrollPane;
     private javax.swing.JTextArea currentHintTextArea;
     private javax.swing.JTextField currentHintTextField;
-    private javax.swing.JPanel currentTipsLayoutPanel;
     private javax.swing.JPanel currentTipsPanel;
     private javax.swing.JPanel findHelpPanel;
     private javax.swing.JButton firstButton;
+    private javax.swing.JButton forumButton;
     private javax.swing.ButtonGroup hintsButtonGroup;
     private javax.swing.JLabel hintsHeaderLabel;
     private javax.swing.JPanel hintsNavigationPanel;
-    private javax.swing.JButton jButton33;
-    private javax.swing.JButton jButton34;
-    private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JButton lastButton;
+    private javax.swing.JLabel manualLabel;
     private javax.swing.JPanel manualPanel;
+    private javax.swing.JScrollPane manualScrollPane;
+    private javax.swing.JTextArea manualTextArea;
     private javax.swing.JButton minusOneButton;
     private javax.swing.JButton minusTwoButton;
     private javax.swing.JLabel needHelpLabel;
-    private javax.swing.JPanel needHelpPanel;
     private javax.swing.JButton nextButton;
     private javax.swing.JButton plusOneButton;
     private javax.swing.JButton plusTwoButton;

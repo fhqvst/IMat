@@ -67,7 +67,6 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
 
         newsPanel.setBackground(new java.awt.Color(255, 255, 255));
         newsPanel.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20)));
-        newsPanel.setAlignmentX(0.5F);
         newsPanel.setMaximumSize(new java.awt.Dimension(300, 2147483647));
         newsPanel.setMinimumSize(new java.awt.Dimension(0, 0));
         newsPanel.setPreferredSize(new java.awt.Dimension(250, 230));
@@ -89,6 +88,7 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
         jTextArea1.setRows(5);
         jTextArea1.setText("Nam venenatis nisl at sem blandit, at laoreet sapien auctor. Fusce hendrerit leo sit amet suscipit vestibulum. Integer sem nulla, sollicitudin at nunc sit amet, commodo imperdiet nunc. Aliquam congue ligula eget urna interdum, sit amet lacinia ipsum suscipit. Cras vitae aliquam ante, quis dictum metus. Morbi auctor rhoncus sodales. Etiam malesuada velit ac ligula dapibus, ornare porttitor velit consectetur.");
         jTextArea1.setWrapStyleWord(true);
+        jTextArea1.setFocusable(false);
         jTextArea1.setMinimumSize(new java.awt.Dimension(0, 0));
         jTextArea1.setPreferredSize(new java.awt.Dimension(2147483647, 2147483647));
         newsPanel.add(jTextArea1);
@@ -109,6 +109,7 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
         jTextArea3.setRows(5);
         jTextArea3.setText("Nam venenatis nisl at sem blandit, at laoreet sapien auctor. Fusce hendrerit leo sit amet suscipit vestibulum. Integer sem nulla, sollicitudin at nunc sit amet, commodo imperdiet nunc. Aliquam congue ligula eget urna interdum, sit amet lacinia ipsum suscipit. ");
         jTextArea3.setWrapStyleWord(true);
+        jTextArea3.setFocusable(false);
         jTextArea3.setMinimumSize(new java.awt.Dimension(0, 0));
         jTextArea3.setPreferredSize(new java.awt.Dimension(2147483647, 2147483647));
         newsPanel.add(jTextArea3);
@@ -122,8 +123,8 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
         welcomePanel.setLayout(new java.awt.BorderLayout());
 
         welcomeLabel.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        welcomeLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        welcomeLabel.setText("Välkommen Alexandra");
+        welcomeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        welcomeLabel.setText("Välkommen");
         welcomeLabel.setToolTipText("");
         welcomeLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 10, 0));
         welcomePanel.add(welcomeLabel, java.awt.BorderLayout.PAGE_START);
