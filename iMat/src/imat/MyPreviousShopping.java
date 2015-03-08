@@ -5,6 +5,7 @@
  */
 package imat;
 
+import java.util.List;
 import javax.swing.DefaultListModel;
 import se.chalmers.ait.dat215.project.*;
 
@@ -16,6 +17,7 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
     
     private Object bean;
     private DefaultListModel orders;
+    private DefaultListModel items;
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
     /**
@@ -24,10 +26,13 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
     public MyPreviousShopping() {
         initComponents();
         orders = new DefaultListModel();
+        items = new DefaultListModel();
         for(int i = 0; i < dataHandler.getOrders().size(); i ++){
             orders.addElement(dataHandler.getOrders().get(i).getDate());
+            
         }
         ordersList.setModel(orders);
+        ordersList.setSelectedIndex(0);
     }
 
     MyPreviousShopping(int width, int height) {
@@ -64,6 +69,8 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
         ordersList = new javax.swing.JList();
         cartButtonList1 = new javax.swing.JButton();
         cartButtonList2 = new javax.swing.JButton();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        itemsList = new javax.swing.JList();
 
         setLayout(new java.awt.GridLayout(1, 0));
 
@@ -106,6 +113,11 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
+        ordersList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+            public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
+                ordersListValueChanged(evt);
+            }
+        });
         jScrollPane3.setViewportView(ordersList);
 
         cartButtonList1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
@@ -125,6 +137,13 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
                 cartButtonList2ActionPerformed(evt);
             }
         });
+
+        itemsList.setModel(new javax.swing.AbstractListModel() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public Object getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane4.setViewportView(itemsList);
 
         javax.swing.GroupLayout myStoredListsPanelLayout = new javax.swing.GroupLayout(myStoredListsPanel);
         myStoredListsPanel.setLayout(myStoredListsPanelLayout);
@@ -162,8 +181,9 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel57)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 171, Short.MAX_VALUE))
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 158, Short.MAX_VALUE))
         );
         myStoredListsPanelLayout.setVerticalGroup(
             myStoredListsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -193,7 +213,9 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
                 .addComponent(jLabel57)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         myStoredListsScrollPane.setViewportView(myStoredListsPanel);
@@ -213,10 +235,25 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
 
     }//GEN-LAST:event_cartButtonList2ActionPerformed
 
+    private void ordersListValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_ordersListValueChanged
+        
+        if(orders.getSize() > 0){
+            List<ShoppingItem> tempItems = ((Order)dataHandler.getOrders().get(ordersList.getSelectedIndex())).getItems();
+            items.removeAllElements();
+            for(int i = 0; i < tempItems.size(); i ++){
+                
+                items.addElement(tempItems.get(i).getProduct().getName() + ": " + tempItems.get(i).getAmount() + " " + tempItems.get(i).getProduct().getUnitSuffix());
+            }
+            
+            itemsList.setModel(items);
+        }
+    }//GEN-LAST:event_ordersListValueChanged
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cartButtonList1;
     private javax.swing.JButton cartButtonList2;
+    private javax.swing.JList itemsList;
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton25;
     private javax.swing.JButton jButton27;
@@ -227,6 +264,7 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JToggleButton jToggleButton5;
     private javax.swing.JPanel myStoredListsPanel;
