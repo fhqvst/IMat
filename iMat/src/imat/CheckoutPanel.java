@@ -191,7 +191,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         page2NextButton = new javax.swing.JButton();
         saveCredentialsCheckBox = new javax.swing.JCheckBox();
         jTextArea2 = new javax.swing.JTextArea();
-        page2NextButton1 = new javax.swing.JButton();
+        page2BackButton = new javax.swing.JButton();
         page3Panel = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -211,6 +211,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         wizardButtonGroup.add(wizardStep1ToggleButton);
         wizardStep1ToggleButton.setSelected(true);
         wizardStep1ToggleButton.setText("Personuppgifter");
+        wizardStep1ToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         wizardStep1ToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 wizardStep1ToggleButtonActionPerformed(evt);
@@ -220,6 +221,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
 
         wizardButtonGroup.add(wizardStep2ToggleButton);
         wizardStep2ToggleButton.setText("Betaluppifter");
+        wizardStep2ToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         wizardStep2ToggleButton.setEnabled(false);
         wizardStep2ToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -230,6 +232,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
 
         wizardButtonGroup.add(wizardStep3ToggleButton);
         wizardStep3ToggleButton.setText("Bekräfta köp");
+        wizardStep3ToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         wizardStep3ToggleButton.setEnabled(false);
         wizardStep3ToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -443,12 +446,12 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         jTextArea2.setRows(5);
         jTextArea2.setText("*Måste fyllas i\n**Sparas Ej");
 
-        page2NextButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        page2NextButton1.setText("Tillbaka");
-        page2NextButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        page2NextButton1.addActionListener(new java.awt.event.ActionListener() {
+        page2BackButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        page2BackButton.setText("Tillbaka");
+        page2BackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        page2BackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                page2NextButton1ActionPerformed(evt);
+                page2BackButtonActionPerformed(evt);
             }
         });
 
@@ -457,7 +460,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         buttonPanel3Layout.setHorizontalGroup(
             buttonPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(buttonPanel3Layout.createSequentialGroup()
-                .addComponent(page2NextButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(page2BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                 .addComponent(jTextArea2, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -474,7 +477,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
                     .addGroup(buttonPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(page2NextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(saveCredentialsCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(page2NextButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(page2BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextArea2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -501,6 +504,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         jPanel2.add(completedLabel, java.awt.BorderLayout.CENTER);
 
         buyButton.setText("Betala");
+        buyButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         buyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buyButtonActionPerformed(evt);
@@ -509,6 +513,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         jPanel2.add(buyButton, java.awt.BorderLayout.EAST);
 
         page3BackButton.setText("Tillbaka");
+        page3BackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         page3BackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 page3BackButtonActionPerformed(evt);
@@ -678,10 +683,10 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         }
     }//GEN-LAST:event_page2NextButtonActionPerformed
 
-    private void page2NextButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_page2NextButton1ActionPerformed
+    private void page2BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_page2BackButtonActionPerformed
         showCard("page1");
         wizardStep1ToggleButton.setSelected(true);
-    }//GEN-LAST:event_page2NextButton1ActionPerformed
+    }//GEN-LAST:event_page2BackButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -739,9 +744,9 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
     private javax.swing.JPanel page1FormPanel;
     private javax.swing.JButton page1NextButton;
     private javax.swing.JPanel page1Panel;
+    private javax.swing.JButton page2BackButton;
     private javax.swing.JPanel page2FormsPanel;
     private javax.swing.JButton page2NextButton;
-    private javax.swing.JButton page2NextButton1;
     private javax.swing.JPanel page2Panel;
     private javax.swing.JButton page3BackButton;
     private javax.swing.JPanel page3Panel;

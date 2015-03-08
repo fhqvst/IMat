@@ -50,6 +50,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         }));
         //Does not
         
+        this.setExtendedState(this.MAXIMIZED_BOTH);
         dataHandler.getShoppingCart().addShoppingCartListener(this);
         updateCartLabels();
         homeButton.requestFocus();
@@ -205,7 +206,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
         searchButton.setText("Sök");
         searchButton.setToolTipText("Sök i butiken");
-        searchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        searchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         searchButton.setMaximumSize(new java.awt.Dimension(75, 40));
         searchButton.setMinimumSize(new java.awt.Dimension(75, 40));
         searchButton.setPreferredSize(new java.awt.Dimension(75, 40));
@@ -223,6 +224,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         hintsToggleButton.setToolTipText("Tips");
         hintsToggleButton.setBorderPainted(false);
         hintsToggleButton.setContentAreaFilled(false);
+        hintsToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         hintsToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hintsToggleButtonActionPerformed(evt);
@@ -236,6 +238,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         profileButton.setToolTipText("Min profil");
         profileButton.setBorderPainted(false);
         profileButton.setContentAreaFilled(false);
+        profileButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         profileButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 profileButtonActionPerformed(evt);
@@ -247,7 +250,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         checkoutButton.setBackground(new java.awt.Color(204, 255, 102));
         checkoutButton.setText("Till kassan");
         checkoutButton.setToolTipText("");
-        checkoutButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        checkoutButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         checkoutButton.setMaximumSize(new java.awt.Dimension(112, 40));
         checkoutButton.setMinimumSize(new java.awt.Dimension(112, 40));
         checkoutButton.setPreferredSize(new java.awt.Dimension(112, 40));
@@ -267,6 +270,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
         previousButton.setText("<<");
         previousButton.setToolTipText("Föregående sida");
+        previousButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         previousButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 previousButtonActionPerformed(evt);
@@ -277,6 +281,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         globalNavigationButtonGroup.add(homeButton);
         homeButton.setText("Hem");
         homeButton.setToolTipText("Visa förstasidan");
+        homeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         homeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 homeButtonActionPerformed(evt);
@@ -287,6 +292,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         globalNavigationButtonGroup.add(receipeButton);
         receipeButton.setText("Recept");
         receipeButton.setToolTipText("Visa rekommenderade recept");
+        receipeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         receipeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 receipeButtonActionPerformed(evt);
@@ -296,6 +302,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
         globalNavigationButtonGroup.add(meatFishButton);
         meatFishButton.setText("Kött & Fisk");
+        meatFishButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         meatFishButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 meatFishButtonActionPerformed(evt);
@@ -305,6 +312,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
         globalNavigationButtonGroup.add(freezerButton);
         freezerButton.setText("Frysvaror");
+        freezerButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         freezerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 freezerButtonActionPerformed(evt);
@@ -314,6 +322,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
         globalNavigationButtonGroup.add(dairyButton);
         dairyButton.setText("Mejeri");
+        dairyButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         dairyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dairyButtonActionPerformed(evt);
@@ -323,6 +332,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
         globalNavigationButtonGroup.add(fruitVegetablesButton);
         fruitVegetablesButton.setText("Frukt & Grönt");
+        fruitVegetablesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         fruitVegetablesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fruitVegetablesButtonActionPerformed(evt);
@@ -332,6 +342,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
         globalNavigationButtonGroup.add(pantryButton);
         pantryButton.setText("Skafferi");
+        pantryButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         pantryButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pantryButtonActionPerformed(evt);
@@ -341,6 +352,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
         globalNavigationButtonGroup.add(candySnacksButton);
         candySnacksButton.setText("Godis & Snacks");
+        candySnacksButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         candySnacksButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 candySnacksButtonActionPerformed(evt);
@@ -351,6 +363,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         globalNavigationButtonGroup.add(favoriteButton);
         favoriteButton.setText("Favoriter");
         favoriteButton.setToolTipText("Visa mina favoritmarkerade varor");
+        favoriteButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         favoriteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 favoriteButtonActionPerformed(evt);
@@ -360,6 +373,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
         nextButton.setText(">>");
         nextButton.setToolTipText("Nästa sida");
+        nextButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         nextButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nextButtonActionPerformed(evt);
@@ -431,6 +445,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         cartToggleButton.setToolTipText("Visa varukorg");
         cartToggleButton.setBorderPainted(false);
         cartToggleButton.setContentAreaFilled(false);
+        cartToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cartToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cartToggleButtonActionPerformed(evt);
@@ -470,6 +485,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         listToggleButton.setToolTipText("Visa mina listor");
         listToggleButton.setBorderPainted(false);
         listToggleButton.setContentAreaFilled(false);
+        listToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         listToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listToggleButtonActionPerformed(evt);
