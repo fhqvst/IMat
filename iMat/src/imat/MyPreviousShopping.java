@@ -5,6 +5,9 @@
  */
 package imat;
 
+import javax.swing.DefaultListModel;
+import se.chalmers.ait.dat215.project.*;
+
 /**
  *
  * @author kakan
@@ -12,12 +15,19 @@ package imat;
 public class MyPreviousShopping extends javax.swing.JPanel implements java.beans.Customizer {
     
     private Object bean;
+    private DefaultListModel orders;
+    private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
     /**
      * Creates new customizer MyPreviousShopping
      */
     public MyPreviousShopping() {
         initComponents();
+        orders = new DefaultListModel();
+        for(int i = 0; i < dataHandler.getOrders().size(); i ++){
+            orders.addElement(dataHandler.getOrders().get(i).getDate());
+        }
+        ordersList.setModel(orders);
     }
 
     MyPreviousShopping(int width, int height) {
@@ -51,12 +61,11 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
         jComboBox10 = new javax.swing.JComboBox();
         jLabel57 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jList3 = new javax.swing.JList();
+        ordersList = new javax.swing.JList();
         cartButtonList1 = new javax.swing.JButton();
         cartButtonList2 = new javax.swing.JButton();
 
-        setPreferredSize(null);
-        setLayout(new java.awt.GridLayout());
+        setLayout(new java.awt.GridLayout(1, 0));
 
         myStoredListsScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         myStoredListsScrollPane.setPreferredSize(new java.awt.Dimension(0, 0));
@@ -92,12 +101,12 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
 
         jLabel57.setText("Mina senaste köp");
 
-        jList3.setModel(new javax.swing.AbstractListModel() {
+        ordersList.setModel(new javax.swing.AbstractListModel() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane3.setViewportView(jList3);
+        jScrollPane3.setViewportView(ordersList);
 
         cartButtonList1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
         cartButtonList1.setBorderPainted(false);
@@ -217,11 +226,11 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
     private javax.swing.JLabel jLabel57;
-    private javax.swing.JList jList3;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JToggleButton jToggleButton4;
     private javax.swing.JToggleButton jToggleButton5;
     private javax.swing.JPanel myStoredListsPanel;
     private javax.swing.JScrollPane myStoredListsScrollPane;
+    private javax.swing.JList ordersList;
     // End of variables declaration//GEN-END:variables
 }
