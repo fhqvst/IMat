@@ -3,6 +3,7 @@ package imat;
 import com.sun.org.apache.xalan.internal.xsltc.runtime.BasisLibrary;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
@@ -11,6 +12,7 @@ import java.util.LinkedList;
 import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.AbstractButton;
+import javax.swing.ButtonModel;
 import javax.swing.JToggleButton;
 import javax.swing.UIManager;
 import se.chalmers.ait.dat215.project.*;
@@ -107,9 +109,10 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         jMenuItem2 = new javax.swing.JMenuItem();
         globalNavigationButtonGroup = new javax.swing.ButtonGroup();
         closeablePanelsButtonGroup = new javax.swing.ButtonGroup();
+        jDialog1 = new javax.swing.JDialog();
         headerPanel = new javax.swing.JPanel();
         logotype = new javax.swing.JLabel();
-        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0));
+        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(60, 0), new java.awt.Dimension(60, 0), new java.awt.Dimension(60, 0));
         searchTextField = new javax.swing.JTextField();
         searchButton = new javax.swing.JButton();
         filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0));
@@ -120,6 +123,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         navigationPanel = new javax.swing.JPanel();
         previousButton = new javax.swing.JButton();
         homeButton = new javax.swing.JToggleButton();
+        favoriteButton = new javax.swing.JToggleButton();
         receipeButton = new javax.swing.JToggleButton();
         meatFishButton = new javax.swing.JToggleButton();
         freezerButton = new javax.swing.JToggleButton();
@@ -127,15 +131,14 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         fruitVegetablesButton = new javax.swing.JToggleButton();
         pantryButton = new javax.swing.JToggleButton();
         candySnacksButton = new javax.swing.JToggleButton();
-        favoriteButton = new javax.swing.JToggleButton();
         nextButton = new javax.swing.JButton();
         contentPanel = new javax.swing.JPanel();
         cardCartListLayeredPane = new javax.swing.JLayeredPane();
         cardPanel = new javax.swing.JPanel();
         cartLayeredPanel = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        cartLayeredPanelTitle = new javax.swing.JLabel();
         listLayeredPanel = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
+        listLayeredPanelTitle = new javax.swing.JLabel();
         cartAndListsPanel = new javax.swing.JPanel();
         cartPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -170,6 +173,17 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         jMenuItem2.setText("jMenuItem2");
         jPopupMenu1.add(jMenuItem2);
 
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("iMat");
         setBounds(new java.awt.Rectangle(0, 0, 0, 0));
@@ -177,18 +191,25 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.Y_AXIS));
 
         headerPanel.setBackground(new java.awt.Color(255, 255, 255));
-        headerPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
-        headerPanel.setMaximumSize(new java.awt.Dimension(2147483647, 80));
+        headerPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(40, 40, 40, 40));
+        headerPanel.setMaximumSize(new java.awt.Dimension(2147483647, 100));
         headerPanel.setMinimumSize(new java.awt.Dimension(0, 0));
-        headerPanel.setPreferredSize(new java.awt.Dimension(0, 80));
+        headerPanel.setPreferredSize(new java.awt.Dimension(0, 140));
         headerPanel.setLayout(new javax.swing.BoxLayout(headerPanel, javax.swing.BoxLayout.LINE_AXIS));
 
-        logotype.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
+        logotype.setFont(new java.awt.Font("Helvetica", 1, 48)); // NOI18N
         logotype.setText("iMat");
         headerPanel.add(logotype);
         headerPanel.add(filler2);
 
+        searchTextField.setFont(new java.awt.Font("Helvetica", 0, 18)); // NOI18N
+        searchTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
         searchTextField.setText("Sök produkt...");
+        searchTextField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 0, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 12, 0, 0)));
+        searchTextField.setMaximumSize(new java.awt.Dimension(2147483647, 60));
+        searchTextField.setMinimumSize(new java.awt.Dimension(0, 0));
+        searchTextField.setOpaque(true);
+        searchTextField.setPreferredSize(new java.awt.Dimension(124, 60));
         searchTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 searchTextFieldFocusGained(evt);
@@ -204,10 +225,18 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         });
         headerPanel.add(searchTextField);
 
-        searchButton.setText("Sök");
+        searchButton.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        searchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
+        searchButton.setText("SÖK");
         searchButton.setToolTipText("Sök i butiken");
-        searchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        searchButton.setMaximumSize(new java.awt.Dimension(75, 40));
+        searchButton.setAlignmentX(0.5F);
+        searchButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)));
+        searchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        searchButton.setFocusPainted(false);
+        searchButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        searchButton.setIconTextGap(0);
+        searchButton.setMargin(null);
+        searchButton.setMaximumSize(new java.awt.Dimension(75, 60));
         searchButton.setMinimumSize(new java.awt.Dimension(75, 40));
         searchButton.setPreferredSize(new java.awt.Dimension(75, 40));
         searchButton.addActionListener(new java.awt.event.ActionListener() {
@@ -224,7 +253,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         hintsToggleButton.setToolTipText("Tips");
         hintsToggleButton.setBorderPainted(false);
         hintsToggleButton.setContentAreaFilled(false);
-        hintsToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        hintsToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         hintsToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hintsToggleButtonActionPerformed(evt);
@@ -238,7 +267,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         profileButton.setToolTipText("Min profil");
         profileButton.setBorderPainted(false);
         profileButton.setContentAreaFilled(false);
-        profileButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        profileButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         profileButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 profileButtonActionPerformed(evt);
@@ -247,13 +276,19 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         headerPanel.add(profileButton);
         headerPanel.add(filler4);
 
-        checkoutButton.setBackground(new java.awt.Color(204, 255, 102));
-        checkoutButton.setText("Till kassan");
+        checkoutButton.setBackground(new java.awt.Color(255, 255, 255));
+        checkoutButton.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        checkoutButton.setForeground(new java.awt.Color(255, 255, 255));
+        checkoutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        checkoutButton.setText("TILL KASSAN");
         checkoutButton.setToolTipText("");
+        checkoutButton.setBorder(null);
+        checkoutButton.setBorderPainted(false);
         checkoutButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        checkoutButton.setMaximumSize(new java.awt.Dimension(112, 40));
-        checkoutButton.setMinimumSize(new java.awt.Dimension(112, 40));
-        checkoutButton.setPreferredSize(new java.awt.Dimension(112, 40));
+        checkoutButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        checkoutButton.setMaximumSize(new java.awt.Dimension(130, 60));
+        checkoutButton.setMinimumSize(new java.awt.Dimension(130, 60));
+        checkoutButton.setPreferredSize(new java.awt.Dimension(130, 60));
         checkoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkoutButtonActionPerformed(evt);
@@ -264,13 +299,27 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         getContentPane().add(headerPanel);
 
         navigationPanel.setBackground(new java.awt.Color(255, 255, 255));
-        navigationPanel.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 20, 20, 20)));
+        navigationPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 1, 0, new java.awt.Color(200, 200, 200)));
         navigationPanel.setMaximumSize(new java.awt.Dimension(2147483647, 80));
-        navigationPanel.setLayout(new javax.swing.BoxLayout(navigationPanel, javax.swing.BoxLayout.LINE_AXIS));
+        navigationPanel.setLayout(new javax.swing.BoxLayout(navigationPanel, javax.swing.BoxLayout.X_AXIS));
 
-        previousButton.setText("<<");
+        previousButton.setBackground(new java.awt.Color(255, 255, 255));
+        previousButton.setFont(new java.awt.Font("Helvetica", 1, 24)); // NOI18N
+        previousButton.setText("←");
         previousButton.setToolTipText("Föregående sida");
+        previousButton.setBorder(null);
         previousButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        previousButton.setFocusPainted(false);
+        previousButton.setIconTextGap(0);
+        previousButton.setMargin(null);
+        previousButton.setMaximumSize(new java.awt.Dimension(60, 60));
+        previousButton.setMinimumSize(new java.awt.Dimension(60, 60));
+        previousButton.setPreferredSize(new java.awt.Dimension(60, 60));
+        previousButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        previousButton.setRolloverEnabled(true);
+        previousButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
+        previousButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
+        previousButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
         previousButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 previousButtonActionPerformed(evt);
@@ -278,10 +327,25 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         });
         navigationPanel.add(previousButton);
 
+        homeButton.setBackground(new java.awt.Color(255, 255, 255));
         globalNavigationButtonGroup.add(homeButton);
-        homeButton.setText("Hem");
+        homeButton.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        homeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
+        homeButton.setText("HEM");
         homeButton.setToolTipText("Visa förstasidan");
+        homeButton.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
         homeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        homeButton.setFocusPainted(false);
+        homeButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        homeButton.setIconTextGap(0);
+        homeButton.setMargin(null);
+        homeButton.setMaximumSize(new java.awt.Dimension(80, 60));
+        homeButton.setMinimumSize(new java.awt.Dimension(0, 0));
+        homeButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        homeButton.setRolloverEnabled(true);
+        homeButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
+        homeButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        homeButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
         homeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 homeButtonActionPerformed(evt);
@@ -289,81 +353,26 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         });
         navigationPanel.add(homeButton);
 
-        globalNavigationButtonGroup.add(receipeButton);
-        receipeButton.setText("Recept");
-        receipeButton.setToolTipText("Visa rekommenderade recept");
-        receipeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        receipeButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                receipeButtonActionPerformed(evt);
-            }
-        });
-        navigationPanel.add(receipeButton);
-
-        globalNavigationButtonGroup.add(meatFishButton);
-        meatFishButton.setText("Kött & Fisk");
-        meatFishButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        meatFishButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                meatFishButtonActionPerformed(evt);
-            }
-        });
-        navigationPanel.add(meatFishButton);
-
-        globalNavigationButtonGroup.add(freezerButton);
-        freezerButton.setText("Frysvaror");
-        freezerButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        freezerButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                freezerButtonActionPerformed(evt);
-            }
-        });
-        navigationPanel.add(freezerButton);
-
-        globalNavigationButtonGroup.add(dairyButton);
-        dairyButton.setText("Mejeri");
-        dairyButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        dairyButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                dairyButtonActionPerformed(evt);
-            }
-        });
-        navigationPanel.add(dairyButton);
-
-        globalNavigationButtonGroup.add(fruitVegetablesButton);
-        fruitVegetablesButton.setText("Frukt & Grönt");
-        fruitVegetablesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        fruitVegetablesButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                fruitVegetablesButtonActionPerformed(evt);
-            }
-        });
-        navigationPanel.add(fruitVegetablesButton);
-
-        globalNavigationButtonGroup.add(pantryButton);
-        pantryButton.setText("Skafferi");
-        pantryButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        pantryButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pantryButtonActionPerformed(evt);
-            }
-        });
-        navigationPanel.add(pantryButton);
-
-        globalNavigationButtonGroup.add(candySnacksButton);
-        candySnacksButton.setText("Godis & Snacks");
-        candySnacksButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        candySnacksButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                candySnacksButtonActionPerformed(evt);
-            }
-        });
-        navigationPanel.add(candySnacksButton);
-
+        favoriteButton.setBackground(new java.awt.Color(255, 255, 255));
         globalNavigationButtonGroup.add(favoriteButton);
-        favoriteButton.setText("Favoriter");
+        favoriteButton.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        favoriteButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
+        favoriteButton.setText("FAVORITER");
         favoriteButton.setToolTipText("Visa mina favoritmarkerade varor");
+        favoriteButton.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
         favoriteButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        favoriteButton.setFocusPainted(false);
+        favoriteButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        favoriteButton.setIconTextGap(0);
+        favoriteButton.setMargin(null);
+        favoriteButton.setMaximumSize(new java.awt.Dimension(120, 60));
+        favoriteButton.setMinimumSize(new java.awt.Dimension(0, 0));
+        favoriteButton.setOpaque(true);
+        favoriteButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        favoriteButton.setRolloverEnabled(true);
+        favoriteButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
+        favoriteButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        favoriteButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
         favoriteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 favoriteButtonActionPerformed(evt);
@@ -371,9 +380,207 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         });
         navigationPanel.add(favoriteButton);
 
-        nextButton.setText(">>");
+        receipeButton.setBackground(new java.awt.Color(255, 255, 255));
+        globalNavigationButtonGroup.add(receipeButton);
+        receipeButton.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        receipeButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
+        receipeButton.setText("RECEPT");
+        receipeButton.setToolTipText("Visa rekommenderade recept");
+        receipeButton.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
+        receipeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        receipeButton.setFocusPainted(false);
+        receipeButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        receipeButton.setIconTextGap(0);
+        receipeButton.setMargin(null);
+        receipeButton.setMaximumSize(new java.awt.Dimension(100, 60));
+        receipeButton.setMinimumSize(new java.awt.Dimension(0, 0));
+        receipeButton.setOpaque(true);
+        receipeButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        receipeButton.setRolloverEnabled(true);
+        receipeButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
+        receipeButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        receipeButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        receipeButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                receipeButtonActionPerformed(evt);
+            }
+        });
+        navigationPanel.add(receipeButton);
+
+        meatFishButton.setBackground(new java.awt.Color(255, 255, 255));
+        globalNavigationButtonGroup.add(meatFishButton);
+        meatFishButton.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        meatFishButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
+        meatFishButton.setText("KÖTT & FISK");
+        meatFishButton.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
+        meatFishButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        meatFishButton.setFocusPainted(false);
+        meatFishButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        meatFishButton.setIconTextGap(0);
+        meatFishButton.setMargin(null);
+        meatFishButton.setMaximumSize(new java.awt.Dimension(130, 60));
+        meatFishButton.setMinimumSize(new java.awt.Dimension(0, 0));
+        meatFishButton.setOpaque(true);
+        meatFishButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        meatFishButton.setRolloverEnabled(true);
+        meatFishButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
+        meatFishButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        meatFishButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        meatFishButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                meatFishButtonActionPerformed(evt);
+            }
+        });
+        navigationPanel.add(meatFishButton);
+
+        freezerButton.setBackground(new java.awt.Color(255, 255, 255));
+        globalNavigationButtonGroup.add(freezerButton);
+        freezerButton.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        freezerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
+        freezerButton.setText("FRYSVAROR");
+        freezerButton.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
+        freezerButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        freezerButton.setFocusPainted(false);
+        freezerButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        freezerButton.setIconTextGap(0);
+        freezerButton.setMargin(null);
+        freezerButton.setMaximumSize(new java.awt.Dimension(130, 60));
+        freezerButton.setMinimumSize(new java.awt.Dimension(0, 0));
+        freezerButton.setOpaque(true);
+        freezerButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        freezerButton.setRolloverEnabled(true);
+        freezerButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
+        freezerButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        freezerButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        freezerButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                freezerButtonActionPerformed(evt);
+            }
+        });
+        navigationPanel.add(freezerButton);
+
+        dairyButton.setBackground(new java.awt.Color(255, 255, 255));
+        globalNavigationButtonGroup.add(dairyButton);
+        dairyButton.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        dairyButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
+        dairyButton.setText("MEJERI");
+        dairyButton.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
+        dairyButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        dairyButton.setFocusPainted(false);
+        dairyButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        dairyButton.setIconTextGap(0);
+        dairyButton.setMargin(null);
+        dairyButton.setMaximumSize(new java.awt.Dimension(100, 60));
+        dairyButton.setMinimumSize(new java.awt.Dimension(0, 0));
+        dairyButton.setOpaque(true);
+        dairyButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        dairyButton.setRolloverEnabled(true);
+        dairyButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
+        dairyButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        dairyButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        dairyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dairyButtonActionPerformed(evt);
+            }
+        });
+        navigationPanel.add(dairyButton);
+
+        fruitVegetablesButton.setBackground(new java.awt.Color(255, 255, 255));
+        globalNavigationButtonGroup.add(fruitVegetablesButton);
+        fruitVegetablesButton.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        fruitVegetablesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
+        fruitVegetablesButton.setText("FRUKT & GRÖNT");
+        fruitVegetablesButton.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
+        fruitVegetablesButton.setBounds(new java.awt.Rectangle(0, 0, 0, 0));
+        fruitVegetablesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        fruitVegetablesButton.setFocusPainted(false);
+        fruitVegetablesButton.setHideActionText(true);
+        fruitVegetablesButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        fruitVegetablesButton.setIconTextGap(0);
+        fruitVegetablesButton.setMargin(null);
+        fruitVegetablesButton.setMaximumSize(new java.awt.Dimension(150, 60));
+        fruitVegetablesButton.setMinimumSize(new java.awt.Dimension(0, 0));
+        fruitVegetablesButton.setOpaque(true);
+        fruitVegetablesButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        fruitVegetablesButton.setRolloverEnabled(true);
+        fruitVegetablesButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
+        fruitVegetablesButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        fruitVegetablesButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        fruitVegetablesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                fruitVegetablesButtonActionPerformed(evt);
+            }
+        });
+        navigationPanel.add(fruitVegetablesButton);
+
+        pantryButton.setBackground(new java.awt.Color(255, 255, 255));
+        globalNavigationButtonGroup.add(pantryButton);
+        pantryButton.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        pantryButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
+        pantryButton.setText("SKAFFERI");
+        pantryButton.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
+        pantryButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pantryButton.setFocusPainted(false);
+        pantryButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        pantryButton.setIconTextGap(0);
+        pantryButton.setMargin(null);
+        pantryButton.setMaximumSize(new java.awt.Dimension(110, 60));
+        pantryButton.setMinimumSize(new java.awt.Dimension(0, 0));
+        pantryButton.setOpaque(true);
+        pantryButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        pantryButton.setRolloverEnabled(true);
+        pantryButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
+        pantryButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        pantryButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        pantryButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pantryButtonActionPerformed(evt);
+            }
+        });
+        navigationPanel.add(pantryButton);
+
+        candySnacksButton.setBackground(new java.awt.Color(255, 255, 255));
+        globalNavigationButtonGroup.add(candySnacksButton);
+        candySnacksButton.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        candySnacksButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
+        candySnacksButton.setText("GODIS & SNACKS");
+        candySnacksButton.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
+        candySnacksButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        candySnacksButton.setFocusPainted(false);
+        candySnacksButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        candySnacksButton.setIconTextGap(0);
+        candySnacksButton.setMargin(null);
+        candySnacksButton.setMaximumSize(new java.awt.Dimension(160, 60));
+        candySnacksButton.setMinimumSize(new java.awt.Dimension(0, 0));
+        candySnacksButton.setOpaque(true);
+        candySnacksButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        candySnacksButton.setRolloverEnabled(true);
+        candySnacksButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
+        candySnacksButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        candySnacksButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        candySnacksButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                candySnacksButtonActionPerformed(evt);
+            }
+        });
+        navigationPanel.add(candySnacksButton);
+
+        nextButton.setBackground(new java.awt.Color(255, 255, 255));
+        nextButton.setFont(new java.awt.Font("Helvetica", 1, 24)); // NOI18N
+        nextButton.setText("→");
         nextButton.setToolTipText("Nästa sida");
+        nextButton.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
         nextButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        nextButton.setFocusPainted(false);
+        nextButton.setMargin(null);
+        nextButton.setMaximumSize(new java.awt.Dimension(60, 60));
+        nextButton.setMinimumSize(new java.awt.Dimension(60, 60));
+        nextButton.setPreferredSize(new java.awt.Dimension(60, 60));
+        nextButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        nextButton.setRolloverEnabled(true);
+        nextButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
+        nextButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
+        nextButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
         nextButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nextButtonActionPerformed(evt);
@@ -387,33 +594,40 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         contentPanel.setPreferredSize(new java.awt.Dimension(80, 0));
         contentPanel.setLayout(new java.awt.BorderLayout());
 
+        cardPanel.setVerifyInputWhenFocusTarget(false);
         cardPanel.setLayout(new java.awt.CardLayout());
 
-        jLabel2.setText("ShoppingCart");
-        cartLayeredPanel.add(jLabel2);
+        cartLayeredPanelTitle.setText("Min varukorg");
+        cartLayeredPanel.add(cartLayeredPanelTitle);
 
-        jLabel3.setText("Listor");
-        listLayeredPanel.add(jLabel3);
+        listLayeredPanelTitle.setText("Mina listor");
+        listLayeredPanel.add(listLayeredPanelTitle);
 
         javax.swing.GroupLayout cardCartListLayeredPaneLayout = new javax.swing.GroupLayout(cardCartListLayeredPane);
         cardCartListLayeredPane.setLayout(cardCartListLayeredPaneLayout);
         cardCartListLayeredPaneLayout.setHorizontalGroup(
             cardCartListLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cardCartListLayeredPaneLayout.createSequentialGroup()
-                .addGap(0, 733, Short.MAX_VALUE)
-                .addComponent(listLayeredPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 1474, Short.MAX_VALUE)
                 .addComponent(cartLayeredPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(cardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(cardCartListLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardCartListLayeredPaneLayout.createSequentialGroup()
+                    .addContainerGap(1474, Short.MAX_VALUE)
+                    .addComponent(listLayeredPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, 0)))
         );
         cardCartListLayeredPaneLayout.setVerticalGroup(
             cardCartListLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cardCartListLayeredPaneLayout.createSequentialGroup()
-                .addGroup(cardCartListLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(listLayeredPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 413, Short.MAX_VALUE)
-                    .addComponent(cartLayeredPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(cartLayeredPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
                 .addContainerGap())
             .addComponent(cardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(cardCartListLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(cardCartListLayeredPaneLayout.createSequentialGroup()
+                    .addGap(0, 0, 0)
+                    .addComponent(listLayeredPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
+                    .addGap(0, 0, 0)))
         );
         cardCartListLayeredPane.setLayer(cardPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
         cardCartListLayeredPane.setLayer(cartLayeredPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -422,6 +636,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         contentPanel.add(cardCartListLayeredPane, java.awt.BorderLayout.CENTER);
 
         cartAndListsPanel.setBackground(new java.awt.Color(255, 255, 255));
+        cartAndListsPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
         cartAndListsPanel.setMaximumSize(new java.awt.Dimension(80, 2147483647));
         cartAndListsPanel.setMinimumSize(new java.awt.Dimension(70, 0));
         cartAndListsPanel.setPreferredSize(new java.awt.Dimension(80, 0));
@@ -445,7 +660,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         cartToggleButton.setToolTipText("Visa varukorg");
         cartToggleButton.setBorderPainted(false);
         cartToggleButton.setContentAreaFilled(false);
-        cartToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cartToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         cartToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cartToggleButtonActionPerformed(evt);
@@ -485,7 +700,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         listToggleButton.setToolTipText("Visa mina listor");
         listToggleButton.setBorderPainted(false);
         listToggleButton.setContentAreaFilled(false);
-        listToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        listToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         listToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listToggleButtonActionPerformed(evt);
@@ -661,6 +876,14 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     
     public void changeFilter(FilterPanel filterCard, java.awt.event.ActionEvent e) {
         this.productCategoryPanel.applyFilters(filterCard);
+        for(Component button : navigationPanel.getComponents()) {
+            if(button instanceof JToggleButton) {
+                ((JToggleButton)button).setForeground(Color.black);
+            }
+        }
+        try {
+            ((JToggleButton)e.getSource()).setForeground(Color.white);
+        } catch(Exception exc) {}
         switchCard("productCategoryPanel", e);
     }
     
@@ -804,6 +1027,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         }
     }//GEN-LAST:event_searchTextFieldKeyPressed
 
+    
     @Override
     public void shoppingCartChanged(CartEvent ce) {
         Color typGreen = new Color(135,211,124);
@@ -833,7 +1057,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Aqua".equals(info.getName())) {
+                if ("Metal".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -850,7 +1074,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         //</editor-fold>
         
         UIManager.getLookAndFeelDefaults()
-        .put("defaultFont", new Font("Helvetica Neue", Font.PLAIN, 13));
+        .put("defaultFont", new Font("Helvetica", Font.PLAIN, 13));
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -869,6 +1093,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     private javax.swing.JLabel cartAmountLabel;
     private javax.swing.JPanel cartAndListsPanel;
     private javax.swing.JPanel cartLayeredPanel;
+    private javax.swing.JLabel cartLayeredPanelTitle;
     private javax.swing.JPanel cartPanel;
     private javax.swing.JLabel cartPriceLabel;
     private javax.swing.JToggleButton cartToggleButton;
@@ -892,14 +1117,14 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     private javax.swing.JPanel headerPanel;
     private javax.swing.JToggleButton hintsToggleButton;
     private javax.swing.JToggleButton homeButton;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPanel listLayeredPanel;
+    private javax.swing.JLabel listLayeredPanelTitle;
     private javax.swing.JToggleButton listToggleButton;
     private javax.swing.JPanel listsPanel;
     private javax.swing.JLabel logotype;

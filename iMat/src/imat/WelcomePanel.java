@@ -62,11 +62,12 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
         welcomeLabel = new javax.swing.JLabel();
         campaignLabel = new javax.swing.JLabel();
 
+        setAlignmentY(0.5F);
         setPreferredSize(new java.awt.Dimension(100, 200));
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.X_AXIS));
 
         newsPanel.setBackground(new java.awt.Color(255, 255, 255));
-        newsPanel.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20)));
+        newsPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
         newsPanel.setMaximumSize(new java.awt.Dimension(300, 2147483647));
         newsPanel.setMinimumSize(new java.awt.Dimension(0, 0));
         newsPanel.setPreferredSize(new java.awt.Dimension(250, 230));
@@ -119,11 +120,11 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
         contentPanel.setLayout(new java.awt.BorderLayout());
 
         welcomePanel.setBackground(new java.awt.Color(255, 255, 255));
-        welcomePanel.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20)));
+        welcomePanel.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 1, 0, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20)));
         welcomePanel.setLayout(new java.awt.BorderLayout());
 
         welcomeLabel.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
-        welcomeLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        welcomeLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         welcomeLabel.setText("Välkommen");
         welcomeLabel.setToolTipText("");
         welcomeLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 10, 0));

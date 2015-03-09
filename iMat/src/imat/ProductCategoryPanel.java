@@ -124,16 +124,15 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
         setPreferredSize(new java.awt.Dimension(100, 200));
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.LINE_AXIS));
 
-        productsScrollPane.setBackground(javax.swing.UIManager.getDefaults().getColor("window"));
         productsScrollPane.setBorder(null);
         productsScrollPane.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
         productsScrollPane.setMinimumSize(new java.awt.Dimension(0, 0));
 
         productsPanel.setBackground(java.awt.SystemColor.window);
-        productsPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        productsPanel.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20)));
         productsPanel.setMaximumSize(new java.awt.Dimension(1084, 2147483647));
         productsPanel.setMinimumSize(new java.awt.Dimension(1084, 2147483647));
-        productsPanel.setLayout(new java.awt.GridLayout(0, 3, 20, 20));
+        productsPanel.setLayout(new java.awt.GridLayout(0, 4, 20, 20));
         productsScrollPane.setViewportView(productsPanel);
 
         add(productsScrollPane);

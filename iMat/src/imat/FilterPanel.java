@@ -131,72 +131,65 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
         selectAllButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setMaximumSize(new java.awt.Dimension(180, 32767));
-        setMinimumSize(new java.awt.Dimension(150, 0));
-        setPreferredSize(new java.awt.Dimension(180, 434));
+        setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        setMaximumSize(new java.awt.Dimension(300, 32767));
+        setMinimumSize(new java.awt.Dimension(300, 0));
+        setPreferredSize(new java.awt.Dimension(300, 434));
+        setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.Y_AXIS));
 
         titleLable.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         titleLable.setText("Title");
+        titleLable.setAlignmentX(0.5F);
+        titleLable.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        titleLable.setMaximumSize(new java.awt.Dimension(1337, 20));
+        titleLable.setMinimumSize(new java.awt.Dimension(0, 0));
+        titleLable.setPreferredSize(new java.awt.Dimension(1337, 20));
+        add(titleLable);
 
+        jSpinner1.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 0, 0, 0));
+        jSpinner1.setMaximumSize(new java.awt.Dimension(32767, 60));
         jSpinner1.setValue(150);
+        add(jSpinner1);
 
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel1.setText("Max Kr/Kg");
+        jLabel1.setAlignmentX(0.5F);
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabel1.setMaximumSize(new java.awt.Dimension(1337, 60));
+        jLabel1.setMinimumSize(new java.awt.Dimension(0, 0));
+        jLabel1.setPreferredSize(new java.awt.Dimension(1337, 40));
+        add(jLabel1);
 
         filterPanel.setBackground(new java.awt.Color(255, 255, 255));
+        add(filterPanel);
 
-        unselectAllButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        unselectAllButton.setAlignmentX(0.5F);
+        unselectAllButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        unselectAllButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         unselectAllButton.setLabel("Avmarkera allt");
+        unselectAllButton.setMaximumSize(new java.awt.Dimension(1337, 60));
+        unselectAllButton.setMinimumSize(new java.awt.Dimension(0, 0));
+        unselectAllButton.setPreferredSize(new java.awt.Dimension(1337, 40));
         unselectAllButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 unselectAllButtonActionPerformed(evt);
             }
         });
+        add(unselectAllButton);
 
         selectAllButton.setText("Återställ filtrering");
-        selectAllButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        selectAllButton.setAlignmentX(0.5F);
+        selectAllButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        selectAllButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        selectAllButton.setMaximumSize(new java.awt.Dimension(1337, 60));
+        selectAllButton.setMinimumSize(new java.awt.Dimension(0, 0));
+        selectAllButton.setPreferredSize(new java.awt.Dimension(1337, 40));
         selectAllButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selectAllButtonActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(titleLable, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)
-                            .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(filterPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(selectAllButton, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
-                            .addComponent(unselectAllButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 10, Short.MAX_VALUE))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(titleLable)
-                .addGap(19, 19, 19)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(filterPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(selectAllButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(unselectAllButton)
-                .addContainerGap())
-        );
+        add(selectAllButton);
     }// </editor-fold>//GEN-END:initComponents
 
     private void unselectAllButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_unselectAllButtonActionPerformed

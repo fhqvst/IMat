@@ -29,9 +29,8 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
         this();
         this.product = product;
         this.titleLabel.setText(product.getName());
-        this.priceLabel.setText(Double.toString(product.getPrice()) + " " + product.getUnit());
-        this.imageLabel.setIcon(IMat.dataHandler.getImageIcon(product, 300, 300));
-        this.adjustedPriceLabel.setText(Double.toString(this.product.getPrice()) + " kr");
+        this.priceLabel.setText(Double.toString(product.getPrice()));
+        this.imageLabel.setIcon(IMat.dataHandler.getImageIcon(product, 600, 600));
         this.unitLabel.setText(product.getUnitSuffix());
         this.amountSpinner.setValue(1);
         if(dataHandler.favorites().contains(product)){
@@ -54,15 +53,14 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
         imagePanel = new javax.swing.JPanel();
         imageLabel = new javax.swing.JLabel();
         descriptionPanel = new javax.swing.JPanel();
+        topPanel = new javax.swing.JPanel();
+        titleAndPricePanel = new javax.swing.JPanel();
         titleLabel = new javax.swing.JLabel();
         priceLabel = new javax.swing.JLabel();
-        pricePanel = new javax.swing.JPanel();
         addToFavouritesButton = new javax.swing.JButton();
-        buttonPanel = new javax.swing.JPanel();
+        bottomPanel = new javax.swing.JPanel();
         amountSpinner = new javax.swing.JSpinner();
-        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(10, 0), new java.awt.Dimension(32767, 0));
         unitLabel = new javax.swing.JLabel();
-        adjustedPriceLabel = new javax.swing.JLabel();
         addToCartButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -88,69 +86,100 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
 
         descriptionPanel.setBackground(new java.awt.Color(255, 255, 255));
         descriptionPanel.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 0, 0, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20)));
-        descriptionPanel.setLayout(new java.awt.GridLayout(2, 0, 20, 20));
+        descriptionPanel.setLayout(new javax.swing.BoxLayout(descriptionPanel, javax.swing.BoxLayout.Y_AXIS));
 
+        topPanel.setBackground(new java.awt.Color(255, 255, 255));
+        topPanel.setLayout(new java.awt.BorderLayout());
+
+        titleAndPricePanel.setBackground(new java.awt.Color(255, 255, 255));
+        titleAndPricePanel.setOpaque(false);
+        titleAndPricePanel.setLayout(new javax.swing.BoxLayout(titleAndPricePanel, javax.swing.BoxLayout.Y_AXIS));
+
+        titleLabel.setFont(new java.awt.Font("Helvetica", 1, 18)); // NOI18N
+        titleLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         titleLabel.setText("Titel");
-        titleLabel.setMaximumSize(new java.awt.Dimension(2147483647, 40));
+        titleLabel.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        titleLabel.setMaximumSize(new java.awt.Dimension(2147483647, 20));
         titleLabel.setMinimumSize(new java.awt.Dimension(0, 0));
-        titleLabel.setPreferredSize(null);
-        descriptionPanel.add(titleLabel);
+        titleAndPricePanel.add(titleLabel);
 
+        priceLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         priceLabel.setForeground(new java.awt.Color(255, 0, 0));
-        priceLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        priceLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         priceLabel.setText("Pris");
         priceLabel.setToolTipText("");
-        descriptionPanel.add(priceLabel);
+        titleAndPricePanel.add(priceLabel);
 
-        pricePanel.setBackground(new java.awt.Color(255, 255, 255));
-        pricePanel.setLayout(new java.awt.BorderLayout());
+        topPanel.add(titleAndPricePanel, java.awt.BorderLayout.CENTER);
 
-        addToFavouritesButton.setText("<3");
+        addToFavouritesButton.setFont(new java.awt.Font("Helvetica", 1, 36)); // NOI18N
+        addToFavouritesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
+        addToFavouritesButton.setText("♡");
+        addToFavouritesButton.setAlignmentY(0.0F);
+        addToFavouritesButton.setBorder(null);
+        addToFavouritesButton.setBorderPainted(false);
+        addToFavouritesButton.setContentAreaFilled(false);
         addToFavouritesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        addToFavouritesButton.setMaximumSize(new java.awt.Dimension(2147483647, 40));
+        addToFavouritesButton.setFocusPainted(false);
+        addToFavouritesButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        addToFavouritesButton.setIconTextGap(0);
+        addToFavouritesButton.setMargin(null);
+        addToFavouritesButton.setMaximumSize(new java.awt.Dimension(50, 50));
         addToFavouritesButton.setMinimumSize(new java.awt.Dimension(0, 0));
+        addToFavouritesButton.setPreferredSize(new java.awt.Dimension(60, 60));
         addToFavouritesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addToFavouritesButtonActionPerformed(evt);
             }
         });
-        pricePanel.add(addToFavouritesButton, java.awt.BorderLayout.CENTER);
+        topPanel.add(addToFavouritesButton, java.awt.BorderLayout.EAST);
 
-        descriptionPanel.add(pricePanel);
+        descriptionPanel.add(topPanel);
 
-        buttonPanel.setBackground(new java.awt.Color(255, 255, 255));
-        buttonPanel.setLayout(new javax.swing.BoxLayout(buttonPanel, javax.swing.BoxLayout.LINE_AXIS));
+        bottomPanel.setBackground(new java.awt.Color(255, 255, 255));
+        bottomPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 0, 0, 0));
+        bottomPanel.setMaximumSize(new java.awt.Dimension(2147483647, 60));
+        bottomPanel.setMinimumSize(new java.awt.Dimension(0, 60));
+        bottomPanel.setPreferredSize(new java.awt.Dimension(170, 60));
+        bottomPanel.setLayout(new java.awt.BorderLayout());
 
+        amountSpinner.setFont(new java.awt.Font("Helvetica", 0, 18)); // NOI18N
         amountSpinner.setMaximumSize(new java.awt.Dimension(2147483647, 40));
         amountSpinner.setMinimumSize(new java.awt.Dimension(0, 0));
-        amountSpinner.setPreferredSize(new java.awt.Dimension(70, 40));
+        amountSpinner.setPreferredSize(new java.awt.Dimension(100, 40));
         amountSpinner.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 amountSpinnerStateChanged(evt);
             }
         });
-        buttonPanel.add(amountSpinner);
-        buttonPanel.add(filler1);
+        bottomPanel.add(amountSpinner, java.awt.BorderLayout.WEST);
 
+        unitLabel.setFont(new java.awt.Font("Helvetica", 0, 18)); // NOI18N
         unitLabel.setText("kg");
-        buttonPanel.add(unitLabel);
+        bottomPanel.add(unitLabel, java.awt.BorderLayout.CENTER);
 
-        descriptionPanel.add(buttonPanel);
-
-        adjustedPriceLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        adjustedPriceLabel.setText("10");
-        descriptionPanel.add(adjustedPriceLabel);
-
-        addToCartButton.setText("Lägg till");
-        addToCartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        addToCartButton.setMaximumSize(new java.awt.Dimension(2147483647, 40));
+        addToCartButton.setBackground(new java.awt.Color(255, 153, 153));
+        addToCartButton.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        addToCartButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
+        addToCartButton.setText("LÄGG TILL");
+        addToCartButton.setAlignmentX(0.5F);
+        addToCartButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)));
+        addToCartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        addToCartButton.setFocusPainted(false);
+        addToCartButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        addToCartButton.setIconTextGap(0);
+        addToCartButton.setMargin(null);
+        addToCartButton.setMaximumSize(new java.awt.Dimension(100, 60));
         addToCartButton.setMinimumSize(new java.awt.Dimension(0, 0));
+        addToCartButton.setPreferredSize(new java.awt.Dimension(100, 40));
         addToCartButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addToCartButtonActionPerformed(evt);
             }
         });
-        descriptionPanel.add(addToCartButton);
+        bottomPanel.add(addToCartButton, java.awt.BorderLayout.EAST);
+
+        descriptionPanel.add(bottomPanel);
 
         add(descriptionPanel);
     }// </editor-fold>//GEN-END:initComponents
@@ -158,7 +187,7 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
     private void amountSpinnerStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_amountSpinnerStateChanged
         if((Integer)amountSpinner.getValue() < 1)
             amountSpinner.setValue(1);
-        this.adjustedPriceLabel.setText(Double.toString(((Integer)amountSpinner.getValue()) * this.product.getPrice()) + " kr");
+        this.priceLabel.setText(Double.toString(((Integer)amountSpinner.getValue()) * this.product.getPrice()) + " kr");
     }//GEN-LAST:event_amountSpinnerStateChanged
 
     private void addToCartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToCartButtonActionPerformed
@@ -199,16 +228,15 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addToCartButton;
     private javax.swing.JButton addToFavouritesButton;
-    private javax.swing.JLabel adjustedPriceLabel;
     private javax.swing.JSpinner amountSpinner;
-    private javax.swing.JPanel buttonPanel;
+    private javax.swing.JPanel bottomPanel;
     private javax.swing.JPanel descriptionPanel;
-    private javax.swing.Box.Filler filler1;
     private javax.swing.JLabel imageLabel;
     private javax.swing.JPanel imagePanel;
     private javax.swing.JLabel priceLabel;
-    private javax.swing.JPanel pricePanel;
+    private javax.swing.JPanel titleAndPricePanel;
     private javax.swing.JLabel titleLabel;
+    private javax.swing.JPanel topPanel;
     private javax.swing.JLabel unitLabel;
     // End of variables declaration//GEN-END:variables
 }
