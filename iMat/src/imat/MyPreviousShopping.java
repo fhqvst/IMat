@@ -5,23 +5,9 @@
  */
 package imat;
 
-<<<<<<< HEAD
-import java.awt.FlowLayout;
-import java.awt.ScrollPane;
-import javax.swing.BoxLayout;
-import javax.swing.DefaultListModel;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JList;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import se.chalmers.ait.dat215.project.IMatDataHandler;
-import se.chalmers.ait.dat215.project.Order;
-=======
 import java.util.List;
 import javax.swing.DefaultListModel;
 import se.chalmers.ait.dat215.project.*;
->>>>>>> d7c4821c3228318f10d65c906726934647caad61
 
 /**
  *
