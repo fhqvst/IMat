@@ -83,6 +83,11 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JSpinner" name="jSpinner1">
+      <Properties>
+        <Property name="value" type="java.lang.Object" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="150" type="code"/>
+        </Property>
+      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
@@ -100,6 +105,9 @@
     </Container>
     <Component class="javax.swing.JButton" name="unselectAllButton">
       <Properties>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Handmark&#xf6;r"/>
+        </Property>
         <Property name="label" type="java.lang.String" value="Avmarkera allt"/>
       </Properties>
       <Events>
@@ -109,6 +117,9 @@
     <Component class="javax.swing.JButton" name="selectAllButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xc5;terst&#xe4;ll filtrering"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Handmark&#xf6;r"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="selectAllButtonActionPerformed"/>

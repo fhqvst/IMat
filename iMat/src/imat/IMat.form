@@ -262,7 +262,7 @@
             <Property name="text" type="java.lang.String" value="S&#xf6;k"/>
             <Property name="toolTipText" type="java.lang.String" value="S&#xf6;k i butiken"/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Handmark&#xf6;r"/>
             </Property>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[75, 40]"/>
@@ -305,6 +305,9 @@
             <Property name="toolTipText" type="java.lang.String" value="Tips"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Handmark&#xf6;r"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="hintsToggleButtonActionPerformed"/>
@@ -324,6 +327,9 @@
             <Property name="toolTipText" type="java.lang.String" value="Min profil"/>
             <Property name="borderPainted" type="boolean" value="false"/>
             <Property name="contentAreaFilled" type="boolean" value="false"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Handmark&#xf6;r"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="profileButtonActionPerformed"/>
@@ -350,7 +356,7 @@
             <Property name="text" type="java.lang.String" value="Till kassan"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>
             <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-              <Color id="Default Cursor"/>
+              <Color id="Handmark&#xf6;r"/>
             </Property>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[112, 40]"/>
@@ -398,6 +404,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="&lt;&lt;"/>
             <Property name="toolTipText" type="java.lang.String" value="F&#xf6;reg&#xe5;ende sida"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Handmark&#xf6;r"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="previousButtonActionPerformed"/>
@@ -410,6 +419,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Hem"/>
             <Property name="toolTipText" type="java.lang.String" value="Visa f&#xf6;rstasidan"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Handmark&#xf6;r"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="homeButtonActionPerformed"/>
@@ -422,6 +434,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Recept"/>
             <Property name="toolTipText" type="java.lang.String" value="Visa rekommenderade recept"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Handmark&#xf6;r"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="receipeButtonActionPerformed"/>
@@ -433,6 +448,9 @@
               <ComponentRef name="globalNavigationButtonGroup"/>
             </Property>
             <Property name="text" type="java.lang.String" value="K&#xf6;tt &amp; Fisk"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Handmark&#xf6;r"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="meatFishButtonActionPerformed"/>
@@ -444,6 +462,9 @@
               <ComponentRef name="globalNavigationButtonGroup"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Frysvaror"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Handmark&#xf6;r"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="freezerButtonActionPerformed"/>
@@ -455,6 +476,9 @@
               <ComponentRef name="globalNavigationButtonGroup"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Mejeri"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Handmark&#xf6;r"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dairyButtonActionPerformed"/>
@@ -466,6 +490,9 @@
               <ComponentRef name="globalNavigationButtonGroup"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Frukt &amp; Gr&#xf6;nt"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Handmark&#xf6;r"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fruitVegetablesButtonActionPerformed"/>
@@ -477,6 +504,9 @@
               <ComponentRef name="globalNavigationButtonGroup"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Skafferi"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Handmark&#xf6;r"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pantryButtonActionPerformed"/>
@@ -488,6 +518,9 @@
               <ComponentRef name="globalNavigationButtonGroup"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Godis &amp; Snacks"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Handmark&#xf6;r"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="candySnacksButtonActionPerformed"/>
@@ -500,6 +533,9 @@
             </Property>
             <Property name="text" type="java.lang.String" value="Favoriter"/>
             <Property name="toolTipText" type="java.lang.String" value="Visa mina favoritmarkerade varor"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Handmark&#xf6;r"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="favoriteButtonActionPerformed"/>
@@ -509,6 +545,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="&gt;&gt;"/>
             <Property name="toolTipText" type="java.lang.String" value="N&#xe4;sta sida"/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Handmark&#xf6;r"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nextButtonActionPerformed"/>
@@ -660,6 +699,9 @@
                     <Property name="toolTipText" type="java.lang.String" value="Visa varukorg"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
                     <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Handmark&#xf6;r"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cartToggleButtonActionPerformed"/>
@@ -737,6 +779,9 @@
                     <Property name="toolTipText" type="java.lang.String" value="Visa mina listor"/>
                     <Property name="borderPainted" type="boolean" value="false"/>
                     <Property name="contentAreaFilled" type="boolean" value="false"/>
+                    <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                      <Color id="Handmark&#xf6;r"/>
+                    </Property>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="listToggleButtonActionPerformed"/>

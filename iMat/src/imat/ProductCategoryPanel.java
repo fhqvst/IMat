@@ -7,6 +7,7 @@ package imat;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.util.List;
 import javax.swing.JPanel;
 import se.chalmers.ait.dat215.project.Product;
@@ -20,12 +21,14 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
     
     private Object bean;
     protected JPanel filterPanel = new JPanel();
+    private GridLayout layout;
 
     /**
      * Creates new customizer PageCard
      */
     public ProductCategoryPanel() {
         initComponents();
+        this.layout = (GridLayout)productsPanel.getLayout();
         productsScrollPane.getVerticalScrollBar().setUnitIncrement(16);
         filterPanel.setBackground(Color.white);
         this.add(filterPanel, 0);
@@ -33,11 +36,13 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
     
     public ProductCategoryPanel(ProductCategory... productCategories) {
         this();
+        this.layout = (GridLayout) productsPanel.getLayout();
         this.addProducts(productCategories);
     }
     
     public ProductCategoryPanel(List<Product> products) {
         this();
+        this.layout = (GridLayout) productsPanel.getLayout();
         filterPanel.setVisible(false);
         for(Product product : products) {
                 
@@ -67,6 +72,7 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
         filterPanel.repaint();
         
         productsPanel.removeAll();
+        layout.setColumns(3);
   
         for(Product product : filterCard.getSelected()) {
             ProductPanel productPanel = new ProductPanel(product);
@@ -78,10 +84,12 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
         this.repaint();
     }
     
+    //#NoFilter
     public void displayProducts(List<Product> products) {
         productsPanel.removeAll();
         filterPanel.removeAll();
-        
+        layout.setColumns(4);
+
         for(Product product : products) {
             
             ProductPanel productPanel = new ProductPanel(product);

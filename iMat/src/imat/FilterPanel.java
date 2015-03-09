@@ -138,10 +138,13 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
         titleLable.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         titleLable.setText("Title");
 
+        jSpinner1.setValue(150);
+
         jLabel1.setText("Max Kr/Kg");
 
         filterPanel.setBackground(new java.awt.Color(255, 255, 255));
 
+        unselectAllButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         unselectAllButton.setLabel("Avmarkera allt");
         unselectAllButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,6 +153,7 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
         });
 
         selectAllButton.setText("Återställ filtrering");
+        selectAllButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         selectAllButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selectAllButtonActionPerformed(evt);
