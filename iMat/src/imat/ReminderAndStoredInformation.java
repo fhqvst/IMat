@@ -16,6 +16,7 @@ import se.chalmers.ait.dat215.project.IMatDataHandler;
 public class ReminderAndStoredInformation extends javax.swing.JPanel implements java.beans.Customizer {
     
     private Object bean;
+    private IMatDataHandler idh;
     private Customer customer;
 
     /**
@@ -53,12 +54,12 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
     }
     
     public void storeInformaitonFromTextFields() {
-        customer.setAddress(addressTextField.getText());
-        customer.setEmail(emailTextField.getText());
-        customer.setFirstName(firstNameTextField.getText());
-        customer.setLastName(lastNameTextField.getText());
-        customer.setMobilePhoneNumber(mobileTextField.getText());;
-        customer.setPostCode(postCodeTextField.getText());
+        idh.getCustomer().setAddress(addressTextField.getText());
+        idh.getCustomer().setEmail(emailTextField.getText());
+        idh.getCustomer().setFirstName(firstNameTextField.getText());
+        idh.getCustomer().setLastName(lastNameTextField.getText());
+        idh.getCustomer().setMobilePhoneNumber(mobileTextField.getText());;
+        idh.getCustomer().setPostCode(postCodeTextField.getText());
     }
 
     /**
@@ -91,6 +92,8 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
         howLabel = new javax.swing.JLabel();
         frequenceyLabel = new javax.swing.JLabel();
         reminderLabel = new javax.swing.JLabel();
+        cityLabel = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
         showPanel = new javax.swing.JPanel();
         showContactInformationLabel = new javax.swing.JLabel();
         editButton = new javax.swing.JButton();
@@ -197,6 +200,8 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
         reminderLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         reminderLabel.setText("Påminnelser");
 
+        cityLabel.setText("Ort:");
+
         javax.swing.GroupLayout editPanelLayout = new javax.swing.GroupLayout(editPanel);
         editPanel.setLayout(editPanelLayout);
         editPanelLayout.setHorizontalGroup(
@@ -224,6 +229,7 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
                     .addGroup(editPanelLayout.createSequentialGroup()
                         .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(emailLabel)
+                            .addComponent(cityLabel)
                             .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(postCodeLabel)
                                 .addComponent(addressLabel, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -233,6 +239,7 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
                         .addGap(12, 12, 12)
                         .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(firstNameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
                                 .addComponent(lastNameTextField)
@@ -264,15 +271,19 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
                     .addComponent(postCodeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(emailLabel))
+                    .addComponent(cityLabel)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(emailLabel)
+                    .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(mobileTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(mobileLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addGap(18, 18, Short.MAX_VALUE)
                 .addComponent(reminderLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -489,6 +500,7 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel addressLabel;
     private javax.swing.JTextField addressTextField;
+    private javax.swing.JLabel cityLabel;
     private javax.swing.JLabel contactInformationLabel;
     private javax.swing.JButton editButton;
     private javax.swing.JPanel editPanel;
@@ -506,6 +518,7 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
     private javax.swing.JComboBox howComboBox1;
     private javax.swing.JLabel howLabel;
     private javax.swing.JLabel howLabel1;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lastNameLabel;
     private javax.swing.JTextField lastNameTextField;
     private javax.swing.JLabel mobileLabel;
