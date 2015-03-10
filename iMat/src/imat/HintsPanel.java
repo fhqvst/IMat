@@ -6,6 +6,7 @@
 package imat;
 
 import java.awt.Component;
+import java.awt.Dimension;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -26,18 +27,11 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
      */
     public HintsPanel() {
         initComponents();
-        Component[] allComponents = hintsNavigationPanel.getComponents();
-        for (Component c: allComponents) {
-            if (c instanceof AbstractButton) {
-                AbstractButton button = (AbstractButton)c;
-               // button.setBorderPainted(false);
-                //button.setContentAreaFilled(false);
-            }
-        }
         forumButton.setText("<html><font color='blue'><u>forum</u></font></html>");
         contactUsButton.setText("<html><font color='blue'><u>kontakta oss!</u></font></html>");
         changeToHint(13);
-        manualTextArea.setText("Mitt första köp \n\n" + setDummyText());
+        manualTextArea.setText("Mitt första köp:\n\n" + getDummyText() + "\n\nAtt lägga till favoriter:\n\n" + getDummyText());
+        currentHintScrollPane.setPreferredSize(new Dimension(800, 600));
     }
     
     public void setObject(Object bean) {
@@ -66,14 +60,25 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
             }
             if (currentHintNbr != changeNumber) {
                 currentHintNbr = changeNumber;
-                currentHintTextArea.setText(setDummyText());
+                currentHintTextArea.setText(getDummyText());
             }
             
         }
         
+        Component[] allComponents = hintsNavigationPanel.getComponents();
+        for (Component c: allComponents) {
+            if (c instanceof AbstractButton) {
+                AbstractButton button = (AbstractButton)c;
+                button.setPreferredSize(new Dimension(60, 25));
+                // button.setBorderPainted(false);
+                //button.setContentAreaFilled(false);
+            }
+        }
+        currentHintTextField.setPreferredSize(new Dimension(60, 25));
+        
     }
     
-    public String setDummyText() {
+    public String getDummyText() {
         String dummyText = "";
         boolean startOfSentence = true;
         Random r = new Random();
@@ -201,7 +206,11 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         });
         hintsNavigationPanel.add(minusOneButton);
 
+        currentHintTextField.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         currentHintTextField.setText("13");
+        currentHintTextField.setMaximumSize(new java.awt.Dimension(28, 29));
+        currentHintTextField.setMinimumSize(new java.awt.Dimension(28, 29));
+        currentHintTextField.setPreferredSize(new java.awt.Dimension(28, 29));
         currentHintTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 currentHintTextFieldActionPerformed(evt);
@@ -319,10 +328,9 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         manualPanelLayout.setHorizontalGroup(
             manualPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(manualPanelLayout.createSequentialGroup()
-                .addGroup(manualPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(manualScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 414, Short.MAX_VALUE)
-                    .addComponent(manualLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(manualLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(70, Short.MAX_VALUE))
+            .addComponent(manualScrollPane)
         );
         manualPanelLayout.setVerticalGroup(
             manualPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -330,8 +338,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
                 .addContainerGap()
                 .addComponent(manualLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(manualScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addComponent(manualScrollPane))
         );
 
         javax.swing.GroupLayout currentTipsPanelLayout = new javax.swing.GroupLayout(currentTipsPanel);
@@ -345,22 +352,22 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(findHelpPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(manualPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 416, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(manualPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         currentTipsPanelLayout.setVerticalGroup(
             currentTipsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(currentTipsPanelLayout.createSequentialGroup()
-                .addGroup(currentTipsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(currentTipsPanelLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(hintsHeaderLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(manualPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .addComponent(hintsHeaderLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(findHelpPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(currentTipsPanelLayout.createSequentialGroup()
+                .addComponent(manualPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         add(currentTipsPanel);
