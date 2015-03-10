@@ -5,7 +5,10 @@
  */
 package imat;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Set;
 import javax.swing.DefaultListModel;
 import se.chalmers.ait.dat215.project.*;
 
@@ -18,6 +21,9 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
     private Object bean;
     private DefaultListModel orders;
     private DefaultListModel items;
+    private DefaultListModel shoppingLists = new DefaultListModel();
+    private DefaultListModel listContent = new DefaultListModel();
+    private HashMap<String, List<Product>> listMap = new HashMap();
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
     /**
@@ -35,6 +41,13 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
         }
         ordersList.setModel(orders);
         ordersList.setSelectedIndex(0);
+        addDefaultShoppingList();
+        for (String s : listMap.keySet()) {
+            shoppingLists.addElement(s);
+        }
+        shoppingListName.setModel(shoppingLists);
+        
+        
     }
 
     MyPreviousShopping(int width, int height) {
@@ -44,6 +57,14 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
     
     public void setObject(Object bean) {
         this.bean = bean;
+    }
+    
+    public void addDefaultShoppingList() {
+        ArrayList<Product> someProducts = new ArrayList<>();
+        for (int i = 0; i < 7; i++ ) {
+            someProducts.add(dataHandler.getProduct(i));
+        }
+        listMap.put("Veckohandling", someProducts);
     }
 
     /**
@@ -64,9 +85,9 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
         itemsList = new javax.swing.JList();
         filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0));
         jScrollPane5 = new javax.swing.JScrollPane();
-        ordersList1 = new javax.swing.JList();
+        shoppingListName = new javax.swing.JList();
         jScrollPane6 = new javax.swing.JScrollPane();
-        itemsList1 = new javax.swing.JList();
+        shoppingListContains = new javax.swing.JList();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -96,14 +117,14 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
 
         jScrollPane4.setViewportView(itemsList);
 
-        ordersList1.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
+        shoppingListName.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
-                ordersList1ValueChanged(evt);
+                shoppingListNameValueChanged(evt);
             }
         });
-        jScrollPane5.setViewportView(ordersList1);
+        jScrollPane5.setViewportView(shoppingListName);
 
-        jScrollPane6.setViewportView(itemsList1);
+        jScrollPane6.setViewportView(shoppingListContains);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Namn");
@@ -189,15 +210,18 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
         }
     }//GEN-LAST:event_ordersListValueChanged
 
-    private void ordersList1ValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_ordersList1ValueChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ordersList1ValueChanged
+    private void shoppingListNameValueChanged(javax.swing.event.ListSelectionEvent evt) {//GEN-FIRST:event_shoppingListNameValueChanged
+        listContent.removeAllElements();
+        for (Product p : listMap.get(shoppingLists.get(shoppingListName.getSelectedIndex()))) {
+            listContent.addElement(p);
+        }
+        shoppingListContains.setModel(listContent);
+    }//GEN-LAST:event_shoppingListNameValueChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.Box.Filler filler4;
     private javax.swing.JList itemsList;
-    private javax.swing.JList itemsList1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -211,6 +235,7 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
     private javax.swing.JPanel myStoredListsPanel;
     private javax.swing.JScrollPane myStoredListsScrollPane;
     private javax.swing.JList ordersList;
-    private javax.swing.JList ordersList1;
+    private javax.swing.JList shoppingListContains;
+    private javax.swing.JList shoppingListName;
     // End of variables declaration//GEN-END:variables
 }
