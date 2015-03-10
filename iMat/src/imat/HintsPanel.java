@@ -27,6 +27,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
      */
     public HintsPanel() {
         initComponents();
+        manualLabel.setText("<html><h2>Manual</h2></html>");
         forumButton.setText("<html><font color='blue'><u>forum</u></font></html>");
         contactUsButton.setText("<html><font color='blue'><u>kontakta oss!</u></font></html>");
         changeToHint(13);
@@ -41,62 +42,11 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
     private void changeToHint(int changeNumber) {
         if (1 <= changeNumber && changeNumber <= NUMBER_OF_HINTS) {
             hintsHeaderLabel.setText("<html><h2>Tips " + changeNumber + "/" + NUMBER_OF_HINTS + "</html></h2>");
-            currentHintTextField.setText(String.valueOf(changeNumber));
+            currentHintTextField.setText(String.valueOf(changeNumber));            
             
-            System.out.println(changeNumber);
-            if (changeNumber < 6) {
-                leftDotsLabel.setVisible(false);
-                if (changeNumber < 5) {
-                    minusTwoButton.setVisible(false);
-                    if (changeNumber < 4) {
-                        minusOneButton.setVisible(false);
-                        if (changeNumber < 3) {
-                            secondButton.setVisible(false);
-                            if (changeNumber < 2) {
-                                firstButton.setVisible(false);
-                            } else {
-                                firstButton.setVisible(true);
-                            }
-                        } else {
-                            secondButton.setVisible(true);
-                        }
-                    } else {
-                        minusOneButton.setVisible(true);
-                    }
-                } else {
-                  minusTwoButton.setVisible(true);
-                }
-            } else {
-                leftDotsLabel.setVisible(true);
-            }
-            
-            if (changeNumber > NUMBER_OF_HINTS-5) {
-                rightDotsLabel.setVisible(false);
-                if (changeNumber > NUMBER_OF_HINTS-4){
-                    plusTwoButton.setVisible(false);
-                    if (changeNumber > NUMBER_OF_HINTS-3) {
-                        plusOneButton.setVisible(false);
-                        if (changeNumber > NUMBER_OF_HINTS-2) {
-                            secondLastButton.setVisible(false);
-                            if (changeNumber > NUMBER_OF_HINTS-1){
-                                lastButton.setVisible(false);
-                            } else {
-                                lastButton.setVisible(true);
-                            }
-                        } else {
-                            secondLastButton.setVisible(true);
-                        }
-                    } else {
-                        plusOneButton.setVisible(true);
-                    }
-                } else {
-                    plusTwoButton.setVisible(true);
-                }
-            } else {
-                rightDotsLabel.setVisible(true);
-            }
-            
-            
+            hideLeftSideButtons(changeNumber);
+            hideRightSideButtons(changeNumber);           
+                    
             if (2 < changeNumber) {
                 minusOneButton.setText(String.valueOf(changeNumber-1));
                 minusTwoButton.setText(String.valueOf(changeNumber-2));
@@ -124,14 +74,78 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
             if (c instanceof AbstractButton) {
                 AbstractButton button = (AbstractButton)c;
                 button.setPreferredSize(new Dimension(60, 25));
-                // button.setBorderPainted(false);
-                //button.setContentAreaFilled(false);
+                button.setContentAreaFilled(false);
             }
         }
         currentHintTextField.setPreferredSize(new Dimension(60, 25));
         this.revalidate();
         this.repaint();
         
+    }
+    
+    public void hideLeftSideButtons(int changeNumber){
+        if (changeNumber < 6) {
+            leftDotsLabel.setVisible(false);
+        } else {
+            leftDotsLabel.setVisible(true);
+        }
+
+        if (changeNumber < 5) {
+            minusTwoButton.setVisible(false);
+        } else {
+          minusTwoButton.setVisible(true);
+        }
+
+        if (changeNumber < 4) {
+            minusOneButton.setVisible(false);
+        } else {
+            minusOneButton.setVisible(true);
+        }
+
+        if (changeNumber < 3) {
+            secondButton.setVisible(false);
+        } else {
+            secondButton.setVisible(true);
+        }
+
+        if (changeNumber < 2) {
+            firstButton.setVisible(false);
+        } else {
+            firstButton.setVisible(true);
+        }
+        
+    }
+    
+    public void hideRightSideButtons(int changeNumber) {
+        if (changeNumber > NUMBER_OF_HINTS-5) {
+            rightDotsLabel.setVisible(false);
+        } else {
+            rightDotsLabel.setVisible(true);
+        }
+
+        if (changeNumber > NUMBER_OF_HINTS-4){
+            plusTwoButton.setVisible(false);
+        } else {
+            plusTwoButton.setVisible(true);
+        }
+
+        if (changeNumber > NUMBER_OF_HINTS-3) {
+                plusOneButton.setVisible(false);
+        } else {
+            plusOneButton.setVisible(true);
+        }
+
+        if (changeNumber > NUMBER_OF_HINTS-2) {
+            secondLastButton.setVisible(false);
+        } else {
+            secondLastButton.setVisible(true);
+        }
+
+        if (changeNumber > NUMBER_OF_HINTS-1){
+            lastButton.setVisible(false);
+        } else {
+            lastButton.setVisible(true);
+        } 
     }
     
     public String getDummyText() {
@@ -384,7 +398,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         manualPanel.setLayout(manualPanelLayout);
         manualPanelLayout.setHorizontalGroup(
             manualPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(manualScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
+            .addComponent(manualScrollPane)
             .addComponent(manualLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         manualPanelLayout.setVerticalGroup(
