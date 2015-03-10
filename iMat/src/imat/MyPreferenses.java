@@ -5,6 +5,10 @@
  */
 package imat;
 
+import javax.swing.DefaultListModel;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Product;
+
 /**
  *
  * @author kakan
@@ -12,12 +16,32 @@ package imat;
 public class MyPreferenses extends javax.swing.JPanel implements java.beans.Customizer {
     
     private Object bean;
+    private DefaultListModel favourites = new DefaultListModel();
+    private DefaultListModel ignores = new DefaultListModel();
+    private IMatDataHandler idh = IMatDataHandler.getInstance();
 
     /**
      * Creates new customizer MyPreferenses
      */
     public MyPreferenses() {
         initComponents();
+        
+        myFavoritesLabel.setText("<html><h2>Mina favoriter</h2></html>");
+        myIgnoresLabel.setText("<html><h2>Mina borttagna varor</h2></html>");
+        
+        if (idh.favorites().size() == 0) {
+            favourites.addElement("Du har inga favoriter.");
+        } else {
+            for(Product p : idh.favorites()){
+                favourites.addElement(p.getName());           
+            }
+        }
+        myFavouritesList.setModel(favourites);
+        
+        
+        ignores.addElement("Du har inga borttagna varor.");
+        myIgnoresList.setModel(ignores);
+        
     }
 
     MyPreferenses(int width, int height) {
@@ -40,13 +64,12 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
         myPreferenses = new javax.swing.JPanel();
         myFavouritesPanel = new javax.swing.JPanel();
         myFavoritesLabel = new javax.swing.JLabel();
-        myFavouritesList = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList();
+        myFavouritesScrollPane = new javax.swing.JScrollPane();
+        myFavouritesList = new javax.swing.JList();
         myIgnoresLabel = new javax.swing.JLabel();
-        myIgnoresList = new javax.swing.JScrollPane();
-        jList5 = new javax.swing.JList();
+        myIgnoresScrollPane = new javax.swing.JScrollPane();
+        myIgnoresList = new javax.swing.JList();
 
-        setPreferredSize(null);
         setLayout(new java.awt.GridLayout(1, 0));
 
         myPreferenses.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -56,22 +79,12 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
         myFavoritesLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         myFavoritesLabel.setText("Mina favoriter");
 
-        jList1.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        myFavouritesList.setViewportView(jList1);
+        myFavouritesScrollPane.setViewportView(myFavouritesList);
 
         myIgnoresLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         myIgnoresLabel.setText("Mina borttagna varor");
 
-        jList5.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
-        myIgnoresList.setViewportView(jList5);
+        myIgnoresScrollPane.setViewportView(myIgnoresList);
 
         javax.swing.GroupLayout myFavouritesPanelLayout = new javax.swing.GroupLayout(myFavouritesPanel);
         myFavouritesPanel.setLayout(myFavouritesPanelLayout);
@@ -80,10 +93,10 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
             .addGroup(myFavouritesPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(myFavouritesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(myIgnoresLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 434, Short.MAX_VALUE)
-                    .addComponent(myFavouritesList)
+                    .addComponent(myIgnoresLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
+                    .addComponent(myFavouritesScrollPane)
                     .addComponent(myFavoritesLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(myIgnoresList, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(myIgnoresScrollPane, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
         myFavouritesPanelLayout.setVerticalGroup(
@@ -92,12 +105,12 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
                 .addContainerGap()
                 .addComponent(myFavoritesLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(myFavouritesList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(myFavouritesScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(myIgnoresLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(myIgnoresList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(myIgnoresScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(97, Short.MAX_VALUE))
         );
 
         myPreferenses.add(myFavouritesPanel);
@@ -107,13 +120,13 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JList jList1;
-    private javax.swing.JList jList5;
     private javax.swing.JLabel myFavoritesLabel;
-    private javax.swing.JScrollPane myFavouritesList;
+    private javax.swing.JList myFavouritesList;
     private javax.swing.JPanel myFavouritesPanel;
+    private javax.swing.JScrollPane myFavouritesScrollPane;
     private javax.swing.JLabel myIgnoresLabel;
-    private javax.swing.JScrollPane myIgnoresList;
+    private javax.swing.JList myIgnoresList;
+    private javax.swing.JScrollPane myIgnoresScrollPane;
     private javax.swing.JPanel myPreferenses;
     // End of variables declaration//GEN-END:variables
 }
