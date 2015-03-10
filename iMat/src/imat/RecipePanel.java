@@ -5,6 +5,8 @@
  */
 package imat;
 
+import javax.swing.DefaultListModel;
+
 /**
  *
  * @author kakan
@@ -12,12 +14,15 @@ package imat;
 public class RecipePanel extends javax.swing.JPanel implements java.beans.Customizer {
     
     private Object bean;
+    private DefaultListModel updateListModel;
 
     /**
      * Creates new customizer recipePanel
      */
     public RecipePanel() {
         initComponents();
+        updateListModel = new DefaultListModel();
+        recipeSelectList.setModel(updateListModel);
     }
     
     public void setObject(Object bean) {
@@ -89,6 +94,11 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
         recipeSearchMaxTimeSlider.setValue(90);
 
         searchButton.setText("Sök!");
+        searchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout receipeSearchPanelLayout = new javax.swing.GroupLayout(receipeSearchPanel);
         receipeSearchPanel.setLayout(receipeSearchPanelLayout);
@@ -149,11 +159,6 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
 
         recipeSearchAndSelectPanel.add(receipeSearchPanel);
 
-        recipeSelectList.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
         recipeSelectScrollPane.setViewportView(recipeSelectList);
 
         recipeSearchAndSelectPanel.add(recipeSelectScrollPane);
@@ -162,6 +167,11 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
 
         add(recipePanel, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+        updateListModel.removeAllElements();
+        updateListModel.addElement("Inget recept matchar sökningen.");
+    }//GEN-LAST:event_searchButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
