@@ -40,8 +40,62 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
     
     private void changeToHint(int changeNumber) {
         if (1 <= changeNumber && changeNumber <= NUMBER_OF_HINTS) {
-            hintsHeaderLabel.setText("Tips " + changeNumber + "/" + NUMBER_OF_HINTS);
+            hintsHeaderLabel.setText("<html><h2>Tips " + changeNumber + "/" + NUMBER_OF_HINTS + "</html></h2>");
             currentHintTextField.setText(String.valueOf(changeNumber));
+            
+            System.out.println(changeNumber);
+            if (changeNumber < 6) {
+                leftDotsLabel.setVisible(false);
+                if (changeNumber < 5) {
+                    minusTwoButton.setVisible(false);
+                    if (changeNumber < 4) {
+                        minusOneButton.setVisible(false);
+                        if (changeNumber < 3) {
+                            secondButton.setVisible(false);
+                            if (changeNumber < 2) {
+                                firstButton.setVisible(false);
+                            } else {
+                                firstButton.setVisible(true);
+                            }
+                        } else {
+                            secondButton.setVisible(true);
+                        }
+                    } else {
+                        minusOneButton.setVisible(true);
+                    }
+                } else {
+                  minusTwoButton.setVisible(true);
+                }
+            } else {
+                leftDotsLabel.setVisible(true);
+            }
+            
+            if (changeNumber > NUMBER_OF_HINTS-5) {
+                rightDotsLabel.setVisible(false);
+                if (changeNumber > NUMBER_OF_HINTS-4){
+                    plusTwoButton.setVisible(false);
+                    if (changeNumber > NUMBER_OF_HINTS-3) {
+                        plusOneButton.setVisible(false);
+                        if (changeNumber > NUMBER_OF_HINTS-2) {
+                            secondLastButton.setVisible(false);
+                            if (changeNumber > NUMBER_OF_HINTS-1){
+                                lastButton.setVisible(false);
+                            } else {
+                                lastButton.setVisible(true);
+                            }
+                        } else {
+                            secondLastButton.setVisible(true);
+                        }
+                    } else {
+                        plusOneButton.setVisible(true);
+                    }
+                } else {
+                    plusTwoButton.setVisible(true);
+                }
+            } else {
+                rightDotsLabel.setVisible(true);
+            }
+            
             
             if (2 < changeNumber) {
                 minusOneButton.setText(String.valueOf(changeNumber-1));
@@ -75,6 +129,8 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
             }
         }
         currentHintTextField.setPreferredSize(new Dimension(60, 25));
+        this.revalidate();
+        this.repaint();
         
     }
     
@@ -123,13 +179,13 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         previousButton = new javax.swing.JButton();
         firstButton = new javax.swing.JButton();
         secondButton = new javax.swing.JButton();
-        jLabel63 = new javax.swing.JLabel();
+        leftDotsLabel = new javax.swing.JLabel();
         minusTwoButton = new javax.swing.JButton();
         minusOneButton = new javax.swing.JButton();
         currentHintTextField = new javax.swing.JTextField();
         plusOneButton = new javax.swing.JButton();
         plusTwoButton = new javax.swing.JButton();
-        jLabel62 = new javax.swing.JLabel();
+        rightDotsLabel = new javax.swing.JLabel();
         secondLastButton = new javax.swing.JButton();
         lastButton = new javax.swing.JButton();
         nextButton = new javax.swing.JButton();
@@ -186,8 +242,8 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         });
         hintsNavigationPanel.add(secondButton);
 
-        jLabel63.setText(". . .");
-        hintsNavigationPanel.add(jLabel63);
+        leftDotsLabel.setText(". . .");
+        hintsNavigationPanel.add(leftDotsLabel);
 
         minusTwoButton.setText("11");
         minusTwoButton.addActionListener(new java.awt.event.ActionListener() {
@@ -235,8 +291,8 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         });
         hintsNavigationPanel.add(plusTwoButton);
 
-        jLabel62.setText(". . .");
-        hintsNavigationPanel.add(jLabel62);
+        rightDotsLabel.setText(". . .");
+        hintsNavigationPanel.add(rightDotsLabel);
 
         secondLastButton.setText("36");
         hintsButtonGroup.add(secondLastButton);
@@ -310,6 +366,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         manualLabel.setText("Manual");
 
         manualScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        manualScrollPane.setToolTipText("");
 
         manualTextArea.setColumns(20);
         manualTextArea.setLineWrap(true);
@@ -327,10 +384,8 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         manualPanel.setLayout(manualPanelLayout);
         manualPanelLayout.setHorizontalGroup(
             manualPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(manualPanelLayout.createSequentialGroup()
-                .addComponent(manualLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(70, Short.MAX_VALUE))
-            .addComponent(manualScrollPane)
+            .addComponent(manualScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
+            .addComponent(manualLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         manualPanelLayout.setVerticalGroup(
             manualPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -383,7 +438,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
             } else {
                 showHintNbr = Integer.parseInt(currentHintTextField.getText());
             }
-            if (showHintNbr < NUMBER_OF_HINTS) {
+            if (showHintNbr <= NUMBER_OF_HINTS) {
                 changeToHint(showHintNbr);
             } else {
                 currentHintTextField.setText(String.valueOf(currentHintNbr));
@@ -446,12 +501,11 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
     private javax.swing.ButtonGroup hintsButtonGroup;
     private javax.swing.JLabel hintsHeaderLabel;
     private javax.swing.JPanel hintsNavigationPanel;
-    private javax.swing.JLabel jLabel62;
-    private javax.swing.JLabel jLabel63;
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton lastButton;
+    private javax.swing.JLabel leftDotsLabel;
     private javax.swing.JLabel manualLabel;
     private javax.swing.JPanel manualPanel;
     private javax.swing.JScrollPane manualScrollPane;
@@ -463,6 +517,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
     private javax.swing.JButton plusOneButton;
     private javax.swing.JButton plusTwoButton;
     private javax.swing.JButton previousButton;
+    private javax.swing.JLabel rightDotsLabel;
     private javax.swing.JButton secondButton;
     private javax.swing.JButton secondLastButton;
     // End of variables declaration//GEN-END:variables

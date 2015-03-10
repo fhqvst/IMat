@@ -151,7 +151,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="secondButtonActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel63">
+                <Component class="javax.swing.JLabel" name="leftDotsLabel">
                   <Properties>
                     <Property name="text" type="java.lang.String" value=". . ."/>
                   </Properties>
@@ -212,7 +212,7 @@
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="plusTwoButtonActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel62">
+                <Component class="javax.swing.JLabel" name="rightDotsLabel">
                   <Properties>
                     <Property name="text" type="java.lang.String" value=". . ."/>
                   </Properties>
@@ -295,11 +295,8 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="manualLabel" min="-2" pref="414" max="-2" attributes="0"/>
-                      <EmptySpace pref="70" max="32767" attributes="0"/>
-                  </Group>
-                  <Component id="manualScrollPane" max="32767" attributes="0"/>
+                  <Component id="manualScrollPane" pref="484" max="32767" attributes="0"/>
+                  <Component id="manualLabel" alignment="0" max="32767" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -323,6 +320,7 @@
             <Container class="javax.swing.JScrollPane" name="manualScrollPane">
               <Properties>
                 <Property name="horizontalScrollBarPolicy" type="int" value="31"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
