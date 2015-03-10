@@ -92,6 +92,9 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        shoppingListToCart = new javax.swing.JButton();
+        shoppingListProductsToCart = new javax.swing.JButton();
+        productsToCart = new javax.swing.JButton();
 
         setBorder(null);
         setLayout(new java.awt.GridLayout(1, 0));
@@ -138,6 +141,14 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Handlade produkter");
 
+        shoppingListToCart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
+        shoppingListToCart.setToolTipText("Lägg till listans innehåll i varukorgen");
+
+        shoppingListProductsToCart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
+        shoppingListProductsToCart.setToolTipText("Lägg till valda varor i varukorgen");
+
+        productsToCart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
+
         javax.swing.GroupLayout myStoredListsPanelLayout = new javax.swing.GroupLayout(myStoredListsPanel);
         myStoredListsPanel.setLayout(myStoredListsPanelLayout);
         myStoredListsPanelLayout.setHorizontalGroup(
@@ -157,7 +168,11 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
                         .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING))
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(filler4, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(myStoredListsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(filler4, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(shoppingListToCart)
+                    .addComponent(shoppingListProductsToCart)
+                    .addComponent(productsToCart))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         myStoredListsPanelLayout.setVerticalGroup(
@@ -165,30 +180,36 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
             .addGroup(myStoredListsPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(myStoredListsLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
                 .addGroup(myStoredListsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(myStoredListsPanelLayout.createSequentialGroup()
-                        .addGap(121, 121, 121)
-                        .addComponent(filler4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(myStoredListsPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(myStoredListsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(shoppingListToCart))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2))
+                    .addGroup(myStoredListsPanelLayout.createSequentialGroup()
+                        .addGap(123, 123, 123)
+                        .addComponent(filler4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(myStoredListsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(shoppingListProductsToCart))
+                .addGap(18, 18, 18)
+                .addGroup(myStoredListsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(myStoredListsPanelLayout.createSequentialGroup()
                         .addComponent(myLatestShoppingsLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(157, Short.MAX_VALUE))
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(productsToCart))
+                .addContainerGap(163, Short.MAX_VALUE))
         );
 
         myStoredListsScrollPane.setViewportView(myStoredListsPanel);
@@ -235,7 +256,10 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
     private javax.swing.JPanel myStoredListsPanel;
     private javax.swing.JScrollPane myStoredListsScrollPane;
     private javax.swing.JList ordersList;
+    private javax.swing.JButton productsToCart;
     private javax.swing.JList shoppingListContains;
     private javax.swing.JList shoppingListName;
+    private javax.swing.JButton shoppingListProductsToCart;
+    private javax.swing.JButton shoppingListToCart;
     // End of variables declaration//GEN-END:variables
 }
