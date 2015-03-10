@@ -7,6 +7,7 @@ package imat;
 
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.Point;
 import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -34,6 +35,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         changeToHint(13);
         manualTextArea.setText("Mitt första köp:\n\n" + getDummyText());
         currentHintScrollPane.setPreferredSize(new Dimension(800, 600));
+        currentHintTextArea.setCaretPosition(0);
     }
     
     public void setObject(Object bean) {
