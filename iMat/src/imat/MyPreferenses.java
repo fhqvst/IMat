@@ -70,9 +70,10 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
         myIgnoresScrollPane = new javax.swing.JScrollPane();
         myIgnoresList = new javax.swing.JList();
 
+        setBorder(null);
         setLayout(new java.awt.GridLayout(1, 0));
 
-        myPreferenses.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        myPreferenses.setBorder(null);
         myPreferenses.setPreferredSize(new java.awt.Dimension(301, 505));
         myPreferenses.setLayout(new java.awt.GridLayout(1, 0));
 
@@ -93,7 +94,7 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
             .addGroup(myFavouritesPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(myFavouritesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(myIgnoresLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
+                    .addComponent(myIgnoresLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
                     .addComponent(myFavouritesScrollPane)
                     .addComponent(myFavoritesLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(myIgnoresScrollPane, javax.swing.GroupLayout.Alignment.TRAILING))
@@ -110,7 +111,7 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
                 .addComponent(myIgnoresLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(myIgnoresScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(97, Short.MAX_VALUE))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
 
         myPreferenses.add(myFavouritesPanel);

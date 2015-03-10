@@ -71,14 +71,18 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
         cartButtonList2 = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
         itemsList = new javax.swing.JList();
+        filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0));
 
+        setBorder(null);
         setLayout(new java.awt.GridLayout(1, 0));
 
+        myStoredListsScrollPane.setBorder(null);
         myStoredListsScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        myStoredListsScrollPane.setPreferredSize(new java.awt.Dimension(0, 0));
+        myStoredListsScrollPane.setPreferredSize(new java.awt.Dimension(300, 400));
 
         myStoredListsPanel.setPreferredSize(new java.awt.Dimension(250, 250));
 
+        jLabel55.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel55.setText("Mina inköpslistor");
 
         jButton21.setText("+");
@@ -89,10 +93,10 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
 
         jButton28.setText("Middagsbjudning");
 
-        jToggleButton4.setText("auto");
+        jToggleButton4.setText("[auto]");
         jToggleButton4.setToolTipText("Lägg till som autoköp");
 
-        jToggleButton5.setText("auto");
+        jToggleButton5.setText("[auto]");
         jToggleButton5.setToolTipText("Lägg till som autoköp");
         jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,19 +104,15 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
             }
         });
 
-        jLabel54.setText("auto");
+        jLabel54.setText("[auto]");
 
         jLabel56.setText("autoköp");
 
-        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "varje tisdag" }));
 
+        jLabel57.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel57.setText("Mina senaste köp");
 
-        ordersList.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
         ordersList.addListSelectionListener(new javax.swing.event.ListSelectionListener() {
             public void valueChanged(javax.swing.event.ListSelectionEvent evt) {
                 ordersListValueChanged(evt);
@@ -138,11 +138,6 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
             }
         });
 
-        itemsList.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane4.setViewportView(itemsList);
 
         javax.swing.GroupLayout myStoredListsPanelLayout = new javax.swing.GroupLayout(myStoredListsPanel);
@@ -152,38 +147,41 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
             .addGroup(myStoredListsPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(myStoredListsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(myStoredListsPanelLayout.createSequentialGroup()
-                        .addGroup(myStoredListsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(myStoredListsPanelLayout.createSequentialGroup()
-                                .addComponent(jButton27)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton28))
-                            .addGroup(myStoredListsPanelLayout.createSequentialGroup()
-                                .addComponent(jButton21)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton25))
-                            .addComponent(jLabel55, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(49, 49, 49)
-                        .addGroup(myStoredListsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cartButtonList2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                            .addComponent(cartButtonList1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(myStoredListsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(myStoredListsPanelLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jToggleButton5))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, myStoredListsPanelLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jToggleButton4))))
-                    .addGroup(myStoredListsPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel54)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel56)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel57)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 158, Short.MAX_VALUE))
+                    .addGroup(myStoredListsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(myStoredListsPanelLayout.createSequentialGroup()
+                            .addGroup(myStoredListsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(myStoredListsPanelLayout.createSequentialGroup()
+                                    .addComponent(jButton27)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jButton28))
+                                .addGroup(myStoredListsPanelLayout.createSequentialGroup()
+                                    .addComponent(jButton21)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jButton25)))
+                            .addGap(49, 49, 49)
+                            .addGroup(myStoredListsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(cartButtonList2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(cartButtonList1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(myStoredListsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(myStoredListsPanelLayout.createSequentialGroup()
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jToggleButton5))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, myStoredListsPanelLayout.createSequentialGroup()
+                                    .addGap(18, 18, 18)
+                                    .addComponent(jToggleButton4))))
+                        .addGroup(myStoredListsPanelLayout.createSequentialGroup()
+                            .addComponent(jLabel54)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jLabel56)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(myStoredListsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel57, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE))
+                        .addComponent(jLabel55, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(filler4, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 38, Short.MAX_VALUE))
         );
         myStoredListsPanelLayout.setVerticalGroup(
             myStoredListsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,13 +207,15 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
                     .addComponent(jLabel54)
                     .addComponent(jLabel56)
                     .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(94, 94, 94)
-                .addComponent(jLabel57)
                 .addGap(18, 18, 18)
+                .addComponent(filler4, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel57)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         myStoredListsScrollPane.setViewportView(myStoredListsPanel);
@@ -253,6 +253,7 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton cartButtonList1;
     private javax.swing.JButton cartButtonList2;
+    private javax.swing.Box.Filler filler4;
     private javax.swing.JList itemsList;
     private javax.swing.JButton jButton21;
     private javax.swing.JButton jButton25;

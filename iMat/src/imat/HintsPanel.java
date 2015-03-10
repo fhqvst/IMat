@@ -28,10 +28,11 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
     public HintsPanel() {
         initComponents();
         manualLabel.setText("<html><h2>Manual</h2></html>");
+        needHelpLabel.setText("<html><h2>Behöver du hjälp?</h2></html>");
         forumButton.setText("<html><font color='blue'><u>forum</u></font></html>");
         contactUsButton.setText("<html><font color='blue'><u>kontakta oss!</u></font></html>");
         changeToHint(13);
-        manualTextArea.setText("Mitt första köp:\n\n" + getDummyText() + "\n\nAtt lägga till favoriter:\n\n" + getDummyText());
+        manualTextArea.setText("Mitt första köp:\n\n" + getDummyText());
         currentHintScrollPane.setPreferredSize(new Dimension(800, 600));
     }
     
@@ -221,6 +222,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
 
         currentHintScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
 
+        currentHintTextArea.setEditable(false);
         currentHintTextArea.setColumns(20);
         currentHintTextArea.setLineWrap(true);
         currentHintTextArea.setRows(5);
@@ -382,6 +384,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         manualScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         manualScrollPane.setToolTipText("");
 
+        manualTextArea.setEditable(false);
         manualTextArea.setColumns(20);
         manualTextArea.setLineWrap(true);
         manualTextArea.setRows(5);
