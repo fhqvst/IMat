@@ -25,8 +25,8 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
         initComponents();
         customer = IMatDataHandler.getInstance().getCustomer();
         setLabelsFromStoredInformation();
-        CardLayout cards = (CardLayout) this.getLayout();
-        cards.show(this, "showCard");
+        CardLayout cards = (CardLayout) cardPanel.getLayout();
+        cards.show(cardPanel, "showCard");
     }
     
     public void setObject(Object bean) {
@@ -69,6 +69,7 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        cardPanel = new javax.swing.JPanel();
         editPanel = new javax.swing.JPanel();
         saveButton = new javax.swing.JButton();
         mobileTextField = new javax.swing.JTextField();
@@ -84,15 +85,7 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
         lastNameLabel = new javax.swing.JLabel();
         firstNameLabel = new javax.swing.JLabel();
         contactInformationLabel = new javax.swing.JLabel();
-        newReminderButton = new javax.swing.JButton();
-        howLabel = new javax.swing.JLabel();
-        frequenceyLabel = new javax.swing.JLabel();
-        reminderLabel = new javax.swing.JLabel();
         filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0));
-        jPanel1 = new javax.swing.JPanel();
-        howComboBox = new javax.swing.JComboBox();
-        frequencyComboBox = new javax.swing.JComboBox();
-        jComboBox1 = new javax.swing.JComboBox();
         showPanel = new javax.swing.JPanel();
         showContactInformationLabel = new javax.swing.JLabel();
         editButton = new javax.swing.JButton();
@@ -108,19 +101,22 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
         userEmail = new javax.swing.JLabel();
         showMobileLabel = new javax.swing.JLabel();
         userMobile = new javax.swing.JLabel();
-        reminderLabel1 = new javax.swing.JLabel();
-        howLabel1 = new javax.swing.JLabel();
-        frequenceyLabel1 = new javax.swing.JLabel();
-        frequencyComboBox1 = new javax.swing.JComboBox();
-        howComboBox1 = new javax.swing.JComboBox();
-        newReminderButton1 = new javax.swing.JButton();
         filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0));
-        filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0));
+        reminderPanel = new javax.swing.JPanel();
+        reminderLabel = new javax.swing.JLabel();
+        howLabel = new javax.swing.JLabel();
+        frequenceyLabel = new javax.swing.JLabel();
+        howComboBox = new javax.swing.JComboBox();
+        frequencyComboBox = new javax.swing.JComboBox();
+        jComboBox1 = new javax.swing.JComboBox();
+        newReminderButton = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(300, 300));
         setMinimumSize(new java.awt.Dimension(300, 300));
         setPreferredSize(new java.awt.Dimension(200, 400));
-        setLayout(new java.awt.CardLayout());
+        setLayout(new java.awt.GridLayout(2, 1));
+
+        cardPanel.setLayout(new java.awt.CardLayout());
 
         editPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
@@ -181,56 +177,6 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
         contactInformationLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         contactInformationLabel.setText("Kontaktuppgifter");
 
-        newReminderButton.setText("Ny påminnelse");
-        newReminderButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                newReminderButtonActionPerformed(evt);
-            }
-        });
-
-        howLabel.setText("Hur");
-
-        frequenceyLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        frequenceyLabel.setText("Frekvens");
-
-        reminderLabel.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
-        reminderLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        reminderLabel.setText("Påminnelser");
-
-        howComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "E-post", "SMS" }));
-
-        frequencyComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "varje", "varannan" }));
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "dag", "måndag", "tisdag", "onsdag", "torsdag", "fredag", "lördag", "söndag", "månad" }));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 326, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(howComboBox, 0, 96, Short.MAX_VALUE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(frequencyComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 75, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(36, 36, 36)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(howComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(frequencyComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-
         javax.swing.GroupLayout editPanelLayout = new javax.swing.GroupLayout(editPanel);
         editPanel.setLayout(editPanelLayout);
         editPanelLayout.setHorizontalGroup(
@@ -261,19 +207,7 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
                             .addComponent(mobileTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(editPanelLayout.createSequentialGroup()
-                .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(filler4, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(reminderLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(newReminderButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, editPanelLayout.createSequentialGroup()
-                            .addContainerGap()
-                            .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(editPanelLayout.createSequentialGroup()
-                                    .addComponent(howLabel)
-                                    .addGap(100, 100, 100)
-                                    .addComponent(frequenceyLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addComponent(filler4, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         editPanelLayout.setVerticalGroup(
@@ -308,20 +242,10 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
                 .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(filler4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(reminderLabel)
-                .addGap(18, 18, 18)
-                .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(frequenceyLabel)
-                    .addComponent(howLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
-                .addComponent(newReminderButton)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        add(editPanel, "editCard");
+        cardPanel.add(editPanel, "editCard");
 
         showPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
@@ -385,20 +309,6 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
         userMobile.setText("[mobil]");
         userMobile.setPreferredSize(null);
 
-        reminderLabel1.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
-        reminderLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        reminderLabel1.setText("Påminnelser");
-
-        howLabel1.setText("Hur");
-
-        frequenceyLabel1.setText("Frekvens");
-
-        frequencyComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        howComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        newReminderButton1.setText("Ny påminnelse");
-
         javax.swing.GroupLayout showPanelLayout = new javax.swing.GroupLayout(showPanel);
         showPanel.setLayout(showPanelLayout);
         showPanelLayout.setHorizontalGroup(
@@ -425,24 +335,8 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
                     .addGroup(showPanelLayout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addComponent(showContactInformationLabel))
-                    .addComponent(filler2, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(showPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(newReminderButton1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, showPanelLayout.createSequentialGroup()
-                            .addGroup(showPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(howLabel1)
-                                .addComponent(howComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(showPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(frequencyComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(frequenceyLabel1)))
-                        .addComponent(reminderLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(filler2, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(showPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, showPanelLayout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(filler3, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(2, 2, 2)))
         );
         showPanelLayout.setVerticalGroup(
             showPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -476,27 +370,77 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
                 .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(filler2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(reminderLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(showPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(howLabel1)
-                    .addComponent(frequenceyLabel1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(showPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(howComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(frequencyComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(newReminderButton1)
-                .addContainerGap(144, Short.MAX_VALUE))
-            .addGroup(showPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, showPanelLayout.createSequentialGroup()
-                    .addContainerGap(543, Short.MAX_VALUE)
-                    .addComponent(filler3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(10, 10, 10)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        add(showPanel, "showCard");
+        cardPanel.add(showPanel, "showCard");
+
+        add(cardPanel);
+
+        reminderLabel.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        reminderLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        reminderLabel.setText("Påminnelser");
+
+        howLabel.setText("Hur");
+
+        frequenceyLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        frequenceyLabel.setText("Frekvens");
+
+        howComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "E-post", "SMS" }));
+
+        frequencyComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "varje", "varannan" }));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "dag", "måndag", "tisdag", "onsdag", "torsdag", "fredag", "lördag", "söndag", "månad" }));
+
+        newReminderButton.setText("Ny påminnelse");
+        newReminderButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newReminderButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout reminderPanelLayout = new javax.swing.GroupLayout(reminderPanel);
+        reminderPanel.setLayout(reminderPanelLayout);
+        reminderPanelLayout.setHorizontalGroup(
+            reminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(reminderPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(reminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(reminderLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(reminderPanelLayout.createSequentialGroup()
+                        .addGroup(reminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(howLabel)
+                            .addComponent(howComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(reminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(reminderPanelLayout.createSequentialGroup()
+                                .addComponent(frequencyComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(frequenceyLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(newReminderButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(167, Short.MAX_VALUE))
+        );
+        reminderPanelLayout.setVerticalGroup(
+            reminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(reminderPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(reminderLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(reminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(frequenceyLabel)
+                    .addComponent(howLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(reminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(howComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(frequencyComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(newReminderButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        add(reminderPanel);
     }// </editor-fold>//GEN-END:initComponents
 
     private void addressTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addressTextFieldActionPerformed
@@ -508,8 +452,8 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
     }//GEN-LAST:event_emailTextFieldActionPerformed
 
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
-        CardLayout cards = (CardLayout) this.getLayout();
-        cards.show(this, "editCard");
+        CardLayout cards = (CardLayout) cardPanel.getLayout();
+        cards.show(cardPanel, "editCard");
         setTextFieldsFromStoredInformation();
     }//GEN-LAST:event_editButtonActionPerformed
 
@@ -517,8 +461,8 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
         storeInformaitonFromTextFields();
         setLabelsFromStoredInformation();
         
-        CardLayout cards = (CardLayout) this.getLayout();
-        cards.show(this, "showCard");
+        CardLayout cards = (CardLayout) cardPanel.getLayout();
+        cards.show(cardPanel, "showCard");
     }//GEN-LAST:event_saveButtonActionPerformed
 
     private void postCodeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_postCodeTextFieldActionPerformed
@@ -533,36 +477,30 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel addressLabel;
     private javax.swing.JTextField addressTextField;
+    private javax.swing.JPanel cardPanel;
     private javax.swing.JLabel contactInformationLabel;
     private javax.swing.JButton editButton;
     private javax.swing.JPanel editPanel;
     private javax.swing.JLabel emailLabel;
     private javax.swing.JTextField emailTextField;
     private javax.swing.Box.Filler filler2;
-    private javax.swing.Box.Filler filler3;
     private javax.swing.Box.Filler filler4;
     private javax.swing.JLabel firstNameLabel;
     private javax.swing.JTextField firstNameTextField;
     private javax.swing.JLabel frequenceyLabel;
-    private javax.swing.JLabel frequenceyLabel1;
     private javax.swing.JComboBox frequencyComboBox;
-    private javax.swing.JComboBox frequencyComboBox1;
     private javax.swing.JComboBox howComboBox;
-    private javax.swing.JComboBox howComboBox1;
     private javax.swing.JLabel howLabel;
-    private javax.swing.JLabel howLabel1;
     private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lastNameLabel;
     private javax.swing.JTextField lastNameTextField;
     private javax.swing.JLabel mobileLabel;
     private javax.swing.JTextField mobileTextField;
     private javax.swing.JButton newReminderButton;
-    private javax.swing.JButton newReminderButton1;
     private javax.swing.JLabel postCodeLabel;
     private javax.swing.JTextField postCodeTextField;
     private javax.swing.JLabel reminderLabel;
-    private javax.swing.JLabel reminderLabel1;
+    private javax.swing.JPanel reminderPanel;
     private javax.swing.JButton saveButton;
     private javax.swing.JLabel showAddressLabel;
     private javax.swing.JLabel showContactInformationLabel;
