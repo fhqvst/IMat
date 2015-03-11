@@ -21,7 +21,8 @@ import se.chalmers.ait.dat215.project.*;
 public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Customizer, ShoppingCartListener {
     
     private Object bean;
-    private ProductListPanel plp = new ProductListPanel();
+    private ProductListPanel plp1 = new ProductListPanel();
+    private ProductListPanel plp2 = new ProductListPanel();
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     private List<JTextField> page1RequiredTextFields;
     private List<JTextField> page2RequiredTextFields;
@@ -33,7 +34,8 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
     public CheckoutPanel() {
         initComponents();
         dataHandler.getShoppingCart().addShoppingCartListener(this);
-        jPanel1.add(plp, 0);
+        jPanel1.add(plp1, 0);
+        page2FormsPanel.add(plp2, 0);
         showCard("page1");
         errorLabel1.setVisible(false);
         errorLabel2.setVisible(false);
@@ -41,7 +43,8 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         totalLabel1.setText("Antal varor: " + dataHandler.getShoppingCart().getItems().size() + " st   Totalkostnad: " + Math.round(dataHandler.getShoppingCart().getTotal()*100)/100 + " kr");
         totalLabel2.setText("Antal varor: " + dataHandler.getShoppingCart().getItems().size() + " st   Totalkostnad: " + Math.round(dataHandler.getShoppingCart().getTotal()*100)/100 + " kr");
         
-        this.plp.setBorder(BorderFactory.createMatteBorder(1,1,1,1,new Color(200,200,200)));
+        this.plp1.setBorder(BorderFactory.createMatteBorder(1,1,1,1,new Color(200,200,200)));
+        this.plp2.setBorder(BorderFactory.createMatteBorder(1,1,1,1,new Color(200,200,200)));
         
         customerToTextFields();
         
@@ -170,7 +173,6 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         page1NextButton = new javax.swing.JButton();
         page2Panel = new javax.swing.JPanel();
         page2FormsPanel = new javax.swing.JPanel();
-        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
         middlePanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         cardNumberLabel = new javax.swing.JLabel();
@@ -218,11 +220,12 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         wizardButtonGroup.add(wizardStep1ToggleButton);
         wizardStep1ToggleButton.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
         wizardStep1ToggleButton.setForeground(new java.awt.Color(255, 255, 255));
-        wizardStep1ToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green.png"))); // NOI18N
+        wizardStep1ToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-selected.png"))); // NOI18N
         wizardStep1ToggleButton.setSelected(true);
         wizardStep1ToggleButton.setText("1. PERSONUPPGIFTER");
         wizardStep1ToggleButton.setAlignmentX(0.5F);
         wizardStep1ToggleButton.setBorder(null);
+        wizardStep1ToggleButton.setBorderPainted(false);
         wizardStep1ToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         wizardStep1ToggleButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         wizardStep1ToggleButton.setIconTextGap(0);
@@ -231,7 +234,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         wizardStep1ToggleButton.setPreferredSize(new java.awt.Dimension(170, 40));
         wizardStep1ToggleButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-hover.png"))); // NOI18N
         wizardStep1ToggleButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-hover.png"))); // NOI18N
-        wizardStep1ToggleButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-selected.png"))); // NOI18N
+        wizardStep1ToggleButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green.png"))); // NOI18N
         wizardStep1ToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 wizardStep1ToggleButtonActionPerformed(evt);
@@ -243,10 +246,11 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         wizardButtonGroup.add(wizardStep2ToggleButton);
         wizardStep2ToggleButton.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
         wizardStep2ToggleButton.setForeground(new java.awt.Color(255, 255, 255));
-        wizardStep2ToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green.png"))); // NOI18N
+        wizardStep2ToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-selected.png"))); // NOI18N
         wizardStep2ToggleButton.setText("2. BETALUPPGIFTER");
         wizardStep2ToggleButton.setAlignmentX(0.5F);
         wizardStep2ToggleButton.setBorder(null);
+        wizardStep2ToggleButton.setBorderPainted(false);
         wizardStep2ToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         wizardStep2ToggleButton.setEnabled(false);
         wizardStep2ToggleButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -256,7 +260,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         wizardStep2ToggleButton.setPreferredSize(new java.awt.Dimension(170, 40));
         wizardStep2ToggleButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-hover.png"))); // NOI18N
         wizardStep2ToggleButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-hover.png"))); // NOI18N
-        wizardStep2ToggleButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-selected.png"))); // NOI18N
+        wizardStep2ToggleButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green.png"))); // NOI18N
         wizardStep2ToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 wizardStep2ToggleButtonActionPerformed(evt);
@@ -268,10 +272,11 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         wizardButtonGroup.add(wizardStep3ToggleButton);
         wizardStep3ToggleButton.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
         wizardStep3ToggleButton.setForeground(new java.awt.Color(255, 255, 255));
-        wizardStep3ToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green.png"))); // NOI18N
+        wizardStep3ToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-selected.png"))); // NOI18N
         wizardStep3ToggleButton.setText("3. BEKRÄFTA KÖP");
         wizardStep3ToggleButton.setAlignmentX(0.5F);
         wizardStep3ToggleButton.setBorder(null);
+        wizardStep3ToggleButton.setBorderPainted(false);
         wizardStep3ToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         wizardStep3ToggleButton.setEnabled(false);
         wizardStep3ToggleButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -281,7 +286,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         wizardStep3ToggleButton.setPreferredSize(new java.awt.Dimension(170, 40));
         wizardStep3ToggleButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-hover.png"))); // NOI18N
         wizardStep3ToggleButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-hover.png"))); // NOI18N
-        wizardStep3ToggleButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-selected.png"))); // NOI18N
+        wizardStep3ToggleButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green.png"))); // NOI18N
         wizardStep3ToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 wizardStep3ToggleButtonActionPerformed(evt);
@@ -532,9 +537,9 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         page2Panel.setAutoscrolls(true);
         page2Panel.setLayout(new javax.swing.BoxLayout(page2Panel, javax.swing.BoxLayout.Y_AXIS));
 
-        page2FormsPanel.setLayout(new java.awt.GridLayout(1, 4));
-        page2FormsPanel.add(filler1);
+        page2FormsPanel.setLayout(new java.awt.GridLayout(1, 2));
 
+        middlePanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 20, 0, 0));
         middlePanel1.setLayout(new javax.swing.BoxLayout(middlePanel1, javax.swing.BoxLayout.Y_AXIS));
 
         jLabel2.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
@@ -677,17 +682,22 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         deliveryTimeComboBox.setPreferredSize(new java.awt.Dimension(1333337, 60));
         middlePanel1.add(deliveryTimeComboBox);
 
+        errorLabel2.setFont(new java.awt.Font("Helvetica", 0, 14)); // NOI18N
+        errorLabel2.setForeground(new java.awt.Color(255, 0, 0));
+        errorLabel2.setText("errorLabel");
+        errorLabel2.setAlignmentX(0.5F);
+        errorLabel2.setMaximumSize(new java.awt.Dimension(133337, 40));
+        errorLabel2.setPreferredSize(new java.awt.Dimension(133337, 20));
+        middlePanel1.add(errorLabel2);
+
         page2FormsPanel.add(middlePanel1);
 
         page2Panel.add(page2FormsPanel);
 
-        errorLabel2.setForeground(new java.awt.Color(255, 0, 0));
-        errorLabel2.setText("errorLabel");
-        page2Panel.add(errorLabel2);
-
-        buttonPanel3.setMaximumSize(new java.awt.Dimension(133337, 60));
+        buttonPanel3.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 0, 0, 0));
+        buttonPanel3.setMaximumSize(new java.awt.Dimension(133337, 80));
         buttonPanel3.setMinimumSize(new java.awt.Dimension(0, 0));
-        buttonPanel3.setPreferredSize(new java.awt.Dimension(133337, 60));
+        buttonPanel3.setPreferredSize(new java.awt.Dimension(133337, 80));
         buttonPanel3.setLayout(new javax.swing.BoxLayout(buttonPanel3, javax.swing.BoxLayout.LINE_AXIS));
 
         page2BackButton.setFont(new java.awt.Font("Helvetica", 1, 18)); // NOI18N
@@ -730,9 +740,8 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
 
         page2NextButton.setFont(new java.awt.Font("Helvetica", 1, 18)); // NOI18N
         page2NextButton.setForeground(new java.awt.Color(255, 255, 255));
-        page2NextButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        page2NextButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green.png"))); // NOI18N
         page2NextButton.setText("NÄSTA");
-        page2NextButton.setBorder(null);
         page2NextButton.setBorderPainted(false);
         page2NextButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         page2NextButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -740,8 +749,11 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         page2NextButton.setMaximumSize(new java.awt.Dimension(120, 60));
         page2NextButton.setMinimumSize(new java.awt.Dimension(100, 60));
         page2NextButton.setPreferredSize(new java.awt.Dimension(120, 60));
-        page2NextButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        page2NextButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-selected.png"))); // NOI18N
         page2NextButton.setRolloverEnabled(true);
+        page2NextButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-hover.png"))); // NOI18N
+        page2NextButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-hover.png"))); // NOI18N
+        page2NextButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-selected.png"))); // NOI18N
         page2NextButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 page2NextButtonActionPerformed(evt);
@@ -774,7 +786,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(397, Short.MAX_VALUE))
+                .addContainerGap(398, Short.MAX_VALUE))
         );
 
         page3Panel.add(jPanel4);
@@ -808,15 +820,18 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
 
         buyButton.setFont(new java.awt.Font("Helvetica", 1, 18)); // NOI18N
         buyButton.setForeground(new java.awt.Color(255, 255, 255));
-        buyButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        buyButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green.png"))); // NOI18N
         buyButton.setText("BETALA");
-        buyButton.setBorder(null);
         buyButton.setBorderPainted(false);
         buyButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         buyButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         buyButton.setMaximumSize(new java.awt.Dimension(120, 60));
         buyButton.setMinimumSize(new java.awt.Dimension(120, 60));
         buyButton.setPreferredSize(new java.awt.Dimension(120, 60));
+        buyButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-selected.png"))); // NOI18N
+        buyButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-hover.png"))); // NOI18N
+        buyButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-hover.png"))); // NOI18N
+        buyButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-selected.png"))); // NOI18N
         buyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buyButtonActionPerformed(evt);
@@ -1002,7 +1017,6 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
     private javax.swing.JLabel errorLabel1;
     private javax.swing.JLabel errorLabel2;
     private javax.swing.JPanel fifthRow;
-    private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler11;
     private javax.swing.Box.Filler filler2;
     private javax.swing.JLabel firstNameLabel;

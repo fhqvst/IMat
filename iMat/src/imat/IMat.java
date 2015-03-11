@@ -304,6 +304,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         checkoutToggleButton.setForeground(new java.awt.Color(255, 255, 255));
         checkoutToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green.png"))); // NOI18N
         checkoutToggleButton.setText("TILL KASSAN");
+        checkoutToggleButton.setBorder(null);
+        checkoutToggleButton.setBorderPainted(false);
         checkoutToggleButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         checkoutToggleButton.setMargin(null);
         checkoutToggleButton.setMaximumSize(new java.awt.Dimension(130, 60));
