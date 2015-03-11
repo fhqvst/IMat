@@ -1079,20 +1079,23 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     
     @Override
     public void shoppingCartChanged(CartEvent ce) {
-        Color typGreen = new Color(135,211,124);
         updateCartLabels();
-        cartPanel.setBackground(typGreen);
-        cartPanel.repaint();
-        cartPanel.revalidate();
-        
-        Timer t = new Timer();
-        t.schedule(new TimerTask() {
-            public void run(){
-                cartPanel.setBackground(Color.white);
-                cartPanel.repaint();
-                cartPanel.revalidate();
-            }
-        },1500);
+                    
+        if(ce.isAddEvent()){
+            Color typGreen = new Color(135,211,124);
+            cartPanel.setBackground(typGreen);
+            cartPanel.repaint();
+            cartPanel.revalidate();
+
+            Timer t = new Timer();
+            t.schedule(new TimerTask() {
+                public void run(){
+                    cartPanel.setBackground(Color.white);
+                    cartPanel.repaint();
+                    cartPanel.revalidate();
+                }
+            },1500);
+        }
         
     }
     /**
