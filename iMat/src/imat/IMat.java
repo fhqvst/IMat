@@ -290,6 +290,9 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         checkoutButton.setMaximumSize(new java.awt.Dimension(130, 60));
         checkoutButton.setMinimumSize(new java.awt.Dimension(130, 60));
         checkoutButton.setPreferredSize(new java.awt.Dimension(130, 60));
+        checkoutButton.setRolloverEnabled(true);
+        checkoutButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected-hover.png"))); // NOI18N
+        checkoutButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected-hover.png"))); // NOI18N
         checkoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 checkoutButtonActionPerformed(evt);
@@ -620,9 +623,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         );
         cardCartListLayeredPaneLayout.setVerticalGroup(
             cardCartListLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cardCartListLayeredPaneLayout.createSequentialGroup()
-                .addComponent(cartLayeredPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+            .addComponent(cartLayeredPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
             .addComponent(cardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(cardCartListLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(cardCartListLayeredPaneLayout.createSequentialGroup()
