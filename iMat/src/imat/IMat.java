@@ -52,8 +52,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
                     dataHandler.shutDown();
             }
         }));
-        //Does not
-        
+
         this.setExtendedState(this.MAXIMIZED_BOTH);
         dataHandler.getShoppingCart().addShoppingCartListener(this);
         updateCartLabels();
@@ -96,6 +95,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         homeButton.doClick();
         setPrevious(false);
         setNext(false);
+        undo.setEnabled(false);
+        redo.setEnabled(false);
         
     }
 
@@ -1131,38 +1132,22 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
     private void undoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_undoActionPerformed
         if (lastAdded.size() > 0) {
+            System.out.println(lastAdded.getLast().toString());
             lastRemoved.add(lastAdded.getLast());
-            if (lastRemoved.size() == 0) {
+            if (lastRemoved.size() == 1) {
                 redo.setEnabled(true);
             } 
             dataHandler.getShoppingCart().removeItem(lastAdded.getLast());
             lastAdded.removeLast();
+            lastAdded.removeLast();
             if (lastAdded.size() == 0) {
                 undo.setEnabled(false);
             }
+            System.out.println(lastAdded.getLast().toString());
         }
-        /*if (previousCards.size() >  1) {
-            nextCards.add(previousCards.getLast());
-            if (nextCards.size() == 1) {
-                setNext(true);
-            }
-            previousCards.removeLast();
-            ((AbstractButton)previousCards.getLast().getSource()).doClick();
-            previousCards.removeLast();
-            if (previousCards.size() == 1) {
-                setPrevious(false);
-            }
-        }*/
     }//GEN-LAST:event_undoActionPerformed
 
     private void redoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_redoActionPerformed
-        /*if (nextCards.size() > 0) {
-            ((AbstractButton)nextCards.getLast().getSource()).doClick();
-            nextCards.removeLast();
-            if (nextCards.size() == 0) {
-                setNext(false);
-            }
-        }*/
         if (lastRemoved.size() > 0) {
             dataHandler.getShoppingCart().addItem(lastRemoved.getLast());
             lastRemoved.removeLast();
@@ -1176,6 +1161,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     @Override
     public void shoppingCartChanged(CartEvent ce) {
         lastAdded.add(ce.getShoppingItem());
+        undo.setEnabled(true);
         updateCartLabels();
                     
         if(ce.isAddEvent()){
