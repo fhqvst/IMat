@@ -110,6 +110,14 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
                     productCategoriesInSearch.add(stringToCategory(checkBoxTitles[i]));
             }
         }
+        
+        ArrayList<Product> toBeRemoved = new ArrayList();
+        for(Product p: productsShown) {
+            if ((int)jSpinner1.getValue() < p.getPrice()) {
+                toBeRemoved.add(p);
+            }
+        }
+        productsShown.removeAll(toBeRemoved);
         return productsShown;
     }
     
