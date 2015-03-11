@@ -1092,6 +1092,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         }
     }//GEN-LAST:event_undoActionPerformed
 
+
     private void redoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_redoActionPerformed
         if (lastRemoved.size() > 0) {
             dataHandler.getShoppingCart().addItem(lastRemoved.getLast());
