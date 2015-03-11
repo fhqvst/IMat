@@ -104,7 +104,7 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
         titleAndPricePanel.add(titleLabel);
 
         priceLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
-        priceLabel.setForeground(new java.awt.Color(255, 0, 0));
+        priceLabel.setForeground(new java.awt.Color(238, 85, 62));
         priceLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         priceLabel.setText("Pris");
         priceLabel.setToolTipText("");
@@ -213,6 +213,10 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
         if(!exists){
             dataHandler.getShoppingCart().addProduct(product, (Integer)amountSpinner.getValue());
         }
+        
+        ((IMat)this.getTopLevelAncestor()).getLayeredPane().moveToFront(((IMat)this.getTopLevelAncestor()).getCardPanel());
+        ((IMat)this.getTopLevelAncestor()).getLayeredPane().moveToBack(((IMat)this.getTopLevelAncestor()).getCartPanel());
+        
     }//GEN-LAST:event_addToCartButtonActionPerformed
 
     private void addToFavouritesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToFavouritesButtonActionPerformed
