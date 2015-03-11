@@ -73,6 +73,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         }
         */
         
+        this.cartLayeredPanel.add(new ProductListPanel());
+        
         this.productCategoryPanel = new ProductCategoryPanel();
         this.detailPanel = new DetailPanel();
 
@@ -134,9 +136,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         nextButton = new javax.swing.JButton();
         contentPanel = new javax.swing.JPanel();
         cardCartListLayeredPane = new javax.swing.JLayeredPane();
-        cardPanel = new javax.swing.JPanel();
         cartLayeredPanel = new javax.swing.JPanel();
-        cartLayeredPanelTitle = new javax.swing.JLabel();
+        cardPanel = new javax.swing.JPanel();
         listLayeredPanel = new javax.swing.JPanel();
         listLayeredPanelTitle = new javax.swing.JLabel();
         cartAndListsPanel = new javax.swing.JPanel();
@@ -491,7 +492,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         fruitVegetablesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
         fruitVegetablesButton.setText("FRUKT & GRÖNT");
         fruitVegetablesButton.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
-        fruitVegetablesButton.setBounds(new java.awt.Rectangle(0, 0, 0, 0));
         fruitVegetablesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         fruitVegetablesButton.setFocusPainted(false);
         fruitVegetablesButton.setHideActionText(true);
@@ -594,11 +594,12 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         contentPanel.setPreferredSize(new java.awt.Dimension(80, 0));
         contentPanel.setLayout(new java.awt.BorderLayout());
 
+        cartLayeredPanel.setBackground(new java.awt.Color(255, 255, 255));
+        cartLayeredPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
+        cartLayeredPanel.setLayout(new java.awt.BorderLayout());
+
         cardPanel.setVerifyInputWhenFocusTarget(false);
         cardPanel.setLayout(new java.awt.CardLayout());
-
-        cartLayeredPanelTitle.setText("Min varukorg");
-        cartLayeredPanel.add(cartLayeredPanelTitle);
 
         listLayeredPanelTitle.setText("Mina listor");
         listLayeredPanel.add(listLayeredPanelTitle);
@@ -607,10 +608,10 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         cardCartListLayeredPane.setLayout(cardCartListLayeredPaneLayout);
         cardCartListLayeredPaneLayout.setHorizontalGroup(
             cardCartListLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(cardCartListLayeredPaneLayout.createSequentialGroup()
-                .addGap(0, 1474, Short.MAX_VALUE)
-                .addComponent(cartLayeredPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(cardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(cardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 1613, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardCartListLayeredPaneLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(cartLayeredPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(cardCartListLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardCartListLayeredPaneLayout.createSequentialGroup()
                     .addContainerGap(1474, Short.MAX_VALUE)
@@ -620,8 +621,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         cardCartListLayeredPaneLayout.setVerticalGroup(
             cardCartListLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(cardCartListLayeredPaneLayout.createSequentialGroup()
-                .addComponent(cartLayeredPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 346, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(cartLayeredPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
             .addComponent(cardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(cardCartListLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(cardCartListLayeredPaneLayout.createSequentialGroup()
@@ -629,8 +630,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
                     .addComponent(listLayeredPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
                     .addGap(0, 0, 0)))
         );
-        cardCartListLayeredPane.setLayer(cardPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
         cardCartListLayeredPane.setLayer(cartLayeredPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        cardCartListLayeredPane.setLayer(cardPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
         cardCartListLayeredPane.setLayer(listLayeredPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         contentPanel.add(cardCartListLayeredPane, java.awt.BorderLayout.CENTER);
@@ -1093,7 +1094,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     private javax.swing.JLabel cartAmountLabel;
     private javax.swing.JPanel cartAndListsPanel;
     private javax.swing.JPanel cartLayeredPanel;
-    private javax.swing.JLabel cartLayeredPanelTitle;
     private javax.swing.JPanel cartPanel;
     private javax.swing.JLabel cartPriceLabel;
     private javax.swing.JToggleButton cartToggleButton;
