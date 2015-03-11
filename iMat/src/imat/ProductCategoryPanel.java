@@ -9,6 +9,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.util.List;
+import javax.swing.Box;
+import javax.swing.Box.Filler;
 import javax.swing.JPanel;
 import se.chalmers.ait.dat215.project.Product;
 import se.chalmers.ait.dat215.project.ProductCategory;
@@ -79,7 +81,17 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
             productPanel.setSize(200, 100);
             productsPanel.add(productPanel);
 
-        }    
+        }
+        
+        JPanel p;
+        
+        if(filterCard.getSelected().size() < 9){
+            for(int i = 0; i < (9-filterCard.getSelected().size()); i++){
+                p = new JPanel();
+                p.setBackground(Color.white);
+                productsPanel.add(p);
+            }
+        }
         this.revalidate();
         this.repaint();
     }
@@ -96,6 +108,16 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
             productPanel.setSize(200, 100);
             productsPanel.add(productPanel);
 
+        }
+        
+        JPanel p;
+        
+        if(products.size() < 11){
+            for(int i = 0; i < (11-products.size()); i++){
+                p = new JPanel();
+                p.setBackground(Color.white);
+                productsPanel.add(p);
+            }
         }
         this.revalidate();
         this.repaint();
