@@ -275,6 +275,9 @@
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="L&#xe4;gg till vald listas inneh&#xe5;ll i varukorgen"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="shoppingListToCartActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="shoppingListProductsToCart">
               <Properties>
@@ -283,6 +286,9 @@
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="L&#xe4;gg till valda varor i varukorgen"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="shoppingListProductsToCartActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="productsToCart">
               <Properties>

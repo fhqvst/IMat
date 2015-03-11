@@ -5,10 +5,10 @@
  */
 package imat;
 
+import java.awt.Dimension;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
 import javax.swing.DefaultListModel;
 import se.chalmers.ait.dat215.project.*;
 
@@ -21,9 +21,10 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
     private Object bean;
     private DefaultListModel orders;
     private DefaultListModel items;
-    private DefaultListModel shoppingLists = new DefaultListModel();
-    private DefaultListModel listContent = new DefaultListModel();
+    private DefaultListModel<String> shoppingLists = new DefaultListModel();
+    private DefaultListModel<Product> listContent = new DefaultListModel();
     private HashMap<String, List<Product>> listMap = new HashMap();
+    private HashMap<Product, Integer> amout = new HashMap();
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
     /**
@@ -36,8 +37,7 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
         orders = new DefaultListModel();
         items = new DefaultListModel();
         for(int i = 0; i < dataHandler.getOrders().size(); i ++){
-            orders.addElement(dataHandler.getOrders().get(i).getDate());
-            
+            orders.addElement(dataHandler.getOrders().get(i).getDate());            
         }
         ordersList.setModel(orders);
         ordersList.setSelectedIndex(0);
@@ -63,6 +63,7 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
         ArrayList<Product> someProducts = new ArrayList<>();
         for (int i = 0; i < 7; i++ ) {
             someProducts.add(dataHandler.getProduct(i));
+            amout.put(dataHandler.getProduct(i), (i*4)%3);
         }
         listMap.put("Veckohandling", someProducts);
     }
@@ -147,9 +148,19 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
 
         shoppingListToCart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
         shoppingListToCart.setToolTipText("Lägg till vald listas innehåll i varukorgen");
+        shoppingListToCart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                shoppingListToCartActionPerformed(evt);
+            }
+        });
 
         shoppingListProductsToCart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
         shoppingListProductsToCart.setToolTipText("Lägg till valda varor i varukorgen");
+        shoppingListProductsToCart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                shoppingListProductsToCartActionPerformed(evt);
+            }
+        });
 
         productsToCart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
 
@@ -280,6 +291,54 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void shoppingListToCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shoppingListToCartActionPerformed
+        if (shoppingListName.getSelectedIndex() >= 0) {
+            Dimension d = jScrollPane6.getPreferredSize();
+            Dimension e = jScrollPane6.getSize();
+            for (Product p : listMap.get(shoppingLists.get(shoppingListName.getSelectedIndex()))) {
+                if (p != null) {
+                    boolean exists = false;
+                    for(int i = 0; i < dataHandler.getShoppingCart().getItems().size(); i++){
+                        ShoppingItem temp = dataHandler.getShoppingCart().getItems().get(i);
+                        if(temp.getProduct() == p){
+                            temp.setAmount(temp.getAmount() + amout.get(p));
+                            dataHandler.getShoppingCart().fireShoppingCartChanged(temp, true);
+                            exists = true;
+                            break;
+                        }
+                    }
+                    if(!exists) {
+                        dataHandler.getShoppingCart().addProduct(p, amout.get(p));
+                    }
+                }
+               
+            }
+            jScrollPane6.setPreferredSize(d);
+            jScrollPane6.setSize(e);
+        }
+    }//GEN-LAST:event_shoppingListToCartActionPerformed
+
+    private void shoppingListProductsToCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_shoppingListProductsToCartActionPerformed
+        if (shoppingListName.getSelectedIndex() >= 0) {
+            Product p = listContent.get(shoppingListContains.getSelectedIndex());
+            if (p != null) {
+                boolean exists = false;
+                for(int i = 0; i < dataHandler.getShoppingCart().getItems().size(); i++){
+                    ShoppingItem temp = dataHandler.getShoppingCart().getItems().get(i);
+                    if(temp.getProduct() == p){
+                        temp.setAmount(temp.getAmount() + amout.get(p));
+                        dataHandler.getShoppingCart().fireShoppingCartChanged(temp, true);
+                        exists = true;
+                        break;
+                    }
+                }
+                if(!exists){
+                    dataHandler.getShoppingCart().addProduct(p, amout.get(p));
+                }
+            }
+        }
+    }//GEN-LAST:event_shoppingListProductsToCartActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
