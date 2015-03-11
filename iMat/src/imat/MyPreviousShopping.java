@@ -6,6 +6,7 @@
 package imat;
 
 import java.awt.Dimension;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -36,8 +37,9 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
         myLatestShoppingsLabel.setText("<html><h2>Mina senaste köp</h2></html>");
         orders = new DefaultListModel();
         items = new DefaultListModel();
+        SimpleDateFormat dt = new SimpleDateFormat("yyyy-MM-dd hh:mm");
         for(int i = 0; i < dataHandler.getOrders().size(); i ++){
-            orders.addElement(dataHandler.getOrders().get(i).getDate());            
+            orders.addElement(dt.format(dataHandler.getOrders().get(i).getDate()));            
         }
         ordersList.setModel(orders);
         ordersList.setSelectedIndex(0);
