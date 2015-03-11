@@ -152,6 +152,7 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
 
         jSpinner1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)));
         jSpinner1.setMaximumSize(new java.awt.Dimension(32767, 60));
+        jSpinner1.setMinimumSize(new java.awt.Dimension(39, 60));
         jSpinner1.setPreferredSize(new java.awt.Dimension(37, 60));
         jSpinner1.setValue(150);
         add(jSpinner1);

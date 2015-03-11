@@ -200,7 +200,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
         logotype.setFont(new java.awt.Font("Helvetica", 1, 48)); // NOI18N
         logotype.setText("iMat");
-        logotype.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        logotype.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         logotype.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 logotypeMouseClicked(evt);
@@ -237,7 +237,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         searchButton.setToolTipText("Sök i butiken");
         searchButton.setAlignmentX(0.5F);
         searchButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)));
-        searchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        searchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         searchButton.setFocusPainted(false);
         searchButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         searchButton.setIconTextGap(0);
@@ -259,7 +259,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         hintsToggleButton.setToolTipText("Tips");
         hintsToggleButton.setBorderPainted(false);
         hintsToggleButton.setContentAreaFilled(false);
-        hintsToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        hintsToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         hintsToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hintsToggleButtonActionPerformed(evt);
@@ -273,7 +273,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         profileButton.setToolTipText("Min profil");
         profileButton.setBorderPainted(false);
         profileButton.setContentAreaFilled(false);
-        profileButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        profileButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         profileButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 profileButtonActionPerformed(evt);
@@ -316,7 +316,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         previousButton.setText("←");
         previousButton.setToolTipText("Föregående sida");
         previousButton.setBorder(null);
-        previousButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        previousButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         previousButton.setFocusPainted(false);
         previousButton.setIconTextGap(0);
         previousButton.setMargin(null);
@@ -341,7 +341,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         homeButton.setText("HEM");
         homeButton.setToolTipText("Visa förstasidan");
         homeButton.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
-        homeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        homeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         homeButton.setFocusPainted(false);
         homeButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         homeButton.setIconTextGap(0);
@@ -371,7 +371,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         favoriteButton.setText("FAVORITER");
         favoriteButton.setToolTipText("Visa mina favoritmarkerade varor");
         favoriteButton.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
-        favoriteButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        favoriteButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         favoriteButton.setFocusPainted(false);
         favoriteButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         favoriteButton.setIconTextGap(0);
@@ -402,7 +402,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         receipeButton.setText("RECEPT");
         receipeButton.setToolTipText("Visa rekommenderade recept");
         receipeButton.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
-        receipeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        receipeButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         receipeButton.setFocusPainted(false);
         receipeButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         receipeButton.setIconTextGap(0);
@@ -432,7 +432,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         meatFishButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
         meatFishButton.setText("KÖTT & FISK");
         meatFishButton.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
-        meatFishButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        meatFishButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         meatFishButton.setFocusPainted(false);
         meatFishButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         meatFishButton.setIconTextGap(0);
@@ -462,7 +462,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         freezerButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
         freezerButton.setText("FRYSVAROR");
         freezerButton.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
-        freezerButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        freezerButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         freezerButton.setFocusPainted(false);
         freezerButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         freezerButton.setIconTextGap(0);
@@ -492,7 +492,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         dairyButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
         dairyButton.setText("MEJERI");
         dairyButton.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
-        dairyButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        dairyButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         dairyButton.setFocusPainted(false);
         dairyButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         dairyButton.setIconTextGap(0);
@@ -522,7 +522,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         fruitVegetablesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
         fruitVegetablesButton.setText("FRUKT & GRÖNT");
         fruitVegetablesButton.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
-        fruitVegetablesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        fruitVegetablesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         fruitVegetablesButton.setFocusPainted(false);
         fruitVegetablesButton.setHideActionText(true);
         fruitVegetablesButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -553,7 +553,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         pantryButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
         pantryButton.setText("SKAFFERI");
         pantryButton.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
-        pantryButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        pantryButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         pantryButton.setFocusPainted(false);
         pantryButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         pantryButton.setIconTextGap(0);
@@ -583,7 +583,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         candySnacksButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
         candySnacksButton.setText("GODIS & SNACKS");
         candySnacksButton.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
-        candySnacksButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        candySnacksButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         candySnacksButton.setFocusPainted(false);
         candySnacksButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         candySnacksButton.setIconTextGap(0);
@@ -612,7 +612,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         nextButton.setText("→");
         nextButton.setToolTipText("Nästa sida");
         nextButton.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
-        nextButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        nextButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         nextButton.setFocusPainted(false);
         nextButton.setMargin(null);
         nextButton.setMaximumSize(new java.awt.Dimension(60, 60));
@@ -700,7 +700,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         cartToggleButton.setToolTipText("Visa varukorg");
         cartToggleButton.setBorderPainted(false);
         cartToggleButton.setContentAreaFilled(false);
-        cartToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cartToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         cartToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cartToggleButtonActionPerformed(evt);
@@ -740,7 +740,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         listToggleButton.setToolTipText("Visa mina listor");
         listToggleButton.setBorderPainted(false);
         listToggleButton.setContentAreaFilled(false);
-        listToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        listToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         listToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listToggleButtonActionPerformed(evt);
