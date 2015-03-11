@@ -112,9 +112,8 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
 
         topPanel.add(titleAndPricePanel, java.awt.BorderLayout.CENTER);
 
-        addToFavouritesButton.setFont(new java.awt.Font("Helvetica", 1, 36)); // NOI18N
-        addToFavouritesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
-        addToFavouritesButton.setText("♡");
+        addToFavouritesButton.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
+        addToFavouritesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/heart-open.png"))); // NOI18N
         addToFavouritesButton.setAlignmentY(0.0F);
         addToFavouritesButton.setBorder(null);
         addToFavouritesButton.setBorderPainted(false);
@@ -127,6 +126,9 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
         addToFavouritesButton.setMaximumSize(new java.awt.Dimension(50, 50));
         addToFavouritesButton.setMinimumSize(new java.awt.Dimension(0, 0));
         addToFavouritesButton.setPreferredSize(new java.awt.Dimension(60, 60));
+        addToFavouritesButton.setRolloverEnabled(true);
+        addToFavouritesButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/heart.png"))); // NOI18N
+        addToFavouritesButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/heart.png"))); // NOI18N
         addToFavouritesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addToFavouritesButtonActionPerformed(evt);
@@ -215,10 +217,10 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
     private void addToFavouritesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToFavouritesButtonActionPerformed
         if(dataHandler.favorites().contains(product)){
             dataHandler.favorites().remove(product);
-            addToFavouritesButton.setForeground(Color.black);
+            addToFavouritesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/heart-open.png")));
         }else{
             dataHandler.addFavorite(product);
-            addToFavouritesButton.setForeground(Color.red);
+            addToFavouritesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/heart.png")));
         }
     }//GEN-LAST:event_addToFavouritesButtonActionPerformed
 
