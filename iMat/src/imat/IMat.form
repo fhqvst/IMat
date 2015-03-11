@@ -154,13 +154,35 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="toCheckoutMenuNavigationActionPerformed"/>
               </Events>
             </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="goToPreviousCategory">
+              <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="LEFT"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="G&#xe5; till f&#xf6;reg&#xe5;ende kategori"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="goToPreviousCategoryActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="goToNextCategory">
+              <Properties>
+                <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
+                  <KeyStroke key="RIGHT"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="G&#xe5; till n&#xe4;sta kategori"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="goToNextCategoryActionPerformed"/>
+              </Events>
+            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="switchToPrevious">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
                   <KeyStroke key="BACK_SPACE"/>
                 </Property>
                 <Property name="mnemonic" type="int" value="102"/>
-                <Property name="text" type="java.lang.String" value="F&#xf6;reg&#xe5;ende sida"/>
+                <Property name="text" type="java.lang.String" value="Visa tidigare sida"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="switchToPreviousActionPerformed"/>
@@ -172,7 +194,7 @@
                   <KeyStroke key="Shift+BACK_SPACE"/>
                 </Property>
                 <Property name="mnemonic" type="int" value="110"/>
-                <Property name="text" type="java.lang.String" value="N&#xe4;sta sida"/>
+                <Property name="text" type="java.lang.String" value="Visa senare sida"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="switchToNextActionPerformed"/>
@@ -612,7 +634,7 @@
               <Font name="Helvetica" size="24" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#x2190;"/>
-            <Property name="toolTipText" type="java.lang.String" value="F&#xf6;reg&#xe5;ende sida"/>
+            <Property name="toolTipText" type="java.lang.String" value="Visa tidigare sida"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
@@ -1109,7 +1131,7 @@
               <Font name="Helvetica" size="24" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="&#x2192;"/>
-            <Property name="toolTipText" type="java.lang.String" value="N&#xe4;sta sida"/>
+            <Property name="toolTipText" type="java.lang.String" value="Visa n&#xe4;sta sida"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
                 <MatteColorBorder bottom="0" left="1" right="0" top="0">
