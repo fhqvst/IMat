@@ -183,13 +183,15 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
         rightPanel.add(jLabel2);
 
         buttonGroup1.add(jToggleButton1);
+        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/gridSmall.png"))); // NOI18N
         jToggleButton1.setSelected(true);
-        jToggleButton1.setText("Ruta");
+        jToggleButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 4, 4));
         jToggleButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         rightPanel.add(jToggleButton1);
 
         buttonGroup1.add(jToggleButton2);
-        jToggleButton2.setText("Lista");
+        jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/listSmall.png"))); // NOI18N
+        jToggleButton2.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 4, 4));
         jToggleButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         rightPanel.add(jToggleButton2);
 
