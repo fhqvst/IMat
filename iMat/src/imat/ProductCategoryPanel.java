@@ -162,59 +162,118 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
 
         jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.Y_AXIS));
 
-        sortingPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
+        sortingPanel.setBackground(new java.awt.Color(255, 255, 255));
+        sortingPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 1, 0, new java.awt.Color(200, 200, 200)));
+        sortingPanel.setMaximumSize(new java.awt.Dimension(32767, 40));
+        sortingPanel.setMinimumSize(new java.awt.Dimension(528, 40));
+        sortingPanel.setPreferredSize(new java.awt.Dimension(133337, 40));
         sortingPanel.setLayout(new java.awt.GridLayout(1, 2));
 
         leftPanel.setBackground(new java.awt.Color(255, 255, 255));
-        leftPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+        leftPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        leftPanel.setMaximumSize(new java.awt.Dimension(13337, 60));
+        leftPanel.setMinimumSize(new java.awt.Dimension(0, 60));
+        leftPanel.setPreferredSize(new java.awt.Dimension(13337, 60));
+        leftPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT, 5, 0));
 
+        jLabel1.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel1.setText("Sortera efter:");
+        jLabel1.setText("SORTERA EFTER");
+        jLabel1.setAlignmentX(0.5F);
+        jLabel1.setMaximumSize(new java.awt.Dimension(101, 30));
+        jLabel1.setMinimumSize(new java.awt.Dimension(0, 20));
+        jLabel1.setPreferredSize(new java.awt.Dimension(101, 20));
         leftPanel.add(jLabel1);
 
-        nameLinkLabel.setForeground(new java.awt.Color(102, 102, 255));
+        nameLinkLabel.setFont(new java.awt.Font("Helvetica", 0, 12)); // NOI18N
+        nameLinkLabel.setForeground(new java.awt.Color(255, 102, 102));
         nameLinkLabel.setText("Namn");
-        nameLinkLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        nameLinkLabel.setAlignmentX(0.5F);
+        nameLinkLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        nameLinkLabel.setMinimumSize(new java.awt.Dimension(0, 20));
+        nameLinkLabel.setPreferredSize(new java.awt.Dimension(33, 20));
         leftPanel.add(nameLinkLabel);
 
+        jLabel3.setFont(new java.awt.Font("Helvetica", 0, 12)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(153, 153, 153));
         jLabel3.setText("|");
+        jLabel3.setAlignmentX(0.5F);
+        jLabel3.setMinimumSize(new java.awt.Dimension(0, 20));
+        jLabel3.setPreferredSize(new java.awt.Dimension(3, 20));
         leftPanel.add(jLabel3);
 
-        priceLinkLabel.setForeground(new java.awt.Color(102, 102, 255));
+        priceLinkLabel.setFont(new java.awt.Font("Helvetica", 0, 12)); // NOI18N
+        priceLinkLabel.setForeground(new java.awt.Color(200, 200, 200));
         priceLinkLabel.setText("Pris");
-        priceLinkLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        priceLinkLabel.setAlignmentX(0.5F);
+        priceLinkLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        priceLinkLabel.setMinimumSize(new java.awt.Dimension(0, 20));
+        priceLinkLabel.setPreferredSize(new java.awt.Dimension(21, 20));
+        priceLinkLabel.setRequestFocusEnabled(false);
         leftPanel.add(priceLinkLabel);
 
+        jLabel5.setFont(new java.awt.Font("Helvetica", 0, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(153, 153, 153));
         jLabel5.setText("|");
+        jLabel5.setAlignmentX(0.5F);
+        jLabel5.setMinimumSize(new java.awt.Dimension(0, 20));
+        jLabel5.setPreferredSize(new java.awt.Dimension(3, 20));
         leftPanel.add(jLabel5);
 
-        favouritesLinkLabel.setForeground(new java.awt.Color(102, 102, 255));
+        favouritesLinkLabel.setFont(new java.awt.Font("Helvetica", 0, 12)); // NOI18N
+        favouritesLinkLabel.setForeground(new java.awt.Color(200, 200, 200));
         favouritesLinkLabel.setText("Favoriter");
-        favouritesLinkLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        favouritesLinkLabel.setAlignmentX(0.5F);
+        favouritesLinkLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        favouritesLinkLabel.setMinimumSize(new java.awt.Dimension(0, 20));
+        favouritesLinkLabel.setPreferredSize(new java.awt.Dimension(48, 20));
         leftPanel.add(favouritesLinkLabel);
 
         sortingPanel.add(leftPanel);
 
         rightPanel.setBackground(new java.awt.Color(255, 255, 255));
-        rightPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
+        rightPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20));
+        rightPanel.setMaximumSize(new java.awt.Dimension(13337, 60));
+        rightPanel.setMinimumSize(new java.awt.Dimension(0, 60));
+        rightPanel.setPreferredSize(new java.awt.Dimension(13337, 60));
+        rightPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT, 5, 0));
 
         jLabel2.setForeground(new java.awt.Color(153, 153, 153));
         jLabel2.setText("Vy:");
+        jLabel2.setPreferredSize(new java.awt.Dimension(20, 20));
         rightPanel.add(jLabel2);
 
+        jToggleButton1.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(jToggleButton1);
         jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/gridSmall.png"))); // NOI18N
         jToggleButton1.setSelected(true);
-        jToggleButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 4, 4));
-        jToggleButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jToggleButton1.setAlignmentX(0.5F);
+        jToggleButton1.setBorder(null);
+        jToggleButton1.setBorderPainted(false);
+        jToggleButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jToggleButton1.setIconTextGap(0);
+        jToggleButton1.setMargin(null);
+        jToggleButton1.setMaximumSize(new java.awt.Dimension(20, 20));
+        jToggleButton1.setMinimumSize(new java.awt.Dimension(20, 20));
+        jToggleButton1.setPreferredSize(new java.awt.Dimension(20, 20));
+        jToggleButton1.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/gridSmall.png"))); // NOI18N
+        jToggleButton1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         rightPanel.add(jToggleButton1);
 
+        jToggleButton2.setBackground(new java.awt.Color(255, 255, 255));
         buttonGroup1.add(jToggleButton2);
         jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/listSmall.png"))); // NOI18N
-        jToggleButton2.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 5, 4, 4));
-        jToggleButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jToggleButton2.setAlignmentX(0.5F);
+        jToggleButton2.setBorder(null);
+        jToggleButton2.setBorderPainted(false);
+        jToggleButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jToggleButton2.setIconTextGap(0);
+        jToggleButton2.setMargin(null);
+        jToggleButton2.setMaximumSize(new java.awt.Dimension(20, 20));
+        jToggleButton2.setMinimumSize(new java.awt.Dimension(20, 20));
+        jToggleButton2.setPreferredSize(new java.awt.Dimension(20, 20));
+        jToggleButton2.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/listSmall.png"))); // NOI18N
+        jToggleButton2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         rightPanel.add(jToggleButton2);
 
         sortingPanel.add(rightPanel);
