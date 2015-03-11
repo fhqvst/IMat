@@ -102,8 +102,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         searchTextField = new javax.swing.JTextField();
         searchButton = new javax.swing.JButton();
         filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0));
-        favoritesToggleButton = new javax.swing.JToggleButton();
         hintsToggleButton = new javax.swing.JToggleButton();
+        favoritesToggleButton = new javax.swing.JToggleButton();
         profileButton = new javax.swing.JToggleButton();
         filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0), new java.awt.Dimension(20, 0));
         checkoutToggleButton = new javax.swing.JToggleButton();
@@ -142,9 +142,16 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         undo = new javax.swing.JMenuItem();
         redo = new javax.swing.JMenuItem();
         navigate = new javax.swing.JMenu();
+        homeMenuNavigation = new javax.swing.JMenuItem();
+        hintsMenuNavigation = new javax.swing.JMenuItem();
+        myFavouritesMenuNavigation = new javax.swing.JMenuItem();
+        myProfileMenuNavigation = new javax.swing.JMenuItem();
+        toCheckoutMenuNavigation = new javax.swing.JMenuItem();
         switchToPrevious = new javax.swing.JMenuItem();
         switchToNext = new javax.swing.JMenuItem();
         view = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
         zoomIn = new javax.swing.JMenuItem();
         zoomOut = new javax.swing.JMenuItem();
         fullscreen = new javax.swing.JCheckBoxMenuItem();
@@ -238,20 +245,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         headerPanel.add(searchButton);
         headerPanel.add(filler3);
 
-        favoritesToggleButton.setBackground(new java.awt.Color(255, 255, 255));
-        globalNavigationButtonGroup.add(favoritesToggleButton);
-        favoritesToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/heart.png"))); // NOI18N
-        favoritesToggleButton.setToolTipText("Tips");
-        favoritesToggleButton.setBorderPainted(false);
-        favoritesToggleButton.setContentAreaFilled(false);
-        favoritesToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        favoritesToggleButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                favoritesToggleButtonActionPerformed(evt);
-            }
-        });
-        headerPanel.add(favoritesToggleButton);
-
         hintsToggleButton.setBackground(new java.awt.Color(255, 255, 255));
         globalNavigationButtonGroup.add(hintsToggleButton);
         hintsToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/info.png"))); // NOI18N
@@ -265,6 +258,20 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
             }
         });
         headerPanel.add(hintsToggleButton);
+
+        favoritesToggleButton.setBackground(new java.awt.Color(255, 255, 255));
+        globalNavigationButtonGroup.add(favoritesToggleButton);
+        favoritesToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/heart.png"))); // NOI18N
+        favoritesToggleButton.setToolTipText("Favoriter");
+        favoritesToggleButton.setBorderPainted(false);
+        favoritesToggleButton.setContentAreaFilled(false);
+        favoritesToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        favoritesToggleButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                favoritesToggleButtonActionPerformed(evt);
+            }
+        });
+        headerPanel.add(favoritesToggleButton);
 
         profileButton.setBackground(new java.awt.Color(255, 255, 255));
         globalNavigationButtonGroup.add(profileButton);
@@ -770,6 +777,51 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         navigate.setMnemonic('n');
         navigate.setText("Navigera");
 
+        homeMenuNavigation.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, 0));
+        homeMenuNavigation.setText("Hem");
+        homeMenuNavigation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeMenuNavigationActionPerformed(evt);
+            }
+        });
+        navigate.add(homeMenuNavigation);
+
+        hintsMenuNavigation.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, 0));
+        hintsMenuNavigation.setText("Tips");
+        hintsMenuNavigation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hintsMenuNavigationActionPerformed(evt);
+            }
+        });
+        navigate.add(hintsMenuNavigation);
+
+        myFavouritesMenuNavigation.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, 0));
+        myFavouritesMenuNavigation.setText("Mina favoriter");
+        myFavouritesMenuNavigation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myFavouritesMenuNavigationActionPerformed(evt);
+            }
+        });
+        navigate.add(myFavouritesMenuNavigation);
+
+        myProfileMenuNavigation.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, 0));
+        myProfileMenuNavigation.setText("Min profil");
+        myProfileMenuNavigation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myProfileMenuNavigationActionPerformed(evt);
+            }
+        });
+        navigate.add(myProfileMenuNavigation);
+
+        toCheckoutMenuNavigation.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_K, 0));
+        toCheckoutMenuNavigation.setText("Till kassan");
+        toCheckoutMenuNavigation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                toCheckoutMenuNavigationActionPerformed(evt);
+            }
+        });
+        navigate.add(toCheckoutMenuNavigation);
+
         switchToPrevious.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_BACK_SPACE, 0));
         switchToPrevious.setMnemonic('f');
         switchToPrevious.setText("Föregående sida");
@@ -794,6 +846,19 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
         view.setMnemonic('v');
         view.setText("Vy");
+
+        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem3.setText("Visa varukorg");
+        view.add(jMenuItem3);
+
+        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem4.setText("Visa mina listor");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        view.add(jMenuItem4);
 
         zoomIn.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_PLUS, java.awt.event.InputEvent.CTRL_MASK));
         zoomIn.setMnemonic('i');
@@ -1081,6 +1146,30 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         }
     }//GEN-LAST:event_redoActionPerformed
 
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void hintsMenuNavigationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hintsMenuNavigationActionPerformed
+        hintsToggleButton.doClick();
+    }//GEN-LAST:event_hintsMenuNavigationActionPerformed
+
+    private void myFavouritesMenuNavigationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myFavouritesMenuNavigationActionPerformed
+        favoritesToggleButton.doClick();
+    }//GEN-LAST:event_myFavouritesMenuNavigationActionPerformed
+
+    private void homeMenuNavigationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeMenuNavigationActionPerformed
+        homeButton.doClick();
+    }//GEN-LAST:event_homeMenuNavigationActionPerformed
+
+    private void myProfileMenuNavigationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myProfileMenuNavigationActionPerformed
+        profileButton.doClick();
+    }//GEN-LAST:event_myProfileMenuNavigationActionPerformed
+
+    private void toCheckoutMenuNavigationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toCheckoutMenuNavigationActionPerformed
+        checkoutToggleButton.doClick();
+    }//GEN-LAST:event_toCheckoutMenuNavigationActionPerformed
+
     @Override
     public void shoppingCartChanged(CartEvent ce) {
         lastAdded.add(ce.getShoppingItem());
@@ -1173,13 +1262,17 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     private javax.swing.JCheckBoxMenuItem fullscreen;
     private javax.swing.ButtonGroup globalNavigationButtonGroup;
     private javax.swing.JPanel headerPanel;
+    private javax.swing.JMenuItem hintsMenuNavigation;
     private javax.swing.JToggleButton hintsToggleButton;
     private javax.swing.JToggleButton homeButton;
+    private javax.swing.JMenuItem homeMenuNavigation;
     private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPanel listLayeredPanel;
     private javax.swing.JLabel listLayeredPanelTitle;
@@ -1189,6 +1282,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     private javax.swing.JToggleButton meatFishButton;
     private javax.swing.JMenuBar menu;
     private javax.swing.JMenuItem minimize;
+    private javax.swing.JMenuItem myFavouritesMenuNavigation;
+    private javax.swing.JMenuItem myProfileMenuNavigation;
     private javax.swing.JMenu navigate;
     private javax.swing.JPanel navigationPanel;
     private javax.swing.JButton nextButton;
@@ -1201,6 +1296,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     private javax.swing.JTextField searchTextField;
     private javax.swing.JMenuItem switchToNext;
     private javax.swing.JMenuItem switchToPrevious;
+    private javax.swing.JMenuItem toCheckoutMenuNavigation;
     private javax.swing.JMenuItem undo;
     private javax.swing.JMenu view;
     private javax.swing.JMenuItem zoomIn;
