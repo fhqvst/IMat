@@ -1033,7 +1033,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
             this.productCategoryPanel.displayProducts(dataHandler.findProducts(searchTextField.getText()));
             switchCard("productCategoryPanel", null);
-            
         }
     }//GEN-LAST:event_searchTextFieldKeyPressed
 
