@@ -35,7 +35,6 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         changeToHint(13);
         manualTextArea.setText("Mitt första köp:\n\n" + getDummyText());
         currentHintScrollPane.setPreferredSize(new Dimension(800, 600));
-        currentHintTextArea.setCaretPosition(0);
     }
     
     public void setObject(Object bean) {
@@ -81,6 +80,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
             }
         }
         currentHintTextField.setPreferredSize(new Dimension(60, 25));
+        currentHintTextArea.setCaretPosition(0);
         this.revalidate();
         this.repaint();
         
