@@ -53,7 +53,6 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
         imageLabel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -65,21 +64,13 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
         amountSpinner = new javax.swing.JSpinner();
         jPanel9 = new javax.swing.JPanel();
         addToCartButton = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        jPanel10 = new javax.swing.JPanel();
-        jPanel12 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setLayout(new java.awt.GridLayout(3, 3));
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        add(jPanel2);
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel7.setLayout(new java.awt.BorderLayout());
-        jPanel7.add(imageLabel, java.awt.BorderLayout.WEST);
+        jPanel7.setBorder(javax.swing.BorderFactory.createEmptyBorder(100, 100, 100, 100));
+        jPanel7.setLayout(new java.awt.GridLayout());
+        jPanel7.add(imageLabel);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
@@ -149,24 +140,18 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
 
         jPanel1.add(jPanel9);
 
-        jPanel7.add(jPanel1, java.awt.BorderLayout.CENTER);
+        jPanel7.add(jPanel1);
 
-        add(jPanel7);
-
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        add(jPanel4);
-
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        add(jPanel5);
-
-        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
-        add(jPanel6);
-
-        jPanel10.setBackground(new java.awt.Color(255, 255, 255));
-        add(jPanel10);
-
-        jPanel12.setBackground(new java.awt.Color(255, 255, 255));
-        add(jPanel12);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 917, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void favBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_favBtnActionPerformed
@@ -210,13 +195,7 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
     private javax.swing.JButton favBtn;
     private javax.swing.JLabel imageLabel;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
