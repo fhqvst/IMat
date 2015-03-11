@@ -6,7 +6,6 @@ import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-import java.awt.event.WindowListener;
 import java.util.LinkedList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -147,8 +146,10 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         file = new javax.swing.JMenu();
         clearCardInfo = new javax.swing.JMenuItem();
         clearAllInfo = new javax.swing.JMenuItem();
+        jSeparator5 = new javax.swing.JPopupMenu.Separator();
         exit = new javax.swing.JMenuItem();
         edit = new javax.swing.JMenu();
+        clearShoppingCart = new javax.swing.JMenuItem();
         undo = new javax.swing.JMenuItem();
         redo = new javax.swing.JMenuItem();
         navigate = new javax.swing.JMenu();
@@ -157,15 +158,19 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         myFavouritesMenuNavigation = new javax.swing.JMenuItem();
         myProfileMenuNavigation = new javax.swing.JMenuItem();
         toCheckoutMenuNavigation = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
         goToPreviousCategory = new javax.swing.JMenuItem();
         goToNextCategory = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
         switchToPrevious = new javax.swing.JMenuItem();
         switchToNext = new javax.swing.JMenuItem();
         view = new javax.swing.JMenu();
         showShoppingCart = new javax.swing.JMenuItem();
         showMyLists = new javax.swing.JMenuItem();
+        jSeparator3 = new javax.swing.JPopupMenu.Separator();
         zoomIn = new javax.swing.JMenuItem();
         zoomOut = new javax.swing.JMenuItem();
+        jSeparator4 = new javax.swing.JPopupMenu.Separator();
         fullscreen = new javax.swing.JCheckBoxMenuItem();
         minimize = new javax.swing.JMenuItem();
         about = new javax.swing.JMenu();
@@ -767,6 +772,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
             }
         });
         file.add(clearAllInfo);
+        file.add(jSeparator5);
 
         exit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
         exit.setMnemonic('a');
@@ -782,6 +788,10 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
 
         edit.setMnemonic('e');
         edit.setText("Redigera");
+
+        clearShoppingCart.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_DELETE, java.awt.event.InputEvent.CTRL_MASK));
+        clearShoppingCart.setText("Töm varukorgen");
+        edit.add(clearShoppingCart);
 
         undo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_MASK));
         undo.setMnemonic('\u00e5');
@@ -852,6 +862,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
             }
         });
         navigate.add(toCheckoutMenuNavigation);
+        navigate.add(jSeparator1);
 
         goToPreviousCategory.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_LEFT, 0));
         goToPreviousCategory.setText("Gå till föregående kategori");
@@ -870,6 +881,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
             }
         });
         navigate.add(goToNextCategory);
+        navigate.add(jSeparator2);
 
         switchToPrevious.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_BACK_SPACE, 0));
         switchToPrevious.setMnemonic('f');
@@ -913,6 +925,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
             }
         });
         view.add(showMyLists);
+        view.add(jSeparator3);
 
         zoomIn.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_PLUS, java.awt.event.InputEvent.CTRL_MASK));
         zoomIn.setMnemonic('i');
@@ -923,6 +936,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         zoomOut.setMnemonic('u');
         zoomOut.setText("Zooma ut");
         view.add(zoomOut);
+        view.add(jSeparator4);
 
         fullscreen.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F11, 0));
         fullscreen.setMnemonic('f');
@@ -1399,6 +1413,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
     private javax.swing.JToggleButton checkoutToggleButton;
     private javax.swing.JMenuItem clearAllInfo;
     private javax.swing.JMenuItem clearCardInfo;
+    private javax.swing.JMenuItem clearShoppingCart;
     private javax.swing.ButtonGroup closeablePanelsButtonGroup;
     private javax.swing.JMenuItem contact;
     private javax.swing.JPanel contentPanel;
@@ -1429,6 +1444,11 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
+    private javax.swing.JPopupMenu.Separator jSeparator3;
+    private javax.swing.JPopupMenu.Separator jSeparator4;
+    private javax.swing.JPopupMenu.Separator jSeparator5;
     private javax.swing.JPanel listLayeredPanel;
     private javax.swing.JLabel listLayeredPanelTitle;
     private javax.swing.JToggleButton listToggleButton;
