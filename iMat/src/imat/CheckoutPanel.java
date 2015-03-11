@@ -663,6 +663,11 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         deliveryDateTextField.setMaximumSize(new java.awt.Dimension(2147483647, 60));
         deliveryDateTextField.setMinimumSize(new java.awt.Dimension(100, 60));
         deliveryDateTextField.setPreferredSize(new java.awt.Dimension(133333337, 60));
+        deliveryDateTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deliveryDateTextFieldActionPerformed(evt);
+            }
+        });
         middlePanel1.add(deliveryDateTextField);
 
         jLabel22.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
@@ -988,6 +993,10 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         wizardStep1ToggleButton.setSelected(true);
         ((IMat)this.getTopLevelAncestor()).switchCard("welcomePanel", null);
     }//GEN-LAST:event_buyButtonActionPerformed
+
+    private void deliveryDateTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deliveryDateTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deliveryDateTextFieldActionPerformed
 
     @Override
     public void shoppingCartChanged(CartEvent ce) {
