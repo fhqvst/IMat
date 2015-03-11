@@ -110,6 +110,14 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
                     productCategoriesInSearch.add(stringToCategory(checkBoxTitles[i]));
             }
         }
+        
+        ArrayList<Product> toBeRemoved = new ArrayList();
+        for(Product p: productsShown) {
+            if ((int)jSpinner1.getValue() < p.getPrice()) {
+                toBeRemoved.add(p);
+            }
+        }
+        productsShown.removeAll(toBeRemoved);
         return productsShown;
     }
     
@@ -133,9 +141,10 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
-        setMaximumSize(new java.awt.Dimension(300, 32767));
-        setMinimumSize(new java.awt.Dimension(300, 0));
-        setPreferredSize(new java.awt.Dimension(300, 434));
+        setAlignmentX(0.5F);
+        setMaximumSize(new java.awt.Dimension(250, 32767));
+        setMinimumSize(new java.awt.Dimension(250, 0));
+        setPreferredSize(new java.awt.Dimension(250, 434));
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.Y_AXIS));
 
         titleLable.setFont(new java.awt.Font("Helvetica", 1, 18)); // NOI18N
@@ -143,9 +152,9 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
         titleLable.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         titleLable.setAlignmentX(0.5F);
         titleLable.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
-        titleLable.setMaximumSize(new java.awt.Dimension(1337, 20));
-        titleLable.setMinimumSize(new java.awt.Dimension(0, 0));
-        titleLable.setPreferredSize(new java.awt.Dimension(1337, 30));
+        titleLable.setMaximumSize(new java.awt.Dimension(1337, 40));
+        titleLable.setMinimumSize(new java.awt.Dimension(1337, 40));
+        titleLable.setPreferredSize(new java.awt.Dimension(1337, 40));
         titleLable.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
         add(titleLable);
 
@@ -160,8 +169,8 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
         jLabel1.setAlignmentX(0.5F);
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel1.setMaximumSize(new java.awt.Dimension(1337, 60));
-        jLabel1.setMinimumSize(new java.awt.Dimension(0, 0));
-        jLabel1.setPreferredSize(new java.awt.Dimension(1337, 40));
+        jLabel1.setMinimumSize(new java.awt.Dimension(0, 20));
+        jLabel1.setPreferredSize(new java.awt.Dimension(1337, 20));
         add(jLabel1);
 
         filterPanel.setBackground(new java.awt.Color(255, 255, 255));
