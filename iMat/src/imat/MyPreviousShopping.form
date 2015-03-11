@@ -69,6 +69,7 @@
                           <Component id="shoppingListToCart" min="-2" max="-2" attributes="0"/>
                           <Component id="shoppingListProductsToCart" min="-2" max="-2" attributes="0"/>
                           <Component id="productsToCart" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
@@ -108,12 +109,17 @@
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jScrollPane3" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jScrollPane4" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="productsToCart" min="-2" max="-2" attributes="0"/>
+                          <Component id="productsToCart" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="163" max="32767" attributes="0"/>
                   </Group>
@@ -245,7 +251,7 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/imat/resources/basket.png"/>
                 </Property>
-                <Property name="toolTipText" type="java.lang.String" value="L&#xe4;gg till listans inneh&#xe5;ll i varukorgen"/>
+                <Property name="toolTipText" type="java.lang.String" value="L&#xe4;gg till vald listas inneh&#xe5;ll i varukorgen"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="shoppingListProductsToCart">
@@ -261,6 +267,14 @@
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/imat/resources/basket.png"/>
                 </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton1">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/imat/resources/basket.png"/>
+                </Property>
+                <Property name="toolTipText" type="java.lang.String" value="L&#xe4;gg till valt k&#xf6;ptillf&#xe4;lles inneh&#xe5;ll i varukorgen"/>
               </Properties>
             </Component>
           </SubComponents>

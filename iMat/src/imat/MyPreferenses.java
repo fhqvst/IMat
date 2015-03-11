@@ -6,6 +6,8 @@
 package imat;
 
 import javax.swing.DefaultListModel;
+import javax.swing.JDialog;
+import javax.swing.JOptionPane;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
 
@@ -28,6 +30,7 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
         
         myFavoritesLabel.setText("<html><h2>Mina favoriter</h2></html>");
         myIgnoresLabel.setText("<html><h2>Mina borttagna varor</h2></html>");
+        clearInfoLabel.setText("<html><h2>Ta bort personlig information</h2></html>");
         
         if (idh.favorites().size() == 0) {
             favourites.addElement("Du har inga favoriter.");
@@ -37,8 +40,7 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
             }
         }
         myFavouritesList.setModel(favourites);
-        
-        
+
         ignores.addElement("Du har inga borttagna varor.");
         myIgnoresList.setModel(ignores);
         
@@ -69,9 +71,15 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
         myIgnoresLabel = new javax.swing.JLabel();
         myIgnoresScrollPane = new javax.swing.JScrollPane();
         myIgnoresList = new javax.swing.JList();
+        clearInfoPanel = new javax.swing.JPanel();
+        clearInfoLabel = new javax.swing.JLabel();
+        deleteCardInfoButton = new javax.swing.JButton();
+        deleteAllInfoButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setBorder(null);
-        setLayout(new java.awt.GridLayout(1, 0));
+        setLayout(new java.awt.GridLayout(2, 1));
 
         myPreferenses.setBorder(null);
         myPreferenses.setPreferredSize(new java.awt.Dimension(301, 505));
@@ -94,10 +102,10 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
             .addGroup(myFavouritesPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(myFavouritesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(myIgnoresLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 277, Short.MAX_VALUE)
-                    .addComponent(myFavouritesScrollPane)
+                    .addComponent(myIgnoresLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(myFavouritesScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE)
                     .addComponent(myFavoritesLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(myIgnoresScrollPane, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(myIgnoresScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
         );
         myFavouritesPanelLayout.setVerticalGroup(
@@ -111,16 +119,98 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
                 .addComponent(myIgnoresLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(myIgnoresScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(99, Short.MAX_VALUE))
+                .addContainerGap(169, Short.MAX_VALUE))
         );
 
         myPreferenses.add(myFavouritesPanel);
 
         add(myPreferenses);
+
+        clearInfoLabel.setText("Ta bort personlig information");
+
+        deleteCardInfoButton.setText("Genomför");
+        deleteCardInfoButton.setToolTipText("Tar bort ALL personlig information ");
+        deleteCardInfoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteCardInfoButtonActionPerformed(evt);
+            }
+        });
+
+        deleteAllInfoButton.setText("Genomför");
+        deleteAllInfoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteAllInfoButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Rensa allt:");
+
+        jLabel2.setText("Rensa kortuppgifter");
+
+        javax.swing.GroupLayout clearInfoPanelLayout = new javax.swing.GroupLayout(clearInfoPanel);
+        clearInfoPanel.setLayout(clearInfoPanelLayout);
+        clearInfoPanelLayout.setHorizontalGroup(
+            clearInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(clearInfoPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(clearInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(clearInfoLabel)
+                    .addGroup(clearInfoPanelLayout.createSequentialGroup()
+                        .addGroup(clearInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel1))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(clearInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(deleteCardInfoButton)
+                            .addComponent(deleteAllInfoButton))))
+                .addContainerGap(129, Short.MAX_VALUE))
+        );
+        clearInfoPanelLayout.setVerticalGroup(
+            clearInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(clearInfoPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(clearInfoLabel)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(clearInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(deleteCardInfoButton)
+                    .addComponent(jLabel2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(clearInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(deleteAllInfoButton)
+                    .addComponent(jLabel1))
+                .addContainerGap(406, Short.MAX_VALUE))
+        );
+
+        add(clearInfoPanel);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void deleteCardInfoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteCardInfoButtonActionPerformed
+        int result = JOptionPane.showConfirmDialog(null, "Är du säker på att du vill ta bort sparad kortuppgifter?", "Bekräftelse", JOptionPane.YES_NO_OPTION);
+        if (result == JOptionPane.YES_OPTION) {
+            idh.getCreditCard().setCardNumber(null);
+            idh.getCreditCard().setCardType(null);
+            idh.getCreditCard().setHoldersName(null);
+            idh.getCreditCard().setValidMonth(0);
+            idh.getCreditCard().setValidYear(0);
+            idh.getCreditCard().setVerificationCode(0);
+        }
+    }//GEN-LAST:event_deleteCardInfoButtonActionPerformed
+
+    private void deleteAllInfoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteAllInfoButtonActionPerformed
+        int result = JOptionPane.showConfirmDialog(null, "Är du säker på att du vill ta bort ALL sparad information?", "Bekräftelse", JOptionPane.YES_NO_OPTION);
+        if (result == JOptionPane.YES_OPTION) {
+            idh.reset();
+        }
+    }//GEN-LAST:event_deleteAllInfoButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel clearInfoLabel;
+    private javax.swing.JPanel clearInfoPanel;
+    private javax.swing.JButton deleteAllInfoButton;
+    private javax.swing.JButton deleteCardInfoButton;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel myFavoritesLabel;
     private javax.swing.JList myFavouritesList;
     private javax.swing.JPanel myFavouritesPanel;
