@@ -126,6 +126,7 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
         addToFavouritesButton.setMaximumSize(new java.awt.Dimension(50, 50));
         addToFavouritesButton.setMinimumSize(new java.awt.Dimension(0, 0));
         addToFavouritesButton.setPreferredSize(new java.awt.Dimension(60, 60));
+        addToFavouritesButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/heart.png"))); // NOI18N
         addToFavouritesButton.setRolloverEnabled(true);
         addToFavouritesButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/heart.png"))); // NOI18N
         addToFavouritesButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/heart.png"))); // NOI18N
