@@ -57,15 +57,16 @@ public class ListedProductPanel extends javax.swing.JPanel implements java.beans
         RemoveFromCartButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        setMaximumSize(new java.awt.Dimension(300, 70));
-        setMinimumSize(new java.awt.Dimension(0, 35));
-        setPreferredSize(new java.awt.Dimension(600, 70));
-        setLayout(new java.awt.GridLayout());
+        setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20)));
+        setDoubleBuffered(false);
+        setMaximumSize(new java.awt.Dimension(11212221, 80));
+        setMinimumSize(null);
+        setPreferredSize(null);
+        setLayout(new java.awt.GridLayout(1, 5));
 
         titleLabel.setText("Titel");
-        titleLabel.setMaximumSize(new java.awt.Dimension(125, 40));
-        titleLabel.setMinimumSize(new java.awt.Dimension(0, 0));
+        titleLabel.setMaximumSize(null);
+        titleLabel.setMinimumSize(null);
         titleLabel.setPreferredSize(null);
         add(titleLabel);
 
@@ -73,15 +74,18 @@ public class ListedProductPanel extends javax.swing.JPanel implements java.beans
         priceLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         priceLabel.setText("Pris");
         priceLabel.setToolTipText("");
+        priceLabel.setMaximumSize(null);
+        priceLabel.setMinimumSize(null);
+        priceLabel.setPreferredSize(null);
         add(priceLabel);
 
-        amountPanel.setBackground(java.awt.SystemColor.window);
+        amountPanel.setBackground(new java.awt.Color(255, 255, 255));
         amountPanel.setLayout(new javax.swing.BoxLayout(amountPanel, javax.swing.BoxLayout.LINE_AXIS));
         amountPanel.add(filler2);
 
-        amountSpinner.setMaximumSize(new java.awt.Dimension(30, 40));
-        amountSpinner.setMinimumSize(new java.awt.Dimension(0, 0));
-        amountSpinner.setPreferredSize(new java.awt.Dimension(70, 40));
+        amountSpinner.setMaximumSize(new java.awt.Dimension(30, 20));
+        amountSpinner.setMinimumSize(null);
+        amountSpinner.setPreferredSize(new java.awt.Dimension(30, 20));
         amountSpinner.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 amountSpinnerStateChanged(evt);
@@ -91,20 +95,29 @@ public class ListedProductPanel extends javax.swing.JPanel implements java.beans
         amountPanel.add(filler1);
 
         unitLabel.setText("jLabel1");
+        unitLabel.setMaximumSize(null);
+        unitLabel.setMinimumSize(null);
+        unitLabel.setPreferredSize(null);
         amountPanel.add(unitLabel);
 
         add(amountPanel);
 
         adjustedPriceLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         adjustedPriceLabel.setText("10");
+        adjustedPriceLabel.setMaximumSize(null);
+        adjustedPriceLabel.setMinimumSize(null);
+        adjustedPriceLabel.setPreferredSize(null);
         add(adjustedPriceLabel);
 
-        RemoveFromCartButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        RemoveFromCartButton.setText("X");
-        RemoveFromCartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        RemoveFromCartButton.setFont(new java.awt.Font("Helvetica", 1, 18)); // NOI18N
+        RemoveFromCartButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
+        RemoveFromCartButton.setText("╳");
+        RemoveFromCartButton.setBorderPainted(false);
+        RemoveFromCartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        RemoveFromCartButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        RemoveFromCartButton.setIconTextGap(0);
         RemoveFromCartButton.setMargin(new java.awt.Insets(14, 14, 14, 14));
-        RemoveFromCartButton.setMaximumSize(new java.awt.Dimension(40, 40));
-        RemoveFromCartButton.setMinimumSize(new java.awt.Dimension(0, 0));
+        RemoveFromCartButton.setPreferredSize(new java.awt.Dimension(76, 40));
         RemoveFromCartButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 RemoveFromCartButtonActionPerformed(evt);

@@ -9,6 +9,7 @@ import java.awt.Color;
 import javax.swing.JButton;
 import se.chalmers.ait.dat215.project.IMatDataHandler;
 import se.chalmers.ait.dat215.project.Product;
+import se.chalmers.ait.dat215.project.ShoppingItem;
 
 /**
  *
@@ -18,6 +19,7 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
     
     private Object bean;
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
+    private Product product; 
     
     /**
      * Creates new customizer Detail
@@ -28,14 +30,15 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
     }
     
     public void update(Product product) {
+        this.product = product;
         this.titleLabel.setText(product.getName());
-        this.priceLabel.setText(Double.toString(product.getPrice()) + " " + product.getUnit());
+        this.priceLabel.setText(Double.toString(product.getPrice()));
         this.imageLabel.setIcon(IMat.dataHandler.getImageIcon(product, 300, 300));
-       // this.adjustedPriceLabel.setText(Double.toString(this.product.getPrice()) + " kr");
-       // this.amountSpinner.setValue(1);
-       //if(dataHandler.favorites().contains(product)){
-         //  favBtn.setForeground(Color.red);
-       // }
+       //this.adjustedPriceLabel.setText(Double.toString(this.product.getPrice()) + " kr");
+       this.amountSpinner.setValue(1);
+       if(dataHandler.favorites().contains(product)){
+           favBtn.setForeground(Color.red);
+        }
     }
     
     public void setObject(Object bean) {
@@ -50,80 +53,152 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel5 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
         imageLabel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         titleLabel = new javax.swing.JLabel();
+        favBtn = new javax.swing.JButton();
         priceLabel = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jSpinner1 = new javax.swing.JSpinner();
-        jButton1 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        amountSpinner = new javax.swing.JSpinner();
+        jPanel9 = new javax.swing.JPanel();
+        addToCartButton = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
-        setLayout(new java.awt.GridLayout(2, 4));
 
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
-        add(jPanel5);
-        add(imageLabel);
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel7.setBorder(javax.swing.BorderFactory.createEmptyBorder(100, 100, 100, 100));
+        jPanel7.setLayout(new java.awt.GridLayout());
+        jPanel7.add(imageLabel);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
         jPanel1.setLayout(new java.awt.GridLayout(3, 2));
 
-        titleLabel.setText("titleLabel");
+        titleLabel.setFont(new java.awt.Font("Helvetica", 1, 36)); // NOI18N
+        titleLabel.setText("title");
         jPanel1.add(titleLabel);
 
-        priceLabel.setText("priceLabel");
+        favBtn.setBackground(new java.awt.Color(255, 255, 255));
+        favBtn.setFont(new java.awt.Font("Helvetica", 1, 36)); // NOI18N
+        favBtn.setText("♡");
+        favBtn.setBorderPainted(false);
+        favBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                favBtnActionPerformed(evt);
+            }
+        });
+        jPanel1.add(favBtn);
+
+        priceLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
+        priceLabel.setForeground(new java.awt.Color(255, 0, 0));
+        priceLabel.setText("price");
         jPanel1.add(priceLabel);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setLayout(new java.awt.GridLayout(1, 0));
-        jPanel3.add(jSpinner1);
-
-        jButton1.setText("Lägg till i Varukorg");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel3.add(jButton1);
-
         jPanel1.add(jPanel3);
 
-        add(jPanel1);
+        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        add(jPanel2);
+        amountSpinner.setMaximumSize(new java.awt.Dimension(30, 30));
+        amountSpinner.setMinimumSize(new java.awt.Dimension(30, 30));
+        amountSpinner.setPreferredSize(new java.awt.Dimension(100, 30));
+        amountSpinner.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                amountSpinnerStateChanged(evt);
+            }
+        });
+        jPanel8.add(amountSpinner, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 15, -1, -1));
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-        add(jPanel4);
+        jPanel1.add(jPanel8);
 
-        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
-        add(jPanel6);
+        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
-        add(jPanel7);
+        addToCartButton.setBackground(new java.awt.Color(255, 153, 153));
+        addToCartButton.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        addToCartButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
+        addToCartButton.setText("LÄGG TILL");
+        addToCartButton.setAlignmentX(0.5F);
+        addToCartButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)));
+        addToCartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        addToCartButton.setFocusPainted(false);
+        addToCartButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        addToCartButton.setIconTextGap(0);
+        addToCartButton.setMargin(null);
+        addToCartButton.setMaximumSize(new java.awt.Dimension(100, 100));
+        addToCartButton.setMinimumSize(new java.awt.Dimension(0, 0));
+        addToCartButton.setPreferredSize(new java.awt.Dimension(100, 40));
+        addToCartButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addToCartButtonActionPerformed(evt);
+            }
+        });
+        jPanel9.add(addToCartButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 13, -1, -1));
+
+        jPanel1.add(jPanel9);
+
+        jPanel7.add(jPanel1);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 917, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void favBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_favBtnActionPerformed
+        if(dataHandler.favorites().contains(product)){
+            dataHandler.favorites().remove(product);
+            favBtn.setForeground(Color.black);
+        }else{
+            dataHandler.addFavorite(product);
+            favBtn.setForeground(Color.red);
+        }
+    }//GEN-LAST:event_favBtnActionPerformed
+
+    private void addToCartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToCartButtonActionPerformed
+        boolean exists = false;
+
+        for(int i = 0; i < dataHandler.getShoppingCart().getItems().size(); i++){
+            ShoppingItem temp = dataHandler.getShoppingCart().getItems().get(i);
+            if(temp.getProduct() == product){
+                temp.setAmount(temp.getAmount() + (Integer)amountSpinner.getValue());
+                dataHandler.getShoppingCart().fireShoppingCartChanged(temp, true);
+                exists = true;
+                break;
+            }
+        }
+
+        if(!exists){
+            dataHandler.getShoppingCart().addProduct(product, (Integer)amountSpinner.getValue());
+        }
+    }//GEN-LAST:event_addToCartButtonActionPerformed
+
+    private void amountSpinnerStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_amountSpinnerStateChanged
+        if((Integer)amountSpinner.getValue() < 1)
+            amountSpinner.setValue(1);
+        this.priceLabel.setText(Double.toString(((Integer)amountSpinner.getValue()) * this.product.getPrice()) + " kr");
+    }//GEN-LAST:event_amountSpinnerStateChanged
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addToCartButton;
+    private javax.swing.JSpinner amountSpinner;
+    private javax.swing.JButton favBtn;
     private javax.swing.JLabel imageLabel;
-    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JLabel priceLabel;
     private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
