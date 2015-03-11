@@ -822,6 +822,11 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         redo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Y, java.awt.event.InputEvent.CTRL_MASK));
         redo.setMnemonic('g');
         redo.setText("Gör om");
+        redo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                redoActionPerformed(evt);
+            }
+        });
         edit.add(redo);
 
         menu.add(edit);
@@ -1125,6 +1130,17 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     }//GEN-LAST:event_favoritesToggleButtonActionPerformed
 
     private void undoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_undoActionPerformed
+        if (lastAdded.size() > 0) {
+            lastRemoved.add(lastAdded.getLast());
+            if (lastRemoved.size() == 0) {
+                redo.setEnabled(true);
+            } 
+            dataHandler.getShoppingCart().removeItem(lastAdded.getLast());
+            lastAdded.removeLast();
+            if (lastAdded.size() == 0) {
+                undo.setEnabled(false);
+            }
+        }
         /*if (previousCards.size() >  1) {
             nextCards.add(previousCards.getLast());
             if (nextCards.size() == 1) {
@@ -1137,25 +1153,29 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
                 setPrevious(false);
             }
         }*/
-        
-        if (lastAdded.size() > 1) {
-            lastRemoved.add(lastAdded.getLast());
-            if (lastRemoved.size() == 1) {
-                redo.setEnabled(true);
+    }//GEN-LAST:event_undoActionPerformed
+
+    private void redoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_redoActionPerformed
+        /*if (nextCards.size() > 0) {
+            ((AbstractButton)nextCards.getLast().getSource()).doClick();
+            nextCards.removeLast();
+            if (nextCards.size() == 0) {
+                setNext(false);
             }
-            lastAdded.removeLast();
-            dataHandler.getShoppingCart().removeItem(lastAdded.getLast());
-            lastAdded.removeLast();
-            if (lastAdded.size() == 1) {
-                undo.setEnabled(false);
+        }*/
+        if (lastRemoved.size() > 0) {
+            dataHandler.getShoppingCart().addItem(lastRemoved.getLast());
+            lastRemoved.removeLast();
+            if(lastRemoved.size() == 0) {
+                redo.setEnabled(false);
             }
         }
-    }//GEN-LAST:event_undoActionPerformed
+    }//GEN-LAST:event_redoActionPerformed
 
     
     @Override
     public void shoppingCartChanged(CartEvent ce) {
-        lastAdded.add(ce.getShoppingItem());;
+        lastAdded.add(ce.getShoppingItem());
         updateCartLabels();
                     
         if(ce.isAddEvent()){
