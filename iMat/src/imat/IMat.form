@@ -251,17 +251,22 @@
                   <KeyStroke key="F11"/>
                 </Property>
                 <Property name="mnemonic" type="int" value="102"/>
+                <Property name="selected" type="boolean" value="true"/>
                 <Property name="text" type="java.lang.String" value="Fullsk&#xe4;rm"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="minimize">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Alt+SPACE"/>
+                  <KeyStroke key="Shift+Ctrl+M"/>
                 </Property>
                 <Property name="mnemonic" type="int" value="109"/>
                 <Property name="text" type="java.lang.String" value="Minimera"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="minimizeActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
