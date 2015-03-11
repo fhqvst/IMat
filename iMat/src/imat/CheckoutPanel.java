@@ -9,6 +9,7 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import se.chalmers.ait.dat215.project.*;
@@ -39,6 +40,8 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         errorLabel1.setForeground(Color.red);
         totalLabel1.setText("Antal varor: " + dataHandler.getShoppingCart().getItems().size() + " st   Totalkostnad: " + Math.round(dataHandler.getShoppingCart().getTotal()*100)/100 + " kr");
         totalLabel2.setText("Antal varor: " + dataHandler.getShoppingCart().getItems().size() + " st   Totalkostnad: " + Math.round(dataHandler.getShoppingCart().getTotal()*100)/100 + " kr");
+        
+        this.plp.setBorder(BorderFactory.createMatteBorder(1,1,1,1,new Color(200,200,200)));
         
         customerToTextFields();
         
@@ -133,88 +136,101 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         page1Panel = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         page1FormPanel = new javax.swing.JPanel();
+        firstRow = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        secondRow = new javax.swing.JPanel();
         firstNameLabel = new javax.swing.JLabel();
-        firstNameTextField = new javax.swing.JTextField();
         lastNameLabel = new javax.swing.JLabel();
+        thirdRow = new javax.swing.JPanel();
+        firstNameTextField = new javax.swing.JTextField();
         lastNameTextField = new javax.swing.JTextField();
+        fourthRow = new javax.swing.JPanel();
         addressLabel = new javax.swing.JLabel();
-        addressTextField = new javax.swing.JTextField();
         postCodeLabel = new javax.swing.JLabel();
+        fifthRow = new javax.swing.JPanel();
+        addressTextField = new javax.swing.JTextField();
         postCodeTextField = new javax.swing.JTextField();
+        sixthRow = new javax.swing.JPanel();
         postAddressLabel = new javax.swing.JLabel();
-        postAddressTextField = new javax.swing.JTextField();
         mobileNumberLabel = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        postAddressTextField = new javax.swing.JTextField();
         mobileNumberTextField = new javax.swing.JTextField();
+        jPanel13 = new javax.swing.JPanel();
         phoneNumberLabel = new javax.swing.JLabel();
-        phoneNumberTextField = new javax.swing.JTextField();
         emailLabel = new javax.swing.JLabel();
+        jPanel10 = new javax.swing.JPanel();
+        phoneNumberTextField = new javax.swing.JTextField();
         emailTextField = new javax.swing.JTextField();
-        filler3 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
+        jPanel12 = new javax.swing.JPanel();
         errorLabel1 = new javax.swing.JLabel();
         buttonPanel2 = new javax.swing.JPanel();
-        page1NextButton = new javax.swing.JButton();
-        saveCustomerCheckBox = new javax.swing.JCheckBox();
         totalLabel1 = new javax.swing.JLabel();
+        saveCustomerCheckBox = new javax.swing.JCheckBox();
+        page1NextButton = new javax.swing.JButton();
         page2Panel = new javax.swing.JPanel();
         page2FormsPanel = new javax.swing.JPanel();
-        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
         middlePanel1 = new javax.swing.JPanel();
-        filler25 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
-        filler24 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
+        jLabel2 = new javax.swing.JLabel();
         cardNumberLabel = new javax.swing.JLabel();
         cardNumberTextField = new javax.swing.JTextField();
         cardTypeLabel = new javax.swing.JLabel();
         cardTypeComboBox = new javax.swing.JComboBox();
         validDateLabel = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        validDatePanel = new javax.swing.JPanel();
         validMonthComboBox = new javax.swing.JComboBox();
         filler11 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 0));
         validYearComboBox = new javax.swing.JComboBox();
         holderNameLabel = new javax.swing.JLabel();
         holderNameTextField = new javax.swing.JTextField();
         securityCodeLabel = new javax.swing.JLabel();
-        jPanel5 = new javax.swing.JPanel();
         securityCodeTextField = new javax.swing.JTextField();
-        filler4 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
-        rightPanel1 = new javax.swing.JPanel();
-        filler30 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
-        filler23 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
         deliveryDateLabel = new javax.swing.JLabel();
         deliveryDateTextField = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         deliveryTimeComboBox = new javax.swing.JComboBox();
-        filler22 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
-        filler28 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
-        filler29 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
-        filler31 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
-        filler32 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
-        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
         errorLabel2 = new javax.swing.JLabel();
         buttonPanel3 = new javax.swing.JPanel();
-        page2NextButton = new javax.swing.JButton();
-        saveCredentialsCheckBox = new javax.swing.JCheckBox();
-        jTextArea2 = new javax.swing.JTextArea();
         page2BackButton = new javax.swing.JButton();
+        filler2 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
+        jTextArea2 = new javax.swing.JTextArea();
+        saveCredentialsCheckBox = new javax.swing.JCheckBox();
+        page2NextButton = new javax.swing.JButton();
         page3Panel = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         confirmTextArea = new javax.swing.JTextArea();
         buttonPanel4 = new javax.swing.JPanel();
-        buyButton = new javax.swing.JButton();
         page3BackButton = new javax.swing.JButton();
         totalLabel2 = new javax.swing.JLabel();
+        buyButton = new javax.swing.JButton();
 
         setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
         setMinimumSize(new java.awt.Dimension(0, 0));
         setPreferredSize(new java.awt.Dimension(100, 200));
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.Y_AXIS));
 
-        buttonPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        buttonPanel.setBackground(new java.awt.Color(255, 255, 255));
+        buttonPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(200, 200, 200)));
+        buttonPanel.setLayout(new java.awt.GridLayout(1, 3));
 
         wizardButtonGroup.add(wizardStep1ToggleButton);
+        wizardStep1ToggleButton.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
+        wizardStep1ToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
         wizardStep1ToggleButton.setSelected(true);
-        wizardStep1ToggleButton.setText("Personuppgifter");
+        wizardStep1ToggleButton.setText("1. PERSONUPPGIFTER");
+        wizardStep1ToggleButton.setAlignmentX(0.5F);
+        wizardStep1ToggleButton.setBorder(null);
         wizardStep1ToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        wizardStep1ToggleButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        wizardStep1ToggleButton.setIconTextGap(0);
+        wizardStep1ToggleButton.setMaximumSize(new java.awt.Dimension(170, 40));
+        wizardStep1ToggleButton.setMinimumSize(new java.awt.Dimension(170, 40));
+        wizardStep1ToggleButton.setPreferredSize(new java.awt.Dimension(170, 40));
+        wizardStep1ToggleButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
+        wizardStep1ToggleButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected-hover.png"))); // NOI18N
+        wizardStep1ToggleButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
         wizardStep1ToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 wizardStep1ToggleButtonActionPerformed(evt);
@@ -222,10 +238,23 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         });
         buttonPanel.add(wizardStep1ToggleButton);
 
+        wizardStep2ToggleButton.setBackground(new java.awt.Color(255, 255, 255));
         wizardButtonGroup.add(wizardStep2ToggleButton);
-        wizardStep2ToggleButton.setText("Betaluppifter");
+        wizardStep2ToggleButton.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
+        wizardStep2ToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
+        wizardStep2ToggleButton.setText("2. BETALUPPGIFTER");
+        wizardStep2ToggleButton.setAlignmentX(0.5F);
+        wizardStep2ToggleButton.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
         wizardStep2ToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         wizardStep2ToggleButton.setEnabled(false);
+        wizardStep2ToggleButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        wizardStep2ToggleButton.setIconTextGap(0);
+        wizardStep2ToggleButton.setMaximumSize(new java.awt.Dimension(170, 40));
+        wizardStep2ToggleButton.setMinimumSize(new java.awt.Dimension(170, 40));
+        wizardStep2ToggleButton.setPreferredSize(new java.awt.Dimension(170, 40));
+        wizardStep2ToggleButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
+        wizardStep2ToggleButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected-hover.png"))); // NOI18N
+        wizardStep2ToggleButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
         wizardStep2ToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 wizardStep2ToggleButtonActionPerformed(evt);
@@ -233,10 +262,23 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         });
         buttonPanel.add(wizardStep2ToggleButton);
 
+        wizardStep3ToggleButton.setBackground(new java.awt.Color(255, 255, 255));
         wizardButtonGroup.add(wizardStep3ToggleButton);
-        wizardStep3ToggleButton.setText("Bekräfta köp");
+        wizardStep3ToggleButton.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
+        wizardStep3ToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
+        wizardStep3ToggleButton.setText("3. BEKRÄFTA KÖP");
+        wizardStep3ToggleButton.setAlignmentX(0.5F);
+        wizardStep3ToggleButton.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
         wizardStep3ToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         wizardStep3ToggleButton.setEnabled(false);
+        wizardStep3ToggleButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        wizardStep3ToggleButton.setIconTextGap(0);
+        wizardStep3ToggleButton.setMaximumSize(new java.awt.Dimension(170, 40));
+        wizardStep3ToggleButton.setMinimumSize(new java.awt.Dimension(170, 40));
+        wizardStep3ToggleButton.setPreferredSize(new java.awt.Dimension(170, 40));
+        wizardStep3ToggleButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
+        wizardStep3ToggleButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected-hover.png"))); // NOI18N
+        wizardStep3ToggleButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
         wizardStep3ToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 wizardStep3ToggleButtonActionPerformed(evt);
@@ -248,186 +290,392 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
 
         cardPanel.setLayout(new java.awt.CardLayout());
 
-        page1Panel.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        page1Panel.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        page1Panel.setOpaque(false);
         page1Panel.setLayout(new javax.swing.BoxLayout(page1Panel, javax.swing.BoxLayout.Y_AXIS));
 
+        jPanel1.setMaximumSize(new java.awt.Dimension(32767, 550));
+        jPanel1.setOpaque(false);
         jPanel1.setLayout(new java.awt.GridLayout(1, 0));
 
-        page1FormPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 100));
-        page1FormPanel.setLayout(new java.awt.GridLayout(9, 2, 10, 20));
+        page1FormPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 20, 20, 20));
+        page1FormPanel.setMaximumSize(new java.awt.Dimension(32767, 200));
+        page1FormPanel.setMinimumSize(new java.awt.Dimension(394, 200));
+        page1FormPanel.setOpaque(false);
+        page1FormPanel.setPreferredSize(new java.awt.Dimension(260, 200));
+        page1FormPanel.setLayout(new javax.swing.BoxLayout(page1FormPanel, javax.swing.BoxLayout.Y_AXIS));
 
-        firstNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        firstNameLabel.setText("Förnamn:*");
-        page1FormPanel.add(firstNameLabel);
-        page1FormPanel.add(firstNameTextField);
+        firstRow.setMaximumSize(new java.awt.Dimension(32767, 40));
+        firstRow.setPreferredSize(new java.awt.Dimension(873, 40));
+        firstRow.setLayout(new java.awt.GridLayout(1, 1));
 
-        lastNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        lastNameLabel.setText("Efternamn:*");
-        page1FormPanel.add(lastNameLabel);
-        page1FormPanel.add(lastNameTextField);
+        jLabel1.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel1.setText("Personuppgifter");
+        jLabel1.setAlignmentY(0.0F);
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        jLabel1.setMaximumSize(new java.awt.Dimension(121231, 20));
+        jLabel1.setPreferredSize(new java.awt.Dimension(160, 20));
+        firstRow.add(jLabel1);
 
-        addressLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        addressLabel.setText("Gatuadress:*");
-        page1FormPanel.add(addressLabel);
-        page1FormPanel.add(addressTextField);
+        page1FormPanel.add(firstRow);
 
-        postCodeLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        postCodeLabel.setText("Postkod:*");
-        page1FormPanel.add(postCodeLabel);
-        page1FormPanel.add(postCodeTextField);
+        secondRow.setMaximumSize(new java.awt.Dimension(32767, 60));
+        secondRow.setPreferredSize(new java.awt.Dimension(1333337, 30));
+        secondRow.setLayout(new java.awt.GridLayout(1, 2, 20, 0));
 
-        postAddressLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        postAddressLabel.setText("Ort:*");
-        page1FormPanel.add(postAddressLabel);
-        page1FormPanel.add(postAddressTextField);
+        firstNameLabel.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
+        firstNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        firstNameLabel.setText("FÖRNAMN*");
+        firstNameLabel.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        firstNameLabel.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        firstNameLabel.setMaximumSize(new java.awt.Dimension(100, 10));
+        firstNameLabel.setMinimumSize(new java.awt.Dimension(100, 10));
+        firstNameLabel.setPreferredSize(new java.awt.Dimension(100, 10));
+        secondRow.add(firstNameLabel);
 
-        mobileNumberLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        mobileNumberLabel.setText("Mobilnummer:*");
-        page1FormPanel.add(mobileNumberLabel);
-        page1FormPanel.add(mobileNumberTextField);
+        lastNameLabel.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
+        lastNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        lastNameLabel.setText("EFTERNAMN");
+        lastNameLabel.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        lastNameLabel.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        lastNameLabel.setMaximumSize(new java.awt.Dimension(100, 10));
+        lastNameLabel.setMinimumSize(new java.awt.Dimension(100, 10));
+        lastNameLabel.setPreferredSize(new java.awt.Dimension(100, 10));
+        secondRow.add(lastNameLabel);
 
-        phoneNumberLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        phoneNumberLabel.setText("Telefonnummer:");
-        page1FormPanel.add(phoneNumberLabel);
-        page1FormPanel.add(phoneNumberTextField);
+        page1FormPanel.add(secondRow);
 
-        emailLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        emailLabel.setText("E-mail:");
-        page1FormPanel.add(emailLabel);
-        page1FormPanel.add(emailTextField);
-        page1FormPanel.add(filler3);
+        thirdRow.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 0, 0, 0));
+        thirdRow.setMaximumSize(new java.awt.Dimension(32767, 60));
+        thirdRow.setPreferredSize(new java.awt.Dimension(13333, 60));
+        thirdRow.setLayout(new java.awt.GridLayout(1, 2, 20, 0));
 
+        firstNameTextField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        thirdRow.add(firstNameTextField);
+
+        lastNameTextField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        thirdRow.add(lastNameTextField);
+
+        page1FormPanel.add(thirdRow);
+
+        fourthRow.setMaximumSize(new java.awt.Dimension(32767, 60));
+        fourthRow.setPreferredSize(new java.awt.Dimension(1333337, 30));
+        fourthRow.setLayout(new java.awt.GridLayout(1, 2, 20, 0));
+
+        addressLabel.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
+        addressLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        addressLabel.setText("GATUADRESS*");
+        addressLabel.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        addressLabel.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        addressLabel.setMaximumSize(new java.awt.Dimension(100, 10));
+        addressLabel.setMinimumSize(new java.awt.Dimension(100, 10));
+        addressLabel.setPreferredSize(new java.awt.Dimension(100, 10));
+        fourthRow.add(addressLabel);
+
+        postCodeLabel.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
+        postCodeLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        postCodeLabel.setText("POSTKOD");
+        postCodeLabel.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        postCodeLabel.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        postCodeLabel.setMaximumSize(new java.awt.Dimension(100, 10));
+        postCodeLabel.setMinimumSize(new java.awt.Dimension(100, 10));
+        postCodeLabel.setPreferredSize(new java.awt.Dimension(100, 10));
+        fourthRow.add(postCodeLabel);
+
+        page1FormPanel.add(fourthRow);
+
+        fifthRow.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 0, 0, 0));
+        fifthRow.setMaximumSize(new java.awt.Dimension(32767, 60));
+        fifthRow.setPreferredSize(new java.awt.Dimension(13333, 60));
+        fifthRow.setLayout(new java.awt.GridLayout(1, 2, 20, 0));
+
+        addressTextField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        fifthRow.add(addressTextField);
+
+        postCodeTextField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        fifthRow.add(postCodeTextField);
+
+        page1FormPanel.add(fifthRow);
+
+        sixthRow.setMaximumSize(new java.awt.Dimension(32767, 60));
+        sixthRow.setPreferredSize(new java.awt.Dimension(1333337, 30));
+        sixthRow.setLayout(new java.awt.GridLayout(1, 2, 20, 0));
+
+        postAddressLabel.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
+        postAddressLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        postAddressLabel.setText("ORT*");
+        postAddressLabel.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        postAddressLabel.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        postAddressLabel.setMaximumSize(new java.awt.Dimension(100, 10));
+        postAddressLabel.setMinimumSize(new java.awt.Dimension(100, 10));
+        postAddressLabel.setPreferredSize(new java.awt.Dimension(100, 10));
+        sixthRow.add(postAddressLabel);
+
+        mobileNumberLabel.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
+        mobileNumberLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        mobileNumberLabel.setText("MOBILNUMMER*");
+        mobileNumberLabel.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        mobileNumberLabel.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        mobileNumberLabel.setMaximumSize(new java.awt.Dimension(100, 10));
+        mobileNumberLabel.setMinimumSize(new java.awt.Dimension(100, 10));
+        mobileNumberLabel.setPreferredSize(new java.awt.Dimension(100, 10));
+        sixthRow.add(mobileNumberLabel);
+
+        page1FormPanel.add(sixthRow);
+
+        jPanel8.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 0, 0, 0));
+        jPanel8.setMaximumSize(new java.awt.Dimension(32767, 60));
+        jPanel8.setPreferredSize(new java.awt.Dimension(13333, 60));
+        jPanel8.setLayout(new java.awt.GridLayout(1, 2, 20, 0));
+
+        postAddressTextField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        jPanel8.add(postAddressTextField);
+
+        mobileNumberTextField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        jPanel8.add(mobileNumberTextField);
+
+        page1FormPanel.add(jPanel8);
+
+        jPanel13.setMaximumSize(new java.awt.Dimension(32767, 60));
+        jPanel13.setPreferredSize(new java.awt.Dimension(1333337, 30));
+        jPanel13.setLayout(new java.awt.GridLayout(1, 2, 20, 0));
+
+        phoneNumberLabel.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
+        phoneNumberLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        phoneNumberLabel.setText("TELEFONNUMMER*");
+        phoneNumberLabel.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        phoneNumberLabel.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        phoneNumberLabel.setMaximumSize(new java.awt.Dimension(100, 10));
+        phoneNumberLabel.setMinimumSize(new java.awt.Dimension(100, 10));
+        phoneNumberLabel.setPreferredSize(new java.awt.Dimension(100, 10));
+        jPanel13.add(phoneNumberLabel);
+
+        emailLabel.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
+        emailLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        emailLabel.setText("E-MAIL");
+        emailLabel.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        emailLabel.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        emailLabel.setMaximumSize(new java.awt.Dimension(100, 10));
+        emailLabel.setMinimumSize(new java.awt.Dimension(100, 10));
+        emailLabel.setPreferredSize(new java.awt.Dimension(100, 10));
+        jPanel13.add(emailLabel);
+
+        page1FormPanel.add(jPanel13);
+
+        jPanel10.setBorder(javax.swing.BorderFactory.createEmptyBorder(5, 0, 0, 0));
+        jPanel10.setMaximumSize(new java.awt.Dimension(32767, 60));
+        jPanel10.setPreferredSize(new java.awt.Dimension(13333, 60));
+        jPanel10.setLayout(new java.awt.GridLayout(1, 2, 20, 0));
+
+        phoneNumberTextField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        jPanel10.add(phoneNumberTextField);
+
+        emailTextField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        jPanel10.add(emailTextField);
+
+        page1FormPanel.add(jPanel10);
+
+        jPanel12.setLayout(new java.awt.GridLayout(1, 2, 20, 0));
+
+        errorLabel1.setFont(new java.awt.Font("Helvetica", 0, 14)); // NOI18N
         errorLabel1.setForeground(javax.swing.UIManager.getDefaults().getColor("nb.errorForeground"));
-        errorLabel1.setText("jLabel6");
-        page1FormPanel.add(errorLabel1);
+        errorLabel1.setText("Error");
+        jPanel12.add(errorLabel1);
+
+        page1FormPanel.add(jPanel12);
 
         jPanel1.add(page1FormPanel);
 
         page1Panel.add(jPanel1);
 
-        buttonPanel2.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        buttonPanel2.setMaximumSize(new java.awt.Dimension(12192712, 60));
+        buttonPanel2.setLayout(new javax.swing.BoxLayout(buttonPanel2, javax.swing.BoxLayout.X_AXIS));
 
-        page1NextButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        page1NextButton.setText("Nästa");
-        page1NextButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        totalLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        totalLabel1.setText("Antal varor: 99 st   Totalkostnad: 9999 kr");
+        totalLabel1.setMaximumSize(new java.awt.Dimension(13337, 22));
+        buttonPanel2.add(totalLabel1);
+
+        saveCustomerCheckBox.setSelected(true);
+        saveCustomerCheckBox.setText("Spara personuppgifter");
+        buttonPanel2.add(saveCustomerCheckBox);
+
+        page1NextButton.setFont(new java.awt.Font("Helvetica", 1, 18)); // NOI18N
+        page1NextButton.setForeground(new java.awt.Color(255, 255, 255));
+        page1NextButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        page1NextButton.setText("NÄSTA");
+        page1NextButton.setBorder(null);
+        page1NextButton.setBorderPainted(false);
+        page1NextButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        page1NextButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        page1NextButton.setIconTextGap(0);
+        page1NextButton.setMaximumSize(new java.awt.Dimension(120, 60));
+        page1NextButton.setMinimumSize(new java.awt.Dimension(120, 60));
+        page1NextButton.setPreferredSize(new java.awt.Dimension(120, 60));
+        page1NextButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected-hover.png"))); // NOI18N
+        page1NextButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected-hover.png"))); // NOI18N
         page1NextButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 page1NextButtonActionPerformed(evt);
             }
         });
-
-        saveCustomerCheckBox.setSelected(true);
-        saveCustomerCheckBox.setText("Spara personuppgifter");
-
-        totalLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        totalLabel1.setText("Antal varor: 99 st   Totalkostnad: 9999 kr");
-
-        javax.swing.GroupLayout buttonPanel2Layout = new javax.swing.GroupLayout(buttonPanel2);
-        buttonPanel2.setLayout(buttonPanel2Layout);
-        buttonPanel2Layout.setHorizontalGroup(
-            buttonPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(buttonPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(totalLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 201, Short.MAX_VALUE)
-                .addComponent(saveCustomerCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(page1NextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        buttonPanel2Layout.setVerticalGroup(
-            buttonPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(buttonPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(buttonPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(page1NextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(saveCustomerCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(totalLabel1))
-                .addContainerGap())
-        );
+        buttonPanel2.add(page1NextButton);
 
         page1Panel.add(buttonPanel2);
 
         cardPanel.add(page1Panel, "page1");
 
+        page2Panel.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        page2Panel.setAutoscrolls(true);
         page2Panel.setLayout(new javax.swing.BoxLayout(page2Panel, javax.swing.BoxLayout.Y_AXIS));
 
         page2FormsPanel.setLayout(new java.awt.GridLayout(1, 4));
-        page2FormsPanel.add(filler2);
+        page2FormsPanel.add(filler1);
 
-        middlePanel1.setLayout(new java.awt.GridLayout(8, 2, 10, 30));
-        middlePanel1.add(filler25);
-        middlePanel1.add(filler24);
+        middlePanel1.setLayout(new javax.swing.BoxLayout(middlePanel1, javax.swing.BoxLayout.Y_AXIS));
 
-        cardNumberLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        cardNumberLabel.setText("Kortnummer:*");
+        jLabel2.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
+        jLabel2.setText("Betaluppgifter");
+        jLabel2.setAlignmentX(0.5F);
+        jLabel2.setMaximumSize(new java.awt.Dimension(1333337, 60));
+        jLabel2.setMinimumSize(new java.awt.Dimension(0, 0));
+        jLabel2.setPreferredSize(new java.awt.Dimension(133337, 60));
+        middlePanel1.add(jLabel2);
+
+        cardNumberLabel.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
+        cardNumberLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        cardNumberLabel.setText("KORTNUMMER*");
+        cardNumberLabel.setAlignmentX(0.5F);
+        cardNumberLabel.setMaximumSize(new java.awt.Dimension(1333337, 20));
+        cardNumberLabel.setPreferredSize(new java.awt.Dimension(13333337, 20));
         middlePanel1.add(cardNumberLabel);
+
+        cardNumberTextField.setFont(new java.awt.Font("Helvetica", 0, 14)); // NOI18N
+        cardNumberTextField.setAutoscrolls(false);
+        cardNumberTextField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        cardNumberTextField.setMaximumSize(new java.awt.Dimension(2147483647, 60));
+        cardNumberTextField.setMinimumSize(new java.awt.Dimension(100, 60));
+        cardNumberTextField.setPreferredSize(new java.awt.Dimension(133333337, 60));
         middlePanel1.add(cardNumberTextField);
 
-        cardTypeLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        cardTypeLabel.setText("Korttyp:*");
+        cardTypeLabel.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
+        cardTypeLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        cardTypeLabel.setText("KORRTYP*");
+        cardTypeLabel.setAlignmentX(0.5F);
+        cardTypeLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 0, 10, 0));
+        cardTypeLabel.setMaximumSize(new java.awt.Dimension(1333337, 30));
+        cardTypeLabel.setPreferredSize(new java.awt.Dimension(13333337, 30));
         middlePanel1.add(cardTypeLabel);
 
+        cardTypeComboBox.setBackground(new java.awt.Color(255, 255, 255));
         cardTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Visa", "MasterCard", "American Express", "Visa Electron" }));
+        cardTypeComboBox.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        cardTypeComboBox.setMaximumSize(new java.awt.Dimension(32767, 60));
+        cardTypeComboBox.setMinimumSize(new java.awt.Dimension(100, 60));
+        cardTypeComboBox.setPreferredSize(new java.awt.Dimension(1333337, 60));
         middlePanel1.add(cardTypeComboBox);
 
-        validDateLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        validDateLabel.setText("Giltigt t.o.m:*");
+        validDateLabel.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
+        validDateLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        validDateLabel.setText("GILTIGT T.O.M.*");
+        validDateLabel.setAlignmentX(0.5F);
+        validDateLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 0, 10, 0));
+        validDateLabel.setMaximumSize(new java.awt.Dimension(1333337, 30));
+        validDateLabel.setPreferredSize(new java.awt.Dimension(13333337, 30));
         middlePanel1.add(validDateLabel);
 
-        jPanel3.setLayout(new javax.swing.BoxLayout(jPanel3, javax.swing.BoxLayout.LINE_AXIS));
+        validDatePanel.setLayout(new javax.swing.BoxLayout(validDatePanel, javax.swing.BoxLayout.LINE_AXIS));
 
+        validMonthComboBox.setBackground(new java.awt.Color(255, 255, 255));
         validMonthComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mån", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
-        jPanel3.add(validMonthComboBox);
-        jPanel3.add(filler11);
+        validMonthComboBox.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        validMonthComboBox.setMaximumSize(new java.awt.Dimension(32767, 60));
+        validMonthComboBox.setMinimumSize(new java.awt.Dimension(100, 60));
+        validMonthComboBox.setPreferredSize(new java.awt.Dimension(1333337, 60));
+        validDatePanel.add(validMonthComboBox);
+        validDatePanel.add(filler11);
 
+        validYearComboBox.setBackground(new java.awt.Color(255, 255, 255));
         validYearComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "År", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25" }));
-        jPanel3.add(validYearComboBox);
+        validYearComboBox.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        validYearComboBox.setMaximumSize(new java.awt.Dimension(32767, 60));
+        validYearComboBox.setMinimumSize(new java.awt.Dimension(100, 60));
+        validYearComboBox.setPreferredSize(new java.awt.Dimension(1333337, 60));
+        validDatePanel.add(validYearComboBox);
 
-        middlePanel1.add(jPanel3);
+        middlePanel1.add(validDatePanel);
 
-        holderNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        holderNameLabel.setText("Kortinnehavarens namn:*");
+        holderNameLabel.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
+        holderNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        holderNameLabel.setText("KORTINNEHAVARENS NAMN");
+        holderNameLabel.setAlignmentX(0.5F);
+        holderNameLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 0, 10, 0));
+        holderNameLabel.setMaximumSize(new java.awt.Dimension(1333337, 30));
+        holderNameLabel.setPreferredSize(new java.awt.Dimension(13333337, 30));
         middlePanel1.add(holderNameLabel);
+
+        holderNameTextField.setFont(new java.awt.Font("Helvetica", 0, 14)); // NOI18N
+        holderNameTextField.setAutoscrolls(false);
+        holderNameTextField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        holderNameTextField.setMaximumSize(new java.awt.Dimension(2147483647, 60));
+        holderNameTextField.setMinimumSize(new java.awt.Dimension(100, 60));
+        holderNameTextField.setPreferredSize(new java.awt.Dimension(133333337, 60));
         middlePanel1.add(holderNameTextField);
 
-        securityCodeLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        securityCodeLabel.setText("CCV-kod**:");
+        securityCodeLabel.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
+        securityCodeLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        securityCodeLabel.setText("CCV-KOD**");
+        securityCodeLabel.setAlignmentX(0.5F);
+        securityCodeLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 0, 10, 0));
+        securityCodeLabel.setMaximumSize(new java.awt.Dimension(1333337, 30));
+        securityCodeLabel.setPreferredSize(new java.awt.Dimension(13333337, 30));
         middlePanel1.add(securityCodeLabel);
 
-        jPanel5.setLayout(new java.awt.GridLayout(1, 2));
-        jPanel5.add(securityCodeTextField);
-        jPanel5.add(filler4);
+        securityCodeTextField.setFont(new java.awt.Font("Helvetica", 0, 14)); // NOI18N
+        securityCodeTextField.setAutoscrolls(false);
+        securityCodeTextField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        securityCodeTextField.setMaximumSize(new java.awt.Dimension(2147483647, 60));
+        securityCodeTextField.setMinimumSize(new java.awt.Dimension(100, 60));
+        securityCodeTextField.setPreferredSize(new java.awt.Dimension(133333337, 60));
+        middlePanel1.add(securityCodeTextField);
 
-        middlePanel1.add(jPanel5);
+        deliveryDateLabel.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
+        deliveryDateLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        deliveryDateLabel.setText("LEVERANSDATUM");
+        deliveryDateLabel.setAlignmentX(0.5F);
+        deliveryDateLabel.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 0, 10, 0));
+        deliveryDateLabel.setMaximumSize(new java.awt.Dimension(1333337, 30));
+        deliveryDateLabel.setPreferredSize(new java.awt.Dimension(13333337, 30));
+        middlePanel1.add(deliveryDateLabel);
+
+        deliveryDateTextField.setFont(new java.awt.Font("Helvetica", 0, 14)); // NOI18N
+        deliveryDateTextField.setText("04-03-2015");
+        deliveryDateTextField.setAutoscrolls(false);
+        deliveryDateTextField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        deliveryDateTextField.setMaximumSize(new java.awt.Dimension(2147483647, 60));
+        deliveryDateTextField.setMinimumSize(new java.awt.Dimension(100, 60));
+        deliveryDateTextField.setPreferredSize(new java.awt.Dimension(133333337, 60));
+        middlePanel1.add(deliveryDateTextField);
+
+        jLabel22.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel22.setText("LEVERANSTID");
+        jLabel22.setAlignmentX(0.5F);
+        jLabel22.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 0, 10, 0));
+        jLabel22.setMaximumSize(new java.awt.Dimension(1333337, 30));
+        jLabel22.setPreferredSize(new java.awt.Dimension(13333337, 30));
+        middlePanel1.add(jLabel22);
+
+        deliveryTimeComboBox.setBackground(new java.awt.Color(255, 255, 255));
+        deliveryTimeComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hela dagen (8:00-16:00)", "Förmiddag (8:00-12:00)", "Eftermiddag (12:00-16:00)" }));
+        deliveryTimeComboBox.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        deliveryTimeComboBox.setMaximumSize(new java.awt.Dimension(32767, 60));
+        deliveryTimeComboBox.setMinimumSize(new java.awt.Dimension(100, 60));
+        deliveryTimeComboBox.setPreferredSize(new java.awt.Dimension(1333337, 60));
+        middlePanel1.add(deliveryTimeComboBox);
 
         page2FormsPanel.add(middlePanel1);
-
-        rightPanel1.setLayout(new java.awt.GridLayout(7, 2, 10, 30));
-        rightPanel1.add(filler30);
-        rightPanel1.add(filler23);
-
-        deliveryDateLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        deliveryDateLabel.setText("Leveransdatum:*");
-        rightPanel1.add(deliveryDateLabel);
-
-        deliveryDateTextField.setText("04-03-2015");
-        rightPanel1.add(deliveryDateTextField);
-
-        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel22.setText("Leveranstid:*");
-        rightPanel1.add(jLabel22);
-
-        deliveryTimeComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hela dagen (8:00-16:00)", "Förmiddag (8:00-12:00)", "Eftermiddag (12:00-16:00)" }));
-        rightPanel1.add(deliveryTimeComboBox);
-        rightPanel1.add(filler22);
-        rightPanel1.add(filler28);
-        rightPanel1.add(filler29);
-        rightPanel1.add(filler31);
-        rightPanel1.add(filler32);
-
-        page2FormsPanel.add(rightPanel1);
-        page2FormsPanel.add(filler1);
 
         page2Panel.add(page2FormsPanel);
 
@@ -435,18 +683,31 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         errorLabel2.setText("errorLabel");
         page2Panel.add(errorLabel2);
 
-        buttonPanel3.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        buttonPanel3.setMaximumSize(new java.awt.Dimension(133337, 60));
+        buttonPanel3.setMinimumSize(new java.awt.Dimension(0, 0));
+        buttonPanel3.setPreferredSize(new java.awt.Dimension(133337, 60));
+        buttonPanel3.setLayout(new javax.swing.BoxLayout(buttonPanel3, javax.swing.BoxLayout.LINE_AXIS));
 
-        page2NextButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        page2NextButton.setText("Nästa");
-        page2NextButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        page2NextButton.addActionListener(new java.awt.event.ActionListener() {
+        page2BackButton.setFont(new java.awt.Font("Helvetica", 1, 18)); // NOI18N
+        page2BackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
+        page2BackButton.setText("TILLBAKA");
+        page2BackButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)));
+        page2BackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        page2BackButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        page2BackButton.setMaximumSize(new java.awt.Dimension(130, 60));
+        page2BackButton.setMinimumSize(new java.awt.Dimension(130, 60));
+        page2BackButton.setPreferredSize(new java.awt.Dimension(130, 60));
+        page2BackButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        page2BackButton.setRolloverEnabled(true);
+        page2BackButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
+        page2BackButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        page2BackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                page2NextButtonActionPerformed(evt);
+                page2BackButtonActionPerformed(evt);
             }
         });
-
-        saveCredentialsCheckBox.setText("Spara betaluppgifter");
+        buttonPanel3.add(page2BackButton);
+        buttonPanel3.add(filler2);
 
         jTextArea2.setEditable(false);
         jTextArea2.setBackground(new java.awt.Color(240, 240, 240));
@@ -454,42 +715,37 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         jTextArea2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTextArea2.setRows(5);
         jTextArea2.setText("*Måste fyllas i\n**Sparas Ej");
+        jTextArea2.setMaximumSize(new java.awt.Dimension(100, 60));
+        jTextArea2.setMinimumSize(new java.awt.Dimension(100, 60));
+        jTextArea2.setPreferredSize(new java.awt.Dimension(100, 60));
+        buttonPanel3.add(jTextArea2);
 
-        page2BackButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        page2BackButton.setText("Tillbaka");
-        page2BackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        page2BackButton.addActionListener(new java.awt.event.ActionListener() {
+        saveCredentialsCheckBox.setText("Spara betaluppgifter");
+        saveCredentialsCheckBox.setMaximumSize(new java.awt.Dimension(200, 60));
+        saveCredentialsCheckBox.setMinimumSize(new java.awt.Dimension(100, 60));
+        saveCredentialsCheckBox.setPreferredSize(new java.awt.Dimension(200, 60));
+        buttonPanel3.add(saveCredentialsCheckBox);
+
+        page2NextButton.setFont(new java.awt.Font("Helvetica", 1, 18)); // NOI18N
+        page2NextButton.setForeground(new java.awt.Color(255, 255, 255));
+        page2NextButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        page2NextButton.setText("NÄSTA");
+        page2NextButton.setBorder(null);
+        page2NextButton.setBorderPainted(false);
+        page2NextButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        page2NextButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        page2NextButton.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        page2NextButton.setMaximumSize(new java.awt.Dimension(120, 60));
+        page2NextButton.setMinimumSize(new java.awt.Dimension(100, 60));
+        page2NextButton.setPreferredSize(new java.awt.Dimension(120, 60));
+        page2NextButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        page2NextButton.setRolloverEnabled(true);
+        page2NextButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                page2BackButtonActionPerformed(evt);
+                page2NextButtonActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout buttonPanel3Layout = new javax.swing.GroupLayout(buttonPanel3);
-        buttonPanel3.setLayout(buttonPanel3Layout);
-        buttonPanel3Layout.setHorizontalGroup(
-            buttonPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(buttonPanel3Layout.createSequentialGroup()
-                .addComponent(page2BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 164, Short.MAX_VALUE)
-                .addComponent(jTextArea2, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(saveCredentialsCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(page2NextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        buttonPanel3Layout.setVerticalGroup(
-            buttonPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(buttonPanel3Layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addGroup(buttonPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(buttonPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(page2NextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(saveCredentialsCheckBox, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(page2BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextArea2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
+        buttonPanel3.add(page2NextButton);
 
         page2Panel.add(buttonPanel3);
 
@@ -503,6 +759,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         confirmTextArea.setColumns(20);
         confirmTextArea.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
         confirmTextArea.setRows(5);
+        confirmTextArea.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20)));
         jScrollPane1.setViewportView(confirmTextArea);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -515,55 +772,55 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(88, Short.MAX_VALUE))
+                .addContainerGap(397, Short.MAX_VALUE))
         );
 
         page3Panel.add(jPanel4);
 
-        buttonPanel4.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        buttonPanel4.setLayout(new javax.swing.BoxLayout(buttonPanel4, javax.swing.BoxLayout.LINE_AXIS));
 
-        buyButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        buyButton.setText("Betala");
-        buyButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        buyButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                buyButtonActionPerformed(evt);
-            }
-        });
-
-        page3BackButton.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        page3BackButton.setText("Tillbaka");
-        page3BackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        page3BackButton.setFont(new java.awt.Font("Helvetica", 1, 18)); // NOI18N
+        page3BackButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
+        page3BackButton.setText("TILLBAKA");
+        page3BackButton.setBorder(null);
+        page3BackButton.setBorderPainted(false);
+        page3BackButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        page3BackButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        page3BackButton.setMaximumSize(new java.awt.Dimension(120, 60));
+        page3BackButton.setMinimumSize(new java.awt.Dimension(120, 60));
+        page3BackButton.setPreferredSize(new java.awt.Dimension(120, 60));
         page3BackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 page3BackButtonActionPerformed(evt);
             }
         });
+        buttonPanel4.add(page3BackButton);
 
         totalLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         totalLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         totalLabel2.setText("Antal varor: 99 st   Totalkostnad: 9999 kr");
+        totalLabel2.setMaximumSize(new java.awt.Dimension(133337, 22));
+        totalLabel2.setMinimumSize(new java.awt.Dimension(30, 22));
+        totalLabel2.setPreferredSize(new java.awt.Dimension(133337, 22));
+        buttonPanel4.add(totalLabel2);
 
-        javax.swing.GroupLayout buttonPanel4Layout = new javax.swing.GroupLayout(buttonPanel4);
-        buttonPanel4.setLayout(buttonPanel4Layout);
-        buttonPanel4Layout.setHorizontalGroup(
-            buttonPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(buttonPanel4Layout.createSequentialGroup()
-                .addComponent(page3BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(totalLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 559, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(buyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        buttonPanel4Layout.setVerticalGroup(
-            buttonPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, buttonPanel4Layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addGroup(buttonPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(page3BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buyButton, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(totalLabel2)))
-        );
+        buyButton.setFont(new java.awt.Font("Helvetica", 1, 18)); // NOI18N
+        buyButton.setForeground(new java.awt.Color(255, 255, 255));
+        buyButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        buyButton.setText("BETALA");
+        buyButton.setBorder(null);
+        buyButton.setBorderPainted(false);
+        buyButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        buyButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        buyButton.setMaximumSize(new java.awt.Dimension(120, 60));
+        buyButton.setMinimumSize(new java.awt.Dimension(120, 60));
+        buyButton.setPreferredSize(new java.awt.Dimension(120, 60));
+        buyButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buyButtonActionPerformed(evt);
+            }
+        });
+        buttonPanel4.add(buyButton);
 
         page3Panel.add(buttonPanel4);
 
@@ -742,29 +999,25 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
     private javax.swing.JTextField emailTextField;
     private javax.swing.JLabel errorLabel1;
     private javax.swing.JLabel errorLabel2;
+    private javax.swing.JPanel fifthRow;
     private javax.swing.Box.Filler filler1;
     private javax.swing.Box.Filler filler11;
     private javax.swing.Box.Filler filler2;
-    private javax.swing.Box.Filler filler22;
-    private javax.swing.Box.Filler filler23;
-    private javax.swing.Box.Filler filler24;
-    private javax.swing.Box.Filler filler25;
-    private javax.swing.Box.Filler filler28;
-    private javax.swing.Box.Filler filler29;
-    private javax.swing.Box.Filler filler3;
-    private javax.swing.Box.Filler filler30;
-    private javax.swing.Box.Filler filler31;
-    private javax.swing.Box.Filler filler32;
-    private javax.swing.Box.Filler filler4;
     private javax.swing.JLabel firstNameLabel;
     private javax.swing.JTextField firstNameTextField;
+    private javax.swing.JPanel firstRow;
+    private javax.swing.JPanel fourthRow;
     private javax.swing.JLabel holderNameLabel;
     private javax.swing.JTextField holderNameTextField;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JLabel lastNameLabel;
@@ -787,14 +1040,17 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
     private javax.swing.JTextField postAddressTextField;
     private javax.swing.JLabel postCodeLabel;
     private javax.swing.JTextField postCodeTextField;
-    private javax.swing.JPanel rightPanel1;
     private javax.swing.JCheckBox saveCredentialsCheckBox;
     private javax.swing.JCheckBox saveCustomerCheckBox;
+    private javax.swing.JPanel secondRow;
     private javax.swing.JLabel securityCodeLabel;
     private javax.swing.JTextField securityCodeTextField;
+    private javax.swing.JPanel sixthRow;
+    private javax.swing.JPanel thirdRow;
     private javax.swing.JLabel totalLabel1;
     private javax.swing.JLabel totalLabel2;
     private javax.swing.JLabel validDateLabel;
+    private javax.swing.JPanel validDatePanel;
     private javax.swing.JComboBox validMonthComboBox;
     private javax.swing.JComboBox validYearComboBox;
     private javax.swing.ButtonGroup wizardButtonGroup;
