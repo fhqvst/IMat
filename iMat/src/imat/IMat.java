@@ -1091,7 +1091,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
             System.out.println(lastAdded.getLast().toString());
         }
     }//GEN-LAST:event_undoActionPerformed
-<<<<<<< HEAD
+
 
     private void redoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_redoActionPerformed
         if (lastRemoved.size() > 0) {
@@ -1103,8 +1103,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         }
     }//GEN-LAST:event_redoActionPerformed
 
-=======
->>>>>>> cc4cebe8334a76da9f1de79329b9309d9a2d904e
     
     @Override
     public void shoppingCartChanged(CartEvent ce) {
