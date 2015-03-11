@@ -54,6 +54,13 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
     public void setObject(Object bean) {
         this.bean = bean;
     }
+    
+    public void removeALLInformation() {
+        int result = JOptionPane.showConfirmDialog(null, "Är du säker på att du vill ta bort ALL sparad information?", "Bekräftelse", JOptionPane.YES_NO_OPTION);
+        if (result == JOptionPane.YES_OPTION) {
+            idh.reset();
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -197,10 +204,7 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
     }//GEN-LAST:event_deleteCardInfoButtonActionPerformed
 
     private void deleteAllInfoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteAllInfoButtonActionPerformed
-        int result = JOptionPane.showConfirmDialog(null, "Är du säker på att du vill ta bort ALL sparad information?", "Bekräftelse", JOptionPane.YES_NO_OPTION);
-        if (result == JOptionPane.YES_OPTION) {
-            idh.reset();
-        }
+        removeALLInformation();
     }//GEN-LAST:event_deleteAllInfoButtonActionPerformed
 
 

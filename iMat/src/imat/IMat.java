@@ -12,6 +12,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.AbstractButton;
 import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JToggleButton;
 import javax.swing.UIManager;
@@ -144,6 +145,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 100), new java.awt.Dimension(0, 100), new java.awt.Dimension(2147483647, 2147483647));
         menu = new javax.swing.JMenuBar();
         file = new javax.swing.JMenu();
+        clearCardInfo = new javax.swing.JMenuItem();
+        clearAllInfo = new javax.swing.JMenuItem();
         exit = new javax.swing.JMenuItem();
         edit = new javax.swing.JMenu();
         undo = new javax.swing.JMenuItem();
@@ -159,8 +162,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         switchToPrevious = new javax.swing.JMenuItem();
         switchToNext = new javax.swing.JMenuItem();
         view = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        showShoppingCart = new javax.swing.JMenuItem();
+        showMyLists = new javax.swing.JMenuItem();
         zoomIn = new javax.swing.JMenuItem();
         zoomOut = new javax.swing.JMenuItem();
         fullscreen = new javax.swing.JCheckBoxMenuItem();
@@ -743,8 +746,24 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
 
         getContentPane().add(contentPanel);
 
-        file.setMnemonic('a');
         file.setText("Arkiv");
+        file.setToolTipText("Rensa all sparad personlig information");
+
+        clearCardInfo.setText("Rena kortuppgifter");
+        clearCardInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearCardInfoActionPerformed(evt);
+            }
+        });
+        file.add(clearCardInfo);
+
+        clearAllInfo.setText("Rensa informaion");
+        clearAllInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearAllInfoActionPerformed(evt);
+            }
+        });
+        file.add(clearAllInfo);
 
         exit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
         exit.setMnemonic('a');
@@ -874,18 +893,23 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         view.setMnemonic('v');
         view.setText("Vy");
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem3.setText("Visa varukorg");
-        view.add(jMenuItem3);
-
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
-        jMenuItem4.setText("Visa mina listor");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        showShoppingCart.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        showShoppingCart.setText("Visa varukorg");
+        showShoppingCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                showShoppingCartActionPerformed(evt);
             }
         });
-        view.add(jMenuItem4);
+        view.add(showShoppingCart);
+
+        showMyLists.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
+        showMyLists.setText("Visa mina listor");
+        showMyLists.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showMyListsActionPerformed(evt);
+            }
+        });
+        view.add(showMyLists);
 
         zoomIn.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_PLUS, java.awt.event.InputEvent.CTRL_MASK));
         zoomIn.setMnemonic('i');
@@ -1237,9 +1261,9 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         }
     }//GEN-LAST:event_redoActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    private void showMyListsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showMyListsActionPerformed
+        listToggleButton.doClick();
+    }//GEN-LAST:event_showMyListsActionPerformed
 
     private void hintsMenuNavigationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hintsMenuNavigationActionPerformed
         hintsToggleButton.doClick();
@@ -1272,6 +1296,29 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
     private void minimizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minimizeActionPerformed
        this.setState(this.ICONIFIED);
     }//GEN-LAST:event_minimizeActionPerformed
+
+    private void showShoppingCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showShoppingCartActionPerformed
+        cartToggleButton.doClick();
+    }//GEN-LAST:event_showShoppingCartActionPerformed
+
+    private void clearAllInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearAllInfoActionPerformed
+        int result = JOptionPane.showConfirmDialog(null, "Är du säker på att du vill ta bort ALL sparad information?", "Bekräftelse", JOptionPane.YES_NO_OPTION);
+        if (result == JOptionPane.YES_OPTION) {
+            dataHandler.reset();
+        }
+    }//GEN-LAST:event_clearAllInfoActionPerformed
+
+    private void clearCardInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearCardInfoActionPerformed
+        int result = JOptionPane.showConfirmDialog(null, "Är du säker på att du vill ta bort sparad kortuppgifter?", "Bekräftelse", JOptionPane.YES_NO_OPTION);
+        if (result == JOptionPane.YES_OPTION) {
+            dataHandler.getCreditCard().setCardNumber(null);
+            dataHandler.getCreditCard().setCardType(null);
+            dataHandler.getCreditCard().setHoldersName(null);
+            dataHandler.getCreditCard().setValidMonth(0);
+            dataHandler.getCreditCard().setValidYear(0);
+            dataHandler.getCreditCard().setVerificationCode(0);
+        }
+    }//GEN-LAST:event_clearCardInfoActionPerformed
 
     @Override
     public void shoppingCartChanged(CartEvent ce) {
@@ -1347,6 +1394,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
     private javax.swing.JLabel cartPriceLabel;
     private javax.swing.JToggleButton cartToggleButton;
     private javax.swing.JToggleButton checkoutToggleButton;
+    private javax.swing.JMenuItem clearAllInfo;
+    private javax.swing.JMenuItem clearCardInfo;
     private javax.swing.ButtonGroup closeablePanelsButtonGroup;
     private javax.swing.JMenuItem contact;
     private javax.swing.JPanel contentPanel;
@@ -1376,8 +1425,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
     private javax.swing.JLabel jLabel5;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPanel listLayeredPanel;
     private javax.swing.JLabel listLayeredPanelTitle;
@@ -1399,6 +1446,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
     private javax.swing.JMenuItem redo;
     private javax.swing.JButton searchButton;
     private javax.swing.JTextField searchTextField;
+    private javax.swing.JMenuItem showMyLists;
+    private javax.swing.JMenuItem showShoppingCart;
     private javax.swing.JMenuItem switchToNext;
     private javax.swing.JMenuItem switchToPrevious;
     private javax.swing.JMenuItem toCheckoutMenuNavigation;
