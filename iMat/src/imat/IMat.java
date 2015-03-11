@@ -1081,7 +1081,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         }
     }//GEN-LAST:event_redoActionPerformed
 
-    
     @Override
     public void shoppingCartChanged(CartEvent ce) {
         lastAdded.add(ce.getShoppingItem());

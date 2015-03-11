@@ -32,8 +32,8 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
     public void update(Product product) {
         this.product = product;
         this.titleLabel.setText(product.getName());
-        this.priceLabel.setText(Double.toString(product.getPrice()));
-        this.imageLabel.setIcon(IMat.dataHandler.getImageIcon(product, 300, 300));
+        this.priceLabel.setText(Double.toString(product.getPrice()) + " kr");
+        this.imageLabel.setIcon(IMat.dataHandler.getImageIcon(product, 350, 350));
        //this.adjustedPriceLabel.setText(Double.toString(this.product.getPrice()) + " kr");
        this.amountSpinner.setValue(1);
        if(dataHandler.favorites().contains(product)){
@@ -54,6 +54,7 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
     private void initComponents() {
 
         jPanel7 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         imageLabel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         titleLabel = new javax.swing.JLabel();
@@ -64,13 +65,20 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
         amountSpinner = new javax.swing.JSpinner();
         jPanel9 = new javax.swing.JPanel();
         addToCartButton = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel7.setBorder(javax.swing.BorderFactory.createEmptyBorder(100, 100, 100, 100));
-        jPanel7.setLayout(new java.awt.GridLayout());
-        jPanel7.add(imageLabel);
+        jPanel7.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createEmptyBorder(100, 100, 100, 100), javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200))));
+        jPanel7.setLayout(new java.awt.GridLayout(2, 2));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new java.awt.GridLayout());
+
+        imageLabel.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.add(imageLabel);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
@@ -140,18 +148,19 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
 
         jPanel1.add(jPanel9);
 
-        jPanel7.add(jPanel1);
+        jPanel2.add(jPanel1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 917, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
+        jPanel7.add(jPanel2);
+
+        jTextArea1.setColumns(20);
+        jTextArea1.setLineWrap(true);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ac commodo enim, tristique cursus ipsum. Morbi ex augue, dictum id tempor vel, malesuada vel nibh. Nunc cursus purus eget maximus auctor. Vestibulum sagittis pharetra tellus interdum hendrerit. In ultrices mauris egestas pulvinar convallis. Morbi egestas pulvinar elit vitae volutpat. Morbi venenatis tempor ultrices.\n\nEtiam urna lectus, consequat in vestibulum vel, venenatis ac tortor. Donec ut tortor auctor elit luctus varius. Aliquam pulvinar odio nec consequat aliquet. Praesent tempus orci justo, molestie convallis lacus faucibus sit amet. Curabitur vel ante sodales, lobortis arcu vel, fermentum turpis. Cras imperdiet, ex nec fermentum congue, justo metus iaculis lectus, vel aliquet risus enim ut leo. Maecenas hendrerit ut nunc id pharetra. Curabitur sed magna sapien. Ut luctus, turpis id fermentum mattis, arcu velit blandit diam, vel consectetur lorem odio elementum felis. Donec orci ipsum, dictum ac ligula sed, ullamcorper commodo neque. Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+        jScrollPane1.setViewportView(jTextArea1);
+
+        jPanel7.add(jScrollPane1);
+
+        add(jPanel7);
     }// </editor-fold>//GEN-END:initComponents
 
     private void favBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_favBtnActionPerformed
@@ -195,10 +204,13 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
     private javax.swing.JButton favBtn;
     private javax.swing.JLabel imageLabel;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel priceLabel;
     private javax.swing.JLabel titleLabel;
     // End of variables declaration//GEN-END:variables
