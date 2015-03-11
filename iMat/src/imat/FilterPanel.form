@@ -10,14 +10,15 @@
         <EmptyBorder bottom="20" left="20" right="20" top="20"/>
       </Border>
     </Property>
+    <Property name="alignmentX" type="float" value="0.5"/>
     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[300, 32767]"/>
+      <Dimension value="[250, 32767]"/>
     </Property>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[300, 0]"/>
+      <Dimension value="[250, 0]"/>
     </Property>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[300, 434]"/>
+      <Dimension value="[250, 434]"/>
     </Property>
   </Properties>
   <AuxValues>
@@ -47,13 +48,13 @@
         <Property name="alignmentX" type="float" value="0.5"/>
         <Property name="horizontalTextPosition" type="int" value="2"/>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[1337, 20]"/>
+          <Dimension value="[1337, 40]"/>
         </Property>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[0, 0]"/>
+          <Dimension value="[1337, 40]"/>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[1337, 30]"/>
+          <Dimension value="[1337, 40]"/>
         </Property>
         <Property name="verticalTextPosition" type="int" value="1"/>
       </Properties>
@@ -88,10 +89,10 @@
           <Dimension value="[1337, 60]"/>
         </Property>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[0, 0]"/>
+          <Dimension value="[0, 20]"/>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[1337, 40]"/>
+          <Dimension value="[1337, 20]"/>
         </Property>
       </Properties>
     </Component>
