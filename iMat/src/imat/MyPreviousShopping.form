@@ -291,6 +291,9 @@
                   <Image iconType="3" name="/imat/resources/basket.png"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="productsToCartActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton1">
               <Properties>
@@ -299,6 +302,9 @@
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value="L&#xe4;gg till valt k&#xf6;ptillf&#xe4;lles inneh&#xe5;ll i varukorgen"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="jButton2">
               <Properties>
@@ -315,8 +321,12 @@
             </Component>
             <Component class="javax.swing.JButton" name="jButton4">
               <Properties>
-                <Property name="text" type="java.lang.String" value="X"/>
+                <Property name="text" type="java.lang.String" value="Rensa"/>
+                <Property name="toolTipText" type="java.lang.String" value="Rensar all historik"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

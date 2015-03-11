@@ -103,7 +103,6 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
-        setBorder(null);
         setLayout(new java.awt.GridLayout(1, 0));
 
         myStoredListsScrollPane.setBorder(null);
@@ -165,9 +164,19 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
         });
 
         productsToCart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
+        productsToCart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                productsToCartActionPerformed(evt);
+            }
+        });
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
         jButton1.setToolTipText("Lägg till valt köptillfälles innehåll i varukorgen");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("[edit]");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -178,7 +187,13 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
 
         jButton3.setText("[edit]");
 
-        jButton4.setText("X");
+        jButton4.setText("Rensa");
+        jButton4.setToolTipText("Rensar all historik");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout myStoredListsPanelLayout = new javax.swing.GroupLayout(myStoredListsPanel);
         myStoredListsPanel.setLayout(myStoredListsPanelLayout);
@@ -341,6 +356,97 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
             }
         }
     }//GEN-LAST:event_shoppingListProductsToCartActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        //Funktionalitet stöds ej i backend. Varnar för fulkod.
+        Customer c = dataHandler.getCustomer();
+        CreditCard cc = dataHandler.getCreditCard();
+        ArrayList<String> oldStringValues = new ArrayList();
+        ArrayList<Integer> oldIntegerValues = new ArrayList();
+        oldStringValues.add(c.getAddress());
+        oldStringValues.add(c.getEmail());
+        oldStringValues.add(c.getFirstName());
+        oldStringValues.add(c.getLastName());
+        oldStringValues.add(c.getMobilePhoneNumber());
+        oldStringValues.add(c.getPhoneNumber());
+        oldStringValues.add(c.getPostAddress());
+        oldStringValues.add(c.getPostCode());
+        
+        oldStringValues.add(cc.getCardNumber());
+        oldStringValues.add(cc.getCardType());
+        oldStringValues.add(cc.getHoldersName());
+        oldIntegerValues.add(cc.getValidMonth());
+        oldIntegerValues.add(cc.getValidYear());
+        oldIntegerValues.add(cc.getVerificationCode());
+        
+        dataHandler.reset();
+        dataHandler.resetFirstRun();
+        
+        c.setAddress(oldStringValues.get(0));
+        c.setEmail(oldStringValues.get(1));
+        c.setFirstName(oldStringValues.get(2));
+        c.setLastName(oldStringValues.get(3));
+        c.setMobilePhoneNumber(oldStringValues.get(4));
+        c.setPhoneNumber(oldStringValues.get(5));
+        c.setPostAddress(oldStringValues.get(6));
+        c.setPostCode(oldStringValues.get(7));
+        
+        cc.setCardNumber(oldStringValues.get(8));
+        cc.setCardType(oldStringValues.get(9));
+        cc.setHoldersName(oldStringValues.get(10));
+        cc.setValidMonth(oldIntegerValues.get(0));
+        cc.setValidYear(oldIntegerValues.get(1));
+        cc.setVerificationCode(oldIntegerValues.get(2));
+        //Doesn't work?        
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if (ordersList.getSelectedIndex() >= 0) {
+            dataHandler.getOrders().get(ordersList.getSelectedIndex()).getItems();
+            for (ShoppingItem s : dataHandler.getOrders().get(ordersList.getSelectedIndex()).getItems()) {
+                if (s != null) {
+                    boolean exists = false;
+                    for(int i = 0; i < dataHandler.getShoppingCart().getItems().size(); i++){
+                        ShoppingItem temp = dataHandler.getShoppingCart().getItems().get(i);
+                        if(temp.getProduct() == s.getProduct()){
+                            temp.setAmount(temp.getAmount() + s.getAmount());
+                            dataHandler.getShoppingCart().fireShoppingCartChanged(temp, true);
+                            exists = true;
+                            break;
+                        }
+                    }
+                    if(!exists) {
+                        dataHandler.getShoppingCart().addItem(s);
+                    }
+                }
+               
+            }
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void productsToCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_productsToCartActionPerformed
+        if (itemsList.getSelectedIndex() >= 0) {
+            List<ShoppingItem> list = dataHandler.getOrders().get(ordersList.getSelectedIndex()).getItems();
+            ShoppingItem s = list.get(itemsList.getSelectedIndex());
+            if (s != null ) {
+                boolean exists = false;
+                    for(int i = 0; i < dataHandler.getShoppingCart().getItems().size(); i++){
+                        ShoppingItem temp = dataHandler.getShoppingCart().getItems().get(i);
+                        if(temp.getProduct() == s.getProduct()){
+                            temp.setAmount(temp.getAmount() + s.getAmount());
+                            dataHandler.getShoppingCart().fireShoppingCartChanged(temp, true);
+                            exists = true;
+                            break;
+                        }
+                    }
+                    if(!exists) {
+                        dataHandler.getShoppingCart().addItem(s);
+                    }
+            }
+            
+        }
+   
+    }//GEN-LAST:event_productsToCartActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

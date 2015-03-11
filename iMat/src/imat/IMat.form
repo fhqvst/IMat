@@ -269,6 +269,7 @@
                 </Property>
                 <Property name="mnemonic" type="int" value="105"/>
                 <Property name="text" type="java.lang.String" value="Zooma in"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="zoomOut">
@@ -278,6 +279,7 @@
                 </Property>
                 <Property name="mnemonic" type="int" value="117"/>
                 <Property name="text" type="java.lang.String" value="Zooma ut"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator4">
@@ -311,18 +313,21 @@
           <Properties>
             <Property name="mnemonic" type="int" value="111"/>
             <Property name="text" type="java.lang.String" value="Om oss"/>
+            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
           <SubComponents>
             <MenuItem class="javax.swing.JMenuItem" name="contact">
               <Properties>
                 <Property name="mnemonic" type="int" value="107"/>
                 <Property name="text" type="java.lang.String" value="Kontakt"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="aboutIMat">
               <Properties>
                 <Property name="mnemonic" type="int" value="105"/>
                 <Property name="text" type="java.lang.String" value="iMat"/>
+                <Property name="enabled" type="boolean" value="false"/>
               </Properties>
             </MenuItem>
           </SubComponents>

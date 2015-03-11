@@ -930,11 +930,13 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         zoomIn.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_PLUS, java.awt.event.InputEvent.CTRL_MASK));
         zoomIn.setMnemonic('i');
         zoomIn.setText("Zooma in");
+        zoomIn.setEnabled(false);
         view.add(zoomIn);
 
         zoomOut.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_MINUS, java.awt.event.InputEvent.CTRL_MASK));
         zoomOut.setMnemonic('u');
         zoomOut.setText("Zooma ut");
+        zoomOut.setEnabled(false);
         view.add(zoomOut);
         view.add(jSeparator4);
 
@@ -959,13 +961,16 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
 
         about.setMnemonic('o');
         about.setText("Om oss");
+        about.setEnabled(false);
 
         contact.setMnemonic('k');
         contact.setText("Kontakt");
+        contact.setEnabled(false);
         about.add(contact);
 
         aboutIMat.setMnemonic('i');
         aboutIMat.setText("iMat");
+        aboutIMat.setEnabled(false);
         about.add(aboutIMat);
 
         menu.add(about);
