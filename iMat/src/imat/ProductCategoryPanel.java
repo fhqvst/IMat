@@ -72,7 +72,7 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
         filterPanel.repaint();
         
         productsPanel.removeAll();
-        layout.setColumns(3);
+        layout.setColumns(4);
   
         for(Product product : filterCard.getSelected()) {
             ProductPanel productPanel = new ProductPanel(product);
@@ -88,7 +88,7 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
     public void displayProducts(List<Product> products) {
         productsPanel.removeAll();
         filterPanel.removeAll();
-        layout.setColumns(4);
+        layout.setColumns(5);
 
         for(Product product : products) {
             

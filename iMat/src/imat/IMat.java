@@ -295,7 +295,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         checkoutButton.setMaximumSize(new java.awt.Dimension(130, 60));
         checkoutButton.setMinimumSize(new java.awt.Dimension(130, 60));
         checkoutButton.setPreferredSize(new java.awt.Dimension(130, 60));
-        checkoutButton.setRolloverEnabled(true);
         checkoutButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected-hover.png"))); // NOI18N
         checkoutButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected-hover.png"))); // NOI18N
         checkoutButton.addActionListener(new java.awt.event.ActionListener() {
@@ -353,6 +352,11 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         homeButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         homeButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
         homeButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        homeButton.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                globalToggleFocusLost(evt);
+            }
+        });
         homeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 homeButtonActionPerformed(evt);
@@ -379,6 +383,11 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         favoriteButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         favoriteButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
         favoriteButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        favoriteButton.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                globalToggleFocusLost(evt);
+            }
+        });
         favoriteButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 favoriteButtonActionPerformed(evt);
@@ -405,6 +414,11 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         receipeButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         receipeButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
         receipeButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        receipeButton.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                globalToggleFocusLost(evt);
+            }
+        });
         receipeButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 receipeButtonActionPerformed(evt);
@@ -430,6 +444,11 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         meatFishButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         meatFishButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
         meatFishButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        meatFishButton.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                globalToggleFocusLost(evt);
+            }
+        });
         meatFishButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 meatFishButtonActionPerformed(evt);
@@ -455,6 +474,11 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         freezerButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         freezerButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
         freezerButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        freezerButton.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                globalToggleFocusLost(evt);
+            }
+        });
         freezerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 freezerButtonActionPerformed(evt);
@@ -480,6 +504,11 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         dairyButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         dairyButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
         dairyButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        dairyButton.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                globalToggleFocusLost(evt);
+            }
+        });
         dairyButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 dairyButtonActionPerformed(evt);
@@ -506,6 +535,11 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         fruitVegetablesButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         fruitVegetablesButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
         fruitVegetablesButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        fruitVegetablesButton.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                globalToggleFocusLost(evt);
+            }
+        });
         fruitVegetablesButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 fruitVegetablesButtonActionPerformed(evt);
@@ -531,6 +565,11 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         pantryButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         pantryButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
         pantryButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        pantryButton.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                globalToggleFocusLost(evt);
+            }
+        });
         pantryButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pantryButtonActionPerformed(evt);
@@ -556,6 +595,11 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         candySnacksButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         candySnacksButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
         candySnacksButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        candySnacksButton.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                globalToggleFocusLost(evt);
+            }
+        });
         candySnacksButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 candySnacksButtonActionPerformed(evt);
@@ -1027,6 +1071,10 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         switchCard("welcomePanel", null);
         homeButton.setSelected(true);
     }//GEN-LAST:event_logotypeMouseClicked
+
+    private void globalToggleFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_globalToggleFocusLost
+        ((JToggleButton)evt.getComponent()).setForeground(Color.black);
+    }//GEN-LAST:event_globalToggleFocusLost
 
     
     @Override
