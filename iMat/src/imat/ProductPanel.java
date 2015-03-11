@@ -34,7 +34,7 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
         this.unitLabel.setText(product.getUnitSuffix());
         this.amountSpinner.setValue(1);
         if(dataHandler.favorites().contains(product)){
-            addToFavouritesButton.setForeground(Color.red);
+            addToFavouritesButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/heart.png")));
         }
     }
     

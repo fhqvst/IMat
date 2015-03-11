@@ -268,7 +268,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
         favoritesToggleButton.setBackground(new java.awt.Color(255, 255, 255));
         globalNavigationButtonGroup.add(favoritesToggleButton);
-        favoritesToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/heart.png"))); // NOI18N
+        favoritesToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/heart-black.png"))); // NOI18N
         favoritesToggleButton.setToolTipText("Favoriter");
         favoritesToggleButton.setBorderPainted(false);
         favoritesToggleButton.setContentAreaFilled(false);
@@ -725,6 +725,9 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         listToggleButton.setBorderPainted(false);
         listToggleButton.setContentAreaFilled(false);
         listToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        listToggleButton.setMaximumSize(new java.awt.Dimension(80, 80));
+        listToggleButton.setMinimumSize(new java.awt.Dimension(80, 80));
+        listToggleButton.setPreferredSize(new java.awt.Dimension(80, 80));
         listToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listToggleButtonActionPerformed(evt);
