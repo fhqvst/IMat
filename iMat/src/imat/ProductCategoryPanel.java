@@ -88,7 +88,7 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
         if(filterCard.getSelected().size() < 9){
             for(int i = 0; i < (9-filterCard.getSelected().size()); i++){
                 p = new JPanel();
-                p.setBackground(Color.white);
+                p.setBackground(new Color(238, 238, 238));
                 productsPanel.add(p);
             }
         }
@@ -115,7 +115,7 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
         if(products.size() < 11){
             for(int i = 0; i < (11-products.size()); i++){
                 p = new JPanel();
-                p.setBackground(Color.white);
+                p.setBackground(new Color(238, 238, 238));
                 productsPanel.add(p);
             }
         }
@@ -284,7 +284,7 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
         productsScrollPane.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
         productsScrollPane.setMinimumSize(new java.awt.Dimension(0, 0));
 
-        productsPanel.setBackground(java.awt.SystemColor.window);
+        productsPanel.setBackground(new java.awt.Color(238, 238, 238));
         productsPanel.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20)));
         productsPanel.setMaximumSize(new java.awt.Dimension(1084, 2147483647));
         productsPanel.setMinimumSize(new java.awt.Dimension(1084, 2147483647));
