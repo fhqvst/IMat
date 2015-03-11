@@ -6,6 +6,7 @@ import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
+import java.awt.event.WindowListener;
 import java.util.LinkedList;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -24,7 +25,7 @@ import se.chalmers.ait.dat215.project.*;
  *
  * @author filip
  */
-public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
+public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, WindowListener*/{
     
     public static IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     
@@ -79,6 +80,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         setNext(false);
         undo.setEnabled(false);
         redo.setEnabled(false);
+        //addWindowListener(this);
         
     }
 
@@ -893,12 +895,19 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
         fullscreen.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F11, 0));
         fullscreen.setMnemonic('f');
+        fullscreen.setSelected(true);
         fullscreen.setText("Fullskärm");
+        fullscreen.setEnabled(false);
         view.add(fullscreen);
 
-        minimize.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_SPACE, java.awt.event.InputEvent.ALT_MASK));
+        minimize.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         minimize.setMnemonic('m');
         minimize.setText("Minimera");
+        minimize.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                minimizeActionPerformed(evt);
+            }
+        });
         view.add(minimize);
 
         menu.add(view);
@@ -1243,6 +1252,10 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         nextButton.doClick();
     }//GEN-LAST:event_goToNextCategoryActionPerformed
 
+    private void minimizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minimizeActionPerformed
+       this.setState(this.ICONIFIED);
+    }//GEN-LAST:event_minimizeActionPerformed
+
     @Override
     public void shoppingCartChanged(CartEvent ce) {
         lastAdded.add(ce.getShoppingItem());
@@ -1377,5 +1390,9 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     private javax.swing.JMenuItem zoomIn;
     private javax.swing.JMenuItem zoomOut;
     // End of variables declaration//GEN-END:variables
+
+    private void minimize() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }
