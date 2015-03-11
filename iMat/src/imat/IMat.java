@@ -1,18 +1,15 @@
 package imat;
 
-import com.sun.org.apache.xalan.internal.xsltc.runtime.BasisLibrary;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.AbstractButton;
-import javax.swing.ButtonModel;
 import javax.swing.JToggleButton;
 import javax.swing.UIManager;
 import se.chalmers.ait.dat215.project.*;
@@ -57,22 +54,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         dataHandler.getShoppingCart().addShoppingCartListener(this);
         updateCartLabels();
         homeButton.requestFocus();
-
-      
-        /*
-        Map<String, ProductCategoryPanel> productCategoryPanels = new TreeMap<String, ProductCategoryPanel>();
-        
-        productCategoryPanels.put("meatFishPanel", new ProductCategoryPanel(ProductCategory.MEAT, ProductCategory.FISH));
-        productCategoryPanels.put("freezerPanel", new ProductCategoryPanel(ProductCategory.POD));
-        productCategoryPanels.put("dairyPanel", new ProductCategoryPanel(ProductCategory.DAIRIES));
-        productCategoryPanels.put("fruitVegetablesPanel", new ProductCategoryPanel(ProductCategory.BERRY, ProductCategory.CABBAGE, ProductCategory.CITRUS_FRUIT));
-        productCategoryPanels.put("pantryPanel", new ProductCategoryPanel(ProductCategory.PASTA, ProductCategory.FLOUR_SUGAR_SALT));
-        productCategoryPanels.put("candySnacksPanel", new ProductCategoryPanel(ProductCategory.SWEET));
-       
-        for(Map.Entry<String, ProductCategoryPanel> entry : productCategoryPanels.entrySet()) {
-            this.cardPanel.add(entry.getValue(), entry.getKey());
-        }
-        */
         
         this.cartLayeredPanel.add(new ProductListPanel());
         
@@ -313,7 +294,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         checkoutToggleButton.setMinimumSize(new java.awt.Dimension(130, 60));
         checkoutToggleButton.setPreferredSize(new java.awt.Dimension(130, 60));
         checkoutToggleButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-selected.png"))); // NOI18N
-        checkoutToggleButton.setRolloverEnabled(true);
         checkoutToggleButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-hover.png"))); // NOI18N
         checkoutToggleButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-hover.png"))); // NOI18N
         checkoutToggleButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green.png"))); // NOI18N
@@ -1091,7 +1071,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
             System.out.println(lastAdded.getLast().toString());
         }
     }//GEN-LAST:event_undoActionPerformed
-<<<<<<< HEAD
 
     private void redoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_redoActionPerformed
         if (lastRemoved.size() > 0) {
@@ -1103,8 +1082,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         }
     }//GEN-LAST:event_redoActionPerformed
 
-=======
->>>>>>> cc4cebe8334a76da9f1de79329b9309d9a2d904e
     
     @Override
     public void shoppingCartChanged(CartEvent ce) {
