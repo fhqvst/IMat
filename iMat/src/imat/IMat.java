@@ -10,6 +10,8 @@ import java.util.LinkedList;
 import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.AbstractButton;
+import javax.swing.JLayeredPane;
+import javax.swing.JPanel;
 import javax.swing.JToggleButton;
 import javax.swing.UIManager;
 import se.chalmers.ait.dat215.project.*;
@@ -36,7 +38,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     private LinkedList<ActionEvent> nextCards =  new LinkedList<>();
     private LinkedList<ShoppingItem> lastAdded = new LinkedList<>();
     private LinkedList<ShoppingItem> lastRemoved = new LinkedList<>();
-    
     /**
      * Creates new form IMat
      */
@@ -60,6 +61,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         this.productCategoryPanel = new ProductCategoryPanel();
         this.detailPanel = new DetailPanel();
 
+        cardCartListLayeredPane.moveToFront(cardPanel);
         
         FilterFactory.createFilterCards();
                 
@@ -907,6 +909,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     public DetailPanel getDetailPanel(){
         return detailPanel;
     }
+   
     
     public void updateCartLabels(){
         cartAmountLabel.setText(dataHandler.getShoppingCart().getItems().size() + " varor");
@@ -1004,6 +1007,18 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
             listShowing = true;
         }
         listToggleButton.setSelected(listShowing);
+    }
+    
+    public JLayeredPane getLayeredPane() {
+        return this.cardCartListLayeredPane;
+    }
+    
+    public JPanel getCardPanel() {
+        return this.cardPanel;
+    }
+    
+    public JPanel getCartPanel() {
+        return this.cartPanel;
     }
     
     private void searchTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchTextFieldFocusGained

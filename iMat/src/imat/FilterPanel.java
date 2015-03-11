@@ -144,7 +144,7 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
         setAlignmentX(0.5F);
         setMaximumSize(new java.awt.Dimension(250, 32767));
         setMinimumSize(new java.awt.Dimension(250, 0));
-        setPreferredSize(new java.awt.Dimension(250, 434));
+        setPreferredSize(new java.awt.Dimension(250, 600));
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.Y_AXIS));
 
         titleLable.setFont(new java.awt.Font("Helvetica", 1, 18)); // NOI18N
@@ -188,7 +188,6 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
         unselectAllButton.setMaximumSize(new java.awt.Dimension(1337, 40));
         unselectAllButton.setMinimumSize(new java.awt.Dimension(1337, 40));
         unselectAllButton.setPreferredSize(new java.awt.Dimension(1337, 40));
-        unselectAllButton.setRolloverEnabled(true);
         unselectAllButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         unselectAllButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         unselectAllButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
@@ -211,7 +210,6 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
         selectAllButton.setMaximumSize(new java.awt.Dimension(1337, 40));
         selectAllButton.setMinimumSize(new java.awt.Dimension(1337, 40));
         selectAllButton.setPreferredSize(new java.awt.Dimension(1337, 40));
-        selectAllButton.setRolloverEnabled(true);
         selectAllButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         selectAllButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         selectAllButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
