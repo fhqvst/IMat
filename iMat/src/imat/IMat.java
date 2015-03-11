@@ -36,6 +36,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     private LinkedList<ActionEvent> nextCards =  new LinkedList<>();
     private LinkedList<ShoppingItem> lastAdded = new LinkedList<>();
     private LinkedList<ShoppingItem> lastRemoved = new LinkedList<>();
+    private int currentCategoryIndex;
     
     /**
      * Creates new form IMat
@@ -147,6 +148,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         myFavouritesMenuNavigation = new javax.swing.JMenuItem();
         myProfileMenuNavigation = new javax.swing.JMenuItem();
         toCheckoutMenuNavigation = new javax.swing.JMenuItem();
+        goToPreviousCategory = new javax.swing.JMenuItem();
+        goToNextCategory = new javax.swing.JMenuItem();
         switchToPrevious = new javax.swing.JMenuItem();
         switchToNext = new javax.swing.JMenuItem();
         view = new javax.swing.JMenu();
@@ -322,7 +325,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         previousButton.setBackground(new java.awt.Color(255, 255, 255));
         previousButton.setFont(new java.awt.Font("Helvetica", 1, 24)); // NOI18N
         previousButton.setText("←");
-        previousButton.setToolTipText("Föregående sida");
+        previousButton.setToolTipText("Visa tidigare sida");
         previousButton.setBorder(null);
         previousButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         previousButton.setFocusPainted(false);
@@ -587,7 +590,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         nextButton.setBackground(new java.awt.Color(255, 255, 255));
         nextButton.setFont(new java.awt.Font("Helvetica", 1, 24)); // NOI18N
         nextButton.setText("→");
-        nextButton.setToolTipText("Nästa sida");
+        nextButton.setToolTipText("Visa nästa sida");
         nextButton.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
         nextButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         nextButton.setFocusPainted(false);
@@ -822,9 +825,27 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         });
         navigate.add(toCheckoutMenuNavigation);
 
+        goToPreviousCategory.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_LEFT, 0));
+        goToPreviousCategory.setText("Gå till föregående kategori");
+        goToPreviousCategory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                goToPreviousCategoryActionPerformed(evt);
+            }
+        });
+        navigate.add(goToPreviousCategory);
+
+        goToNextCategory.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_RIGHT, 0));
+        goToNextCategory.setText("Gå till nästa kategori");
+        goToNextCategory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                goToNextCategoryActionPerformed(evt);
+            }
+        });
+        navigate.add(goToNextCategory);
+
         switchToPrevious.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_BACK_SPACE, 0));
         switchToPrevious.setMnemonic('f');
-        switchToPrevious.setText("Föregående sida");
+        switchToPrevious.setText("Visa tidigare sida");
         switchToPrevious.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 switchToPreviousActionPerformed(evt);
@@ -834,7 +855,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
         switchToNext.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_BACK_SPACE, java.awt.event.InputEvent.SHIFT_MASK));
         switchToNext.setMnemonic('n');
-        switchToNext.setText("Nästa sida");
+        switchToNext.setText("Visa senare sida");
         switchToNext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 switchToNextActionPerformed(evt);
@@ -951,12 +972,10 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     
     public void setPrevious(boolean b) {
         switchToPrevious.setEnabled(b);
-        previousButton.setEnabled(b);
     }
     
     public void setNext(boolean b) {
         switchToNext.setEnabled(b);
-        nextButton.setEnabled(b);
     }
     
     public void changeFilter(FilterPanel filterCard, java.awt.event.ActionEvent e) {
@@ -1028,34 +1047,42 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
     private void homeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeButtonActionPerformed
         switchCard("welcomePanel", evt);
+        currentCategoryIndex = 0;
     }//GEN-LAST:event_homeButtonActionPerformed
 
     private void receipeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_receipeButtonActionPerformed
         switchCard("recipePanel", evt);
+        currentCategoryIndex = 1;
     }//GEN-LAST:event_receipeButtonActionPerformed
 
     private void meatFishButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meatFishButtonActionPerformed
         changeFilter(FilterFactory.meatAndFishFilterCard, evt);
+        currentCategoryIndex = 2;
     }//GEN-LAST:event_meatFishButtonActionPerformed
 
     private void freezerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_freezerButtonActionPerformed
         changeFilter(FilterFactory.freezerFilterCard, evt);
+        currentCategoryIndex = 3;
     }//GEN-LAST:event_freezerButtonActionPerformed
 
     private void dairyButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dairyButtonActionPerformed
         changeFilter(FilterFactory.dairyFilterCard, evt);
+        currentCategoryIndex = 4;
     }//GEN-LAST:event_dairyButtonActionPerformed
 
     private void fruitVegetablesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fruitVegetablesButtonActionPerformed
         changeFilter(FilterFactory.veggieAndFruitsFilterCard, evt);
+        currentCategoryIndex = 5;
     }//GEN-LAST:event_fruitVegetablesButtonActionPerformed
 
     private void pantryButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pantryButtonActionPerformed
         changeFilter(FilterFactory.pantryFilterCard, evt);
+        currentCategoryIndex = 6;
     }//GEN-LAST:event_pantryButtonActionPerformed
 
     private void candySnacksButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_candySnacksButtonActionPerformed
         changeFilter(FilterFactory.sweetsFilterCard, evt);
+        currentCategoryIndex = 7;
     }//GEN-LAST:event_candySnacksButtonActionPerformed
 
     private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
@@ -1071,11 +1098,49 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     }//GEN-LAST:event_switchToNextActionPerformed
 
     private void nextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextButtonActionPerformed
-        switchToNextCard();
+        switch(currentCategoryIndex) {
+            case 6:  candySnacksButton.doClick();
+                break;
+            case 7: homeButton.doClick();
+                break;
+            case 0: receipeButton.doClick();
+                break;
+            case 1: meatFishButton.doClick();
+                break;
+            case 2: freezerButton.doClick();
+                break;
+            case 3: dairyButton.doClick();
+                break;
+            case 4: fruitVegetablesButton.doClick();
+                break;
+            case 5: pantryButton.doClick();
+                break;
+                
+            default: break;
+        }
     }//GEN-LAST:event_nextButtonActionPerformed
 
     private void previousButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_previousButtonActionPerformed
-        switchToPreviousCard();
+        switch(currentCategoryIndex) {
+            case 0: candySnacksButton.doClick();
+                break;
+            case 1: homeButton.doClick();
+                break;
+            case 2: receipeButton.doClick();
+                break;
+            case 3: meatFishButton.doClick();
+                break;
+            case 4: freezerButton.doClick();
+                break;
+            case 5: dairyButton.doClick();
+                break;
+            case 6: fruitVegetablesButton.doClick();
+                break;
+            case 7: pantryButton.doClick();
+                break;
+                
+            default: break;   
+        }
     }//GEN-LAST:event_previousButtonActionPerformed
 
     private void cartToggleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartToggleButtonActionPerformed
@@ -1170,6 +1235,14 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         checkoutToggleButton.doClick();
     }//GEN-LAST:event_toCheckoutMenuNavigationActionPerformed
 
+    private void goToPreviousCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToPreviousCategoryActionPerformed
+        previousButton.doClick();
+    }//GEN-LAST:event_goToPreviousCategoryActionPerformed
+
+    private void goToNextCategoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToNextCategoryActionPerformed
+        nextButton.doClick();
+    }//GEN-LAST:event_goToNextCategoryActionPerformed
+
     @Override
     public void shoppingCartChanged(CartEvent ce) {
         lastAdded.add(ce.getShoppingItem());
@@ -1261,6 +1334,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     private javax.swing.JToggleButton fruitVegetablesButton;
     private javax.swing.JCheckBoxMenuItem fullscreen;
     private javax.swing.ButtonGroup globalNavigationButtonGroup;
+    private javax.swing.JMenuItem goToNextCategory;
+    private javax.swing.JMenuItem goToPreviousCategory;
     private javax.swing.JPanel headerPanel;
     private javax.swing.JMenuItem hintsMenuNavigation;
     private javax.swing.JToggleButton hintsToggleButton;
