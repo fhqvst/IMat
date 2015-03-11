@@ -217,7 +217,8 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
 
         wizardButtonGroup.add(wizardStep1ToggleButton);
         wizardStep1ToggleButton.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
-        wizardStep1ToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
+        wizardStep1ToggleButton.setForeground(new java.awt.Color(255, 255, 255));
+        wizardStep1ToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green.png"))); // NOI18N
         wizardStep1ToggleButton.setSelected(true);
         wizardStep1ToggleButton.setText("1. PERSONUPPGIFTER");
         wizardStep1ToggleButton.setAlignmentX(0.5F);
@@ -228,9 +229,9 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         wizardStep1ToggleButton.setMaximumSize(new java.awt.Dimension(170, 40));
         wizardStep1ToggleButton.setMinimumSize(new java.awt.Dimension(170, 40));
         wizardStep1ToggleButton.setPreferredSize(new java.awt.Dimension(170, 40));
-        wizardStep1ToggleButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
-        wizardStep1ToggleButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected-hover.png"))); // NOI18N
-        wizardStep1ToggleButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        wizardStep1ToggleButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-hover.png"))); // NOI18N
+        wizardStep1ToggleButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-hover.png"))); // NOI18N
+        wizardStep1ToggleButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-selected.png"))); // NOI18N
         wizardStep1ToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 wizardStep1ToggleButtonActionPerformed(evt);
@@ -241,10 +242,11 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         wizardStep2ToggleButton.setBackground(new java.awt.Color(255, 255, 255));
         wizardButtonGroup.add(wizardStep2ToggleButton);
         wizardStep2ToggleButton.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
-        wizardStep2ToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
+        wizardStep2ToggleButton.setForeground(new java.awt.Color(255, 255, 255));
+        wizardStep2ToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green.png"))); // NOI18N
         wizardStep2ToggleButton.setText("2. BETALUPPGIFTER");
         wizardStep2ToggleButton.setAlignmentX(0.5F);
-        wizardStep2ToggleButton.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
+        wizardStep2ToggleButton.setBorder(null);
         wizardStep2ToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         wizardStep2ToggleButton.setEnabled(false);
         wizardStep2ToggleButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -252,9 +254,9 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         wizardStep2ToggleButton.setMaximumSize(new java.awt.Dimension(170, 40));
         wizardStep2ToggleButton.setMinimumSize(new java.awt.Dimension(170, 40));
         wizardStep2ToggleButton.setPreferredSize(new java.awt.Dimension(170, 40));
-        wizardStep2ToggleButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
-        wizardStep2ToggleButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected-hover.png"))); // NOI18N
-        wizardStep2ToggleButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        wizardStep2ToggleButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-hover.png"))); // NOI18N
+        wizardStep2ToggleButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-hover.png"))); // NOI18N
+        wizardStep2ToggleButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-selected.png"))); // NOI18N
         wizardStep2ToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 wizardStep2ToggleButtonActionPerformed(evt);
@@ -265,10 +267,11 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         wizardStep3ToggleButton.setBackground(new java.awt.Color(255, 255, 255));
         wizardButtonGroup.add(wizardStep3ToggleButton);
         wizardStep3ToggleButton.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
-        wizardStep3ToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
+        wizardStep3ToggleButton.setForeground(new java.awt.Color(255, 255, 255));
+        wizardStep3ToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green.png"))); // NOI18N
         wizardStep3ToggleButton.setText("3. BEKRÄFTA KÖP");
         wizardStep3ToggleButton.setAlignmentX(0.5F);
-        wizardStep3ToggleButton.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
+        wizardStep3ToggleButton.setBorder(null);
         wizardStep3ToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         wizardStep3ToggleButton.setEnabled(false);
         wizardStep3ToggleButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -276,9 +279,9 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         wizardStep3ToggleButton.setMaximumSize(new java.awt.Dimension(170, 40));
         wizardStep3ToggleButton.setMinimumSize(new java.awt.Dimension(170, 40));
         wizardStep3ToggleButton.setPreferredSize(new java.awt.Dimension(170, 40));
-        wizardStep3ToggleButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
-        wizardStep3ToggleButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected-hover.png"))); // NOI18N
-        wizardStep3ToggleButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        wizardStep3ToggleButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-hover.png"))); // NOI18N
+        wizardStep3ToggleButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-hover.png"))); // NOI18N
+        wizardStep3ToggleButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-selected.png"))); // NOI18N
         wizardStep3ToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 wizardStep3ToggleButtonActionPerformed(evt);
@@ -503,9 +506,8 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
 
         page1NextButton.setFont(new java.awt.Font("Helvetica", 1, 18)); // NOI18N
         page1NextButton.setForeground(new java.awt.Color(255, 255, 255));
-        page1NextButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
+        page1NextButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green.png"))); // NOI18N
         page1NextButton.setText("NÄSTA");
-        page1NextButton.setBorder(null);
         page1NextButton.setBorderPainted(false);
         page1NextButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         page1NextButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
