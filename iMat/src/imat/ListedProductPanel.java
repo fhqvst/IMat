@@ -30,7 +30,7 @@ public class ListedProductPanel extends javax.swing.JPanel implements java.beans
         this.titleLabel.setText(item.getProduct().getName());
         this.priceLabel.setText(Double.toString(item.getProduct().getPrice()) + " " + item.getProduct().getUnit());
         this.adjustedPriceLabel.setText(Double.toString(item.getTotal()) + " kr");
-        this.amountSpinner.setValue(item.getAmount());
+        this.amountSpinner.setValue((int)item.getAmount());
         this.unitLabel.setText(item.getProduct().getUnitSuffix());
     }
     
@@ -127,10 +127,10 @@ public class ListedProductPanel extends javax.swing.JPanel implements java.beans
     }// </editor-fold>//GEN-END:initComponents
 
     private void amountSpinnerStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_amountSpinnerStateChanged
-        if((double)amountSpinner.getValue() < 1)
+        if((int)amountSpinner.getValue() < 1)
             amountSpinner.setValue(1);
         
-        item.setAmount((double)amountSpinner.getValue());
+        item.setAmount((int)amountSpinner.getValue());
         this.adjustedPriceLabel.setText(item.getTotal() + " kr");
     }//GEN-LAST:event_amountSpinnerStateChanged
 
