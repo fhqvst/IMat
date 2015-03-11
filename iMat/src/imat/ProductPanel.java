@@ -119,7 +119,7 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
         addToFavouritesButton.setBorder(null);
         addToFavouritesButton.setBorderPainted(false);
         addToFavouritesButton.setContentAreaFilled(false);
-        addToFavouritesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        addToFavouritesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         addToFavouritesButton.setFocusPainted(false);
         addToFavouritesButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         addToFavouritesButton.setIconTextGap(0);
@@ -164,7 +164,7 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
         addToCartButton.setText("LÄGG TILL");
         addToCartButton.setAlignmentX(0.5F);
         addToCartButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)));
-        addToCartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        addToCartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addToCartButton.setFocusPainted(false);
         addToCartButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         addToCartButton.setIconTextGap(0);

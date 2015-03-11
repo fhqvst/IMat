@@ -200,6 +200,12 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
 
         logotype.setFont(new java.awt.Font("Helvetica", 1, 48)); // NOI18N
         logotype.setText("iMat");
+        logotype.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        logotype.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logotypeMouseClicked(evt);
+            }
+        });
         headerPanel.add(logotype);
         headerPanel.add(filler2);
 
@@ -209,7 +215,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         searchTextField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 0, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 12, 0, 0)));
         searchTextField.setMaximumSize(new java.awt.Dimension(2147483647, 60));
         searchTextField.setMinimumSize(new java.awt.Dimension(0, 0));
-        searchTextField.setOpaque(true);
         searchTextField.setPreferredSize(new java.awt.Dimension(124, 60));
         searchTextField.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -232,7 +237,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         searchButton.setToolTipText("Sök i butiken");
         searchButton.setAlignmentX(0.5F);
         searchButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)));
-        searchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        searchButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         searchButton.setFocusPainted(false);
         searchButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         searchButton.setIconTextGap(0);
@@ -254,7 +259,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         hintsToggleButton.setToolTipText("Tips");
         hintsToggleButton.setBorderPainted(false);
         hintsToggleButton.setContentAreaFilled(false);
-        hintsToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        hintsToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         hintsToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 hintsToggleButtonActionPerformed(evt);
@@ -268,7 +273,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         profileButton.setToolTipText("Min profil");
         profileButton.setBorderPainted(false);
         profileButton.setContentAreaFilled(false);
-        profileButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        profileButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         profileButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 profileButtonActionPerformed(evt);
@@ -285,7 +290,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         checkoutButton.setToolTipText("");
         checkoutButton.setBorder(null);
         checkoutButton.setBorderPainted(false);
-        checkoutButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        checkoutButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         checkoutButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         checkoutButton.setMaximumSize(new java.awt.Dimension(130, 60));
         checkoutButton.setMinimumSize(new java.awt.Dimension(130, 60));
@@ -320,7 +325,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         previousButton.setMinimumSize(new java.awt.Dimension(60, 60));
         previousButton.setPreferredSize(new java.awt.Dimension(60, 60));
         previousButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
-        previousButton.setRolloverEnabled(true);
         previousButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         previousButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         previousButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
@@ -346,7 +350,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         homeButton.setMaximumSize(new java.awt.Dimension(80, 60));
         homeButton.setMinimumSize(new java.awt.Dimension(0, 0));
         homeButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
-        homeButton.setRolloverEnabled(true);
         homeButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         homeButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
         homeButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
@@ -373,7 +376,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         favoriteButton.setMinimumSize(new java.awt.Dimension(0, 0));
         favoriteButton.setOpaque(true);
         favoriteButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
-        favoriteButton.setRolloverEnabled(true);
         favoriteButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         favoriteButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
         favoriteButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
@@ -400,7 +402,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         receipeButton.setMinimumSize(new java.awt.Dimension(0, 0));
         receipeButton.setOpaque(true);
         receipeButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
-        receipeButton.setRolloverEnabled(true);
         receipeButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         receipeButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
         receipeButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
@@ -426,7 +427,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         meatFishButton.setMinimumSize(new java.awt.Dimension(0, 0));
         meatFishButton.setOpaque(true);
         meatFishButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
-        meatFishButton.setRolloverEnabled(true);
         meatFishButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         meatFishButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
         meatFishButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
@@ -452,7 +452,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         freezerButton.setMinimumSize(new java.awt.Dimension(0, 0));
         freezerButton.setOpaque(true);
         freezerButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
-        freezerButton.setRolloverEnabled(true);
         freezerButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         freezerButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
         freezerButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
@@ -478,7 +477,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         dairyButton.setMinimumSize(new java.awt.Dimension(0, 0));
         dairyButton.setOpaque(true);
         dairyButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
-        dairyButton.setRolloverEnabled(true);
         dairyButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         dairyButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
         dairyButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
@@ -505,7 +503,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         fruitVegetablesButton.setMinimumSize(new java.awt.Dimension(0, 0));
         fruitVegetablesButton.setOpaque(true);
         fruitVegetablesButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
-        fruitVegetablesButton.setRolloverEnabled(true);
         fruitVegetablesButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         fruitVegetablesButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
         fruitVegetablesButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
@@ -531,7 +528,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         pantryButton.setMinimumSize(new java.awt.Dimension(0, 0));
         pantryButton.setOpaque(true);
         pantryButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
-        pantryButton.setRolloverEnabled(true);
         pantryButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         pantryButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
         pantryButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
@@ -557,7 +553,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         candySnacksButton.setMinimumSize(new java.awt.Dimension(0, 0));
         candySnacksButton.setOpaque(true);
         candySnacksButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
-        candySnacksButton.setRolloverEnabled(true);
         candySnacksButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         candySnacksButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
         candySnacksButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
@@ -580,7 +575,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         nextButton.setMinimumSize(new java.awt.Dimension(60, 60));
         nextButton.setPreferredSize(new java.awt.Dimension(60, 60));
         nextButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
-        nextButton.setRolloverEnabled(true);
         nextButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         nextButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         nextButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
@@ -662,7 +656,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         cartToggleButton.setToolTipText("Visa varukorg");
         cartToggleButton.setBorderPainted(false);
         cartToggleButton.setContentAreaFilled(false);
-        cartToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        cartToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         cartToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cartToggleButtonActionPerformed(evt);
@@ -702,7 +696,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         listToggleButton.setToolTipText("Visa mina listor");
         listToggleButton.setBorderPainted(false);
         listToggleButton.setContentAreaFilled(false);
-        listToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        listToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         listToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listToggleButtonActionPerformed(evt);
@@ -1028,6 +1022,11 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
             
         }
     }//GEN-LAST:event_searchTextFieldKeyPressed
+
+    private void logotypeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logotypeMouseClicked
+        switchCard("welcomePanel", null);
+        homeButton.setSelected(true);
+    }//GEN-LAST:event_logotypeMouseClicked
 
     
     @Override
