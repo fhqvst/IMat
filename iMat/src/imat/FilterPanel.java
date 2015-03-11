@@ -76,7 +76,7 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
     private ProductCategory stringToCategory(String s){
         switch(s) {
             case "Nötkött": case "Fläskkött": return ProductCategory.MEAT;
-            case "Fisk": return ProductCategory.FISH;
+            case "Fisk": case "Frysta saker": case "Råvaror": return ProductCategory.FISH;
             case "Mjölk": return ProductCategory.DAIRIES;
             case "Bär": return ProductCategory.BERRY;
             case "Bröd": return ProductCategory.BREAD;
@@ -95,7 +95,7 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
             case "Godis": return ProductCategory.SWEET;
             case "Bönor": return ProductCategory.POD;
             
-            default: return ProductCategory.FISH;
+            default: return null;
         }
     }
     
