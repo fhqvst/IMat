@@ -37,6 +37,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     private boolean listShowing = true;
     private LinkedList<ActionEvent> previousCards =  new LinkedList<>();
     private LinkedList<ActionEvent> nextCards =  new LinkedList<>();
+    private LinkedList<ShoppingItem> lastAdded = new LinkedList<>();
+    private LinkedList<ShoppingItem> lastRemoved = new LinkedList<>();
     
     /**
      * Creates new form IMat
@@ -303,7 +305,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         checkoutToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green.png"))); // NOI18N
         checkoutToggleButton.setText("TILL KASSAN");
         checkoutToggleButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        checkoutToggleButton.setLocation(new java.awt.Point(0, 0));
         checkoutToggleButton.setMargin(null);
         checkoutToggleButton.setMaximumSize(new java.awt.Dimension(130, 60));
         checkoutToggleButton.setMinimumSize(new java.awt.Dimension(130, 60));
@@ -764,6 +765,11 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         undo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_MASK));
         undo.setMnemonic('\u00e5');
         undo.setText("Ångra");
+        undo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                undoActionPerformed(evt);
+            }
+        });
         edit.add(undo);
 
         redo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Y, java.awt.event.InputEvent.CTRL_MASK));
@@ -1061,23 +1067,54 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         switchCard("checkoutPanel", evt);
     }//GEN-LAST:event_checkoutToggleButtonActionPerformed
 
+    private void undoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_undoActionPerformed
+        /*if (previousCards.size() >  1) {
+            nextCards.add(previousCards.getLast());
+            if (nextCards.size() == 1) {
+                setNext(true);
+            }
+            previousCards.removeLast();
+            ((AbstractButton)previousCards.getLast().getSource()).doClick();
+            previousCards.removeLast();
+            if (previousCards.size() == 1) {
+                setPrevious(false);
+            }
+        }*/
+        
+        if (lastAdded.size() > 1) {
+            lastRemoved.add(lastAdded.getLast());
+            if (lastRemoved.size() == 1) {
+                redo.setEnabled(true);
+            }
+            lastAdded.removeLast();
+            dataHandler.getShoppingCart().removeItem(lastAdded.getLast());
+            lastAdded.removeLast();
+            if (lastAdded.size() == 1) {
+                undo.setEnabled(false);
+            }
+        }
+    }//GEN-LAST:event_undoActionPerformed
     
     @Override
     public void shoppingCartChanged(CartEvent ce) {
-        Color typGreen = new Color(135,211,124);
+        lastAdded.add(ce.getShoppingItem());;
         updateCartLabels();
-        cartPanel.setBackground(typGreen);
-        cartPanel.repaint();
-        cartPanel.revalidate();
-        
-        Timer t = new Timer();
-        t.schedule(new TimerTask() {
-            public void run(){
-                cartPanel.setBackground(Color.white);
-                cartPanel.repaint();
-                cartPanel.revalidate();
-            }
-        },1500);
+                    
+        if(ce.isAddEvent()){
+            Color typGreen = new Color(135,211,124);
+            cartPanel.setBackground(typGreen);
+            cartPanel.repaint();
+            cartPanel.revalidate();
+
+            Timer t = new Timer();
+            t.schedule(new TimerTask() {
+                public void run(){
+                    cartPanel.setBackground(Color.white);
+                    cartPanel.repaint();
+                    cartPanel.revalidate();
+                }
+            },1500);
+        }
         
     }
     /**

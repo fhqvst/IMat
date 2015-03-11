@@ -16,11 +16,12 @@ public class ListedProductPanel extends javax.swing.JPanel implements java.beans
     private Object bean;
     private ShoppingItem item;
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
-
+    boolean bla;
     /**
      * Creates new customizer ProductPanel
      */
     public ListedProductPanel() {
+        bla = false;
         initComponents();
     }
     
@@ -32,6 +33,7 @@ public class ListedProductPanel extends javax.swing.JPanel implements java.beans
         this.adjustedPriceLabel.setText(Double.toString(item.getTotal()) + " kr");
         this.amountSpinner.setValue((int)item.getAmount());
         this.unitLabel.setText(item.getProduct().getUnitSuffix());
+        bla = true;
     }
     
     public void setObject(Object bean) {
@@ -127,11 +129,15 @@ public class ListedProductPanel extends javax.swing.JPanel implements java.beans
     }// </editor-fold>//GEN-END:initComponents
 
     private void amountSpinnerStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_amountSpinnerStateChanged
-        if((int)amountSpinner.getValue() < 1)
-            amountSpinner.setValue(1);
-        
-        item.setAmount((int)amountSpinner.getValue());
-        this.adjustedPriceLabel.setText(item.getTotal() + " kr");
+        if(bla){
+            if((int)amountSpinner.getValue() < 1)
+                amountSpinner.setValue(1);
+
+            item.setAmount((int)amountSpinner.getValue());
+            this.adjustedPriceLabel.setText(item.getTotal() + " kr");
+            dataHandler.getShoppingCart().fireShoppingCartChanged(item, false);
+            System.out.println(item.getProduct().getName());
+        }
     }//GEN-LAST:event_amountSpinnerStateChanged
 
     private void RemoveFromCartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveFromCartButtonActionPerformed

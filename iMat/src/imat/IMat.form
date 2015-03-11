@@ -75,6 +75,9 @@
                 <Property name="mnemonic" type="int" value="229"/>
                 <Property name="text" type="java.lang.String" value="&#xc5;ngra"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="undoActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="redo">
               <Properties>
@@ -454,9 +457,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="TILL KASSAN"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
-            <Property name="location" type="java.awt.Point" editor="org.netbeans.beaninfo.editors.PointEditor">
-              <Point value="[0, 0]"/>
-            </Property>
             <Property name="margin" type="java.awt.Insets" editor="org.netbeans.beaninfo.editors.InsetsEditor">
               <Insets value="null"/>
             </Property>
