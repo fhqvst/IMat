@@ -52,8 +52,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
                     dataHandler.shutDown();
             }
         }));
-        //Does not
-        
+
         this.setExtendedState(this.MAXIMIZED_BOTH);
         dataHandler.getShoppingCart().addShoppingCartListener(this);
         updateCartLabels();
@@ -96,6 +95,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         homeButton.doClick();
         setPrevious(false);
         setNext(false);
+        undo.setEnabled(false);
+        redo.setEnabled(false);
         
     }
 
@@ -777,6 +778,11 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
         redo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Y, java.awt.event.InputEvent.CTRL_MASK));
         redo.setMnemonic('g');
         redo.setText("Gör om");
+        redo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                redoActionPerformed(evt);
+            }
+        });
         edit.add(redo);
 
         menu.add(edit);
@@ -1070,36 +1076,40 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener {
     }//GEN-LAST:event_checkoutToggleButtonActionPerformed
 
     private void undoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_undoActionPerformed
-        /*if (previousCards.size() >  1) {
-            nextCards.add(previousCards.getLast());
-            if (nextCards.size() == 1) {
-                setNext(true);
-            }
-            previousCards.removeLast();
-            ((AbstractButton)previousCards.getLast().getSource()).doClick();
-            previousCards.removeLast();
-            if (previousCards.size() == 1) {
-                setPrevious(false);
-            }
-        }*/
-        
-        if (lastAdded.size() > 1) {
+        if (lastAdded.size() > 0) {
+            System.out.println(lastAdded.getLast().toString());
             lastRemoved.add(lastAdded.getLast());
             if (lastRemoved.size() == 1) {
                 redo.setEnabled(true);
-            }
-            lastAdded.removeLast();
+            } 
             dataHandler.getShoppingCart().removeItem(lastAdded.getLast());
             lastAdded.removeLast();
-            if (lastAdded.size() == 1) {
+            lastAdded.removeLast();
+            if (lastAdded.size() == 0) {
                 undo.setEnabled(false);
             }
+            System.out.println(lastAdded.getLast().toString());
         }
     }//GEN-LAST:event_undoActionPerformed
+<<<<<<< HEAD
+
+    private void redoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_redoActionPerformed
+        if (lastRemoved.size() > 0) {
+            dataHandler.getShoppingCart().addItem(lastRemoved.getLast());
+            lastRemoved.removeLast();
+            if(lastRemoved.size() == 0) {
+                redo.setEnabled(false);
+            }
+        }
+    }//GEN-LAST:event_redoActionPerformed
+
+=======
+>>>>>>> cc4cebe8334a76da9f1de79329b9309d9a2d904e
     
     @Override
     public void shoppingCartChanged(CartEvent ce) {
-        lastAdded.add(ce.getShoppingItem());;
+        lastAdded.add(ce.getShoppingItem());
+        undo.setEnabled(true);
         updateCartLabels();
                     
         if(ce.isAddEvent()){
