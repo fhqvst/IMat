@@ -22,6 +22,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
     private Object bean;
     private final int NUMBER_OF_HINTS = 37;
     private int currentHintNbr;
+    private String[] hintsArray = new String[37];
 
     /**
      * Creates new customizer HintsPanel
@@ -32,9 +33,12 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         needHelpLabel.setText("<html><h2>Behöver du hjälp?</h2></html>");
         forumButton.setText("<html><font color='blue'><u>forum</u></font></html>");
         contactUsButton.setText("<html><font color='blue'><u>kontakta oss!</u></font></html>");
-        changeToHint(13);
         manualTextArea.setText("Mitt första köp:\n\n" + getDummyText());
         currentHintScrollPane.setPreferredSize(new Dimension(800, 600));
+        for (int i = 0; i < hintsArray.length; i++) {
+            hintsArray[i] = "Tips " + (i+1) + "\n\n" + getDummyText();
+        }
+        changeToHint(13);
     }
     
     public void setObject(Object bean) {
@@ -66,7 +70,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
             }
             if (currentHintNbr != changeNumber) {
                 currentHintNbr = changeNumber;
-                currentHintTextArea.setText(getDummyText());
+                currentHintTextArea.setText(hintsArray[currentHintNbr-1]);
             }
             
         }
