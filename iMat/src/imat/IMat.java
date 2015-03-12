@@ -791,6 +791,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         file.add(clearAllInfo);
 
         jMenuItem3.setText("Importera");
+        jMenuItem3.setEnabled(false);
         file.add(jMenuItem3);
         file.add(jSeparator5);
 
@@ -810,6 +811,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         edit.setText("Redigera");
 
         jMenuItem7.setText("Byt färgtema");
+        jMenuItem7.setEnabled(false);
         jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem7ActionPerformed(evt);
@@ -827,12 +829,15 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         edit.add(clearShoppingCart);
 
         jMenuItem5.setText("Lägg till ny inköpslista");
+        jMenuItem5.setEnabled(false);
         edit.add(jMenuItem5);
 
         jMenuItem6.setText("Redigera inköpslista");
+        jMenuItem6.setEnabled(false);
         edit.add(jMenuItem6);
 
         jMenuItem9.setText("Gör inköpslista av varukorg");
+        jMenuItem9.setEnabled(false);
         edit.add(jMenuItem9);
 
         undo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_MASK));
@@ -1003,7 +1008,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
 
         about.setMnemonic('o');
         about.setText("Om oss");
-        about.setEnabled(false);
 
         contact.setMnemonic('k');
         contact.setText("Kontakt");
@@ -1389,6 +1393,9 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void clearShoppingCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearShoppingCartActionPerformed
+        /*for (ShoppingItem s : dataHandler.getShoppingCart().getItems()) {
+            dataHandler.getShoppingCart().removeItem(s);
+        }*/
         dataHandler.getShoppingCart().clear();
     }//GEN-LAST:event_clearShoppingCartActionPerformed
 

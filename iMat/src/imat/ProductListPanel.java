@@ -199,6 +199,9 @@ public class ProductListPanel extends javax.swing.JPanel implements java.beans.C
     }// </editor-fold>//GEN-END:initComponents
 
     private void addToCartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addToCartButtonActionPerformed
+        /*for (ShoppingItem s : dataHandler.getShoppingCart().getItems()) {
+            dataHandler.getShoppingCart().removeItem(s);
+        }*/
         dataHandler.getShoppingCart().clear();
     }//GEN-LAST:event_addToCartButtonActionPerformed
 
