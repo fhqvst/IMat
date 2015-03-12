@@ -37,7 +37,7 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
        //this.adjustedPriceLabel.setText(Double.toString(this.product.getPrice()) + " kr");
        this.amountSpinner.setValue(1);
        if(dataHandler.favorites().contains(product)){
-           favBtn.setForeground(Color.red);
+           favBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/heart.png")));
         }
     }
     
@@ -75,7 +75,7 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
         jPanel7.setLayout(new java.awt.GridLayout(2, 2));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setLayout(new java.awt.GridLayout());
+        jPanel2.setLayout(new java.awt.GridLayout(1, 0));
 
         imageLabel.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.add(imageLabel);
@@ -90,8 +90,16 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
 
         favBtn.setBackground(new java.awt.Color(255, 255, 255));
         favBtn.setFont(new java.awt.Font("Helvetica", 1, 36)); // NOI18N
-        favBtn.setText("♡");
+        favBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/heart-open.png"))); // NOI18N
         favBtn.setBorderPainted(false);
+        favBtn.setMargin(null);
+        favBtn.setMaximumSize(new java.awt.Dimension(60, 60));
+        favBtn.setMinimumSize(new java.awt.Dimension(60, 60));
+        favBtn.setPreferredSize(new java.awt.Dimension(60, 60));
+        favBtn.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/heart.png"))); // NOI18N
+        favBtn.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/heart.png"))); // NOI18N
+        favBtn.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/heart.png"))); // NOI18N
+        favBtn.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/heart.png"))); // NOI18N
         favBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 favBtnActionPerformed(evt);
@@ -166,10 +174,10 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
     private void favBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_favBtnActionPerformed
         if(dataHandler.favorites().contains(product)){
             dataHandler.favorites().remove(product);
-            favBtn.setForeground(Color.black);
+            favBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/heart-open.png")));
         }else{
             dataHandler.addFavorite(product);
-            favBtn.setForeground(Color.red);
+            favBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/heart.png")));
         }
     }//GEN-LAST:event_favBtnActionPerformed
 

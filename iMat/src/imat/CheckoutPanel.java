@@ -985,7 +985,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         wizardStep2ToggleButton.setEnabled(false);
         wizardStep3ToggleButton.setEnabled(false);
         wizardStep1ToggleButton.setSelected(true);
-        ((IMat)this.getTopLevelAncestor()).switchCard("welcomePanel", null);
+        ((IMat)this.getTopLevelAncestor()).switchCard("thankYouPanel", null);
     }//GEN-LAST:event_buyButtonActionPerformed
 
     private void deliveryDateTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deliveryDateTextFieldActionPerformed
