@@ -865,7 +865,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         navigate.setMnemonic('n');
         navigate.setText("Navigera");
 
-        homeMenuNavigation.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, 0));
+        homeMenuNavigation.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_H, java.awt.event.InputEvent.CTRL_MASK));
         homeMenuNavigation.setText("Hem");
         homeMenuNavigation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -874,7 +874,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         });
         navigate.add(homeMenuNavigation);
 
-        hintsMenuNavigation.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, 0));
+        hintsMenuNavigation.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_MASK));
         hintsMenuNavigation.setText("Tips");
         hintsMenuNavigation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -883,7 +883,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         });
         navigate.add(hintsMenuNavigation);
 
-        myFavouritesMenuNavigation.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, 0));
+        myFavouritesMenuNavigation.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_MASK));
         myFavouritesMenuNavigation.setText("Mina favoriter");
         myFavouritesMenuNavigation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -892,7 +892,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         });
         navigate.add(myFavouritesMenuNavigation);
 
-        myProfileMenuNavigation.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, 0));
+        myProfileMenuNavigation.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
         myProfileMenuNavigation.setText("Min profil");
         myProfileMenuNavigation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -901,7 +901,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         });
         navigate.add(myProfileMenuNavigation);
 
-        toCheckoutMenuNavigation.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_K, 0));
+        toCheckoutMenuNavigation.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_K, java.awt.event.InputEvent.CTRL_MASK));
         toCheckoutMenuNavigation.setText("Till kassan");
         toCheckoutMenuNavigation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -955,7 +955,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         view.setMnemonic('v');
         view.setText("Vy");
 
-        showShoppingCart.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
+        showShoppingCart.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         showShoppingCart.setText("Visa varukorg");
         showShoppingCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -964,7 +964,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         });
         view.add(showShoppingCart);
 
-        showMyLists.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_MASK));
+        showMyLists.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         showMyLists.setText("Visa mina listor");
         showMyLists.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
