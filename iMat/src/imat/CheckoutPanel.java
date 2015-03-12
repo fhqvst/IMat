@@ -226,7 +226,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         wizardStep1ToggleButton.setAlignmentX(0.5F);
         wizardStep1ToggleButton.setBorder(null);
         wizardStep1ToggleButton.setBorderPainted(false);
-        wizardStep1ToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        wizardStep1ToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         wizardStep1ToggleButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         wizardStep1ToggleButton.setIconTextGap(0);
         wizardStep1ToggleButton.setMaximumSize(new java.awt.Dimension(170, 40));
@@ -251,7 +251,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         wizardStep2ToggleButton.setAlignmentX(0.5F);
         wizardStep2ToggleButton.setBorder(null);
         wizardStep2ToggleButton.setBorderPainted(false);
-        wizardStep2ToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        wizardStep2ToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         wizardStep2ToggleButton.setEnabled(false);
         wizardStep2ToggleButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         wizardStep2ToggleButton.setIconTextGap(0);
@@ -277,7 +277,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         wizardStep3ToggleButton.setAlignmentX(0.5F);
         wizardStep3ToggleButton.setBorder(null);
         wizardStep3ToggleButton.setBorderPainted(false);
-        wizardStep3ToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        wizardStep3ToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         wizardStep3ToggleButton.setEnabled(false);
         wizardStep3ToggleButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         wizardStep3ToggleButton.setIconTextGap(0);
@@ -575,7 +575,6 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         cardTypeLabel.setPreferredSize(new java.awt.Dimension(13333337, 30));
         middlePanel1.add(cardTypeLabel);
 
-        cardTypeComboBox.setBackground(new java.awt.Color(255, 255, 255));
         cardTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Visa", "MasterCard", "American Express", "Visa Electron" }));
         cardTypeComboBox.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
         cardTypeComboBox.setMaximumSize(new java.awt.Dimension(32767, 60));
@@ -594,7 +593,6 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
 
         validDatePanel.setLayout(new javax.swing.BoxLayout(validDatePanel, javax.swing.BoxLayout.LINE_AXIS));
 
-        validMonthComboBox.setBackground(new java.awt.Color(255, 255, 255));
         validMonthComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Mån", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
         validMonthComboBox.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
         validMonthComboBox.setMaximumSize(new java.awt.Dimension(32767, 60));
@@ -603,7 +601,6 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         validDatePanel.add(validMonthComboBox);
         validDatePanel.add(filler11);
 
-        validYearComboBox.setBackground(new java.awt.Color(255, 255, 255));
         validYearComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "År", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25" }));
         validYearComboBox.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
         validYearComboBox.setMaximumSize(new java.awt.Dimension(32767, 60));
@@ -657,7 +654,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         middlePanel1.add(deliveryDateLabel);
 
         deliveryDateTextField.setFont(new java.awt.Font("Helvetica", 0, 14)); // NOI18N
-        deliveryDateTextField.setText("04-03-2015");
+        deliveryDateTextField.setText("13-03-2015");
         deliveryDateTextField.setAutoscrolls(false);
         deliveryDateTextField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
         deliveryDateTextField.setMaximumSize(new java.awt.Dimension(2147483647, 60));
@@ -679,7 +676,6 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         jLabel22.setPreferredSize(new java.awt.Dimension(13333337, 30));
         middlePanel1.add(jLabel22);
 
-        deliveryTimeComboBox.setBackground(new java.awt.Color(255, 255, 255));
         deliveryTimeComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hela dagen (8:00-16:00)", "Förmiddag (8:00-12:00)", "Eftermiddag (12:00-16:00)" }));
         deliveryTimeComboBox.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
         deliveryTimeComboBox.setMaximumSize(new java.awt.Dimension(32767, 60));
@@ -715,7 +711,6 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         page2BackButton.setMinimumSize(new java.awt.Dimension(130, 60));
         page2BackButton.setPreferredSize(new java.awt.Dimension(130, 60));
         page2BackButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
-        page2BackButton.setRolloverEnabled(true);
         page2BackButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         page2BackButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
         page2BackButton.addActionListener(new java.awt.event.ActionListener() {
@@ -755,7 +750,6 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         page2NextButton.setMinimumSize(new java.awt.Dimension(100, 60));
         page2NextButton.setPreferredSize(new java.awt.Dimension(120, 60));
         page2NextButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-selected.png"))); // NOI18N
-        page2NextButton.setRolloverEnabled(true);
         page2NextButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-hover.png"))); // NOI18N
         page2NextButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-hover.png"))); // NOI18N
         page2NextButton.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green-selected.png"))); // NOI18N
