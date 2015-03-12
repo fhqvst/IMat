@@ -144,12 +144,19 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 100), new java.awt.Dimension(0, 100), new java.awt.Dimension(2147483647, 2147483647));
         menu = new javax.swing.JMenuBar();
         file = new javax.swing.JMenu();
+        jMenuItem8 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
         clearCardInfo = new javax.swing.JMenuItem();
         clearAllInfo = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jSeparator5 = new javax.swing.JPopupMenu.Separator();
         exit = new javax.swing.JMenuItem();
         edit = new javax.swing.JMenu();
+        jMenuItem7 = new javax.swing.JMenuItem();
         clearShoppingCart = new javax.swing.JMenuItem();
+        jMenuItem5 = new javax.swing.JMenuItem();
+        jMenuItem6 = new javax.swing.JMenuItem();
+        jMenuItem9 = new javax.swing.JMenuItem();
         undo = new javax.swing.JMenuItem();
         redo = new javax.swing.JMenuItem();
         navigate = new javax.swing.JMenu();
@@ -757,6 +764,16 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         file.setText("Arkiv");
         file.setToolTipText("Rensa all sparad personlig information");
 
+        jMenuItem8.setText("List builder mode");
+        jMenuItem8.setToolTipText("");
+        jMenuItem8.setEnabled(false);
+        file.add(jMenuItem8);
+
+        jMenuItem4.setText("Rensa historik");
+        jMenuItem4.setToolTipText("");
+        jMenuItem4.setEnabled(false);
+        file.add(jMenuItem4);
+
         clearCardInfo.setText("Rena kortuppgifter");
         clearCardInfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -772,6 +789,9 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
             }
         });
         file.add(clearAllInfo);
+
+        jMenuItem3.setText("Importera");
+        file.add(jMenuItem3);
         file.add(jSeparator5);
 
         exit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Q, java.awt.event.InputEvent.CTRL_MASK));
@@ -789,9 +809,26 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         edit.setMnemonic('e');
         edit.setText("Redigera");
 
+        jMenuItem7.setText("Byt färgtema");
+        jMenuItem7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem7ActionPerformed(evt);
+            }
+        });
+        edit.add(jMenuItem7);
+
         clearShoppingCart.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_DELETE, java.awt.event.InputEvent.CTRL_MASK));
         clearShoppingCart.setText("Töm varukorgen");
         edit.add(clearShoppingCart);
+
+        jMenuItem5.setText("Lägg till ny inköpslista");
+        edit.add(jMenuItem5);
+
+        jMenuItem6.setText("Redigera inköpslista");
+        edit.add(jMenuItem6);
+
+        jMenuItem9.setText("Gör inköpslista av varukorg");
+        edit.add(jMenuItem9);
 
         undo.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_Z, java.awt.event.InputEvent.CTRL_MASK));
         undo.setMnemonic('\u00e5');
@@ -1342,6 +1379,10 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         }
     }//GEN-LAST:event_clearCardInfoActionPerformed
 
+    private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem7ActionPerformed
+
     @Override
     public void shoppingCartChanged(CartEvent ce) {
         lastAdded.add(ce.getShoppingItem());
@@ -1448,6 +1489,13 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
     private javax.swing.JLabel jLabel5;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JMenuItem jMenuItem5;
+    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenuItem jMenuItem7;
+    private javax.swing.JMenuItem jMenuItem8;
+    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
