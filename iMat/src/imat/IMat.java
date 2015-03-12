@@ -819,6 +819,11 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
 
         clearShoppingCart.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_DELETE, java.awt.event.InputEvent.CTRL_MASK));
         clearShoppingCart.setText("Töm varukorgen");
+        clearShoppingCart.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearShoppingCartActionPerformed(evt);
+            }
+        });
         edit.add(clearShoppingCart);
 
         jMenuItem5.setText("Lägg till ny inköpslista");
@@ -1382,6 +1387,10 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem7ActionPerformed
+
+    private void clearShoppingCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearShoppingCartActionPerformed
+        dataHandler.getShoppingCart().clear();
+    }//GEN-LAST:event_clearShoppingCartActionPerformed
 
     @Override
     public void shoppingCartChanged(CartEvent ce) {
