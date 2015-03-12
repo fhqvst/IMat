@@ -62,7 +62,6 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
         welcomeLabel = new javax.swing.JLabel();
         campaignLabel = new javax.swing.JLabel();
 
-        setAlignmentY(0.5F);
         setPreferredSize(new java.awt.Dimension(100, 200));
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.X_AXIS));
 
@@ -132,7 +131,7 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
 
         campaignLabel.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         campaignLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        campaignLabel.setText("Just nu har vi 42 varor på kampanj.");
+        campaignLabel.setText("Just nu har vi 7 varor på kampanj.");
         campaignLabel.setToolTipText("");
         welcomePanel.add(campaignLabel, java.awt.BorderLayout.CENTER);
 
