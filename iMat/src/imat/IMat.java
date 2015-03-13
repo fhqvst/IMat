@@ -1087,6 +1087,10 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
                 setPrevious(true);
             }
         }
+        
+        if(cardName == "recipePanel"){
+            receipeButton.setSelected(true);
+        }
     }
     
     public void switchToPreviousCard() {
