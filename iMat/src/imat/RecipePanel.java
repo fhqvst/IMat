@@ -31,6 +31,9 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
         Product product1 = dataHandler.findProducts("Köttfärs nöt").get(0);
         Product product2 = dataHandler.findProducts("Jasmin-ris").get(0);
         
+        jCheckBox1.setText(recipePortionsSlider.getValue() + " kg Köttfärs nöt, " + Math.round(product1.getPrice()*recipePortionsSlider.getValue()*100)/100 + " kr");
+        jCheckBox2.setText(recipePortionsSlider.getValue() + " kg Jasmin-ris, " + Math.round(product2.getPrice()*recipePortionsSlider.getValue()*100)/100 + " kr");
+        
         totalLabel.setText("Total: " + Math.round(product1.getPrice()*recipePortionsSlider.getValue()*100 + product2.getPrice()*recipePortionsSlider.getValue()*100)/100 + " kr");
     }
     
@@ -272,9 +275,9 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
                     .addGroup(receipeSearchPanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(recipeSearchMaxTimeSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addComponent(searchButton)
-                .addContainerGap())
+                .addGap(30, 30, 30))
         );
 
         recipeSearchAndSelectPanel.add(receipeSearchPanel);
