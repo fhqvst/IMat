@@ -164,6 +164,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         redo = new javax.swing.JMenuItem();
         navigate = new javax.swing.JMenu();
         homeMenuNavigation = new javax.swing.JMenuItem();
+        jMenuItem10 = new javax.swing.JMenuItem();
+        jMenuItem11 = new javax.swing.JMenuItem();
         hintsMenuNavigation = new javax.swing.JMenuItem();
         myFavouritesMenuNavigation = new javax.swing.JMenuItem();
         myProfileMenuNavigation = new javax.swing.JMenuItem();
@@ -241,6 +243,11 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
                 searchTextFieldFocusLost(evt);
+            }
+        });
+        searchTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchTextFieldActionPerformed(evt);
             }
         });
         searchTextField.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -877,6 +884,24 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         });
         navigate.add(homeMenuNavigation);
 
+        jMenuItem10.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.CTRL_MASK));
+        jMenuItem10.setText("Markera sök");
+        jMenuItem10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem10ActionPerformed(evt);
+            }
+        });
+        navigate.add(jMenuItem10);
+
+        jMenuItem11.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_ENTER, 0));
+        jMenuItem11.setText("Sök");
+        jMenuItem11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem11ActionPerformed(evt);
+            }
+        });
+        navigate.add(jMenuItem11);
+
         hintsMenuNavigation.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_T, java.awt.event.InputEvent.CTRL_MASK));
         hintsMenuNavigation.setText("Tips");
         hintsMenuNavigation.addActionListener(new java.awt.event.ActionListener() {
@@ -1406,6 +1431,18 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         dataHandler.getShoppingCart().clear();
     }//GEN-LAST:event_clearShoppingCartActionPerformed
 
+    private void jMenuItem10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem10ActionPerformed
+        searchTextField.requestFocus();
+    }//GEN-LAST:event_jMenuItem10ActionPerformed
+
+    private void searchTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_searchTextFieldActionPerformed
+
+    private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
+        searchButton.doClick();
+    }//GEN-LAST:event_jMenuItem11ActionPerformed
+
     @Override
     public void shoppingCartChanged(CartEvent ce) {
         lastAdded.add(ce.getShoppingItem());
@@ -1511,6 +1548,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem10;
+    private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
