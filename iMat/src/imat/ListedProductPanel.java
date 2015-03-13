@@ -29,8 +29,8 @@ public class ListedProductPanel extends javax.swing.JPanel implements java.beans
         this();
         this.item = item;
         this.titleLabel.setText(item.getProduct().getName());
-        this.priceLabel.setText(Double.toString(item.getProduct().getPrice()) + " " + item.getProduct().getUnit());
-        this.adjustedPriceLabel.setText(Double.toString(item.getTotal()) + " kr");
+        this.priceLabel.setText(Double.toString(Math.round(item.getProduct().getPrice()*100)/100) + " " + item.getProduct().getUnit());
+        this.adjustedPriceLabel.setText(Double.toString(Math.round(item.getTotal()*100)/100) + " kr");
         this.amountSpinner.setValue((int)item.getAmount());
         this.unitLabel.setText(item.getProduct().getUnitSuffix());
         bla = true;
@@ -134,7 +134,7 @@ public class ListedProductPanel extends javax.swing.JPanel implements java.beans
                 amountSpinner.setValue(1);
 
             item.setAmount((int)amountSpinner.getValue());
-            this.adjustedPriceLabel.setText(item.getTotal() + " kr");
+            this.adjustedPriceLabel.setText(Double.toString(Math.round(item.getTotal()*100)/100) + " kr");
             dataHandler.getShoppingCart().fireShoppingCartChanged(item, false);
             System.out.println(item.getProduct().getName());
         }
