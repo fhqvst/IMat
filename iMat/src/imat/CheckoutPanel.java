@@ -21,8 +21,8 @@ import se.chalmers.ait.dat215.project.*;
 public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Customizer, ShoppingCartListener {
     
     private Object bean;
-    private ProductListPanel plp1 = new ProductListPanel();
-    private ProductListPanel plp2 = new ProductListPanel();
+    private ProductListPanel plp1 = new ProductListPanel(true);
+    private ProductListPanel plp2 = new ProductListPanel(true);
     private IMatDataHandler dataHandler = IMatDataHandler.getInstance();
     private List<JTextField> page1RequiredTextFields;
     private List<JTextField> page2RequiredTextFields;

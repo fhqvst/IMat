@@ -40,6 +40,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
     private LinkedList<ShoppingItem> lastAdded = new LinkedList<>();
     private LinkedList<ShoppingItem> lastRemoved = new LinkedList<>();
     private static CheckoutPanel c;
+    private static IMat i;
 
     private int currentCategoryIndex;
     
@@ -61,7 +62,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         updateCartLabels();
         homeButton.requestFocus();
         
-        this.cartLayeredPanel.add(new ProductListPanel());
+        this.cartLayeredPanel.add(new ProductListPanel(false));
         
         this.productCategoryPanel = new ProductCategoryPanel();
         this.detailPanel = new DetailPanel();
@@ -88,6 +89,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         undo.setEnabled(false);
         redo.setEnabled(false);
         //addWindowListener(this);
+        i = this;
         
     }
 
@@ -1064,6 +1066,10 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
     
     public DetailPanel getDetailPanel(){
         return detailPanel;
+    }
+    
+    public static IMat getIMat () {
+        return i;
     }
    
     
