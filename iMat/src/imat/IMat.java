@@ -658,6 +658,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         cardPanel.setVerifyInputWhenFocusTarget(false);
         cardPanel.setLayout(new java.awt.CardLayout());
 
+        listLayeredPanel.setLayout(new java.awt.BorderLayout());
+
         javax.swing.GroupLayout cardCartListLayeredPaneLayout = new javax.swing.GroupLayout(cardCartListLayeredPane);
         cardCartListLayeredPane.setLayout(cardCartListLayeredPaneLayout);
         cardCartListLayeredPaneLayout.setHorizontalGroup(
@@ -668,8 +670,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
                 .addComponent(cartLayeredPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(cardCartListLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, cardCartListLayeredPaneLayout.createSequentialGroup()
-                    .addContainerGap(1474, Short.MAX_VALUE)
-                    .addComponent(listLayeredPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(1112, Short.MAX_VALUE)
+                    .addComponent(listLayeredPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 501, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, 0)))
         );
         cardCartListLayeredPaneLayout.setVerticalGroup(

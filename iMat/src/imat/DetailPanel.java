@@ -58,9 +58,10 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
         imageLabel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         titleLabel = new javax.swing.JLabel();
-        favBtn = new javax.swing.JButton();
-        priceLabel = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        backButton = new javax.swing.JButton();
+        priceLabel = new javax.swing.JLabel();
+        favBtn = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         amountSpinner = new javax.swing.JSpinner();
         jPanel9 = new javax.swing.JPanel();
@@ -88,6 +89,36 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
         titleLabel.setText("title");
         jPanel1.add(titleLabel);
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+
+        backButton.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        backButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
+        backButton.setText("TILLBAKA");
+        backButton.setToolTipText("Sök i butiken");
+        backButton.setAlignmentX(0.5F);
+        backButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)));
+        backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        backButton.setFocusPainted(false);
+        backButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        backButton.setIconTextGap(0);
+        backButton.setMargin(null);
+        backButton.setMaximumSize(new java.awt.Dimension(75, 60));
+        backButton.setMinimumSize(new java.awt.Dimension(75, 40));
+        backButton.setPreferredSize(new java.awt.Dimension(75, 40));
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
+        jPanel3.add(backButton);
+
+        jPanel1.add(jPanel3);
+
+        priceLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
+        priceLabel.setForeground(new java.awt.Color(255, 0, 0));
+        priceLabel.setText("price");
+        jPanel1.add(priceLabel);
+
         favBtn.setBackground(new java.awt.Color(255, 255, 255));
         favBtn.setFont(new java.awt.Font("Helvetica", 1, 36)); // NOI18N
         favBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/heart-open.png"))); // NOI18N
@@ -106,14 +137,6 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
             }
         });
         jPanel1.add(favBtn);
-
-        priceLabel.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
-        priceLabel.setForeground(new java.awt.Color(255, 0, 0));
-        priceLabel.setText("price");
-        jPanel1.add(priceLabel);
-
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(jPanel3);
 
         jPanel8.setBackground(new java.awt.Color(255, 255, 255));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -205,10 +228,15 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
         this.priceLabel.setText(Double.toString(((Integer)amountSpinner.getValue()) * this.product.getPrice()) + " kr");
     }//GEN-LAST:event_amountSpinnerStateChanged
 
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_backButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addToCartButton;
     private javax.swing.JSpinner amountSpinner;
+    private javax.swing.JButton backButton;
     private javax.swing.JButton favBtn;
     private javax.swing.JLabel imageLabel;
     private javax.swing.JPanel jPanel1;
