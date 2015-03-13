@@ -957,7 +957,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         view.setText("Vy");
 
         showShoppingCart.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        showShoppingCart.setText("Visa varukorg");
+        showShoppingCart.setText("Visa/dölj varukorg");
         showShoppingCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 showShoppingCartActionPerformed(evt);
@@ -966,7 +966,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         view.add(showShoppingCart);
 
         showMyLists.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
-        showMyLists.setText("Visa mina listor");
+        showMyLists.setText("Visa/dölj mina listor");
         showMyLists.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 showMyListsActionPerformed(evt);
