@@ -22,9 +22,9 @@ public class FilterFactory {
     protected static void createFilterCards() {
         meatAndFishFilterCard = new FilterPanel("Kött & Fisk", new String[]{"Fläskkött","Nötkött", "Fisk", "Endast ekologiskt"});
         dairyFilterCard = new FilterPanel("Kylvaror", new String[]{"Mjölk", "Ost", "Ägg", "Laktosfritt", "Endast ekologiskt"});
-        veggieAndFruitsFilterCard = new FilterPanel("Frukt & Grönt", new String[]{"Sallad", "Frukt", "Exotic Frukt", "Bär","Citrus Frukter", "Örter", "Meloner", "Potatis & Ris", "Bönor", "Endast ekologiskt"});
+        veggieAndFruitsFilterCard = new FilterPanel("Frukt & Grönt", new String[]{"Sallad", "Frukt", "Exotic Frukt", "Bär","Citrus Frukter", "Örter", "Meloner", "Rotfrukter", "Grönsaker", "Bönor", "Endast ekologiskt"});
         sweetsFilterCard = new FilterPanel("Godis och Snacks", new String[]{"Godis","Läsk", "Nötter", "Endast ekologiskt"});
         freezerFilterCard = new FilterPanel("Frysvaror", new String[]{"Frysta saker", "Helfabrikat", "Råvaror", "Endast ekologiskt"});
-        pantryFilterCard = new FilterPanel("Skafferi", new String[]{"Mjöl, Socker, Salt", "Kaffe, Te", "Endast ekologiskt"});
+        pantryFilterCard = new FilterPanel("Skafferi", new String[]{"Mjöl, Socker, Salt", "Kaffe, Te", "Pasta", "Potatis, ris", "Endast ekologiskt"});
     }
 }

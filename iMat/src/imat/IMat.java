@@ -91,6 +91,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         setNext(false);
         undo.setEnabled(false);
         redo.setEnabled(false);
+        jMenuItem11.setEnabled(false);
         //addWindowListener(this);
         i = this;
         
@@ -1180,6 +1181,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
     }
     
     private void searchTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchTextFieldFocusGained
+        jMenuItem11.setEnabled(true);
         if(searchTextField.getText().equals("Sök produkt...")){
             searchTextField.setText("");
         }else{
@@ -1188,6 +1190,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
     }//GEN-LAST:event_searchTextFieldFocusGained
 
     private void searchTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_searchTextFieldFocusLost
+        jMenuItem11.setEnabled(false);
         if(searchTextField.getText().equals("")){
             searchTextField.setText("Sök produkt...");
         }
