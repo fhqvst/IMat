@@ -294,7 +294,7 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
                     .addComponent(mobileLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(110, Short.MAX_VALUE))
         );
 
         cardPanel.add(editPanel, "editCard");
@@ -305,7 +305,16 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
         showContactInformationLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         showContactInformationLabel.setText("Kontaktuppgifter");
 
-        editButton.setText("Redigera uppgifter");
+        editButton.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        editButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
+        editButton.setText("REDIGERA UPPGIFTER");
+        editButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)));
+        editButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        editButton.setIconTextGap(0);
+        editButton.setMargin(new java.awt.Insets(0, 0, 0, 0));
+        editButton.setMaximumSize(new java.awt.Dimension(230, 40));
+        editButton.setMinimumSize(new java.awt.Dimension(230, 40));
+        editButton.setPreferredSize(new java.awt.Dimension(230, 40));
         editButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editButtonActionPerformed(evt);
@@ -389,8 +398,8 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
                     .addGroup(showPanelLayout.createSequentialGroup()
                         .addGroup(showPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(showPanelLayout.createSequentialGroup()
-                                .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(218, 218, 218)
+                                .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(176, 176, 176)
                                 .addComponent(filler2, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(userAddress, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(userPostCode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -399,7 +408,6 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
                             .addComponent(userMobile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(showPanelLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
                 .addComponent(showContactInformationLabel)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -441,8 +449,8 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
                             .addComponent(userMobile, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(showMobileLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(editButton)))
-                .addContainerGap(29, Short.MAX_VALUE))
+                        .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(124, Short.MAX_VALUE))
         );
 
         cardPanel.add(showPanel, "showCard");
@@ -493,7 +501,7 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
                                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(frequenceyLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(newReminderButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         reminderPanelLayout.setVerticalGroup(
             reminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -511,7 +519,7 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(newReminderButton)
-                .addContainerGap(218, Short.MAX_VALUE))
+                .addContainerGap(323, Short.MAX_VALUE))
         );
 
         add(reminderPanel);
