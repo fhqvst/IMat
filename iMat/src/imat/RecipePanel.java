@@ -6,6 +6,9 @@
 package imat;
 
 import javax.swing.DefaultListModel;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
+import se.chalmers.ait.dat215.project.Product;
+import se.chalmers.ait.dat215.project.ShoppingItem;
 
 /**
  *
@@ -15,6 +18,7 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
     
     private Object bean;
     private DefaultListModel updateListModel;
+    IMatDataHandler dataHandler = IMatDataHandler.getInstance();
 
     /**
      * Creates new customizer recipePanel
@@ -39,6 +43,13 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
 
         recipePanel = new javax.swing.JPanel();
         recipeResultPanel = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        recipePortionsSlider = new javax.swing.JSlider();
+        jLabel2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         recipeSearchAndSelectPanel = new javax.swing.JPanel();
         receipeSearchPanel = new javax.swing.JPanel();
         receipeSearchTitle = new javax.swing.JLabel();
@@ -58,15 +69,99 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
 
         recipeResultPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setText("Ninjabiffar med ris");
+
+        jCheckBox1.setSelected(true);
+        jCheckBox1.setText("4  kg Köttfärs nöt");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+
+        jCheckBox2.setSelected(true);
+        jCheckBox2.setText("4 kg Jasmin-risi");
+
+        recipePortionsSlider.setMajorTickSpacing(1);
+        recipePortionsSlider.setMaximum(8);
+        recipePortionsSlider.setMinimum(1);
+        recipePortionsSlider.setPaintLabels(true);
+        recipePortionsSlider.setPaintTicks(true);
+        recipePortionsSlider.setToolTipText("");
+        recipePortionsSlider.setValue(4);
+        recipePortionsSlider.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                recipePortionsSliderStateChanged(evt);
+            }
+        });
+
+        jLabel2.setText("Portioner:");
+
+        jButton1.setText("Lägg till i varukorg");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(187, 187, 187)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jCheckBox1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jCheckBox2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(recipePortionsSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton1)))
+                .addContainerGap(215, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(recipePortionsSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jCheckBox1)
+                .addGap(18, 18, 18)
+                .addComponent(jCheckBox2)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
+        );
+
         javax.swing.GroupLayout recipeResultPanelLayout = new javax.swing.GroupLayout(recipeResultPanel);
         recipeResultPanel.setLayout(recipeResultPanelLayout);
         recipeResultPanelLayout.setHorizontalGroup(
             recipeResultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 436, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         recipeResultPanelLayout.setVerticalGroup(
             recipeResultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 492, Short.MAX_VALUE)
+            .addGroup(recipeResultPanelLayout.createSequentialGroup()
+                .addGap(1, 1, 1)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(141, Short.MAX_VALUE))
         );
 
         recipePanel.add(recipeResultPanel, java.awt.BorderLayout.CENTER);
@@ -152,7 +247,7 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
                     .addGroup(receipeSearchPanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(recipeSearchMaxTimeSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addComponent(searchButton)
                 .addContainerGap())
         );
@@ -173,11 +268,77 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
         updateListModel.addElement("Inget recept matchar sökningen.");
     }//GEN-LAST:event_searchButtonActionPerformed
 
+    private void recipePortionsSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_recipePortionsSliderStateChanged
+        jCheckBox1.setText(recipePortionsSlider.getValue() + " kg Köttfärs nöt");
+        jCheckBox2.setText(recipePortionsSlider.getValue() + " kg Jasmin-ris");
+    }//GEN-LAST:event_recipePortionsSliderStateChanged
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if(jCheckBox1.isSelected()){
+            //dataHandler.getShoppingCart().addProduct(dataHandler.findProducts("Köttfärs nöt").get(0), recipePortionsSlider.getValue());
+            Product product = dataHandler.findProducts("Köttfärs nöt").get(0);
+            
+            boolean exists = false;
+                
+            for(int i = 0; i < dataHandler.getShoppingCart().getItems().size(); i++){
+                ShoppingItem temp = dataHandler.getShoppingCart().getItems().get(i);
+                if(temp.getProduct() == product){
+                    temp.setAmount(temp.getAmount() + recipePortionsSlider.getValue());
+                    dataHandler.getShoppingCart().fireShoppingCartChanged(temp, true);
+                    exists = true;
+                    break;
+                }
+            }
+            
+            if(!exists){
+                dataHandler.getShoppingCart().addProduct(product, recipePortionsSlider.getValue());
+            }
+        }
+        
+        if(jCheckBox2.isSelected()){
+            //dataHandler.getShoppingCart().addProduct(dataHandler.findProducts("Spaghetti").get(0), recipePortionsSlider.getValue());
+            
+            Product product = dataHandler.findProducts("Jasmin-ris").get(0);
+            
+            boolean exists = false;
+                
+            for(int i = 0; i < dataHandler.getShoppingCart().getItems().size(); i++){
+                ShoppingItem temp = dataHandler.getShoppingCart().getItems().get(i);
+                if(temp.getProduct() == product){
+                    temp.setAmount(temp.getAmount() + recipePortionsSlider.getValue());
+                    dataHandler.getShoppingCart().fireShoppingCartChanged(temp, true);
+                    exists = true;
+                    break;
+                }
+            }
+            
+            if(!exists){
+                dataHandler.getShoppingCart().addProduct(product, recipePortionsSlider.getValue());
+            }
+        }
+        
+        
+        
+        ((IMat)this.getTopLevelAncestor()).getLayeredPane().moveToFront(((IMat)this.getTopLevelAncestor()).getCardPanel());
+        ((IMat)this.getTopLevelAncestor()).getLayeredPane().moveToBack(((IMat)this.getTopLevelAncestor()).getCartPanel());
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel receipeSearchPanel;
     private javax.swing.JLabel receipeSearchTitle;
     private javax.swing.JPanel recipePanel;
+    private javax.swing.JSlider recipePortionsSlider;
     private javax.swing.JPanel recipeResultPanel;
     private javax.swing.JPanel recipeSearchAndSelectPanel;
     private javax.swing.JLabel recipeSearchMaxPrice;
