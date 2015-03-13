@@ -85,12 +85,15 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
-        setBorder(null);
+        setBackground(new java.awt.Color(255, 255, 255));
+        setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20)));
         setLayout(new java.awt.GridLayout(2, 1));
 
-        myPreferenses.setBorder(null);
+        myPreferenses.setBackground(new java.awt.Color(255, 255, 255));
         myPreferenses.setPreferredSize(new java.awt.Dimension(301, 505));
         myPreferenses.setLayout(new java.awt.GridLayout(1, 0));
+
+        myFavouritesPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         myFavoritesLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         myFavoritesLabel.setText("Mina favoriter");
@@ -110,7 +113,7 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
                 .addContainerGap()
                 .addGroup(myFavouritesPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(myIgnoresLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(myFavouritesScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE)
+                    .addComponent(myFavouritesScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 321, Short.MAX_VALUE)
                     .addComponent(myFavoritesLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(myIgnoresScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap())
@@ -126,12 +129,14 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
                 .addComponent(myIgnoresLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(myIgnoresScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(169, Short.MAX_VALUE))
+                .addContainerGap(152, Short.MAX_VALUE))
         );
 
         myPreferenses.add(myFavouritesPanel);
 
         add(myPreferenses);
+
+        clearInfoPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         clearInfoLabel.setText("Ta bort personlig information");
 
@@ -170,7 +175,7 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
                         .addGroup(clearInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(deleteCardInfoButton)
                             .addComponent(deleteAllInfoButton))))
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
         clearInfoPanelLayout.setVerticalGroup(
             clearInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,7 +190,7 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
                 .addGroup(clearInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(deleteAllInfoButton)
                     .addComponent(jLabel1))
-                .addContainerGap(406, Short.MAX_VALUE))
+                .addContainerGap(392, Short.MAX_VALUE))
         );
 
         add(clearInfoPanel);
