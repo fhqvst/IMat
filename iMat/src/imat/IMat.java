@@ -3,6 +3,7 @@ package imat;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
@@ -63,7 +64,9 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         homeButton.requestFocus();
         
         this.cartLayeredPanel.add(new ProductListPanel(false));
-        
+        this.listLayeredPanel.setPreferredSize(new Dimension(cartLayeredPanel.getWidth(), cartLayeredPanel.getHeight()));
+        this.listLayeredPanel.add(new MyPreviousShopping());
+
         this.productCategoryPanel = new ProductCategoryPanel();
         this.detailPanel = new DetailPanel();
 
@@ -136,7 +139,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         cartLayeredPanel = new javax.swing.JPanel();
         cardPanel = new javax.swing.JPanel();
         listLayeredPanel = new javax.swing.JPanel();
-        listLayeredPanelTitle = new javax.swing.JLabel();
         cartAndListsPanel = new javax.swing.JPanel();
         cartPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -655,9 +657,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         cardPanel.setVerifyInputWhenFocusTarget(false);
         cardPanel.setLayout(new java.awt.CardLayout());
 
-        listLayeredPanelTitle.setText("Mina listor");
-        listLayeredPanel.add(listLayeredPanelTitle);
-
         javax.swing.GroupLayout cardCartListLayeredPaneLayout = new javax.swing.GroupLayout(cardCartListLayeredPane);
         cardCartListLayeredPane.setLayout(cardCartListLayeredPaneLayout);
         cardCartListLayeredPaneLayout.setHorizontalGroup(
@@ -674,12 +673,12 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         );
         cardCartListLayeredPaneLayout.setVerticalGroup(
             cardCartListLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(cartLayeredPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
+            .addComponent(cartLayeredPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE)
             .addComponent(cardPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(cardCartListLayeredPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(cardCartListLayeredPaneLayout.createSequentialGroup()
                     .addGap(0, 0, 0)
-                    .addComponent(listLayeredPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 352, Short.MAX_VALUE)
+                    .addComponent(listLayeredPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 353, Short.MAX_VALUE)
                     .addGap(0, 0, 0)))
         );
         cardCartListLayeredPane.setLayer(cartLayeredPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -1141,7 +1140,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
     }
     
     public void closeCart() {
-        cartLayeredPanel.setBackground(Color.LIGHT_GRAY);   //Just during development
         if (cartShowing){
             cardCartListLayeredPane.moveToFront(cardPanel);
             cardCartListLayeredPane.moveToBack(cartLayeredPanel);
@@ -1571,7 +1569,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
     private javax.swing.JPopupMenu.Separator jSeparator4;
     private javax.swing.JPopupMenu.Separator jSeparator5;
     private javax.swing.JPanel listLayeredPanel;
-    private javax.swing.JLabel listLayeredPanelTitle;
     private javax.swing.JToggleButton listToggleButton;
     private javax.swing.JPanel listsPanel;
     private javax.swing.JLabel logotype;
