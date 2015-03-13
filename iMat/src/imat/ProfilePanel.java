@@ -22,10 +22,10 @@ public class ProfilePanel extends javax.swing.JPanel implements java.beans.Custo
      */
     public ProfilePanel() {
         initComponents();
-        r = new ReminderAndStoredInformation();
-        this.add(r, BorderLayout.WEST);
-        this.add(new MyPreviousShopping(this.getWidth()/3, this.getHeight()));
-        this.add(new MyPreferenses(this.getWidth()/3, this.getHeight()));
+        
+        this.add(new ReminderAndStoredInformation());
+        this.add(new MyPreviousShopping());
+        this.add(new MyPreferenses());
     }
     
     public void setObject(Object bean) {
@@ -44,7 +44,8 @@ public class ProfilePanel extends javax.swing.JPanel implements java.beans.Custo
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setLayout(new java.awt.GridLayout());
+        setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        setLayout(new java.awt.GridLayout(1, 3, 20, 0));
     }// </editor-fold>//GEN-END:initComponents
 
 
