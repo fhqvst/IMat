@@ -15,19 +15,25 @@ import javax.swing.BoxLayout;
 public class ProfilePanel extends javax.swing.JPanel implements java.beans.Customizer {
     
     private Object bean;
+    private static ReminderAndStoredInformation r;
 
     /**
      * Creates new customizer ProfilePanel
      */
     public ProfilePanel() {
         initComponents();
-        this.add(new ReminderAndStoredInformation(), BorderLayout.WEST);
+        r = new ReminderAndStoredInformation();
+        this.add(r, BorderLayout.WEST);
         this.add(new MyPreviousShopping(this.getWidth()/3, this.getHeight()));
         this.add(new MyPreferenses(this.getWidth()/3, this.getHeight()));
     }
     
     public void setObject(Object bean) {
         this.bean = bean;
+    }
+    
+    public static ReminderAndStoredInformation getReminderAndStoredInformation() {
+        return r;
     }
 
     /**

@@ -501,6 +501,8 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
         
         CardLayout cards = (CardLayout) cardPanel.getLayout();
         cards.show(cardPanel, "showCard");
+        CheckoutPanel c = IMat.getCheckoutPanel();
+        c.customerToTextFields();
     }//GEN-LAST:event_saveButtonActionPerformed
 
     private void postCodeTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_postCodeTextFieldActionPerformed

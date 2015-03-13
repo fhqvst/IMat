@@ -78,7 +78,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         
     }
     
-    private void customerToTextFields(){
+    public void customerToTextFields(){
         firstNameTextField.setText(dataHandler.getCustomer().getFirstName());
         lastNameTextField.setText(dataHandler.getCustomer().getLastName());
         addressTextField.setText(dataHandler.getCustomer().getAddress());
@@ -894,6 +894,9 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
                 dataHandler.getCustomer().setMobilePhoneNumber(mobileNumberTextField.getText());
                 dataHandler.getCustomer().setPhoneNumber(phoneNumberTextField.getText());
                 dataHandler.getCustomer().setEmail(emailTextField.getText());
+                ReminderAndStoredInformation r = ProfilePanel.getReminderAndStoredInformation();
+                r.setTextFieldsFromStoredInformation();
+                r.setLabelsFromStoredInformation();
             }
         }
     }//GEN-LAST:event_page1NextButtonActionPerformed
