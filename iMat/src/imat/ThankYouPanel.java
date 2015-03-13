@@ -37,14 +37,14 @@ public class ThankYouPanel extends javax.swing.JPanel implements java.beans.Cust
 
         setLayout(new java.awt.GridLayout(2, 1));
 
-        jLabel2.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Helvetica", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 153, 153));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Tack för ditt köp");
         jLabel2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         add(jLabel2);
 
-        jLabel1.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("VÄLKOMMEN ÅTER");
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
