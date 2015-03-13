@@ -868,22 +868,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         Pattern PHONENUMBER = Pattern.compile("^\\+?[\\d\\-]+$");
         Pattern CCV = Pattern.compile("^\\d{3}$");
         Pattern ADDRESS = Pattern.compile("^[\\w|\\s]+$");
-        Pattern POST_CODE = Pattern.compile("^\\d{3}\\s?\\d{2}$");
-
-        
-        /*
-        Pattern POSITIVE_INTEGER = Pattern.compile("^\\d{3}\\s\\d{2}$");
-        Matcher m = POSITIVE_INTEGER.matcher(priceTextField.getText());
-        if(m.find()) {
-            String maxPrice = priceTextField.getText();
-            if (maxPrice.equals("")) {
-                return 0;
-            }
-            return Integer.parseInt(maxPrice);
-        }
-        throw new IllegalArgumentException("Not a positive integer.");
-        */
-        
+        Pattern POST_CODE = Pattern.compile("^\\d{3}\\s?\\d{2}$");        
         
         if(dataHandler.getShoppingCart().getItems().size() > 0){
             
@@ -910,11 +895,6 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
                         error = true;
                         page1RequiredLabels.get(i).setForeground(Color.red);
                         
-                }    
-                
-                if  (error) {
-                    errorLabel1.setText("Var vänlig ange rätt format i alla rödmarkerade fält.");
-                    errorLabel1.setVisible(true);
                 }
                 
                 if(page1RequiredTextFields.get(i).getText().equals("")){
@@ -923,8 +903,10 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
                     error = true;
                     errorLabel1.setText("Var vänlig fyll i alla fält markerade med *");
                     errorLabel1.setVisible(true);
+                } else if (error) {
+                    errorLabel1.setText("Var vänlig ange rätt format i alla rödmarkerade fält.");
+                    errorLabel1.setVisible(true);
                 }
-                
                 else{
                     page1RequiredLabels.get(i).setForeground(Color.black);
                 }
