@@ -118,17 +118,24 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
         jComboBox1 = new javax.swing.JComboBox();
         newReminderButton = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+        setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20)));
         setMaximumSize(new java.awt.Dimension(300, 300));
         setMinimumSize(new java.awt.Dimension(300, 300));
         setPreferredSize(new java.awt.Dimension(200, 400));
-        setLayout(new java.awt.GridLayout(2, 1));
+        setLayout(new java.awt.GridLayout(2, 1, 0, 20));
 
         cardPanel.setLayout(new java.awt.CardLayout());
 
-        editPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        editPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        saveButton.setText("Spara ändringar");
-        saveButton.setPreferredSize(null);
+        saveButton.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        saveButton.setForeground(new java.awt.Color(255, 255, 255));
+        saveButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green.png"))); // NOI18N
+        saveButton.setText("SPARA ÄNDRINGAR");
+        saveButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)));
+        saveButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        saveButton.setPreferredSize(new java.awt.Dimension(100, 40));
         saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 saveButtonActionPerformed(evt);
@@ -136,8 +143,16 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
         });
 
         mobileTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        mobileTextField.setMaximumSize(new java.awt.Dimension(100, 40));
+        mobileTextField.setMinimumSize(new java.awt.Dimension(100, 40));
+        mobileTextField.setPreferredSize(new java.awt.Dimension(100, 40));
+        mobileTextField.setSize(new java.awt.Dimension(100, 40));
 
         emailTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        emailTextField.setMaximumSize(new java.awt.Dimension(100, 40));
+        emailTextField.setMinimumSize(new java.awt.Dimension(100, 40));
+        emailTextField.setPreferredSize(new java.awt.Dimension(100, 40));
+        emailTextField.setSize(new java.awt.Dimension(100, 40));
         emailTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 emailTextFieldActionPerformed(evt);
@@ -148,6 +163,10 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
         mobileLabel.setText("Mobil:");
 
         postCodeTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        postCodeTextField.setMaximumSize(new java.awt.Dimension(100, 40));
+        postCodeTextField.setMinimumSize(new java.awt.Dimension(100, 40));
+        postCodeTextField.setPreferredSize(new java.awt.Dimension(100, 40));
+        postCodeTextField.setSize(new java.awt.Dimension(100, 40));
         postCodeTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 postCodeTextFieldActionPerformed(evt);
@@ -155,6 +174,10 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
         });
 
         addressTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        addressTextField.setMaximumSize(new java.awt.Dimension(100, 40));
+        addressTextField.setMinimumSize(new java.awt.Dimension(100, 40));
+        addressTextField.setPreferredSize(new java.awt.Dimension(100, 40));
+        addressTextField.setSize(new java.awt.Dimension(100, 40));
         addressTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addressTextFieldActionPerformed(evt);
@@ -162,8 +185,16 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
         });
 
         lastNameTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        lastNameTextField.setMaximumSize(new java.awt.Dimension(100, 40));
+        lastNameTextField.setMinimumSize(new java.awt.Dimension(100, 40));
+        lastNameTextField.setPreferredSize(new java.awt.Dimension(100, 40));
+        lastNameTextField.setSize(new java.awt.Dimension(100, 40));
 
         firstNameTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        firstNameTextField.setMaximumSize(new java.awt.Dimension(100, 40));
+        firstNameTextField.setMinimumSize(new java.awt.Dimension(100, 40));
+        firstNameTextField.setPreferredSize(new java.awt.Dimension(100, 40));
+        firstNameTextField.setSize(new java.awt.Dimension(100, 40));
 
         postCodeLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         postCodeLabel.setText("Postnummer:");
@@ -180,11 +211,15 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
         firstNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         firstNameLabel.setText("Förnamn:");
 
-        contactInformationLabel.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        contactInformationLabel.setFont(new java.awt.Font("Helvetica", 1, 18)); // NOI18N
         contactInformationLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         contactInformationLabel.setText("Kontaktuppgifter");
 
         postAddressTextField.setHorizontalAlignment(javax.swing.JTextField.LEFT);
+        postAddressTextField.setMaximumSize(new java.awt.Dimension(100, 40));
+        postAddressTextField.setMinimumSize(new java.awt.Dimension(100, 40));
+        postAddressTextField.setPreferredSize(new java.awt.Dimension(100, 40));
+        postAddressTextField.setSize(new java.awt.Dimension(100, 40));
         postAddressTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 postAddressTextFieldActionPerformed(evt);
@@ -200,9 +235,6 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
             .addGroup(editPanelLayout.createSequentialGroup()
                 .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(editPanelLayout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(contactInformationLabel))
-                    .addGroup(editPanelLayout.createSequentialGroup()
                         .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(postAddressLabel)
                             .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -217,19 +249,22 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
                             .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(firstNameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
-                                .addComponent(lastNameTextField)
-                                .addComponent(addressTextField)
+                                .addComponent(lastNameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(addressTextField, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(postCodeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(postAddressTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(mobileTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(667, Short.MAX_VALUE))
+                            .addComponent(mobileTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(editPanelLayout.createSequentialGroup()
+                        .addGap(0, 0, 0)
+                        .addComponent(contactInformationLabel)))
+                .addGap(0, 0, 0))
         );
         editPanelLayout.setVerticalGroup(
             editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(editPanelLayout.createSequentialGroup()
                 .addComponent(contactInformationLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(20, 20, 20)
                 .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(firstNameLabel)
                     .addComponent(firstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -259,19 +294,18 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
                     .addComponent(mobileLabel))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(222, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         cardPanel.add(editPanel, "editCard");
 
-        showPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
+        showPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        showContactInformationLabel.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        showContactInformationLabel.setFont(new java.awt.Font("Helvetica", 1, 18)); // NOI18N
         showContactInformationLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         showContactInformationLabel.setText("Kontaktuppgifter");
 
         editButton.setText("Redigera uppgifter");
-        editButton.setPreferredSize(null);
         editButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editButtonActionPerformed(evt);
@@ -363,9 +397,9 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
                             .addComponent(userPostAddress)
                             .addComponent(userEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(userMobile, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(66, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(showPanelLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(0, 0, 0)
                 .addComponent(showContactInformationLabel)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -407,13 +441,15 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
                             .addComponent(userMobile, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(showMobileLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(editButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(221, Short.MAX_VALUE))
+                        .addComponent(editButton)))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         cardPanel.add(showPanel, "showCard");
 
         add(cardPanel);
+
+        reminderPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         reminderLabel.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
         reminderLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -457,7 +493,7 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
                                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(frequenceyLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(newReminderButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap(167, Short.MAX_VALUE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
         reminderPanelLayout.setVerticalGroup(
             reminderPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -475,7 +511,7 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(newReminderButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(218, Short.MAX_VALUE))
         );
 
         add(reminderPanel);

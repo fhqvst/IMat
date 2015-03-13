@@ -103,12 +103,15 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(255, 255, 255));
+        setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20)));
         setLayout(new java.awt.GridLayout(1, 0));
 
         myStoredListsScrollPane.setBorder(null);
         myStoredListsScrollPane.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         myStoredListsScrollPane.setPreferredSize(new java.awt.Dimension(300, 400));
 
+        myStoredListsPanel.setBackground(new java.awt.Color(255, 255, 255));
         myStoredListsPanel.setPreferredSize(new java.awt.Dimension(250, 250));
 
         myStoredListsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -275,7 +278,7 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(productsToCart, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(163, Short.MAX_VALUE))
+                .addContainerGap(127, Short.MAX_VALUE))
         );
 
         myStoredListsScrollPane.setViewportView(myStoredListsPanel);

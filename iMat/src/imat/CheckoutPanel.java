@@ -9,6 +9,8 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
@@ -653,8 +655,9 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         deliveryDateLabel.setPreferredSize(new java.awt.Dimension(13333337, 30));
         middlePanel1.add(deliveryDateLabel);
 
+        deliveryDateTextField.setEditable(false);
         deliveryDateTextField.setFont(new java.awt.Font("Helvetica", 0, 14)); // NOI18N
-        deliveryDateTextField.setText("13-03-2015");
+        deliveryDateTextField.setText("2015-03-14");
         deliveryDateTextField.setAutoscrolls(false);
         deliveryDateTextField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
         deliveryDateTextField.setMaximumSize(new java.awt.Dimension(2147483647, 60));
@@ -745,7 +748,6 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         page2NextButton.setBorderPainted(false);
         page2NextButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         page2NextButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        page2NextButton.setMargin(new java.awt.Insets(0, 0, 0, 0));
         page2NextButton.setMaximumSize(new java.awt.Dimension(120, 60));
         page2NextButton.setMinimumSize(new java.awt.Dimension(100, 60));
         page2NextButton.setPreferredSize(new java.awt.Dimension(120, 60));
@@ -859,16 +861,53 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
 
     private void page1NextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_page1NextButtonActionPerformed
         boolean error = false;
+        
+        Pattern DEFAULT = Pattern.compile("^.+$");
+        Pattern NAME = Pattern.compile("^[^\\d]+$");
+        Pattern EMAIL = Pattern.compile("^\\w+@\\w+\\.\\w+$");
+        Pattern PHONENUMBER = Pattern.compile("^\\+?[\\d\\-\\s]+$");
+        Pattern CCV = Pattern.compile("^\\d{3}$");
+        Pattern ADDRESS = Pattern.compile("^[\\w\\s]+$");
+        Pattern POST_CODE = Pattern.compile("^\\d{3}\\s?\\d{2}$");        
+        
         if(dataHandler.getShoppingCart().getItems().size() > 0){
             
             for(int i = 0; i < page1RequiredTextFields.size(); i++){
+                String text = page1RequiredTextFields.get(i).getText();
+                Matcher m = DEFAULT.matcher(text);
+                if (i < 2 ) {
+                    m = NAME.matcher(text);
+                    
+                }/* else if (i == 2) {
+                    m = ADDRESS.matcher(text);
+  
+                }*/ else if (i == 3) {
+                    m = POST_CODE.matcher(text);
+
+                }/* else if (i == 4) {
+                    m = ADDRESS.matcher(text);
+
+                }*/ else if (i == 5) {
+                    m = PHONENUMBER.matcher(text);
+
+                }
+                if (!m.find()) {
+                        error = true;
+                        page1RequiredLabels.get(i).setForeground(Color.red);
+                        
+                }
+                
                 if(page1RequiredTextFields.get(i).getText().equals("")){
                     page1RequiredLabels.get(i).setForeground(Color.red);
                     
                     error = true;
                     errorLabel1.setText("Var vänlig fyll i alla fält markerade med *");
                     errorLabel1.setVisible(true);
-                }else{
+                } else if (error) {
+                    errorLabel1.setText("Var vänlig ange rätt format i alla rödmarkerade fält.");
+                    errorLabel1.setVisible(true);
+                }
+                else{
                     page1RequiredLabels.get(i).setForeground(Color.black);
                 }
             }
@@ -878,6 +917,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
             errorLabel1.setText("Välj först några varor att köpa.");
             errorLabel1.setVisible(true);
         }
+       
         
         if(!error){
             showCard("page2");
