@@ -94,6 +94,9 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
             case "Potatis, ris": return ProductCategory.POTATO_RICE;
             case "Godis": return ProductCategory.SWEET;
             case "Bönor": return ProductCategory.POD;
+            case "Rotfrukter": return ProductCategory.ROOT_VEGETABLE;
+            case "Grönsaker" : return ProductCategory.VEGETABLE_FRUIT;
+                
             
             default: return null;
         }
@@ -141,7 +144,6 @@ public class FilterPanel extends javax.swing.JPanel implements java.beans.Custom
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
-        setAlignmentX(0.5F);
         setMaximumSize(new java.awt.Dimension(250, 32767));
         setMinimumSize(new java.awt.Dimension(250, 0));
         setPreferredSize(new java.awt.Dimension(250, 600));
