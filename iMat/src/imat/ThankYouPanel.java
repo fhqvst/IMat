@@ -5,6 +5,9 @@
  */
 package imat;
 
+import se.chalmers.ait.dat215.project.Customer;
+import se.chalmers.ait.dat215.project.IMatDataHandler;
+
 /**
  *
  * @author filip
@@ -12,12 +15,15 @@ package imat;
 public class ThankYouPanel extends javax.swing.JPanel implements java.beans.Customizer {
     
     private Object bean;
+    private Customer customer;
 
     /**
      * Creates new customizer ThankYouPanel
      */
     public ThankYouPanel() {
+        customer = IMatDataHandler.getInstance().getCustomer();
         initComponents();
+        jLabel3.setText("Vi skickar en bekräftlse till följande mail adress" + customer.getEmail());
     }
     
     public void setObject(Object bean) {
@@ -33,29 +39,44 @@ public class ThankYouPanel extends javax.swing.JPanel implements java.beans.Cust
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
-        setLayout(new java.awt.GridLayout(2, 1));
+        setLayout(new java.awt.GridLayout(2, 0));
 
-        jLabel2.setFont(new java.awt.Font("Helvetica", 1, 36)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Helvetica", 1, 48)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 153, 153));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Tack för ditt köp");
         jLabel2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         add(jLabel2);
 
-        jLabel1.setFont(new java.awt.Font("Helvetica", 0, 24)); // NOI18N
+        jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.PAGE_AXIS));
+
+        jLabel1.setFont(new java.awt.Font("Helvetica", 0, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("VÄLKOMMEN ÅTER");
         jLabel1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel1.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 0, 0, 0));
+        jLabel1.setMaximumSize(new java.awt.Dimension(1337000000, 60));
         jLabel1.setPreferredSize(new java.awt.Dimension(134, 20));
-        add(jLabel1);
+        jPanel1.add(jLabel1);
+
+        jLabel3.setFont(new java.awt.Font("Helvetica", 0, 14)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jLabel3.setMaximumSize(new java.awt.Dimension(1337000000, 20));
+        jPanel1.add(jLabel3);
+
+        add(jPanel1);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
