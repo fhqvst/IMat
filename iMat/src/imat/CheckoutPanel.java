@@ -863,11 +863,11 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         boolean error = false;
         
         Pattern DEFAULT = Pattern.compile("^.+$");
-        Pattern NAME = Pattern.compile("^\\w+$");
+        Pattern NAME = Pattern.compile("^[^\\d]+$");
         Pattern EMAIL = Pattern.compile("^\\w+@\\w+\\.\\w+$");
-        Pattern PHONENUMBER = Pattern.compile("^\\+?[\\d\\-]+$");
+        Pattern PHONENUMBER = Pattern.compile("^\\+?[\\d\\-\\s]+$");
         Pattern CCV = Pattern.compile("^\\d{3}$");
-        Pattern ADDRESS = Pattern.compile("^[\\w|\\s]+$");
+        Pattern ADDRESS = Pattern.compile("^[\\w\\s]+$");
         Pattern POST_CODE = Pattern.compile("^\\d{3}\\s?\\d{2}$");        
         
         if(dataHandler.getShoppingCart().getItems().size() > 0){
