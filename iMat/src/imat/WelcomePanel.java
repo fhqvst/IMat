@@ -25,7 +25,7 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
     public WelcomePanel() {
         initComponents();
         
-        ProductCategoryPanel campaignProducts = new ProductCategoryPanel(ProductCategory.POD);
+        ProductCategoryPanel campaignProducts = new ProductCategoryPanel(ProductCategory.CABBAGE);
         
         campaignProducts.remove(campaignProducts.filterPanel);
         
@@ -131,7 +131,7 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
 
         campaignLabel.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         campaignLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        campaignLabel.setText("Just nu har vi 7 varor på kampanj.");
+        campaignLabel.setText("Just nu har vi 8 varor på kampanj.");
         campaignLabel.setToolTipText("");
         welcomePanel.add(campaignLabel, java.awt.BorderLayout.CENTER);
 
