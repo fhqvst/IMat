@@ -117,8 +117,10 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
 
         if (changeNumber < 2) {
             firstButton.setVisible(false);
+            previousButton.setVisible(false);
         } else {
             firstButton.setVisible(true);
+            previousButton.setVisible(true);
         }
         
     }
@@ -150,9 +152,11 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
 
         if (changeNumber > NUMBER_OF_HINTS-1){
             lastButton.setVisible(false);
+            nextButton.setVisible(false);
         } else {
             lastButton.setVisible(true);
-        } 
+            nextButton.setVisible(true);
+        }
     }
     
     public String getDummyText() {
