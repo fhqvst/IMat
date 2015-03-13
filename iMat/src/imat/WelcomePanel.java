@@ -25,7 +25,7 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
     public WelcomePanel() {
         initComponents();
         
-        ProductCategoryPanel campaignProducts = new ProductCategoryPanel(ProductCategory.POD);
+        ProductCategoryPanel campaignProducts = new ProductCategoryPanel(ProductCategory.CABBAGE);
         
         campaignProducts.remove(campaignProducts.filterPanel);
         
@@ -53,6 +53,7 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
         newsPanel = new javax.swing.JPanel();
         recipeOfTheDaySubtitle = new javax.swing.JLabel();
         recipeOfTheDayTitle = new javax.swing.JLabel();
+        recipeLinkLabel = new javax.swing.JLabel();
         jTextArea1 = new javax.swing.JTextArea();
         trendsSubtitle = new javax.swing.JLabel();
         trendsTitle = new javax.swing.JLabel();
@@ -81,6 +82,16 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
         recipeOfTheDayTitle.setText("Ninjabiffar med ris");
         recipeOfTheDayTitle.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 20, 0));
         newsPanel.add(recipeOfTheDayTitle);
+
+        recipeLinkLabel.setForeground(new java.awt.Color(255, 102, 102));
+        recipeLinkLabel.setText("Till recept...");
+        recipeLinkLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        recipeLinkLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                recipeLinkLabelMouseClicked(evt);
+            }
+        });
+        newsPanel.add(recipeLinkLabel);
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
@@ -131,7 +142,7 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
 
         campaignLabel.setFont(new java.awt.Font("Lucida Grande", 0, 18)); // NOI18N
         campaignLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        campaignLabel.setText("Just nu har vi 7 varor på kampanj.");
+        campaignLabel.setText("Just nu har vi 8 varor på kampanj.");
         campaignLabel.setToolTipText("");
         welcomePanel.add(campaignLabel, java.awt.BorderLayout.CENTER);
 
@@ -140,6 +151,11 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
         add(contentPanel);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void recipeLinkLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_recipeLinkLabelMouseClicked
+        ((IMat)this.getTopLevelAncestor()).switchCard("recipePanel", null);
+        //((IMat)this.getTopLevelAncestor()).receipeButton.setSelected();
+    }//GEN-LAST:event_recipeLinkLabelMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel campaignLabel;
@@ -147,6 +163,7 @@ public class WelcomePanel extends javax.swing.JPanel implements java.beans.Custo
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea3;
     private javax.swing.JPanel newsPanel;
+    private javax.swing.JLabel recipeLinkLabel;
     private javax.swing.JLabel recipeOfTheDaySubtitle;
     private javax.swing.JLabel recipeOfTheDayTitle;
     private javax.swing.JLabel trendsSubtitle;

@@ -30,7 +30,7 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
         this.product = product;
         this.titleLabel.setText(product.getName());
         this.priceLabel.setText(Double.toString(product.getPrice()));
-        this.imageLabel.setIcon(IMat.dataHandler.getImageIcon(product, 600, 600));
+        this.imageLabel.setIcon(IMat.dataHandler.getImageIcon(product, 256, 200));
         this.unitLabel.setText(product.getUnitSuffix());
         this.amountSpinner.setValue(1);
         if(dataHandler.favorites().contains(product)){
