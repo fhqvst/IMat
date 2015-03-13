@@ -25,8 +25,13 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
      */
     public RecipePanel() {
         initComponents();
-        updateListModel = new DefaultListModel();
-        recipeSelectList.setModel(updateListModel);
+        //updateListModel = new DefaultListModel();
+        //recipeSelectList.setModel(updateListModel);
+        
+        Product product1 = dataHandler.findProducts("Köttfärs nöt").get(0);
+        Product product2 = dataHandler.findProducts("Jasmin-ris").get(0);
+        
+        totalLabel.setText("Total: " + Math.round(product1.getPrice()*recipePortionsSlider.getValue()*100 + product2.getPrice()*recipePortionsSlider.getValue()*100)/100 + " kr");
     }
     
     public void setObject(Object bean) {
@@ -50,6 +55,8 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
         recipePortionsSlider = new javax.swing.JSlider();
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        totalLabel = new javax.swing.JLabel();
+        jTextArea1 = new javax.swing.JTextArea();
         recipeSearchAndSelectPanel = new javax.swing.JPanel();
         receipeSearchPanel = new javax.swing.JPanel();
         receipeSearchTitle = new javax.swing.JLabel();
@@ -60,19 +67,19 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
         recipeSearchMaxTime = new javax.swing.JLabel();
         recipeSearchMaxTimeSlider = new javax.swing.JSlider();
         searchButton = new javax.swing.JButton();
-        recipeSelectScrollPane = new javax.swing.JScrollPane();
-        recipeSelectList = new javax.swing.JList();
 
         setLayout(new java.awt.BorderLayout());
 
         recipePanel.setLayout(new java.awt.BorderLayout());
 
-        recipeResultPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        recipeResultPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(102, 102, 102)));
 
         jLabel1.setText("Ninjabiffar med ris");
 
+        jCheckBox1.setBackground(new java.awt.Color(255, 255, 255));
         jCheckBox1.setSelected(true);
         jCheckBox1.setText("4  kg Köttfärs nöt");
         jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
@@ -81,9 +88,11 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
             }
         });
 
+        jCheckBox2.setBackground(new java.awt.Color(255, 255, 255));
         jCheckBox2.setSelected(true);
         jCheckBox2.setText("4 kg Jasmin-risi");
 
+        recipePortionsSlider.setBackground(new java.awt.Color(255, 255, 255));
         recipePortionsSlider.setMajorTickSpacing(1);
         recipePortionsSlider.setMaximum(8);
         recipePortionsSlider.setMinimum(1);
@@ -106,47 +115,59 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
             }
         });
 
+        totalLabel.setText("Totalt: 0kr");
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setColumns(20);
+        jTextArea1.setLineWrap(true);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Nam venenatis nisl at sem blandit, at laoreet sapien auctor. Fusce hendrerit leo sit amet suscipit vestibulum. Integer sem nulla, sollicitudin at nunc sit amet, commodo imperdiet nunc. Aliquam congue ligula eget urna interdum, sit amet lacinia ipsum suscipit. Cras vitae aliquam ante, quis dictum metus. Morbi auctor rhoncus sodales. Etiam malesuada velit ac ligula dapibus, ornare porttitor velit consectetur.");
+        jTextArea1.setWrapStyleWord(true);
+        jTextArea1.setFocusable(false);
+        jTextArea1.setMinimumSize(new java.awt.Dimension(0, 0));
+        jTextArea1.setPreferredSize(new java.awt.Dimension(2147483647, 2147483647));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(187, 187, 187)
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(187, 187, 187)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jCheckBox1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jCheckBox2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(recipePortionsSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton1)))
-                .addContainerGap(215, Short.MAX_VALUE))
+                    .addComponent(jLabel2)
+                    .addComponent(recipePortionsSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1)
+                    .addComponent(jCheckBox2)
+                    .addComponent(totalLabel)
+                    .addComponent(jCheckBox1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                .addComponent(jTextArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 106, Short.MAX_VALUE)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(recipePortionsSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jCheckBox1)
-                .addGap(18, 18, 18)
-                .addComponent(jCheckBox2)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(recipePortionsSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jCheckBox1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jCheckBox2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(totalLabel)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextArea1, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE))
                 .addGap(28, 28, 28))
         );
 
@@ -161,14 +182,17 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
             .addGroup(recipeResultPanelLayout.createSequentialGroup()
                 .addGap(1, 1, 1)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(141, Short.MAX_VALUE))
+                .addContainerGap(103, Short.MAX_VALUE))
         );
 
         recipePanel.add(recipeResultPanel, java.awt.BorderLayout.CENTER);
 
+        recipeSearchAndSelectPanel.setBackground(new java.awt.Color(255, 255, 255));
+        recipeSearchAndSelectPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 1, new java.awt.Color(102, 102, 102)));
         recipeSearchAndSelectPanel.setPreferredSize(new java.awt.Dimension(400, 100));
         recipeSearchAndSelectPanel.setLayout(new java.awt.GridLayout(2, 0));
 
+        receipeSearchPanel.setBackground(new java.awt.Color(255, 255, 255));
         receipeSearchPanel.setPreferredSize(new java.awt.Dimension(0, 0));
 
         receipeSearchTitle.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
@@ -181,6 +205,7 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
         recipeSearchMaxTime.setText("Tillagningstid");
         recipeSearchMaxTime.setToolTipText("Välj maximal tillagningstid");
 
+        recipeSearchMaxTimeSlider.setBackground(new java.awt.Color(255, 255, 255));
         recipeSearchMaxTimeSlider.setMajorTickSpacing(30);
         recipeSearchMaxTimeSlider.setMaximum(180);
         recipeSearchMaxTimeSlider.setPaintLabels(true);
@@ -208,7 +233,7 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
                             .addGroup(receipeSearchPanelLayout.createSequentialGroup()
                                 .addComponent(recipeSearchMaxTime)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(recipeSearchMaxTimeSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE))
+                                .addComponent(recipeSearchMaxTimeSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE))
                             .addGroup(receipeSearchPanelLayout.createSequentialGroup()
                                 .addGroup(receipeSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(recipeSearchMaxPrice)
@@ -247,16 +272,12 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
                     .addGroup(receipeSearchPanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(recipeSearchMaxTimeSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                 .addComponent(searchButton)
                 .addContainerGap())
         );
 
         recipeSearchAndSelectPanel.add(receipeSearchPanel);
-
-        recipeSelectScrollPane.setViewportView(recipeSelectList);
-
-        recipeSearchAndSelectPanel.add(recipeSelectScrollPane);
 
         recipePanel.add(recipeSearchAndSelectPanel, java.awt.BorderLayout.WEST);
 
@@ -269,8 +290,12 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
     }//GEN-LAST:event_searchButtonActionPerformed
 
     private void recipePortionsSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_recipePortionsSliderStateChanged
-        jCheckBox1.setText(recipePortionsSlider.getValue() + " kg Köttfärs nöt");
-        jCheckBox2.setText(recipePortionsSlider.getValue() + " kg Jasmin-ris");
+        Product product1 = dataHandler.findProducts("Köttfärs nöt").get(0);
+        Product product2 = dataHandler.findProducts("Jasmin-ris").get(0);
+        
+        jCheckBox1.setText(recipePortionsSlider.getValue() + " kg Köttfärs nöt, " + Math.round(product1.getPrice()*recipePortionsSlider.getValue()*100)/100 + " kr");
+        jCheckBox2.setText(recipePortionsSlider.getValue() + " kg Jasmin-ris, " + Math.round(product2.getPrice()*recipePortionsSlider.getValue()*100)/100 + " kr");
+        totalLabel.setText("Total: " + Math.round(product1.getPrice()*recipePortionsSlider.getValue()*100 + product2.getPrice()*recipePortionsSlider.getValue()*100)/100 + " kr");
     }//GEN-LAST:event_recipePortionsSliderStateChanged
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
@@ -335,6 +360,7 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JPanel receipeSearchPanel;
     private javax.swing.JLabel receipeSearchTitle;
     private javax.swing.JPanel recipePanel;
@@ -347,8 +373,7 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
     private javax.swing.JSlider recipeSearchMaxTimeSlider;
     private javax.swing.JLabel recipeSearchWord;
     private javax.swing.JTextField recipeSearchWordTextField;
-    private javax.swing.JList recipeSelectList;
-    private javax.swing.JScrollPane recipeSelectScrollPane;
     private javax.swing.JButton searchButton;
+    private javax.swing.JLabel totalLabel;
     // End of variables declaration//GEN-END:variables
 }

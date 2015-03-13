@@ -72,6 +72,20 @@
             </Property>
           </Properties>
         </Component>
+        <Component class="javax.swing.JLabel" name="recipeLinkLabel">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="66" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Till recept..."/>
+            <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+              <Color id="Handmark&#xf6;r"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="recipeLinkLabelMouseClicked"/>
+          </Events>
+        </Component>
         <Component class="javax.swing.JTextArea" name="jTextArea1">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
