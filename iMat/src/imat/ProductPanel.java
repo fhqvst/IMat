@@ -214,8 +214,8 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
             dataHandler.getShoppingCart().addProduct(product, (Integer)amountSpinner.getValue());
         }
         
-        ((IMat)this.getTopLevelAncestor()).getLayeredPane().moveToFront(((IMat)this.getTopLevelAncestor()).getCardPanel());
-        ((IMat)this.getTopLevelAncestor()).getLayeredPane().moveToBack(((IMat)this.getTopLevelAncestor()).getCartPanel());
+        //((IMat)this.getTopLevelAncestor()).getLayeredPane().moveToFront(((IMat)this.getTopLevelAncestor()).getCardPanel());
+        //((IMat)this.getTopLevelAncestor()).getLayeredPane().moveToBack(((IMat)this.getTopLevelAncestor()).getCartPanel());
         
     }//GEN-LAST:event_addToCartButtonActionPerformed
 

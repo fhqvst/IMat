@@ -11,8 +11,6 @@ import java.util.LinkedList;
 import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.AbstractButton;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -36,16 +34,21 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
     
     private ProductCategoryPanel productCategoryPanel;
     private DetailPanel detailPanel;
-    private boolean cartShowing = true;
-    private boolean listShowing = true;
     private LinkedList<ActionEvent> previousCards =  new LinkedList<>();
     private LinkedList<ActionEvent> nextCards =  new LinkedList<>();
     private LinkedList<ShoppingItem> lastAdded = new LinkedList<>();
     private LinkedList<ShoppingItem> lastRemoved = new LinkedList<>();
     private static CheckoutPanel c;
     private static IMat i;
+    private boolean cartIsShowing;
+    private boolean listIsShowing;
 
     private int currentCategoryIndex;
+    
+    //Herp
+    //Derp
+    //undo
+    //buffer
     
     /**
      * Creates new form IMat
@@ -71,8 +74,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
 
         this.productCategoryPanel = new ProductCategoryPanel();
         this.detailPanel = new DetailPanel();
-
-        cardCartListLayeredPane.moveToFront(cardPanel);
         
         FilterFactory.createFilterCards();
                 
@@ -86,15 +87,12 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         this.cardPanel.add(detailPanel, "detailPanel");
         this.cardPanel.add(new ThankYouPanel(), "thankYouPanel");
         
-        closeClosablePanels();
-        
         homeButton.doClick();
         setPrevious(false);
         setNext(false);
         undo.setEnabled(false);
         redo.setEnabled(false);
         jMenuItem11.setEnabled(false);
-        //addWindowListener(this);
         i = this;
         
     }
@@ -145,12 +143,12 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         cartAndListsPanel = new javax.swing.JPanel();
         cartPanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        cartToggleButton = new javax.swing.JToggleButton();
+        cartToggleButton = new javax.swing.JButton();
         cartAmountLabel = new javax.swing.JLabel();
         cartPriceLabel = new javax.swing.JLabel();
         listsPanel = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        listToggleButton = new javax.swing.JToggleButton();
+        listToggleButton = new javax.swing.JButton();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 100), new java.awt.Dimension(0, 100), new java.awt.Dimension(2147483647, 2147483647));
         menu = new javax.swing.JMenuBar();
         file = new javax.swing.JMenu();
@@ -661,11 +659,41 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
 
         cartLayeredPanel.setBackground(new java.awt.Color(255, 255, 255));
         cartLayeredPanel.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 1, 0, 0, new java.awt.Color(200, 200, 200)));
+        cartLayeredPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                cartLayeredPanelMouseMoved(evt);
+            }
+        });
+        cartLayeredPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cartLayeredPanelMouseClicked(evt);
+            }
+        });
         cartLayeredPanel.setLayout(new java.awt.BorderLayout());
 
         cardPanel.setVerifyInputWhenFocusTarget(false);
+        cardPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                cardPanelMouseMoved(evt);
+            }
+        });
+        cardPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cardPanelMouseClicked(evt);
+            }
+        });
         cardPanel.setLayout(new java.awt.CardLayout());
 
+        listLayeredPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                listLayeredPanelMouseMoved(evt);
+            }
+        });
+        listLayeredPanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listLayeredPanelMouseClicked(evt);
+            }
+        });
         listLayeredPanel.setLayout(new java.awt.BorderLayout());
 
         javax.swing.GroupLayout cardCartListLayeredPaneLayout = new javax.swing.GroupLayout(cardCartListLayeredPane);
@@ -693,7 +721,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
                     .addGap(0, 0, 0)))
         );
         cardCartListLayeredPane.setLayer(cartLayeredPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        cardCartListLayeredPane.setLayer(cardPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        cardCartListLayeredPane.setLayer(cardPanel, javax.swing.JLayeredPane.PALETTE_LAYER);
         cardCartListLayeredPane.setLayer(listLayeredPanel, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         contentPanel.add(cardCartListLayeredPane, java.awt.BorderLayout.CENTER);
@@ -717,13 +745,9 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         jLabel4.setPreferredSize(null);
         cartPanel.add(jLabel4);
 
-        cartToggleButton.setBackground(new java.awt.Color(255, 255, 255));
-        closeablePanelsButtonGroup.add(cartToggleButton);
         cartToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
-        cartToggleButton.setToolTipText("Visa varukorg");
         cartToggleButton.setBorderPainted(false);
         cartToggleButton.setContentAreaFilled(false);
-        cartToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         cartToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cartToggleButtonActionPerformed(evt);
@@ -757,16 +781,9 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         jLabel5.setPreferredSize(null);
         listsPanel.add(jLabel5);
 
-        listToggleButton.setBackground(new java.awt.Color(255, 255, 255));
-        closeablePanelsButtonGroup.add(listToggleButton);
         listToggleButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/lists.png"))); // NOI18N
-        listToggleButton.setToolTipText("Visa mina listor");
         listToggleButton.setBorderPainted(false);
         listToggleButton.setContentAreaFilled(false);
-        listToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        listToggleButton.setMaximumSize(new java.awt.Dimension(80, 80));
-        listToggleButton.setMinimumSize(new java.awt.Dimension(80, 80));
-        listToggleButton.setPreferredSize(new java.awt.Dimension(80, 80));
         listToggleButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listToggleButtonActionPerformed(evt);
@@ -1208,37 +1225,30 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         switchCard("productCategoryPanel", e);
     }
     
-    public void closeClosablePanels() {
-        closeCart();
-        closeList();
+    public void closeCart() {
+        if (cartIsShowing) {
+            cardCartListLayeredPane.setLayer(cartLayeredPanel, JLayeredPane.MODAL_LAYER, 0);
+        }
     }
     
-    public void closeCart() {
-        if (cartShowing){
-            cardCartListLayeredPane.moveToFront(cardPanel);
-            cardCartListLayeredPane.moveToBack(cartLayeredPanel);
-            cartShowing = false;
-        } else {
-            cardCartListLayeredPane.moveToBack(cardPanel);
-            cardCartListLayeredPane.moveToBack(listLayeredPanel);
-            cardCartListLayeredPane.moveToFront(cartLayeredPanel);
-            cartShowing = true;
+    public void openCart() {
+        if (!cartIsShowing) {
+            cardCartListLayeredPane.setLayer(cartLayeredPanel, JLayeredPane.DEFAULT_LAYER, -1);
+            closeList();
         }
-        cartToggleButton.setSelected(cartShowing);
     }
     
     public void closeList() {
-        if (listShowing) {
-            cardCartListLayeredPane.moveToFront(cardPanel);
-            cardCartListLayeredPane.moveToBack(listLayeredPanel);
-            listShowing = false;
-        } else {
-            cardCartListLayeredPane.moveToBack(cardPanel);
-            cardCartListLayeredPane.moveToBack(cartLayeredPanel);
-            cardCartListLayeredPane.moveToFront(listLayeredPanel);
-            listShowing = true;
+        if (listIsShowing) {
+            cardCartListLayeredPane.setLayer(listLayeredPanel, JLayeredPane.MODAL_LAYER, 0);
         }
-        listToggleButton.setSelected(listShowing);
+    }
+    
+    public void openList() {
+        if (!listIsShowing) {
+            cardCartListLayeredPane.setLayer(listLayeredPanel, JLayeredPane.DEFAULT_LAYER, -1);
+            closeCart();
+        }
     }
     
     public JLayeredPane getLayeredPane() {
@@ -1373,14 +1383,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         }
     }//GEN-LAST:event_previousButtonActionPerformed
 
-    private void cartToggleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartToggleButtonActionPerformed
-        closeCart();
-    }//GEN-LAST:event_cartToggleButtonActionPerformed
-
-    private void listToggleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listToggleButtonActionPerformed
-        closeList();
-    }//GEN-LAST:event_listToggleButtonActionPerformed
-
     private void hintsToggleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hintsToggleButtonActionPerformed
         switchCard("hintsPanel", evt);// TODO add your handling code here:
     }//GEN-LAST:event_hintsToggleButtonActionPerformed
@@ -1501,9 +1503,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void clearShoppingCartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearShoppingCartActionPerformed
-        /*for (ShoppingItem s : dataHandler.getShoppingCart().getItems()) {
-            dataHandler.getShoppingCart().removeItem(s);
-        }*/
         dataHandler.getShoppingCart().clear();
     }//GEN-LAST:event_clearShoppingCartActionPerformed
 
@@ -1526,6 +1525,42 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
     private void jMenuItem13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem13ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItem13ActionPerformed
+
+    private void cartLayeredPanelMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartLayeredPanelMouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cartLayeredPanelMouseMoved
+
+    private void cartLayeredPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartLayeredPanelMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cartLayeredPanelMouseClicked
+
+    private void cardPanelMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardPanelMouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cardPanelMouseMoved
+
+    private void cardPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardPanelMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cardPanelMouseClicked
+
+    private void listLayeredPanelMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listLayeredPanelMouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listLayeredPanelMouseMoved
+
+    private void listLayeredPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listLayeredPanelMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listLayeredPanelMouseClicked
+
+    private void cartToggleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartToggleButtonActionPerformed
+        cartIsShowing = !cartIsShowing;
+        openCart();
+        closeCart();      
+    }//GEN-LAST:event_cartToggleButtonActionPerformed
+
+    private void listToggleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listToggleButtonActionPerformed
+        listIsShowing = !listIsShowing;
+        openList();
+        closeList();        
+    }//GEN-LAST:event_listToggleButtonActionPerformed
 
     @Override
     public void shoppingCartChanged(CartEvent ce) {
@@ -1599,7 +1634,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
     private javax.swing.JPanel cartLayeredPanel;
     private javax.swing.JPanel cartPanel;
     private javax.swing.JLabel cartPriceLabel;
-    private javax.swing.JToggleButton cartToggleButton;
+    private javax.swing.JButton cartToggleButton;
     private javax.swing.JToggleButton checkoutToggleButton;
     private javax.swing.JMenuItem clearAllInfo;
     private javax.swing.JMenuItem clearCardInfo;
@@ -1655,7 +1690,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
     private javax.swing.JPopupMenu.Separator jSeparator6;
     private javax.swing.JPopupMenu.Separator jSeparator7;
     private javax.swing.JPanel listLayeredPanel;
-    private javax.swing.JToggleButton listToggleButton;
+    private javax.swing.JButton listToggleButton;
     private javax.swing.JPanel listsPanel;
     private javax.swing.JLabel logotype;
     private javax.swing.JToggleButton meatFishButton;

@@ -183,7 +183,6 @@
                 <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/imat/resources/heart.png"/>
                 </Property>
-                <Property name="rolloverEnabled" type="boolean" value="true"/>
                 <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/imat/resources/heart.png"/>
                 </Property>
@@ -303,7 +302,6 @@
                 <Property name="pressedIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/imat/resources/button-selected.png"/>
                 </Property>
-                <Property name="rolloverEnabled" type="boolean" value="true"/>
                 <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                   <Image iconType="3" name="/imat/resources/button-hover.png"/>
                 </Property>
