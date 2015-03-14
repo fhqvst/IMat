@@ -95,6 +95,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         jMenuItem11.setEnabled(false);
         i = this;
         
+        cartToggleButton.doClick();
+        
     }
 
     /**
@@ -664,9 +666,20 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
                 cartLayeredPanelMouseMoved(evt);
             }
         });
+        cartLayeredPanel.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                cartLayeredPanelFocusLost(evt);
+            }
+        });
         cartLayeredPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 cartLayeredPanelMouseClicked(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                cartLayeredPanelMouseExited(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                cartLayeredPanelMouseEntered(evt);
             }
         });
         cartLayeredPanel.setLayout(new java.awt.BorderLayout());
@@ -1235,6 +1248,9 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         if (!cartIsShowing) {
             cardCartListLayeredPane.setLayer(cartLayeredPanel, JLayeredPane.DEFAULT_LAYER, -1);
             closeList();
+            cartLayeredPanel.setVisible(true);
+        } else {
+            cartLayeredPanel.setVisible(false);
         }
     }
     
@@ -1561,6 +1577,18 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         openList();
         closeList();        
     }//GEN-LAST:event_listToggleButtonActionPerformed
+
+    private void cartLayeredPanelFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_cartLayeredPanelFocusLost
+        
+    }//GEN-LAST:event_cartLayeredPanelFocusLost
+
+    private void cartLayeredPanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartLayeredPanelMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cartLayeredPanelMouseEntered
+
+    private void cartLayeredPanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartLayeredPanelMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cartLayeredPanelMouseExited
 
     @Override
     public void shoppingCartChanged(CartEvent ce) {
