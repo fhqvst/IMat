@@ -7,11 +7,14 @@ package imat;
 
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Font;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.BorderFactory;
+import javax.swing.JCheckBox;
+import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import se.chalmers.ait.dat215.project.*;
@@ -30,6 +33,8 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
     private List<JTextField> page2RequiredTextFields;
     private List<JLabel> page1RequiredLabels;
     private List<JLabel> page2RequiredLabels;
+    private Font prompt;
+            
     /**
      * Creates new customizer PageCard
      */
@@ -39,6 +44,9 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         jPanel1.add(plp1, 0);
         page2FormsPanel.add(plp2, 0);
         showCard("page1");
+        
+        prompt = new Font(getFont().getName(), getFont().getStyle(), getFont().getSize()-2);
+        
         errorLabel1.setVisible(false);
         errorLabel2.setVisible(false);
         errorLabel1.setForeground(Color.red);
@@ -122,6 +130,22 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
     public void showCard(String cardName) {
         CardLayout cards = (CardLayout) cardPanel.getLayout();
         cards.show(cardPanel, cardName);
+    }
+    
+    public void textFieldFocusLost(JTextField textField, String message) {
+        if (textField.getText().isEmpty()) {
+            textField.setFont(prompt);
+            textField.setForeground(Color.LIGHT_GRAY);
+            textField.setText(message);
+        }
+    }
+    
+    public void textFieldFocusGained(JTextField textField) {
+        if (textField.getFont() == prompt) {
+            textField.setFont(new Font(getFont().getName(), getFont().getStyle(), getFont().getSize()+2));
+            textField.setForeground(Color.BLACK);
+            textField.setText(null);
+        }
     }
 
     /**
@@ -362,9 +386,30 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         thirdRow.setLayout(new java.awt.GridLayout(1, 2, 20, 0));
 
         firstNameTextField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        firstNameTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                firstNameTextFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                firstNameTextFieldFocusLost(evt);
+            }
+        });
+        firstNameTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                firstNameTextFieldActionPerformed(evt);
+            }
+        });
         thirdRow.add(firstNameTextField);
 
         lastNameTextField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        lastNameTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                lastNameTextFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                lastNameTextFieldFocusLost(evt);
+            }
+        });
         thirdRow.add(lastNameTextField);
 
         page1FormPanel.add(thirdRow);
@@ -401,9 +446,25 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         fifthRow.setLayout(new java.awt.GridLayout(1, 2, 20, 0));
 
         addressTextField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        addressTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                addressTextFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                addressTextFieldFocusLost(evt);
+            }
+        });
         fifthRow.add(addressTextField);
 
         postCodeTextField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        postCodeTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                postCodeTextFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                postCodeTextFieldFocusLost(evt);
+            }
+        });
         fifthRow.add(postCodeTextField);
 
         page1FormPanel.add(fifthRow);
@@ -440,9 +501,25 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         jPanel8.setLayout(new java.awt.GridLayout(1, 2, 20, 0));
 
         postAddressTextField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        postAddressTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                postAddressTextFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                postAddressTextFieldFocusLost(evt);
+            }
+        });
         jPanel8.add(postAddressTextField);
 
         mobileNumberTextField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        mobileNumberTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                mobileNumberTextFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                mobileNumberTextFieldFocusLost(evt);
+            }
+        });
         jPanel8.add(mobileNumberTextField);
 
         page1FormPanel.add(jPanel8);
@@ -479,9 +556,25 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         jPanel10.setLayout(new java.awt.GridLayout(1, 2, 20, 0));
 
         phoneNumberTextField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        phoneNumberTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                phoneNumberTextFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                phoneNumberTextFieldFocusLost(evt);
+            }
+        });
         jPanel10.add(phoneNumberTextField);
 
         emailTextField.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(0, 10, 0, 0)));
+        emailTextField.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                emailTextFieldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                emailTextFieldFocusLost(evt);
+            }
+        });
         jPanel10.add(emailTextField);
 
         page1FormPanel.add(jPanel10);
@@ -897,7 +990,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
                         
                 }
                 
-                if(page1RequiredTextFields.get(i).getText().equals("")){
+                if(page1RequiredTextFields.get(i).getText().equals("") || page1RequiredTextFields.get(i).getFont() == prompt){
                     page1RequiredLabels.get(i).setForeground(Color.red);
                     
                     error = true;
@@ -1034,6 +1127,74 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
     private void deliveryDateTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deliveryDateTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_deliveryDateTextFieldActionPerformed
+
+    private void firstNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_firstNameTextFieldActionPerformed
+
+    }//GEN-LAST:event_firstNameTextFieldActionPerformed
+
+    private void firstNameTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_firstNameTextFieldFocusLost
+        textFieldFocusLost(firstNameTextField, "ex. Anders");
+    }//GEN-LAST:event_firstNameTextFieldFocusLost
+
+    private void firstNameTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_firstNameTextFieldFocusGained
+        textFieldFocusGained(firstNameTextField);
+    }//GEN-LAST:event_firstNameTextFieldFocusGained
+
+    private void lastNameTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lastNameTextFieldFocusGained
+        textFieldFocusGained(lastNameTextField);
+    }//GEN-LAST:event_lastNameTextFieldFocusGained
+
+    private void lastNameTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lastNameTextFieldFocusLost
+        textFieldFocusLost(lastNameTextField, "ex. Andersson");
+    }//GEN-LAST:event_lastNameTextFieldFocusLost
+
+    private void addressTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addressTextFieldFocusGained
+        textFieldFocusGained(addressTextField);
+    }//GEN-LAST:event_addressTextFieldFocusGained
+
+    private void addressTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_addressTextFieldFocusLost
+        textFieldFocusLost(addressTextField, "ex. Bostadsgatan 123");
+    }//GEN-LAST:event_addressTextFieldFocusLost
+
+    private void postCodeTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_postCodeTextFieldFocusGained
+        textFieldFocusGained(postCodeTextField);
+    }//GEN-LAST:event_postCodeTextFieldFocusGained
+
+    private void postCodeTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_postCodeTextFieldFocusLost
+        textFieldFocusLost(postCodeTextField, "ex. 123 45");
+    }//GEN-LAST:event_postCodeTextFieldFocusLost
+
+    private void postAddressTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_postAddressTextFieldFocusGained
+        textFieldFocusGained(postAddressTextField);
+    }//GEN-LAST:event_postAddressTextFieldFocusGained
+
+    private void postAddressTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_postAddressTextFieldFocusLost
+        textFieldFocusLost(postAddressTextField, "ex. Grönköping");
+    }//GEN-LAST:event_postAddressTextFieldFocusLost
+
+    private void mobileNumberTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_mobileNumberTextFieldFocusGained
+        textFieldFocusGained(mobileNumberTextField);
+    }//GEN-LAST:event_mobileNumberTextFieldFocusGained
+
+    private void mobileNumberTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_mobileNumberTextFieldFocusLost
+        textFieldFocusLost(mobileNumberTextField, "ex. +46706-12 34 56 eller 0706123456");
+    }//GEN-LAST:event_mobileNumberTextFieldFocusLost
+
+    private void phoneNumberTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phoneNumberTextFieldFocusGained
+        textFieldFocusGained(phoneNumberTextField);
+    }//GEN-LAST:event_phoneNumberTextFieldFocusGained
+
+    private void phoneNumberTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phoneNumberTextFieldFocusLost
+        textFieldFocusLost(phoneNumberTextField, "ex. 0102-345 67 eller 010234567");
+    }//GEN-LAST:event_phoneNumberTextFieldFocusLost
+
+    private void emailTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailTextFieldFocusGained
+        textFieldFocusGained(emailTextField);
+    }//GEN-LAST:event_emailTextFieldFocusGained
+
+    private void emailTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailTextFieldFocusLost
+        textFieldFocusLost(emailTextField, "ex. anders.andersson@hemsida.se");
+    }//GEN-LAST:event_emailTextFieldFocusLost
 
     @Override
     public void shoppingCartChanged(CartEvent ce) {

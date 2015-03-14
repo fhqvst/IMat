@@ -364,7 +364,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="showShoppingCart">
               <Properties>
                 <Property name="accelerator" type="javax.swing.KeyStroke" editor="org.netbeans.modules.form.editors.KeyStrokeEditor">
-                  <KeyStroke key="Shift+Ctrl+P"/>
+                  <KeyStroke key="Shift+Ctrl+K"/>
                 </Property>
                 <Property name="mnemonic" type="int" value="118"/>
                 <Property name="text" type="java.lang.String" value="Visa/d&#xf6;lj varukorg"/>
