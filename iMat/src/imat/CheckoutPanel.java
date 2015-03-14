@@ -370,7 +370,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
 
         lastNameLabel.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
         lastNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lastNameLabel.setText("EFTERNAMN");
+        lastNameLabel.setText("EFTERNAMN*");
         lastNameLabel.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         lastNameLabel.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         lastNameLabel.setMaximumSize(new java.awt.Dimension(100, 10));
@@ -430,7 +430,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
 
         postCodeLabel.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
         postCodeLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        postCodeLabel.setText("POSTKOD");
+        postCodeLabel.setText("POSTKOD*");
         postCodeLabel.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         postCodeLabel.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         postCodeLabel.setMaximumSize(new java.awt.Dimension(100, 10));
@@ -530,7 +530,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
 
         phoneNumberLabel.setFont(new java.awt.Font("Helvetica", 1, 12)); // NOI18N
         phoneNumberLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        phoneNumberLabel.setText("TELEFONNUMMER*");
+        phoneNumberLabel.setText("TELEFONNUMMER");
         phoneNumberLabel.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         phoneNumberLabel.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         phoneNumberLabel.setMaximumSize(new java.awt.Dimension(100, 10));
@@ -997,7 +997,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
                     errorLabel1.setText("Var vänlig fyll i alla fält markerade med *");
                     errorLabel1.setVisible(true);
                 } else if (error) {
-                    errorLabel1.setText("Var vänlig ange rätt format i alla rödmarkerade fält.");
+                    errorLabel1.setText("Var vänlig ta bort otillåtna tecken i alla rödmarkerade fält.");
                     errorLabel1.setVisible(true);
                 }
                 else{
@@ -1161,7 +1161,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
     }//GEN-LAST:event_postCodeTextFieldFocusGained
 
     private void postCodeTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_postCodeTextFieldFocusLost
-        textFieldFocusLost(postCodeTextField, "ex. 123 45");
+        textFieldFocusLost(postCodeTextField, "nnn nn");
     }//GEN-LAST:event_postCodeTextFieldFocusLost
 
     private void postAddressTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_postAddressTextFieldFocusGained
@@ -1177,7 +1177,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
     }//GEN-LAST:event_mobileNumberTextFieldFocusGained
 
     private void mobileNumberTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_mobileNumberTextFieldFocusLost
-        textFieldFocusLost(mobileNumberTextField, "ex. +46706-12 34 56 eller 0706123456");
+        textFieldFocusLost(mobileNumberTextField, "nnn-nnn nn nn");
     }//GEN-LAST:event_mobileNumberTextFieldFocusLost
 
     private void phoneNumberTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phoneNumberTextFieldFocusGained
@@ -1185,7 +1185,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
     }//GEN-LAST:event_phoneNumberTextFieldFocusGained
 
     private void phoneNumberTextFieldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_phoneNumberTextFieldFocusLost
-        textFieldFocusLost(phoneNumberTextField, "ex. 0102-345 67 eller 010234567");
+        textFieldFocusLost(phoneNumberTextField, "nnnn-nnnnn");
     }//GEN-LAST:event_phoneNumberTextFieldFocusLost
 
     private void emailTextFieldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_emailTextFieldFocusGained

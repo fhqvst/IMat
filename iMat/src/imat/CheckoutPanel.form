@@ -342,7 +342,7 @@
                               <Font name="Helvetica" size="12" style="1"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
-                            <Property name="text" type="java.lang.String" value="EFTERNAMN"/>
+                            <Property name="text" type="java.lang.String" value="EFTERNAMN*"/>
                             <Property name="verticalAlignment" type="int" value="3"/>
                             <Property name="horizontalTextPosition" type="int" value="2"/>
                             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -468,7 +468,7 @@
                               <Font name="Helvetica" size="12" style="1"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
-                            <Property name="text" type="java.lang.String" value="POSTKOD"/>
+                            <Property name="text" type="java.lang.String" value="POSTKOD*"/>
                             <Property name="verticalAlignment" type="int" value="3"/>
                             <Property name="horizontalTextPosition" type="int" value="2"/>
                             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -698,7 +698,7 @@
                               <Font name="Helvetica" size="12" style="1"/>
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
-                            <Property name="text" type="java.lang.String" value="TELEFONNUMMER*"/>
+                            <Property name="text" type="java.lang.String" value="TELEFONNUMMER"/>
                             <Property name="verticalAlignment" type="int" value="3"/>
                             <Property name="horizontalTextPosition" type="int" value="2"/>
                             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
