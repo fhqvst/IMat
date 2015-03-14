@@ -97,9 +97,11 @@
                   <KeyStroke key="Shift+Ctrl+V"/>
                 </Property>
                 <Property name="mnemonic" type="int" value="107"/>
-                <Property name="text" type="java.lang.String" value="Skapa kopierad lista"/>
+                <Property name="text" type="java.lang.String" value="Skapa kopierad ink&#xf6;pslista"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator6">
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem4">
               <Properties>
@@ -126,6 +128,8 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="clearAllInfoActionPerformed"/>
               </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator7">
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem12">
               <Properties>
@@ -443,7 +447,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="jMenuItem8">
               <Properties>
                 <Property name="mnemonic" type="int" value="108"/>
-                <Property name="text" type="java.lang.String" value="Listbyggar l&#xe4;ge"/>
+                <Property name="text" type="java.lang.String" value="Listbyggarl&#xe4;ge"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>

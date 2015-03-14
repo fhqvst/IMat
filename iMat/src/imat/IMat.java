@@ -159,9 +159,11 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem13 = new javax.swing.JMenuItem();
         jMenuItem15 = new javax.swing.JMenuItem();
+        jSeparator6 = new javax.swing.JPopupMenu.Separator();
         jMenuItem4 = new javax.swing.JMenuItem();
         clearCardInfo = new javax.swing.JMenuItem();
         clearAllInfo = new javax.swing.JMenuItem();
+        jSeparator7 = new javax.swing.JPopupMenu.Separator();
         jMenuItem12 = new javax.swing.JMenuItem();
         jSeparator5 = new javax.swing.JPopupMenu.Separator();
         exit = new javax.swing.JMenuItem();
@@ -816,9 +818,10 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
 
         jMenuItem15.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.SHIFT_MASK | java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem15.setMnemonic('k');
-        jMenuItem15.setText("Skapa kopierad lista");
+        jMenuItem15.setText("Skapa kopierad inköpslista");
         jMenuItem15.setEnabled(false);
         file.add(jMenuItem15);
+        file.add(jSeparator6);
 
         jMenuItem4.setMnemonic('h');
         jMenuItem4.setText("Rensa historik");
@@ -843,6 +846,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
             }
         });
         file.add(clearAllInfo);
+        file.add(jSeparator7);
 
         jMenuItem12.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_MASK));
         jMenuItem12.setMnemonic('u');
@@ -1089,7 +1093,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         jMenu1.setText("Infoga");
 
         jMenuItem8.setMnemonic('l');
-        jMenuItem8.setText("Listbyggar läge");
+        jMenuItem8.setText("Listbyggarläge");
         jMenuItem8.setToolTipText("");
         jMenuItem8.setEnabled(false);
         jMenu1.add(jMenuItem8);
@@ -1648,6 +1652,8 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JPopupMenu.Separator jSeparator4;
     private javax.swing.JPopupMenu.Separator jSeparator5;
+    private javax.swing.JPopupMenu.Separator jSeparator6;
+    private javax.swing.JPopupMenu.Separator jSeparator7;
     private javax.swing.JPanel listLayeredPanel;
     private javax.swing.JToggleButton listToggleButton;
     private javax.swing.JPanel listsPanel;

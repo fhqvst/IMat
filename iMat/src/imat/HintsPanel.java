@@ -338,7 +338,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         });
         hintsNavigationPanel.add(lastButton);
 
-        nextButton.setText(">>");
+        nextButton.setText("→");
         hintsButtonGroup.add(nextButton);
         nextButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
