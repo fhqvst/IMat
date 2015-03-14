@@ -62,8 +62,6 @@ public class ListedProductPanel extends javax.swing.JPanel implements java.beans
         setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20)));
         setDoubleBuffered(false);
         setMaximumSize(new java.awt.Dimension(11212221, 80));
-        setMinimumSize(null);
-        setPreferredSize(null);
         setLayout(new java.awt.GridLayout(1, 5));
 
         titleLabel.setText("Titel");
@@ -112,9 +110,9 @@ public class ListedProductPanel extends javax.swing.JPanel implements java.beans
         add(adjustedPriceLabel);
 
         RemoveFromCartButton.setFont(new java.awt.Font("Helvetica", 1, 18)); // NOI18N
-        RemoveFromCartButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button.png"))); // NOI18N
         RemoveFromCartButton.setText("╳");
         RemoveFromCartButton.setBorderPainted(false);
+        RemoveFromCartButton.setContentAreaFilled(false);
         RemoveFromCartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         RemoveFromCartButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         RemoveFromCartButton.setIconTextGap(0);

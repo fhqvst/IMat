@@ -5,7 +5,12 @@
  */
 package imat;
 
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Container;
 import java.awt.GridLayout;
+import javax.swing.AbstractButton;
+import javax.swing.text.StyleConstants;
 import se.chalmers.ait.dat215.project.*;
 
 /**
@@ -35,10 +40,19 @@ public class ProductListPanel extends javax.swing.JPanel implements java.beans.C
         
         productsPanel.removeAll();
         
-        for(ShoppingItem item : cart.getItems()){
+        for(int i = 0; i < cart.getItems().size(); i++){
 
-            ListedProductPanel listedProductPanel = new ListedProductPanel(item);
+            ListedProductPanel listedProductPanel = new ListedProductPanel(cart.getItems().get(i));
+            if (i % 2 == 0) {
+                listedProductPanel.setBackground(Color.LIGHT_GRAY);
+                Component[] c = listedProductPanel.getComponents();
+                for (int j = 0; j < c.length; j++) {
+                    c[j].setBackground(Color.LIGHT_GRAY);  
+                }
+            }
             productsPanel.add(listedProductPanel);
+            revalidate();
+            repaint();
         }
 
     }
