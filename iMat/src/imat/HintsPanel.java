@@ -241,7 +241,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         currentHintTextArea.setFocusable(false);
         currentHintScrollPane.setViewportView(currentHintTextArea);
 
-        previousButton.setText("<<");
+        previousButton.setText("←");
         hintsButtonGroup.add(previousButton);
         previousButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

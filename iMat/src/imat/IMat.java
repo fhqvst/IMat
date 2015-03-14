@@ -11,6 +11,8 @@ import java.util.LinkedList;
 import java.util.Timer;
 import java.util.TimerTask;
 import javax.swing.AbstractButton;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JLayeredPane;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -944,7 +946,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         navigate.add(jSeparator1);
 
         goToPreviousCategory.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_LEFT, 0));
-        goToPreviousCategory.setText("Gå till föregående kategori");
+        goToPreviousCategory.setText("← Gå till föregående kategori");
         goToPreviousCategory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 goToPreviousCategoryActionPerformed(evt);
@@ -953,7 +955,7 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         navigate.add(goToPreviousCategory);
 
         goToNextCategory.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_RIGHT, 0));
-        goToNextCategory.setText("Gå till nästa kategori");
+        goToNextCategory.setText("→ Gå till nästa kategori");
         goToNextCategory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 goToNextCategoryActionPerformed(evt);
@@ -1378,10 +1380,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         listToggleButton.doClick();
     }//GEN-LAST:event_showMyListsActionPerformed
 
-    private void hintsMenuNavigationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hintsMenuNavigationActionPerformed
-        hintsToggleButton.doClick();
-    }//GEN-LAST:event_hintsMenuNavigationActionPerformed
-
     private void myFavouritesMenuNavigationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myFavouritesMenuNavigationActionPerformed
         favoritesToggleButton.doClick();
     }//GEN-LAST:event_myFavouritesMenuNavigationActionPerformed
@@ -1455,6 +1453,10 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
     private void jMenuItem11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem11ActionPerformed
         searchButton.doClick();
     }//GEN-LAST:event_jMenuItem11ActionPerformed
+
+    private void hintsMenuNavigationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hintsMenuNavigationActionPerformed
+        hintsToggleButton.doClick();
+    }//GEN-LAST:event_hintsMenuNavigationActionPerformed
 
     @Override
     public void shoppingCartChanged(CartEvent ce) {
