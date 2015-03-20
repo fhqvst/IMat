@@ -113,7 +113,7 @@ public class ListedProductPanel extends javax.swing.JPanel implements java.beans
         RemoveFromCartButton.setText("╳");
         RemoveFromCartButton.setBorderPainted(false);
         RemoveFromCartButton.setContentAreaFilled(false);
-        RemoveFromCartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        RemoveFromCartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         RemoveFromCartButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         RemoveFromCartButton.setIconTextGap(0);
         RemoveFromCartButton.setMargin(new java.awt.Insets(14, 14, 14, 14));

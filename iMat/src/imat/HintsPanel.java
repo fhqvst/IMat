@@ -243,6 +243,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
 
         previousButton.setText("←");
         hintsButtonGroup.add(previousButton);
+        previousButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         previousButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 previousButtonActionPerformed(evt);
@@ -252,6 +253,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
 
         firstButton.setText("1");
         hintsButtonGroup.add(firstButton);
+        firstButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         firstButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 firstButtonActionPerformed(evt);
@@ -261,6 +263,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
 
         secondButton.setText("2");
         hintsButtonGroup.add(secondButton);
+        secondButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         secondButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 secondButtonActionPerformed(evt);
@@ -272,6 +275,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         hintsNavigationPanel.add(leftDotsLabel);
 
         minusTwoButton.setText("11");
+        minusTwoButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         minusTwoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 minusTwoButtonActionPerformed(evt);
@@ -281,6 +285,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
 
         minusOneButton.setText("12");
         hintsButtonGroup.add(minusOneButton);
+        minusOneButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         minusOneButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 minusOneButtonActionPerformed(evt);
@@ -302,6 +307,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
 
         plusOneButton.setText("14");
         hintsButtonGroup.add(plusOneButton);
+        plusOneButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         plusOneButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 plusOneButtonActionPerformed(evt);
@@ -310,6 +316,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         hintsNavigationPanel.add(plusOneButton);
 
         plusTwoButton.setText("15");
+        plusTwoButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         plusTwoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 plusTwoButtonActionPerformed(evt);
@@ -322,6 +329,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
 
         secondLastButton.setText("36");
         hintsButtonGroup.add(secondLastButton);
+        secondLastButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         secondLastButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 secondLastButtonActionPerformed(evt);
@@ -331,6 +339,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
 
         lastButton.setText("37");
         hintsButtonGroup.add(lastButton);
+        lastButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lastButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lastButtonActionPerformed(evt);
@@ -356,7 +365,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(hintsNavigationPanel, javax.swing.GroupLayout.DEFAULT_SIZE, 560, Short.MAX_VALUE)
+                    .addComponent(hintsNavigationPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 560, Short.MAX_VALUE)
                     .addComponent(currentHintScrollPane))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addComponent(needHelpLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -378,6 +387,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         forumButton.setText("forum");
         forumButton.setBorderPainted(false);
         forumButton.setContentAreaFilled(false);
+        forumButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         findHelpPanel.add(forumButton);
 
         jLabel66.setText("eller");
@@ -386,6 +396,7 @@ public class HintsPanel extends javax.swing.JPanel implements java.beans.Customi
         contactUsButton.setText("kontakta oss");
         contactUsButton.setBorderPainted(false);
         contactUsButton.setContentAreaFilled(false);
+        contactUsButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         findHelpPanel.add(contactUsButton);
 
         manualLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

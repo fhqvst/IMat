@@ -182,7 +182,7 @@ public class ProductListPanel extends javax.swing.JPanel implements java.beans.C
         addToCartButton.setText("TÖM VARUKORG");
         addToCartButton.setAlignmentX(0.5F);
         addToCartButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)));
-        addToCartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        addToCartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addToCartButton.setFocusPainted(false);
         addToCartButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         addToCartButton.setIconTextGap(0);
@@ -202,7 +202,7 @@ public class ProductListPanel extends javax.swing.JPanel implements java.beans.C
         jButton1.setText("Gå till kassa");
         jButton1.setAlignmentX(0.5F);
         jButton1.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)));
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.setFocusPainted(false);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.setIconTextGap(0);

@@ -189,7 +189,7 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
         nameLinkLabel.setForeground(new java.awt.Color(255, 102, 102));
         nameLinkLabel.setText("Namn");
         nameLinkLabel.setAlignmentX(0.5F);
-        nameLinkLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        nameLinkLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         nameLinkLabel.setMinimumSize(new java.awt.Dimension(0, 20));
         nameLinkLabel.setPreferredSize(new java.awt.Dimension(33, 20));
         leftPanel.add(nameLinkLabel);
@@ -206,7 +206,7 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
         priceLinkLabel.setForeground(new java.awt.Color(200, 200, 200));
         priceLinkLabel.setText("Pris");
         priceLinkLabel.setAlignmentX(0.5F);
-        priceLinkLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        priceLinkLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         priceLinkLabel.setMinimumSize(new java.awt.Dimension(0, 20));
         priceLinkLabel.setPreferredSize(new java.awt.Dimension(21, 20));
         priceLinkLabel.setRequestFocusEnabled(false);
@@ -224,7 +224,7 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
         favouritesLinkLabel.setForeground(new java.awt.Color(200, 200, 200));
         favouritesLinkLabel.setText("Favoriter");
         favouritesLinkLabel.setAlignmentX(0.5F);
-        favouritesLinkLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        favouritesLinkLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         favouritesLinkLabel.setMinimumSize(new java.awt.Dimension(0, 20));
         favouritesLinkLabel.setPreferredSize(new java.awt.Dimension(48, 20));
         leftPanel.add(favouritesLinkLabel);
@@ -250,7 +250,7 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
         jToggleButton1.setAlignmentX(0.5F);
         jToggleButton1.setBorder(null);
         jToggleButton1.setBorderPainted(false);
-        jToggleButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jToggleButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jToggleButton1.setIconTextGap(0);
         jToggleButton1.setMargin(null);
         jToggleButton1.setMaximumSize(new java.awt.Dimension(20, 20));
@@ -266,7 +266,7 @@ public class ProductCategoryPanel extends javax.swing.JPanel implements java.bea
         jToggleButton2.setAlignmentX(0.5F);
         jToggleButton2.setBorder(null);
         jToggleButton2.setBorderPainted(false);
-        jToggleButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jToggleButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jToggleButton2.setIconTextGap(0);
         jToggleButton2.setMargin(null);
         jToggleButton2.setMaximumSize(new java.awt.Dimension(20, 20));

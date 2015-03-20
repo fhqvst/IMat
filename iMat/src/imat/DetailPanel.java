@@ -97,7 +97,7 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
         backButton.setToolTipText("Sök i butiken");
         backButton.setAlignmentX(0.5F);
         backButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)));
-        backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        backButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         backButton.setFocusPainted(false);
         backButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         backButton.setIconTextGap(0);
@@ -123,6 +123,7 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
         favBtn.setFont(new java.awt.Font("Helvetica", 1, 36)); // NOI18N
         favBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/heart-open.png"))); // NOI18N
         favBtn.setBorderPainted(false);
+        favBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         favBtn.setMargin(null);
         favBtn.setMaximumSize(new java.awt.Dimension(60, 60));
         favBtn.setMinimumSize(new java.awt.Dimension(60, 60));
@@ -162,7 +163,7 @@ public class DetailPanel extends javax.swing.JPanel implements java.beans.Custom
         addToCartButton.setText("LÄGG TILL");
         addToCartButton.setAlignmentX(0.5F);
         addToCartButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)));
-        addToCartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        addToCartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addToCartButton.setFocusPainted(false);
         addToCartButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         addToCartButton.setIconTextGap(0);

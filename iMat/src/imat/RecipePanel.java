@@ -112,6 +112,7 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
 
         jButton1.setText("Lägg till i varukorg");
         jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);

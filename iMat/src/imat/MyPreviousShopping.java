@@ -155,6 +155,7 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
         shoppingListToCart.setToolTipText("Lägg till vald listas innehåll i varukorgen");
         shoppingListToCart.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20)));
         shoppingListToCart.setContentAreaFilled(false);
+        shoppingListToCart.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         shoppingListToCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 shoppingListToCartActionPerformed(evt);
@@ -166,6 +167,7 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
         shoppingListProductsToCart.setToolTipText("Lägg till valda varor i varukorgen");
         shoppingListProductsToCart.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20)));
         shoppingListProductsToCart.setContentAreaFilled(false);
+        shoppingListProductsToCart.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         shoppingListProductsToCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 shoppingListProductsToCartActionPerformed(evt);
@@ -176,6 +178,7 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
         productsToCart.setText("LÄGG TILL I VARUKORG");
         productsToCart.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20)));
         productsToCart.setContentAreaFilled(false);
+        productsToCart.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         productsToCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 productsToCartActionPerformed(evt);
@@ -187,6 +190,7 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
         jButton1.setToolTipText("Lägg till valt köptillfälles innehåll i varukorgen");
         jButton1.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20)));
         jButton1.setContentAreaFilled(false);
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -197,6 +201,7 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
         jButton2.setText("REDIGERA");
         jButton2.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20)));
         jButton2.setContentAreaFilled(false);
+        jButton2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -207,12 +212,14 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
         jButton3.setText("REDIGERA");
         jButton3.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20)));
         jButton3.setContentAreaFilled(false);
+        jButton3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         jButton4.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
         jButton4.setText("RENSA");
         jButton4.setToolTipText("Rensar all historik");
         jButton4.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20)));
         jButton4.setContentAreaFilled(false);
+        jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);

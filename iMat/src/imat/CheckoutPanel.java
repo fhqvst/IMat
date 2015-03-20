@@ -252,7 +252,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         wizardStep1ToggleButton.setAlignmentX(0.5F);
         wizardStep1ToggleButton.setBorder(null);
         wizardStep1ToggleButton.setBorderPainted(false);
-        wizardStep1ToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        wizardStep1ToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         wizardStep1ToggleButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         wizardStep1ToggleButton.setIconTextGap(0);
         wizardStep1ToggleButton.setMaximumSize(new java.awt.Dimension(170, 40));
@@ -277,7 +277,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         wizardStep2ToggleButton.setAlignmentX(0.5F);
         wizardStep2ToggleButton.setBorder(null);
         wizardStep2ToggleButton.setBorderPainted(false);
-        wizardStep2ToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        wizardStep2ToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         wizardStep2ToggleButton.setEnabled(false);
         wizardStep2ToggleButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         wizardStep2ToggleButton.setIconTextGap(0);
@@ -303,7 +303,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         wizardStep3ToggleButton.setAlignmentX(0.5F);
         wizardStep3ToggleButton.setBorder(null);
         wizardStep3ToggleButton.setBorderPainted(false);
-        wizardStep3ToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        wizardStep3ToggleButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         wizardStep3ToggleButton.setEnabled(false);
         wizardStep3ToggleButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         wizardStep3ToggleButton.setIconTextGap(0);
@@ -609,7 +609,7 @@ public class CheckoutPanel extends javax.swing.JPanel implements java.beans.Cust
         page1NextButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-green.png"))); // NOI18N
         page1NextButton.setText("NÄSTA");
         page1NextButton.setBorderPainted(false);
-        page1NextButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        page1NextButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         page1NextButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         page1NextButton.setIconTextGap(0);
         page1NextButton.setMaximumSize(new java.awt.Dimension(120, 60));

@@ -2,7 +2,6 @@
 hs_err_pid*
 
 #ant specific
-iMat/dist/
 iMat/build/
 
 #netbeans specific

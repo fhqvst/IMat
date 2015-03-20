@@ -87,6 +87,7 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
 
         setBackground(new java.awt.Color(255, 255, 255));
         setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(20, 20, 20, 20)));
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         setLayout(new java.awt.GridLayout(2, 1));
 
         myPreferenses.setBackground(new java.awt.Color(255, 255, 255));
@@ -145,6 +146,7 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
         deleteCardInfoButton.setToolTipText("Tar bort ALL personlig information ");
         deleteCardInfoButton.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20)));
         deleteCardInfoButton.setContentAreaFilled(false);
+        deleteCardInfoButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         deleteCardInfoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteCardInfoButtonActionPerformed(evt);

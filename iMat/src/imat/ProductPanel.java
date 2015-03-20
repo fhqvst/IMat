@@ -74,6 +74,7 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
         imagePanel.setLayout(new java.awt.BorderLayout());
 
         imageLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        imageLabel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         imageLabel.setPreferredSize(new java.awt.Dimension(256, 0));
         imageLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -118,7 +119,7 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
         addToFavouritesButton.setBorder(null);
         addToFavouritesButton.setBorderPainted(false);
         addToFavouritesButton.setContentAreaFilled(false);
-        addToFavouritesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        addToFavouritesButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addToFavouritesButton.setFocusPainted(false);
         addToFavouritesButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         addToFavouritesButton.setIconTextGap(0);
@@ -127,7 +128,6 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
         addToFavouritesButton.setMinimumSize(new java.awt.Dimension(0, 0));
         addToFavouritesButton.setPreferredSize(new java.awt.Dimension(60, 60));
         addToFavouritesButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/heart.png"))); // NOI18N
-        addToFavouritesButton.setRolloverEnabled(true);
         addToFavouritesButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/heart.png"))); // NOI18N
         addToFavouritesButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/heart.png"))); // NOI18N
         addToFavouritesButton.addActionListener(new java.awt.event.ActionListener() {
@@ -167,7 +167,7 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
         addToCartButton.setText("LÄGG TILL");
         addToCartButton.setAlignmentX(0.5F);
         addToCartButton.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)));
-        addToCartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        addToCartButton.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         addToCartButton.setFocusPainted(false);
         addToCartButton.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         addToCartButton.setIconTextGap(0);
@@ -176,7 +176,6 @@ public class ProductPanel extends javax.swing.JPanel implements java.beans.Custo
         addToCartButton.setMinimumSize(new java.awt.Dimension(0, 0));
         addToCartButton.setPreferredSize(new java.awt.Dimension(100, 40));
         addToCartButton.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-selected.png"))); // NOI18N
-        addToCartButton.setRolloverEnabled(true);
         addToCartButton.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         addToCartButton.setRolloverSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/button-hover.png"))); // NOI18N
         addToCartButton.addActionListener(new java.awt.event.ActionListener() {
