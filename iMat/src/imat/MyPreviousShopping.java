@@ -150,48 +150,69 @@ public class MyPreviousShopping extends javax.swing.JPanel implements java.beans
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Handlade produkter");
 
-        shoppingListToCart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
+        shoppingListToCart.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        shoppingListToCart.setText("LÄGG TILL I VARUKORG");
         shoppingListToCart.setToolTipText("Lägg till vald listas innehåll i varukorgen");
+        shoppingListToCart.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20)));
+        shoppingListToCart.setContentAreaFilled(false);
         shoppingListToCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 shoppingListToCartActionPerformed(evt);
             }
         });
 
-        shoppingListProductsToCart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
+        shoppingListProductsToCart.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        shoppingListProductsToCart.setText("LÄGG TILL I VARUKORG");
         shoppingListProductsToCart.setToolTipText("Lägg till valda varor i varukorgen");
+        shoppingListProductsToCart.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20)));
+        shoppingListProductsToCart.setContentAreaFilled(false);
         shoppingListProductsToCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 shoppingListProductsToCartActionPerformed(evt);
             }
         });
 
-        productsToCart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
+        productsToCart.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        productsToCart.setText("LÄGG TILL I VARUKORG");
+        productsToCart.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20)));
+        productsToCart.setContentAreaFilled(false);
         productsToCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 productsToCartActionPerformed(evt);
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imat/resources/basket.png"))); // NOI18N
+        jButton1.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        jButton1.setText("LÄGG TILL I VARUKORG");
         jButton1.setToolTipText("Lägg till valt köptillfälles innehåll i varukorgen");
+        jButton1.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20)));
+        jButton1.setContentAreaFilled(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
 
-        jButton2.setText("[edit]");
+        jButton2.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        jButton2.setText("REDIGERA");
+        jButton2.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20)));
+        jButton2.setContentAreaFilled(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
 
-        jButton3.setText("[edit]");
+        jButton3.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        jButton3.setText("REDIGERA");
+        jButton3.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20)));
+        jButton3.setContentAreaFilled(false);
 
-        jButton4.setText("Rensa");
+        jButton4.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        jButton4.setText("RENSA");
         jButton4.setToolTipText("Rensar all historik");
+        jButton4.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20)));
+        jButton4.setContentAreaFilled(false);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
