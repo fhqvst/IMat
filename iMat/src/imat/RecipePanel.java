@@ -69,7 +69,6 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
         recipeSearchMaxPriceTextField = new javax.swing.JTextField();
         recipeSearchMaxTime = new javax.swing.JLabel();
         recipeSearchMaxTimeSlider = new javax.swing.JSlider();
-        searchButton = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -112,6 +111,7 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
         jLabel2.setText("Portioner:");
 
         jButton1.setText("Lägg till i varukorg");
+        jButton1.setContentAreaFilled(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -216,13 +216,6 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
         recipeSearchMaxTimeSlider.setToolTipText("");
         recipeSearchMaxTimeSlider.setValue(90);
 
-        searchButton.setText("Sök!");
-        searchButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchButtonActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout receipeSearchPanelLayout = new javax.swing.GroupLayout(receipeSearchPanel);
         receipeSearchPanel.setLayout(receipeSearchPanelLayout);
         receipeSearchPanelLayout.setHorizontalGroup(
@@ -236,7 +229,7 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
                             .addGroup(receipeSearchPanelLayout.createSequentialGroup()
                                 .addComponent(recipeSearchMaxTime)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(recipeSearchMaxTimeSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 306, Short.MAX_VALUE))
+                                .addComponent(recipeSearchMaxTimeSlider, javax.swing.GroupLayout.DEFAULT_SIZE, 263, Short.MAX_VALUE))
                             .addGroup(receipeSearchPanelLayout.createSequentialGroup()
                                 .addGroup(receipeSearchPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(recipeSearchMaxPrice)
@@ -249,10 +242,7 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
                                         .addGap(0, 0, Short.MAX_VALUE))))))
                     .addGroup(receipeSearchPanelLayout.createSequentialGroup()
                         .addComponent(receipeSearchTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, receipeSearchPanelLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         receipeSearchPanelLayout.setVerticalGroup(
@@ -275,9 +265,7 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
                     .addGroup(receipeSearchPanelLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(recipeSearchMaxTimeSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
-                .addComponent(searchButton)
-                .addGap(30, 30, 30))
+                .addContainerGap(64, Short.MAX_VALUE))
         );
 
         recipeSearchAndSelectPanel.add(receipeSearchPanel);
@@ -286,11 +274,6 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
 
         add(recipePanel, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
-        updateListModel.removeAllElements();
-        updateListModel.addElement("Inget recept matchar sökningen.");
-    }//GEN-LAST:event_searchButtonActionPerformed
 
     private void recipePortionsSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_recipePortionsSliderStateChanged
         Product product1 = dataHandler.findProducts("Köttfärs nöt").get(0);
@@ -376,7 +359,6 @@ public class RecipePanel extends javax.swing.JPanel implements java.beans.Custom
     private javax.swing.JSlider recipeSearchMaxTimeSlider;
     private javax.swing.JLabel recipeSearchWord;
     private javax.swing.JTextField recipeSearchWordTextField;
-    private javax.swing.JButton searchButton;
     private javax.swing.JLabel totalLabel;
     // End of variables declaration//GEN-END:variables
 }
