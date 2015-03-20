@@ -45,11 +45,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
 
     private int currentCategoryIndex;
     
-    //Herp
-    //Derp
-    //undo
-    //buffer
-    
     /**
      * Creates new form IMat
      */
@@ -665,11 +660,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
         cartLayeredPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 cartLayeredPanelMouseMoved(evt);
-            }
-        });
-        cartLayeredPanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cartLayeredPanelMouseClicked(evt);
             }
         });
         cartLayeredPanel.setLayout(new java.awt.BorderLayout());
@@ -1537,10 +1527,6 @@ public class IMat extends javax.swing.JFrame implements ShoppingCartListener/*, 
     private void cartLayeredPanelMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartLayeredPanelMouseMoved
         // TODO add your handling code here:
     }//GEN-LAST:event_cartLayeredPanelMouseMoved
-
-    private void cartLayeredPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartLayeredPanelMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cartLayeredPanelMouseClicked
 
     private void cardPanelMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cardPanelMouseMoved
         // TODO add your handling code here:
