@@ -262,9 +262,7 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
                             .addComponent(postAddressTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(emailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(mobileTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(editPanelLayout.createSequentialGroup()
-                        .addGap(0, 0, 0)
-                        .addComponent(contactInformationLabel)))
+                    .addComponent(contactInformationLabel))
                 .addGap(0, 0, 0))
         );
         editPanelLayout.setVerticalGroup(
@@ -496,7 +494,10 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "dag", "måndag", "tisdag", "onsdag", "torsdag", "fredag", "lördag", "söndag", "månad" }));
 
-        newReminderButton.setText("Ny påminnelse");
+        newReminderButton.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        newReminderButton.setText("NY PÅMINNELSE");
+        newReminderButton.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20)));
+        newReminderButton.setContentAreaFilled(false);
         newReminderButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 newReminderButtonActionPerformed(evt);
@@ -541,7 +542,7 @@ public class ReminderAndStoredInformation extends javax.swing.JPanel implements 
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(newReminderButton)
-                .addContainerGap(212, Short.MAX_VALUE))
+                .addContainerGap(204, Short.MAX_VALUE))
         );
 
         add(reminderPanel);

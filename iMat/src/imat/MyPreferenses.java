@@ -140,15 +140,21 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
 
         clearInfoLabel.setText("Ta bort personlig information");
 
-        deleteCardInfoButton.setText("Genomför");
+        deleteCardInfoButton.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        deleteCardInfoButton.setText("GENOMFÖR");
         deleteCardInfoButton.setToolTipText("Tar bort ALL personlig information ");
+        deleteCardInfoButton.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20)));
+        deleteCardInfoButton.setContentAreaFilled(false);
         deleteCardInfoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteCardInfoButtonActionPerformed(evt);
             }
         });
 
-        deleteAllInfoButton.setText("Genomför");
+        deleteAllInfoButton.setFont(new java.awt.Font("Helvetica", 1, 14)); // NOI18N
+        deleteAllInfoButton.setText("GENOMFÖR");
+        deleteAllInfoButton.setBorder(javax.swing.BorderFactory.createCompoundBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(200, 200, 200)), javax.swing.BorderFactory.createEmptyBorder(10, 20, 10, 20)));
+        deleteAllInfoButton.setContentAreaFilled(false);
         deleteAllInfoButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 deleteAllInfoButtonActionPerformed(evt);
@@ -175,7 +181,7 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
                         .addGroup(clearInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(deleteCardInfoButton)
                             .addComponent(deleteAllInfoButton))))
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(71, Short.MAX_VALUE))
         );
         clearInfoPanelLayout.setVerticalGroup(
             clearInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -190,7 +196,7 @@ public class MyPreferenses extends javax.swing.JPanel implements java.beans.Cust
                 .addGroup(clearInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(deleteAllInfoButton)
                     .addComponent(jLabel1))
-                .addContainerGap(392, Short.MAX_VALUE))
+                .addContainerGap(376, Short.MAX_VALUE))
         );
 
         add(clearInfoPanel);
